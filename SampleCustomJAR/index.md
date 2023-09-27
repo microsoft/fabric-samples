@@ -1,6 +1,6 @@
 An example/dummy JAR to test custom JARs in Microsoft Fabric - Workspace Management - Data Engineering/Science - Library management : 
 
-![image](https://github.com/farukc/fabric-samples/assets/4380204/1c353302-49e2-4550-96ca-bdc98c85cdd3)
+![image](images/FabricDEDSLibraryMgmtCustomLibrary.png)
 
 
 
