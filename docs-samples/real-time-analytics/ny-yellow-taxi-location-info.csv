@@ -1,0 +1,266 @@
+LocationID,Borough,Zone,service_zone,Latitude,Longitude
+1,EWR,Newark Airport,EWR,40.6895,-74.1745
+2,Queens,Jamaica Bay,Boro Zone,40.6097,-73.8233
+3,Bronx,Allerton/Pelham Gardens,Boro Zone,40.8667,-73.8478
+4,Manhattan,Alphabet City,Yellow Zone,40.7258,-73.9795
+5,Staten Island,Arden Heights,Boro Zone,40.5563,-74.1737
+6,Staten Island,Arrochar/Fort Wadsworth,Boro Zone,40.5964,-74.0671
+7,Queens,Astoria,Boro Zone,40.7644,-73.9235
+8,Queens,Astoria Park,Boro Zone,40.779,-73.9229
+9,Queens,Auburndale,Boro Zone,40.757,-73.7898
+10,Queens,Baisley Park,Boro Zone,40.6781,-73.7855
+11,Brooklyn,Bath Beach,Boro Zone,40.594224,-74.006131
+12,Manhattan,Battery Park,Yellow Zone,40.703282,-74.017027
+13,Manhattan,Battery Park City,Yellow Zone,40.711932,-74.016869
+14,Brooklyn,Bay Ridge,Boro Zone,40.625801,-74.030621
+15,Queens,Bay Terrace/Fort Totten,Boro Zone,40.791211,-73.776978
+16,Queens,Bayside,Boro Zone,40.76314,-73.77125
+17,Brooklyn,Bedford,Boro Zone,40.687216,-73.941776
+18,Bronx,Bedford Park,Boro Zone,40.8701,-73.885691
+19,Queens,Bellerose,Boro Zone,40.733014,-73.722938
+20,Bronx,Belmont,Boro Zone,40.85232,-73.88601
+21,Brooklyn,Bensonhurst East,Boro Zone,40.610019,-73.992507
+22,Brooklyn,Bensonhurst West,Boro Zone,40.611011,-74.002925
+23,Staten Island,Bloomfield/Emerson Hill,Boro Zone,40.605883,-74.105138
+24,Manhattan,Bloomingdale,Yellow Zone,40.801181,-73.964646
+25,Brooklyn,Boerum Hill,Boro Zone,40.685683,-73.984501
+26,Brooklyn,Borough Park,Boro Zone,40.633993,-73.996938
+27,Queens,Breezy Point/Fort Tilden/Riis Beach,Boro Zone,40.557154,-73.925042
+28,Queens,Briarwood/Jamaica Hills,Boro Zone,40.710185,-73.810501
+29,Brooklyn,Brighton Beach,Boro Zone,40.577621,-73.961376
+30,Queens,Broad Channel,Boro Zone,40.61675,-73.815959
+31,Bronx,Bronx Park,Boro Zone,40.8504855,-73.877832
+32,Bronx,Bronxdale,Boro Zone,40.8527235,-73.861726
+33,Brooklyn,Brooklyn Heights,Boro Zone,40.6960854,-73.995858
+34,Brooklyn,Brooklyn Navy Yard,Boro Zone,40.7016619,-73.969356
+35,Brooklyn,Brownsville,Boro Zone,40.6630806,-73.909527
+36,Brooklyn,Bushwick North,Boro Zone,40.7068344,-73.942253
+37,Brooklyn,Bushwick South,Boro Zone,40.6981167,-73.914279
+38,Queens,Cambria Heights,Boro Zone,40.6921585,-73.736406
+39,Brooklyn,Canarsie,Boro Zone,40.6355643,-73.902093
+40,Brooklyn,Carroll Gardens,Boro Zone,40.6805409,-73.994654
+41,Manhattan,Central Harlem,Boro Zone,40.807879,-73.945415
+42,Manhattan,Central Harlem North,Boro Zone,40.8115504,-73.946476
+43,Manhattan,Central Park,Yellow Zone,40.785091,-73.968285
+44,Staten Island,Charleston/Tottenville,Boro Zone,40.5445983,-74.219831
+45,Manhattan,Chinatown,Yellow Zone,40.7157517,-73.997031
+46,Bronx,City Island,Boro Zone,40.8472472,-73.787481
+47,Bronx,Claremont/Bathgate,Boro Zone,40.84187,-73.907946
+48,Manhattan,Clinton East,Yellow Zone,40.7641011,-73.996119
+49,Brooklyn,Clinton Hill,Boro Zone,40.6895291,-73.963249
+50,Manhattan,Clinton West,Yellow Zone,40.7617504,-73.993094
+51,Bronx,Co-Op City,Boro Zone,40.8742755,-73.829939
+52,Brooklyn,Cobble Hill,Boro Zone,40.6879219,-73.998667
+53,Queens,College Point,Boro Zone,40.7863952,-73.838966
+54,Brooklyn,Columbia Street,Boro Zone,40.6873693,-74.00278
+55,Brooklyn,Coney Island,Boro Zone,40.5749263,-73.985941
+56,Queens,Corona,Boro Zone,40.7498242,-73.862741
+57,Queens,Corona,Boro Zone,40.7498242,-73.862741
+58,Bronx,Country Club,Boro Zone,40.8442468,-73.821364
+59,Bronx,Crotona Park,Boro Zone,40.8392944,-73.895084
+60,Bronx,Crotona Park East,Boro Zone,40.8422884,-73.887867
+61,Brooklyn,Crown Heights North,Boro Zone,40.671078,-73.943491
+62,Brooklyn,Crown Heights South,Boro Zone,40.661147,-73.944591
+63,Brooklyn,Cypress Hills,Boro Zone,40.689947,-73.872267
+64,Queens,Douglaston,Boro Zone,40.768217,-73.749871
+65,Brooklyn,Downtown Brooklyn/MetroTech,Boro Zone,40.693216,-73.985367
+66,Brooklyn,DUMBO/Vinegar Hill,Boro Zone,40.703722,-73.988319
+67,Brooklyn,Dyker Heights,Boro Zone,40.619243,-74.019251
+68,Manhattan,East Chelsea,Yellow Zone,40.744034,-73.982542
+69,Bronx,East Concourse/Concourse Village,Boro Zone,40.830302,-73.915847
+70,Queens,East Elmhurst,Boro Zone,40.764073,-73.867041
+71,Brooklyn,East Flatbush/Farragut,Boro Zone,40.648556,-73.929563
+72,Brooklyn,East Flatbush/Remsen Village,Boro Zone,40.650783,-73.917307
+73,Queens,East Flushing,Boro Zone,40.757408,-73.783678
+74,Manhattan,East Harlem North,Boro Zone,40.79574,-73.938921
+75,Manhattan,East Harlem South,Boro Zone,40.785481,-73.944778
+76,Brooklyn,East New York,Boro Zone,40.675774,-73.883524
+77,Brooklyn,East New York/Pennsylvania Avenue,Boro Zone,40.667536,-73.892861
+78,Bronx,East Tremont,Boro Zone,40.839475,-73.876408
+79,Manhattan,East Village,Yellow Zone,40.727064,-73.982465
+80,Brooklyn,East Williamsburg,Boro Zone,40.715256,-73.933043
+81,Bronx,Eastchester,Boro Zone,40.882043,-73.842993
+82,Queens,Elmhurst,Boro Zone,40.744049,-73.881656
+83,Queens,Elmhurst/Maspeth,Boro Zone,40.731861,-73.883715
+84,Staten Island,Eltingville/Annadale/Prince's Bay,Boro Zone,40.537046,-74.16523
+85,Brooklyn,Erasmus,Boro Zone,40.646926,-73.948177
+86,Queens,Far Rockaway,Boro Zone,40.60913,-73.750359
+87,Manhattan,Financial District North,Yellow Zone,40.707612,-74.012961
+88,Manhattan,Financial District South,Yellow Zone,40.699836,-74.007114
+89,Brooklyn,Flatbush/Ditmas Park,Boro Zone,40.640922,-73.961503
+90,Manhattan,Flatiron,Yellow Zone,40.741061,-73.989699
+91,Brooklyn,Flatlands,Boro Zone,40.619853,-73.933524
+92,Queens,Flushing,Boro Zone,40.764454,-73.831773
+93,Queens,Flushing Meadows-Corona Park,Boro Zone,40.746749,-73.845113
+94,Bronx,Fordham South,Boro Zone,40.850408,-73.897102
+95,Queens,Forest Hills,Boro Zone,40.719865,-73.844142
+96,Queens,Forest Park/Highland Park,Boro Zone,40.698702,-73.85425
+97,Brooklyn,Fort Greene,Boro Zone,40.688527,-73.972973
+98,Queens,Fresh Meadows,Boro Zone,40.733518,-73.782532
+99,Staten Island,Freshkills Park,Boro Zone,40.583189,-74.166295
+100,Manhattan,Garment District,Yellow Zone,40.753995,-73.988947
+101,Queens,Glen Oaks,Boro Zone,40.749441,-73.715481
+102,Queens,Glendale,Boro Zone,40.702762,-73.870742
+103,Manhattan,Governor's Island/Ellis Island/Liberty Island,Yellow Zone,40.68945,-74.044419
+104,Manhattan,Governor's Island/Ellis Island/Liberty Island,Yellow Zone,40.702518,-74.015276
+105,Manhattan,Governor's Island/Ellis Island/Liberty Island,Yellow Zone,40.691531,-74.046565
+106,Brooklyn,Gowanus,Boro Zone,40.673336,-73.990349
+107,Manhattan,Gramercy,Yellow Zone,40.737925,-73.985932
+108,Brooklyn,Gravesend,Boro Zone,40.591017,-73.977126
+109,Staten Island,Great Kills,Boro Zone,40.554431,-74.151392
+110,Staten Island,Great Kills Park,Boro Zone,40.550034,-74.142948
+111,Brooklyn,Green-Wood Cemetery,Boro Zone,40.659055,-73.994892
+112,Brooklyn,Greenpoint,Boro Zone,40.728323,-73.949571
+113,Manhattan,Greenwich Village North,Yellow Zone,40.734706,-74.002942
+114,Manhattan,Greenwich Village South,Yellow Zone,40.727847,-74.000498
+115,Staten Island,Grymes Hill/Clifton,Boro Zone,40.618957,-74.091415
+116,Manhattan,Hamilton Heights,Boro Zone,40.823604,-73.949688
+117,Queens,Hammels/Arverne,Boro Zone,40.593214,-73.791003
+118,Staten Island,Heartland Village/Todt Hill,Boro Zone,40.585458,-74.163257
+119,Bronx,Highbridge,Boro Zone,40.836622,-73.927328
+120,Manhattan,Highbridge Park,Boro Zone,40.854924,-73.932503
+121,Queens,Hillcrest/Pomonok,Boro Zone,40.7326,-73.809528
+122,Queens,Hollis,Boro Zone,40.710036,-73.759773
+123,Brooklyn,Homecrest,Boro Zone,40.592845,-73.958518
+124,Queens,Howard Beach,Boro Zone,40.657122,-73.842999
+125,Manhattan,Hudson Sq,Yellow Zone,40.726562,-74.007662
+126,Bronx,Hunts Point,Boro Zone,40.814429,-73.883076
+127,Manhattan,Inwood,Boro Zone,40.867684,-73.92121
+128,Manhattan,Inwood Hill Park,Boro Zone,40.869258,-73.926364
+129,Queens,Jackson Heights,Boro Zone,40.7519811,-73.883777
+130,Queens,Jamaica,Boro Zone,40.702677,-73.7889689
+131,Queens,Jamaica Estates,Boro Zone,40.7179342,-73.7749678
+132,Queens,JFK Airport,Airports,40.6413111,-73.7781391
+133,Brooklyn,Kensington,Boro Zone,40.637642,-73.974187
+134,Queens,Kew Gardens,Boro Zone,40.7097763,-73.8306581
+135,Queens,Kew Gardens Hills,Boro Zone,40.7329328,-73.8215489
+136,Bronx,Kingsbridge Heights,Boro Zone,40.870392,-73.901523
+137,Manhattan,Kips Bay,Yellow Zone,40.742329,-73.9800655
+138,Queens,LaGuardia Airport,Airports,40.7769271,-73.8739659
+139,Queens,Laurelton,Boro Zone,40.6682083,-73.7511654
+140,Manhattan,Lenox Hill East,Yellow Zone,40.7657264,-73.9596866
+141,Manhattan,Lenox Hill West,Yellow Zone,40.7657264,-73.9596866
+142,Manhattan,Lincoln Square East,Yellow Zone,40.7734551,-73.985679
+143,Manhattan,Lincoln Square West,Yellow Zone,40.7734551,-73.985679
+144,Manhattan,Little Italy/NoLiTa,Yellow Zone,40.7230339,-73.9940809
+145,Queens,Long Island City/Hunters Point,Boro Zone,40.74784,-73.9460044
+146,Queens,Long Island City/Queens Plaza,Boro Zone,40.7464918,-73.9442085
+147,Bronx,Longwood,Boro Zone,40.8172248,-73.8962177
+148,Manhattan,Lower East Side,Yellow Zone,40.715033,-73.984272
+149,Brooklyn,Madison,Boro Zone,40.6039887,-73.9735796
+150,Brooklyn,Manhattan Beach,Boro Zone,40.5781573,-73.9434835
+151,Manhattan,Manhattan Valley,Yellow Zone,40.8003,-73.9613
+152,Manhattan,Manhattanville,Boro Zone,40.8162,-73.9534
+153,Manhattan,Marble Hill,Boro Zone,40.8756,-73.9097
+154,Brooklyn,Marine Park/Floyd Bennett Field,Boro Zone,40.6042,-73.9172
+155,Brooklyn,Marine Park/Mill Basin,Boro Zone,40.6073,-73.9091
+156,Staten Island,Mariners Harbor,Boro Zone,40.6342,-74.1576
+157,Queens,Maspeth,Boro Zone,40.7294,-73.9066
+158,Manhattan,Meatpacking/West Village West,Yellow Zone,40.7397,-74.0052
+159,Bronx,Melrose South,Boro Zone,40.8232,-73.9122
+160,Queens,Middle Village,Boro Zone,40.7164,-73.8744
+161,Manhattan,Midtown Center,Yellow Zone,40.7577,-73.9857
+162,Manhattan,Midtown East,Yellow Zone,40.7553,-73.9693
+163,Manhattan,Midtown North,Yellow Zone,40.7634,-73.9782
+164,Manhattan,Midtown South,Yellow Zone,40.7527,-73.9886
+165,Brooklyn,Midwood,Boro Zone,40.619,-73.9654
+166,Manhattan,Morningside Heights,Boro Zone,40.8105,-73.9624
+167,Bronx,Morrisania/Melrose,Boro Zone,40.8251,-73.9154
+168,Bronx,Mott Haven/Port Morris,Boro Zone,40.8055,-73.9159
+169,Bronx,Mount Hope,Boro Zone,40.8489,-73.9083
+170,Manhattan,Murray Hill,Yellow Zone,40.7479,-73.9757
+171,Queens,Murray Hill-Queens,Boro Zone,40.7649,-73.814
+172,Staten Island,New Dorp/Midland Beach,Boro Zone,40.5717,-74.098
+173,Queens,North Corona,Boro Zone,40.7564,-73.8626
+174,Bronx,Norwood,Boro Zone,40.8771,-73.8786
+175,Queens,Oakland Gardens,Boro Zone,40.7456,-73.7584
+176,Staten Island,Oakwood,Boro Zone,40.5584,-74.1264
+177,Brooklyn,Ocean Hill,Boro Zone,40.6763,-73.912
+178,Brooklyn,Ocean Parkway South,Boro Zone,40.608,-73.9689
+179,Queens,Old Astoria,Boro Zone,40.772,-73.926
+180,Queens,Ozone Park,Boro Zone,40.6769,-73.8469
+181,Brooklyn,Park Slope,Boro Zone,40.6708,-73.9752
+182,Bronx,Parkchester,Boro Zone,40.8339,-73.8604
+183,Bronx,Pelham Bay,Boro Zone,40.8504,-73.8324
+184,Bronx,Pelham Bay Park,Boro Zone,40.8619,-73.8241
+185,Bronx,Pelham Parkway,Boro Zone,40.8572,-73.8648
+186,Manhattan,Penn Station/Madison Sq West,Yellow Zone,40.7505,-73.9934
+187,Staten Island,Port Richmond,Boro Zone,40.6345,-74.1377
+188,Brooklyn,Prospect-Lefferts Gardens,Boro Zone,40.6583,-73.9541
+189,Brooklyn,Prospect Heights,Boro Zone,40.6776,-73.9668
+190,Brooklyn,Prospect Park,Boro Zone,40.6602,-73.969
+191,Queens,Queens Village,Boro Zone,40.7182,-73.7388
+192,Queens,Queensboro Hill,Boro Zone,40.7446,-73.8164
+193,Queens,Queensbridge/Ravenswood,Boro Zone,40.7554,-73.9459
+194,Manhattan,Randalls Island,Yellow Zone,40.7932,-73.9213
+195,Brooklyn,Red Hook,Boro Zone,40.6773,-74.0093
+196,Queens,Rego Park,Boro Zone,40.7256,-73.8625
+197,Queens,Richmond Hill,Boro Zone,40.6958,-73.8272
+198,Queens,Ridgewood,Boro Zone,40.7044,-73.9018
+199,Bronx,Rikers Island,Boro Zone,40.7932,-73.886
+200,Bronx,Riverdale/North Riverdale/Fieldston,Boro Zone,40.8979,-73.905
+201,Queens,Rockaway Park,Boro Zone,40.5808,-73.8371
+202,Manhattan,Roosevelt Island,Boro Zone,40.7614,-73.9497
+203,Queens,Rosedale,Boro Zone,40.6616,-73.7354
+204,Staten Island,Rossville/Woodrow,Boro Zone,40.5416,-74.1996
+205,Queens,Saint Albans,Boro Zone,40.6922,-73.7654
+206,Staten Island,Saint George/New Brighton,Boro Zone,40.6437,-74.0771
+207,Queens,Saint Michaels Cemetery/Woodside,Boro Zone,40.7479,-73.9024
+208,Bronx,Schuylerville/Edgewater Park,Boro Zone,40.8222,-73.825
+209,Manhattan,Seaport,Yellow Zone,40.7062,-74.0034
+210,Brooklyn,Sheepshead Bay,Boro Zone,40.5869,-73.9544
+211,Manhattan,SoHo,Yellow Zone,40.7233,-74.003
+212,Bronx,Soundview/Bruckner,Boro Zone,40.8248,-73.8677
+213,Bronx,Soundview/Castle Hill,Boro Zone,40.8229,-73.8483
+214,Staten Island,South Beach/Dongan Hills,Boro Zone,40.5866,-74.0812
+215,Queens,South Jamaica,Boro Zone,40.6897,-73.7913
+216,Queens,South Ozone Park,Boro Zone,40.6775,-73.812
+217,Brooklyn,South Williamsburg,Boro Zone,40.7041,-73.9582
+218,Queens,Springfield Gardens North,Boro Zone,40.6871,-73.7684
+219,Queens,Springfield Gardens South,Boro Zone,40.667,-73.7663
+220,Bronx,Spuyten Duyvil/Kingsbridge,Boro Zone,40.8797,-73.9137
+221,Staten Island,Stapleton,Boro Zone,40.6263,-74.0776
+222,Brooklyn,Starrett City,Boro Zone,40.648,-73.8805
+223,Queens,Steinway,Boro Zone,40.7758,-73.9018
+224,Manhattan,Stuy Town/Peter Cooper Village,Yellow Zone,40.7317,-73.9781
+225,Brooklyn,Stuyvesant Heights,Boro Zone,40.6827,-73.933
+226,Queens,Sunnyside,Boro Zone,40.7433,-73.9192
+227,Brooklyn,Sunset Park East,Boro Zone,40.6492,-74.0038
+228,Brooklyn,Sunset Park West,Boro Zone,40.6484,-74.006
+229,Manhattan,Sutton Place/Turtle Bay North,Yellow Zone,40.7568,-73.9656
+230,Manhattan,Times Sq/Theatre District,Yellow Zone,40.7589,-73.9851
+231,Manhattan,TriBeCa/Civic Center,Yellow Zone,40.7163,-74.0086
+232,Manhattan,Two Bridges/Seward Park,Yellow Zone,40.7109,-73.9893
+233,Manhattan,UN/Turtle Bay South,Yellow Zone,40.7528,-73.9685
+234,Manhattan,Union Sq,Yellow Zone,40.7359,-73.9911
+235,Bronx,University Heights/Morris Heights,Boro Zone,40.8532,-73.9133
+236,Manhattan,Upper East Side North,Yellow Zone,40.7784,-73.9551
+237,Manhattan,Upper East Side South,Yellow Zone,40.7649,-73.9654
+238,Manhattan,Upper West Side North,Yellow Zone,40.7958,-73.9719
+239,Manhattan,Upper West Side South,Yellow Zone,40.7829,-73.9765
+240,Bronx,Van Cortlandt Park,Boro Zone,40.8983,-73.8963
+241,Bronx,Van Cortlandt Village,Boro Zone,40.902784,-73.883478
+242,Bronx,Van Nest/Morris Park,Boro Zone,40.846822,-73.853876
+243,Manhattan,Washington Heights North,Boro Zone,40.850485,-73.937452
+244,Manhattan,Washington Heights South,Boro Zone,40.841862,-73.939232
+245,Staten Island,West Brighton,Boro Zone,40.629059,-74.110858
+246,Manhattan,West Chelsea/Hudson Yards,Yellow Zone,40.749726,-74.002905
+247,Bronx,West Concourse,Boro Zone,40.846977,-73.914245
+248,Bronx,West Farms/Bronx River,Boro Zone,40.840619,-73.87937
+249,Manhattan,West Village,Yellow Zone,40.734186,-74.00558
+250,Bronx,Westchester Village/Unionport,Boro Zone,40.832303,-73.850259
+251,Staten Island,Westerleigh,Boro Zone,40.618396,-74.136692
+252,Queens,Whitestone,Boro Zone,40.792045,-73.809557
+253,Queens,Willets Point,Boro Zone,40.760691,-73.840436
+254,Bronx,Williamsbridge/Olinville,Boro Zone,40.879395,-73.863896
+255,Brooklyn,Williamsburg (North Side),Boro Zone,40.723008,-73.950684
+256,Brooklyn,Williamsburg (South Side),Boro Zone,40.708939,-73.964156
+257,Brooklyn,Windsor Terrace,Boro Zone,40.655572,-73.97513
+258,Queens,Woodhaven,Boro Zone,40.690137,-73.856609
+259,Bronx,Woodlawn/Wakefield,Boro Zone,40.89599,-73.862438
+260,Queens,Woodside,Boro Zone,40.753195,-73.90611
+261,Manhattan,World Trade Center,Yellow Zone,40.711801,-74.012084
+262,Manhattan,Yorkville East,Yellow Zone,40.775638,-73.948309
+263,Manhattan,Yorkville West,Yellow Zone,40.770965,-73.951605
+264,Unknown,NV,N/A,,
+265,Unknown,NA,N/A,,
