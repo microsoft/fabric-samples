@@ -15,7 +15,7 @@
 # =====================================================
 
 $operationId = "FILL ME"      # The operation id - can be obtained from the output of Commit or UpdateFromGit scripts
-$retryAfter = "FILL ME" # The retry-after time in seconds
+$retryAfter = "FILL ME"       # The retry-after time in seconds
 
 # End Parameters =======================================
 

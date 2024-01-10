@@ -16,7 +16,7 @@
 # Parameters - fill these in before running the script!
 # =====================================================
 
-$workspaceName = "FILL ME"      # The name of the workspace
+$workspaceName = "FILL ME"          # The name of the workspace
 
 $datasetsNames = @("FILL ME")       # The names of the datasets to be committed
 
