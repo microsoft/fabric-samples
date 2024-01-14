@@ -1,7 +1,8 @@
-# This sample script calls the Fabric API to programmatically commit all changes from workspace to Git.
+# This sample script calls the Fabric API to programmatically switch Git connection of a workspace.
 
 # For documentation, please see:
-# https://learn.microsoft.com/en-us/rest/api/fabric/core/git/commit-to-git
+# https://learn.microsoft.com/en-us/rest/api/fabric/core/git/disconnect
+# https://learn.microsoft.com/en-us/rest/api/fabric/core/git/connect
 
 # Instructions:
 # 1. Install PowerShell (https://learn.microsoft.com/en-us/powershell/scripting/install/installing-powershell)
@@ -9,14 +10,22 @@
 # 3. Run PowerShell as an administrator
 # 4. Fill in the parameters below
 # 5. Change PowerShell directory to where this script is saved
-# 5. > ./GitIntegration-CommitAll.ps1
-# 6. [Optional] Wait for long running operation to be completed - see LongRunningOperation-Polling.ps1
+# 5. > ./GitIntegration-SwitchConnection.ps1
 
 # Parameters - fill these in before running the script!
 # =====================================================
 
 $workspaceName = "<WORKSPACE NAME>"      # The name of the workspace
-$commitMessage = "<COMMIT MESSAGE>"      # The commit message
+
+# AzureDevOps details
+$azureDevOpsDetails = @{
+    gitProviderType = "AzureDevOps"
+    organizationName = "<ORGANIZATION NAME>"
+    projectName = "<PROJECT NAME>"
+    repositoryName = "<REPOSITORY NAME>"
+    branchName = "<BRANCH NAME>"
+    directoryName = "<DIRECTORY NAME>"
+}
 
 # End Parameters =======================================
 
@@ -68,6 +77,7 @@ function GetErrorResponse($exception) {
 }
 
 try {
+
     SetFabricHeaders
 
     $workspace = GetWorkspaceByName $workspaceName 
@@ -78,23 +88,28 @@ try {
 	  return
 	}
 	
-    # Commit to Git
-    Write-Host "Committing all changes from workspace '$workspaceName' to Git has been started."
+    # Disconnect from Git
+    Write-Host "Disconnecting the workspace '$workspaceName' from Git has been started."
 
-    $commitToGitUrl = "{0}/workspaces/{1}/git/commitToGit" -f $global:baseUrl, $workspace.Id
+    $disconnectUrl = "{0}/workspaces/{1}/git/disconnect" -f $global:baseUrl, $workspace.Id
+    Invoke-RestMethod -Headers $global:fabricHeaders -Uri $disconnectUrl -Method POST
 
-    $commitToGitBody = @{ 		
-        mode = "All"
-        comment = $commitMessage
+    Write-Host "The workspace '$workspaceName' has been successfully disconnected from Git." -ForegroundColor Green
+
+    # Connect to Git
+    Write-Host "Connecting the workspace '$workspaceName' to Git has been started."
+
+    $connectUrl = "{0}/workspaces/{1}/git/connect" -f $global:baseUrl, $workspace.Id
+    
+    $connectToGitBody = @{
+        gitProviderDetails = $azureDevOpsDetails
     } | ConvertTo-Json
 
-    $commitToGitResponse = Invoke-WebRequest -Headers $global:fabricHeaders -Uri $commitToGitUrl -Method POST -Body $commitToGitBody
+    Invoke-RestMethod -Headers $global:fabricHeaders -Uri $connectUrl -Method POST -Body $connectToGitBody
 
-    $operationId = $commitToGitResponse.Headers['x-ms-operation-id']
-    $retryAfter = $commitToGitResponse.Headers['Retry-After']
-    Write-Host "Long Running Operation ID: '$operationId' has been scheduled for committing changes from workspace '$workspaceName' to Git with a retry-after time of '$retryAfter' seconds." -ForegroundColor Green
+    Write-Host "The workspace '$workspaceName' has been successfully connected to Git with the requested Git provider details." -ForegroundColor Green
 
 } catch {
     $errorResponse = GetErrorResponse($_.Exception)
-    Write-Host "Failed to commit changes from workspace '$workspaceName' to Git. Error reponse: $errorResponse" -ForegroundColor Red
+    Write-Host "Failed to switch connection for workspace '$workspaceName'. Error reponse: $errorResponse" -ForegroundColor Red
 }

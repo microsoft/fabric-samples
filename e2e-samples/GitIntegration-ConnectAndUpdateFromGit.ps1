@@ -4,6 +4,7 @@
 # https://learn.microsoft.com/en-us/rest/api/fabric/core/git/connect
 # https://learn.microsoft.com/en-us/rest/api/fabric/core/git/initialize-connection
 # https://learn.microsoft.com/en-us/rest/api/fabric/core/git/update-from-git
+# https://learn.microsoft.com/en-us/rest/api/fabric/core/long-running-operations/get-operation-state
 
 # Instructions:
 # 1. Install PowerShell (https://learn.microsoft.com/en-us/powershell/scripting/install/installing-powershell)
@@ -16,40 +17,44 @@
 # Parameters - fill these in before running the script!
 # =====================================================
 
-$workspaceName = "FILL ME"      # The name of the workspace
+$workspaceName = "<WORKSPACE NAME>"      # The name of the workspace
 
-# The Git provider details
-$gitProviderDetails = @{
-    gitProviderType = "FILL ME"
-    organizationName = "FILL ME"
-    projectName = "FILL ME"
-    repositoryName = "FILL ME"
-    branchName = "FILL ME"
-    directoryName = "FILL ME"
+# AzureDevOps details
+$azureDevOpsDetails = @{
+    gitProviderType = "AzureDevOps"
+    organizationName = "<ORGANIZATION NAME>"
+    projectName = "<PROJECT NAME>"
+    repositoryName = "<REPOSITORY NAME>"
+    branchName = "<BRANCH NAME>"
+    directoryName = "<DIRECTORY NAME>"
 }
 
 # End Parameters =======================================
 
-function GetFabricHeaders($resourceUrl) {
+$global:baseUrl = "<Base URL>" # Replace with environment-specific base URL. For example: "https://api.fabric.microsoft.com/v1"
+
+$global:resourceUrl = "https://api.fabric.microsoft.com"
+
+$global:fabricHeaders = @{}
+
+function SetFabricHeaders() {
 
     #Login to Azure
     Connect-AzAccount | Out-Null
 
     # Get authentication
-    $fabricToken = (Get-AzAccessToken -ResourceUrl $resourceUrl).Token
+    $fabricToken = (Get-AzAccessToken -ResourceUrl $global:resourceUrl).Token
 
-    $fabricHeaders = @{
+    $global:fabricHeaders = @{
         'Content-Type' = "application/json"
         'Authorization' = "Bearer {0}" -f $fabricToken
     }
-
-    return $fabricHeaders
 }
 
-function GetWorkspaceByName($baseUrl, $fabricHeaders, $workspaceName) {
+function GetWorkspaceByName($workspaceName) {
     # Get workspaces    
-    $getWorkspacesUrl = "{0}/workspaces" -f $baseUrl
-    $workspaces = (Invoke-RestMethod -Headers $fabricHeaders -Uri $getWorkspacesUrl -Method GET).value
+    $getWorkspacesUrl = "{0}/workspaces" -f $global:baseUrl
+    $workspaces = (Invoke-RestMethod -Headers $global:fabricHeaders -Uri $getWorkspacesUrl -Method GET).value
 
     # Try to find the workspace by display name
     $workspace = $workspaces | Where-Object {$_.DisplayName -eq $workspaceName}
@@ -74,13 +79,9 @@ function GetErrorResponse($exception) {
 }
 
 try {
-    # Set up API endpoints
-    $resourceUrl = "https://api.fabric.microsoft.com"
-    $baseUrl = "$resourceUrl/v1"
+    SetFabricHeaders
 
-    $fabricHeaders = GetFabricHeaders $resourceUrl
-
-    $workspace = GetWorkspaceByName $baseUrl $fabricHeaders $workspaceName 
+    $workspace = GetWorkspaceByName $workspaceName 
     
     # Verify the existence of the requested workspace
 	if(!$workspace) {
@@ -91,21 +92,21 @@ try {
     # Connect to Git
     Write-Host "Connecting the workspace '$workspaceName' to Git has been started."
 
-    $connectUrl = "{0}/workspaces/{1}/git/connect" -f $baseUrl, $workspace.Id
+    $connectUrl = "{0}/workspaces/{1}/git/connect" -f $global:baseUrl, $workspace.Id
     
     $connectToGitBody = @{
-        gitProviderDetails =$gitProviderDetails
+        gitProviderDetails =$azureDevOpsDetails
     } | ConvertTo-Json
 
-    Invoke-RestMethod -Headers $fabricHeaders -Uri $connectUrl -Method POST -Body $connectToGitBody
+    Invoke-RestMethod -Headers $global:fabricHeaders -Uri $connectUrl -Method POST -Body $connectToGitBody
 
     Write-Host "The workspace '$workspaceName' has been successfully connected to Git." -ForegroundColor Green
 
     # Initialize Connection
     Write-Host "Initializing Git connection for workspace '$workspaceName' has been started."
 
-    $initializeConnectionUrl = "{0}/workspaces/{1}/git/initializeConnection" -f $baseUrl, $workspace.Id
-    $initializeConnectionResponse = Invoke-RestMethod -Headers $fabricHeaders -Uri $initializeConnectionUrl -Method POST -Body "{}"
+    $initializeConnectionUrl = "{0}/workspaces/{1}/git/initializeConnection" -f $global:baseUrl, $workspace.Id
+    $initializeConnectionResponse = Invoke-RestMethod -Headers $global:fabricHeaders -Uri $initializeConnectionUrl -Method POST -Body "{}"
 
     Write-Host "The Git connection for workspace '$workspaceName' has been successfully initialized." -ForegroundColor Green
 
@@ -114,24 +115,24 @@ try {
         # Update from Git
         Write-Host "Updating the workspace '$workspaceName' from Git has been started."
 
-        $updateFromGitUrl = "{0}/workspaces/{1}/git/updateFromGit" -f $baseUrl, $workspace.Id
+        $updateFromGitUrl = "{0}/workspaces/{1}/git/updateFromGit" -f $global:baseUrl, $workspace.Id
 
         $updateFromGitBody = @{ 
             remoteCommitHash = $initializeConnectionResponse.RemoteCommitHash
-		    workspaceHead = $gitStatusResponse.WorkspaceHead
+		    workspaceHead = $initializeConnectionResponse.WorkspaceHead
         } | ConvertTo-Json
 
-        $updateFromGitResponse = Invoke-WebRequest -Headers $fabricHeaders -Uri $updateFromGitUrl -Method POST -Body $updateFromGitBody
+        $updateFromGitResponse = Invoke-WebRequest -Headers $global:fabricHeaders -Uri $updateFromGitUrl -Method POST -Body $updateFromGitBody
 
         $operationId = $updateFromGitResponse.Headers['x-ms-operation-id']
         $retryAfter = $updateFromGitResponse.Headers['Retry-After']
         Write-Host "Long Running Operation ID: '$operationId' has been scheduled for updating the workspace '$workspaceName' from Git with a retry-after time of '$retryAfter' seconds." -ForegroundColor Green
         
         # Poll Long Running Operation
-        $getOperationState = "{0}/operations/{1}" -f $baseUrl, $operationId
+        $getOperationState = "{0}/operations/{1}" -f $global:baseUrl, $operationId
         do
         {
-            $operationState = Invoke-RestMethod -Headers $fabricHeaders -Uri $getOperationState -Method GET
+            $operationState = Invoke-RestMethod -Headers $global:fabricHeaders -Uri $getOperationState -Method GET
 
             Write-Host "Update from Git operation status: $($operationState.Status)"
 

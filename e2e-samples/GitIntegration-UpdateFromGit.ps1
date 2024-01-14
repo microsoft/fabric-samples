@@ -2,6 +2,7 @@
 
 # For documentation, please see:
 # https://learn.microsoft.com/en-us/rest/api/fabric/core/git/update-from-git
+# https://learn.microsoft.com/en-us/rest/api/fabric/core/git/get-status
 
 # Instructions:
 # 1. Install PowerShell (https://learn.microsoft.com/en-us/powershell/scripting/install/installing-powershell)
@@ -15,30 +16,34 @@
 # Parameters - fill these in before running the script!
 # =====================================================
 
-$workspaceName = "FILL ME"      # The name of the workspace
+$workspaceName = "<WORKSPACE NAME>"      # The name of the workspace
 
 # End Parameters =======================================
 
-function GetFabricHeaders($resourceUrl) {
+$global:baseUrl = "<Base URL>" # Replace with environment-specific base URL. For example: "https://api.fabric.microsoft.com/v1"
+
+$global:resourceUrl = "https://api.fabric.microsoft.com"
+
+$global:fabricHeaders = @{}
+
+function SetFabricHeaders() {
 
     #Login to Azure
     Connect-AzAccount | Out-Null
 
     # Get authentication
-    $fabricToken = (Get-AzAccessToken -ResourceUrl $resourceUrl).Token
+    $fabricToken = (Get-AzAccessToken -ResourceUrl $global:resourceUrl).Token
 
-    $fabricHeaders = @{
+    $global:fabricHeaders = @{
         'Content-Type' = "application/json"
         'Authorization' = "Bearer {0}" -f $fabricToken
     }
-
-    return $fabricHeaders
 }
 
-function GetWorkspaceByName($baseUrl, $fabricHeaders, $workspaceName) {
+function GetWorkspaceByName($workspaceName) {
     # Get workspaces    
-    $getWorkspacesUrl = "{0}/workspaces" -f $baseUrl
-    $workspaces = (Invoke-RestMethod -Headers $fabricHeaders -Uri $getWorkspacesUrl -Method GET).value
+    $getWorkspacesUrl = "{0}/workspaces" -f $global:baseUrl
+    $workspaces = (Invoke-RestMethod -Headers $global:fabricHeaders -Uri $getWorkspacesUrl -Method GET).value
 
     # Try to find the workspace by display name
     $workspace = $workspaces | Where-Object {$_.DisplayName -eq $workspaceName}
@@ -63,13 +68,9 @@ function GetErrorResponse($exception) {
 }
 
 try {
-    # Set up API endpoints
-    $resourceUrl = "https://api.fabric.microsoft.com"
-    $baseUrl = "$resourceUrl/v1"
+    SetFabricHeaders
 
-    $fabricHeaders = GetFabricHeaders $resourceUrl
-
-    $workspace = GetWorkspaceByName $baseUrl $fabricHeaders $workspaceName 
+    $workspace = GetWorkspaceByName $workspaceName 
     
     # Verify the existence of the requested workspace
 	if(!$workspace) {
@@ -80,13 +81,13 @@ try {
     # Get Status
     Write-Host "Calling GET Status REST API to construct the request body for UpdateFromGit REST API."
 
-    $gitStatusUrl = "{0}/workspaces/{1}/git/status" -f $baseUrl, $workspace.Id
-    $gitStatusResponse = Invoke-RestMethod -Headers $fabricHeaders -Uri $gitStatusUrl -Method GET
+    $gitStatusUrl = "{0}/workspaces/{1}/git/status" -f $global:baseUrl, $workspace.Id
+    $gitStatusResponse = Invoke-RestMethod -Headers $global:fabricHeaders -Uri $gitStatusUrl -Method GET
 
     # Update from Git
     Write-Host "Updating the workspace '$workspaceName' from Git has been started."
 
-    $updateFromGitUrl = "{0}/workspaces/{1}/git/updateFromGit" -f $baseUrl, $workspace.Id
+    $updateFromGitUrl = "{0}/workspaces/{1}/git/updateFromGit" -f $global:baseUrl, $workspace.Id
 
     $updateFromGitBody = @{ 
         remoteCommitHash = $gitStatusResponse.RemoteCommitHash
@@ -97,7 +98,7 @@ try {
         }
     } | ConvertTo-Json
 
-    $updateFromGitResponse = Invoke-WebRequest -Headers $fabricHeaders -Uri $updateFromGitUrl -Method POST -Body $updateFromGitBody
+    $updateFromGitResponse = Invoke-WebRequest -Headers $global:fabricHeaders -Uri $updateFromGitUrl -Method POST -Body $updateFromGitBody
 
     $operationId = $updateFromGitResponse.Headers['x-ms-operation-id']
     $retryAfter = $updateFromGitResponse.Headers['Retry-After']

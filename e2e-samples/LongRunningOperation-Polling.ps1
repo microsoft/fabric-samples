@@ -14,25 +14,29 @@
 # Parameters - fill these in before running the script!
 # =====================================================
 
-$operationId = "FILL ME"      # The operation id - can be obtained from the output of Commit or UpdateFromGit scripts
-$retryAfter = "FILL ME"       # The retry-after time in seconds
+$operationId = "<OPERATION ID>"      # The operation id - Can be obtained from the Headers of an LRO operation response - like Commit or Update
+$retryAfter = "<RETRY AFTER>"        # The retry-after time in seconds
 
 # End Parameters =======================================
 
-function GetFabricHeaders($resourceUrl) {
+$global:baseUrl = "<Base URL>" # Replace with environment-specific base URL. For example: "https://api.fabric.microsoft.com/v1"
+
+$global:resourceUrl = "https://api.fabric.microsoft.com"
+
+$global:fabricHeaders = @{}
+
+function SetFabricHeaders() {
 
     #Login to Azure
     Connect-AzAccount | Out-Null
 
     # Get authentication
-    $fabricToken = (Get-AzAccessToken -ResourceUrl $resourceUrl).Token
+    $fabricToken = (Get-AzAccessToken -ResourceUrl $global:resourceUrl).Token
 
-    $fabricHeaders = @{
+    $global:fabricHeaders = @{
         'Content-Type' = "application/json"
         'Authorization' = "Bearer {0}" -f $fabricToken
     }
-
-    return $fabricHeaders
 }
 
 function GetErrorResponse($exception) {
@@ -52,19 +56,15 @@ function GetErrorResponse($exception) {
 }
 
 try {
-    # Set up API endpoints
-    $resourceUrl = "https://api.fabric.microsoft.com"
-    $baseUrl = "$resourceUrl/v1"
+	SetFabricHeaders
 
-    $fabricHeaders = GetFabricHeaders $resourceUrl
-	
-    # Get
+    # Get Long Running Operation
     Write-Host "Polling long running operation ID '$operationId' has been started with a retry-after time of '$retryAfter' seconds."
 
-    $getOperationState = "{0}/operations/{1}" -f $baseUrl, $operationId
+    $getOperationState = "{0}/operations/{1}" -f $global:baseUrl, $operationId
     do
     {
-        $operationState = Invoke-RestMethod -Headers $fabricHeaders -Uri $getOperationState -Method GET
+        $operationState = Invoke-RestMethod -Headers $global:fabricHeaders -Uri $getOperationState -Method GET
 
         Write-Host "Long running operation status: $($operationState.Status)"
 

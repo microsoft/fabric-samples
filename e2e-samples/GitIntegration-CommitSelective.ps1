@@ -16,34 +16,40 @@
 # Parameters - fill these in before running the script!
 # =====================================================
 
-$workspaceName = "FILL ME"          # The name of the workspace
+$workspaceName = "<WORKSPACE NAME>"       # The name of the workspace
 
-$datasetsNames = @("FILL ME")       # The names of the datasets to be committed
+$commitMessage = "<COMMIT MESSAGE>"       # The commit message
 
-$reportsNames = @("FILL ME")        # The name of the reports to be committed
+$datasetsNames = @("<DATASET NAME>")      # The names of the datasets to be committed
+
+$reportsNames = @("<REPORT NAME>")        # The name of the reports to be committed
 
 # End Parameters =======================================
 
-function GetFabricHeaders($resourceUrl) {
+$global:baseUrl = "<Base URL>" # Replace with environment-specific base URL. For example: "https://api.fabric.microsoft.com/v1"
+
+$global:resourceUrl = "https://api.fabric.microsoft.com"
+
+$global:fabricHeaders = @{}
+
+function SetFabricHeaders() {
 
     #Login to Azure
     Connect-AzAccount | Out-Null
 
     # Get authentication
-    $fabricToken = (Get-AzAccessToken -ResourceUrl $resourceUrl).Token
+    $fabricToken = (Get-AzAccessToken -ResourceUrl $global:resourceUrl).Token
 
-    $fabricHeaders = @{
+    $global:fabricHeaders = @{
         'Content-Type' = "application/json"
         'Authorization' = "Bearer {0}" -f $fabricToken
     }
-
-    return $fabricHeaders
 }
 
-function GetWorkspaceByName($baseUrl, $fabricHeaders, $workspaceName) {
+function GetWorkspaceByName($workspaceName) {
     # Get workspaces    
-    $getWorkspacesUrl = "{0}/workspaces" -f $baseUrl
-    $workspaces = (Invoke-RestMethod -Headers $fabricHeaders -Uri $getWorkspacesUrl -Method GET).value
+    $getWorkspacesUrl = "{0}/workspaces" -f $global:baseUrl
+    $workspaces = (Invoke-RestMethod -Headers $global:fabricHeaders -Uri $getWorkspacesUrl -Method GET).value
 
     # Try to find the workspace by display name
     $workspace = $workspaces | Where-Object {$_.DisplayName -eq $workspaceName}
@@ -68,13 +74,9 @@ function GetErrorResponse($exception) {
 }
 
 try {
-    # Set up API endpoints
-    $resourceUrl = "https://api.fabric.microsoft.com"
-    $baseUrl = "$resourceUrl/v1"
+    SetFabricHeaders
 
-    $fabricHeaders = GetFabricHeaders $resourceUrl
-
-    $workspace = GetWorkspaceByName $baseUrl $fabricHeaders $workspaceName 
+    $workspace = GetWorkspaceByName $workspaceName 
     
     # Verify the existence of the requested workspace
 	if(!$workspace) {
@@ -96,8 +98,8 @@ try {
     # Get Status
     Write-Host "Calling GET Status REST API to construct the request body for CommitToGit REST API."
 
-    $gitStatusUrl = "{0}/workspaces/{1}/git/status" -f $baseUrl, $workspace.Id
-    $gitStatusResponse = Invoke-RestMethod -Headers $fabricHeaders -Uri $gitStatusUrl -Method GET
+    $gitStatusUrl = "{0}/workspaces/{1}/git/status" -f $global:baseUrl, $workspace.Id
+    $gitStatusResponse = Invoke-RestMethod -Headers $global:fabricHeaders -Uri $gitStatusUrl -Method GET
     
     # Get selected changes
     $selectedChanges = @($gitStatusResponse.Changes | Where-Object {
@@ -113,7 +115,7 @@ try {
     # Commit to Git
     Write-Host "Committing selected changes from workspace '$workspaceName' to Git has been started."
 
-    $commitToGitUrl = "{0}/workspaces/{1}/git/commitToGit" -f $baseUrl, $workspace.Id
+    $commitToGitUrl = "{0}/workspaces/{1}/git/commitToGit" -f $global:baseUrl, $workspace.Id
 
     $commitToGitBody = @{ 		
         mode = "Selective"
@@ -122,9 +124,10 @@ try {
                 logicalId = $_.ItemMetadata.ItemIdentifier.LogicalId
             }
         })
+        comment = $commitMessage
     } | ConvertTo-Json
 
-    $commitToGitResponse = Invoke-WebRequest -Headers $fabricHeaders -Uri $commitToGitUrl -Method POST -Body $commitToGitBody
+    $commitToGitResponse = Invoke-WebRequest -Headers $global:fabricHeaders -Uri $commitToGitUrl -Method POST -Body $commitToGitBody
 
     $operationId = $commitToGitResponse.Headers['x-ms-operation-id']
     $retryAfter = $commitToGitResponse.Headers['Retry-After']
