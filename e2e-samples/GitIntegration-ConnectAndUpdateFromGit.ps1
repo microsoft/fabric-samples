@@ -19,7 +19,7 @@
 
 $workspaceName = "<WORKSPACE NAME>"      # The name of the workspace
 
-$shouldDisconnect = $true              # Determines whether the workspace should be disconnected before connecting to a new Azure DevOps connection details.
+$shouldDisconnect = $false               # Determines whether the workspace should be disconnected before connecting to a new Azure DevOps connection details.
 
 # AzureDevOps details
 $azureDevOpsDetails = @{
