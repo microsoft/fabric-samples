@@ -19,6 +19,8 @@
 
 $workspaceName = "<WORKSPACE NAME>"      # The name of the workspace
 
+$shouldDisconnect = $true              # Determines whether the workspace should be disconnected before connecting to a new Azure DevOps connection details.
+
 # AzureDevOps details
 $azureDevOpsDetails = @{
     gitProviderType = "AzureDevOps"
@@ -89,6 +91,17 @@ try {
 	  return
 	}
 	
+    if ($shouldDisconnect)
+    {
+        # Disconnect from Git
+        Write-Host "Disconnecting the workspace '$workspaceName' from Git has been started."
+
+        $disconnectUrl = "{0}/workspaces/{1}/git/disconnect" -f $global:baseUrl, $workspace.Id
+        Invoke-RestMethod -Headers $global:fabricHeaders -Uri $disconnectUrl -Method POST
+
+        Write-Host "The workspace '$workspaceName' has been successfully disconnected from Git." -ForegroundColor Green
+    }
+
     # Connect to Git
     Write-Host "Connecting the workspace '$workspaceName' to Git has been started."
 
