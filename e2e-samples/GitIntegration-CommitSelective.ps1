@@ -10,8 +10,8 @@
 # 3. Run PowerShell as an administrator
 # 4. Fill in the parameters below
 # 5. Change PowerShell directory to where this script is saved
-# 5. > ./GitIntegration-CommitSelective.ps1
-# 6. [Optional] Wait for long running operation to be completed - see LongRunningOperation-Polling.ps1
+# 6. > ./GitIntegration-CommitSelective.ps1
+# 7. [Optional] Wait for long running operation to be completed - see LongRunningOperation-Polling.ps1
 
 # Parameters - fill these in before running the script!
 # =====================================================
