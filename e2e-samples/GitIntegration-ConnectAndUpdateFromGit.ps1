@@ -12,7 +12,7 @@
 # 3. Run PowerShell as an administrator
 # 4. Fill in the parameters below
 # 5. Change PowerShell directory to where this script is saved
-# 5. > ./GitIntegration-ConnectAndUpdateFromGit.ps1
+# 6. > ./GitIntegration-ConnectAndUpdateFromGit.ps1
 
 # Parameters - fill these in before running the script!
 # =====================================================
@@ -94,7 +94,7 @@ try {
     if ($shouldDisconnect)
     {
         # Disconnect from Git
-        Write-Host "Disconnecting the workspace '$workspaceName' from Git has been started."
+        Write-Host "Disconnecting the workspace '$workspaceName' from Git."
 
         $disconnectUrl = "{0}/workspaces/{1}/git/disconnect" -f $global:baseUrl, $workspace.Id
         Invoke-RestMethod -Headers $global:fabricHeaders -Uri $disconnectUrl -Method POST
@@ -103,7 +103,7 @@ try {
     }
 
     # Connect to Git
-    Write-Host "Connecting the workspace '$workspaceName' to Git has been started."
+    Write-Host "Connecting the workspace '$workspaceName' to Git."
 
     $connectUrl = "{0}/workspaces/{1}/git/connect" -f $global:baseUrl, $workspace.Id
     
@@ -116,7 +116,7 @@ try {
     Write-Host "The workspace '$workspaceName' has been successfully connected to Git." -ForegroundColor Green
 
     # Initialize Connection
-    Write-Host "Initializing Git connection for workspace '$workspaceName' has been started."
+    Write-Host "Initializing Git connection for workspace '$workspaceName'."
 
     $initializeConnectionUrl = "{0}/workspaces/{1}/git/initializeConnection" -f $global:baseUrl, $workspace.Id
     $initializeConnectionResponse = Invoke-RestMethod -Headers $global:fabricHeaders -Uri $initializeConnectionUrl -Method POST -Body "{}"
@@ -126,7 +126,7 @@ try {
     if ($initializeConnectionResponse.RequiredAction -eq "UpdateFromGit") {
 
         # Update from Git
-        Write-Host "Updating the workspace '$workspaceName' from Git has been started."
+        Write-Host "Updating the workspace '$workspaceName' from Git."
 
         $updateFromGitUrl = "{0}/workspaces/{1}/git/updateFromGit" -f $global:baseUrl, $workspace.Id
 

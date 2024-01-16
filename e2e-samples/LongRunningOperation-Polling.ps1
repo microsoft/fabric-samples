@@ -9,7 +9,7 @@
 # 3. Run PowerShell as an administrator
 # 4. Fill in the parameters below
 # 5. Change PowerShell directory to where this script is saved
-# 5. > ./LongRunningOperation-Polling.ps1
+# 6. > ./LongRunningOperation-Polling.ps1
 
 # Parameters - fill these in before running the script!
 # =====================================================

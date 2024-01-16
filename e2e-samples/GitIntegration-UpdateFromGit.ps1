@@ -85,7 +85,7 @@ try {
     $gitStatusResponse = Invoke-RestMethod -Headers $global:fabricHeaders -Uri $gitStatusUrl -Method GET
 
     # Update from Git
-    Write-Host "Updating the workspace '$workspaceName' from Git has been started."
+    Write-Host "Updating the workspace '$workspaceName' from Git."
 
     $updateFromGitUrl = "{0}/workspaces/{1}/git/updateFromGit" -f $global:baseUrl, $workspace.Id
 

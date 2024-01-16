@@ -108,12 +108,12 @@ try {
     })
 
     if (($reportsNames + $datasetsNames).Length -ne $selectedChanges.Length) {
-        Write-Host "One or more of the requested items was not found or has no change." -ForegroundColor red
+        Write-Host "One or more of the requested items was not found or has no changes." -ForegroundColor red
         return
     }
 
     # Commit to Git
-    Write-Host "Committing selected changes from workspace '$workspaceName' to Git has been started."
+    Write-Host "Committing selected changes from workspace '$workspaceName' to Git."
 
     $commitToGitUrl = "{0}/workspaces/{1}/git/commitToGit" -f $global:baseUrl, $workspace.Id
 
