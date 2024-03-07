@@ -2,7 +2,7 @@
 
 # Microsoft Fabric Samples
 
-Welcome to the repository of Microsoft Fabric samples! This collection is designed to help you explore and learn about Microsoft Fabric, offering practical examples and resources. Whether you're new to Microsoft Fabric or looking to deepen your understanding, you'll find valuable insights and tools here.
+Welcome to the Microsoft Fabric samples repository! This repository is designed to help you explore and learn about Microsoft Fabric.  It provides hands-on examples and resources. Whether you're new to Microsoft Fabric or looking to deepen your understanding, you'll find valuable insights and tools here.
 
 ## What's Inside
 
@@ -11,12 +11,12 @@ This repository is organized into different sections to help you navigate throug
 ### Documentation Samples
 
 - **Location:** `docs-samples` folder.
-- **Description:** These samples support the Microsoft Fabric official documentation and Microsoft Learn modules. They include both code examples and sample data.
+- **Description:** These samples are referenced within the Microsoft Fabric official documentation and Learn training content. They include both code examples and sample data.
 
 ### Feature Samples
 
 - **Location:** `feature-samples` folder.
-- **Description:** Focus on specific features of Microsoft Fabric, showcasing how to leverage them in your projects.
+- **Description:** These samples focus on specific features of Microsoft Fabric, demonstrating how to leverage them in your projects.
 
 ## Learning Resources
 
