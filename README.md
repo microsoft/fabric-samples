@@ -36,16 +36,7 @@ For a visually engaging learning experience, check out [Fabric Notes](https://ak
 
 ## Contributing
 
-While we're currently not accepting contributions from external contributors, we're eager to hear about the samples you'd like to share. If you have a sample proposal:
-
-1. Ensure any datasets used are licensed appropriately for sharing.
-2. Open a draft pull request with the following
-    - A new folder under `community-samples` with a short name for your sample
-    - A `readme.md` sample describing the objective of the sample
-    - If the sample code is not yet written, please wait for confirmation in the PR disucssion before engaging time to create the sample.
-3. Add [@cmaneu](https://github.com/cmaneu) as a reviewer.
-
-Most contributions require you to agree to a Contributor License Agreement (CLA) to ensure that we have the right to use your work. For more details and to contribute, please visit our [CLA information page](https://cla.opensource.microsoft.com).
+Please check [CONTRIBUTING.md](./CONTRIBUTING.md) for more info about contributing to this repository.
 
 ## Governance
 
