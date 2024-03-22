@@ -15,7 +15,7 @@ This repository is organized into different sections to help you navigate throug
 
 ### Feature Samples
 
-- **Location:** `feature-samples` folder.
+- **Location:** `features-samples` folder.
 - **Description:** These samples focus on specific features of Microsoft Fabric, demonstrating how to leverage them in your projects.
 
 ## Learning Resources
