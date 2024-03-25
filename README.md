@@ -8,16 +8,21 @@ Welcome to the Microsoft Fabric samples repository! This repository is designed 
 
 This repository is organized into different sections to help you navigate through various samples and resources easily.
 
-### Documentation Samples
+### [Documentation Samples](./docs-samples)
 
 - **Location:** `docs-samples` folder.
 - **Description:** These samples are referenced within the [Microsoft Fabric official documentation](https://aka.ms/fabric-docs) and Learn training content. They include both code examples and sample data.
 
-### Feature Samples
+### [Features Samples](./features-samples/)
 
 - **Location:** `features-samples` folder.
 - **Description:** These samples focus on specific features of Microsoft Fabric, demonstrating how to leverage them in your projects.
 
+### [Community Samples](./community-samples/)
+
+- **Location:** `community-samples` folder.
+- **Description:** These samples have been created by our community. They showcase creative ways to use Microsoft Fabric and provide valuable insights into real-world scenarios.
+  
 ## Learning Resources
 
 ### Microsoft Learn
