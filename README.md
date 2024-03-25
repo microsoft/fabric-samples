@@ -13,7 +13,7 @@ This repository is organized into different sections to help you navigate throug
 - **Location:** `docs-samples` folder.
 - **Description:** These samples are referenced within the [Microsoft Fabric official documentation](https://aka.ms/fabric-docs) and Learn training content. They include both code examples and sample data.
 
-### [Feature Samples](./e2e-samples/)
+### [Feature Samples](./feature-samples/)
 
 - **Location:** `features-samples` folder.
 - **Description:** These samples focus on specific features of Microsoft Fabric, demonstrating how to leverage them in your projects.
