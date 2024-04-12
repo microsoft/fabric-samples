@@ -32,6 +32,7 @@ if __name__ == "__main__":
     print("spark.dynamicAllocation.minExecutors : " + spark.conf.get("spark.dynamicAllocation.minExecutors")) 
     
     #tableName = "yellowtripdata"
+    # You can download the sample CSV file from this site "https://www.nyc.gov/site/tlc/about/tlc-trip-record-data.page" and upload it to the files section of the lakehouse. 
     csvFilePath = "Files/yellow_tripdata_2022_01.csv"
     #deltaTablePath = SaveToLH + "/Tables/" + tableName
     deltaTablePath = "Tables/yellowtrip"
