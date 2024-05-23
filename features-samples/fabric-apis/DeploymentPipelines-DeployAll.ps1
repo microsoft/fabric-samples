@@ -83,6 +83,9 @@ function GetErrorResponse($exception) {
 
     if(!$errorResponse) {
         # This is needed to support Windows PowerShell
+        if (!$exception.Response) {
+            return $exception.Message
+        }
         $result = $exception.Response.GetResponseStream()
         $reader = New-Object System.IO.StreamReader($result)
         $reader.BaseStream.Position = 0
@@ -120,6 +123,34 @@ try {
     $retryAfter = $deployResponse.Headers['Retry-After']
     Write-Host "Long Running Operation ID: '$operationId' has been scheduled for deploying from $($sourceStage.displayName) to $($targetStage.displayName) with a retry-after time of '$retryAfter' seconds." -ForegroundColor Green
 
+    # Get Long Running Operation Status
+    Write-Host "Polling long running operation ID '$operationId' has been started with a retry-after time of '$retryAfter' seconds."
+
+    $getOperationState = "{0}/operations/{1}" -f $global:baseUrl, $operationId
+    do
+    {
+        $operationState = Invoke-RestMethod -Headers $global:fabricHeaders -Uri $getOperationState -Method GET
+
+        Write-Host "Deployment operation status: $($operationState.Status)"
+
+        if ($operationState.Status -in @("NotStarted", "Running")) {
+            Start-Sleep -Seconds $retryAfter
+        }
+    } while($operationState.Status -in @("NotStarted", "Running"))
+
+    if ($operationState.Status -eq "Failed") {
+        Write-Host "The deployment operation has been completed with failure. Error reponse: $($operationState.Error | ConvertTo-Json)" -ForegroundColor Red
+    }
+    else{
+        # Get Long Running Operation Result
+        Write-Host "The deployment operation has been successfully completed. Getting LRO Result.." -ForegroundColor Green
+
+        $operationResultUrl = "{0}/operations/{1}/result" -f $global:baseUrl, $operationId
+        $operationResult = Invoke-RestMethod -Headers $global:fabricHeaders -Uri $operationResultUrl -Method GET
+
+        Write-Host "Deployment operation result: `n$($operationResult | ConvertTo-Json)" -ForegroundColor Green
+    }
+    
 } catch {
     $errorResponse = GetErrorResponse($_.Exception)
     Write-Host "Failed to deploy. Error reponse: $errorResponse" -ForegroundColor Red
