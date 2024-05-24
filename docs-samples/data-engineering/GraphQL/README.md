@@ -1,1 +1,0 @@
-These are some sample applications that leverage the Fabric API for GraphQL.
