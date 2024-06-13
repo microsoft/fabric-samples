@@ -1,4 +1,4 @@
-# Quickstart: Retrieval Augmented Generation with Azure AI Search, OpenAI, and Spark in Fabric on the CMU Queestion/Answer Dataset
+# Quickstart: Retrieval Augmented Generation with Azure AI Search, OpenAI, and Spark in Fabric on the CMU Question/Answer Dataset
 
 
 ![](img/guidance_fabric.png)
