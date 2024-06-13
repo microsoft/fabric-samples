@@ -24,8 +24,8 @@ Follow these instructions [to import a notebook into Fabric](https://learn.micro
 
 Make sure to use the `environment.yaml` to upload into Fabric to create, save, and publish a [Fabric environment](https://learn.microsoft.com/en-us/fabric/data-engineering/create-and-use-environment). 
 
-Then select the newly created environment before running the notebook.
-
+Then select the newly created environment before running the notebook. The very last cell of the notebook display an ipywidget with a dialogue box for a user to write their question and a response will be given. If the user wishes to ask a new question, simply change the text in the question and press Enter. 
+ 
 ## Modified CMU Question/Answer Dataset
 
 Considering the original dataset has different licenses for S08/S09 and S10, the modified dataset has been created of only S08/S09 rows with a reference to the ExtractedPath. For simplicity, the data is cleaned up and refined into a single structured table with the following fields.
