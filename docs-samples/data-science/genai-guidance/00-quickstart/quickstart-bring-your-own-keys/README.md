@@ -1,13 +1,21 @@
-# Quickstart: Retrieval Augmented Generation with Azure AI Search, OpenAI, and Spark in Fabric on the CMU Question/Answer Dataset
+# Building Retrieval Augmented Generation in Fabric: A Step-by-Step Guide
 
+Large Language Models (LLMs) such as OpenAI's ChatGPT are powerful tools, but their effectiveness for business applications and meeting customer needs greatly improves when customized with specific data using Generative AI (GenAI) solutions. Without this customization, LLMs may not deliver optimal results tailored to the requirements and expectations of businesses and their customers. 
+
+One straightforward approach to enhance the results is to manually integrate specific information into prompts. For more advanced improvements, fine-tuning LLMs with custom data proves effective. This notebook demonstrates the Retrieval Augmented Generation (RAG) strategy, which supplements LLMs with dynamically retrieved and relevant information (e.g., business-specific data) to enrich their knowledge.
+
+Implementing RAG involves methods such as web searching or utilizing specific APIs. An effective approach is utilizing a Vector Search Index to efficiently explore unstructured text data. The Vector Index searches through a database of text chunks and ranks them based on how closely they match the meaning of the user's question  or query. Since full documents or articles are usually too large to embed directly into a vector, they are typically split into smaller chunks. These smaller chunks are then indexed in systems like Azure AI Search, making it easier to retrieve relevant information efficiently.
 
 <img src="https://appliedaipublicdata.blob.core.windows.net/cmuqa-08-09/output/fabric_guidance_genai.png" style="width:1000px;"/>
 
-As disruptive as Large Language Models (LLMs) like OpenAI's chatGPT are, there is still a need to specialize the Generative AI (GenAI) solution by leveraging custom data. You can try a simple approach to improve results by manually adding custom information in a prompt. A more difficult method to get better responses would be to fine tune the LLM with custom data. The strategy that will be demonstrated in this notebook is Retrieval Augmented Generation (RAG), which is dynamically providing additional and relevant information (e.g., data specific to your business) to ground the LLM with knowledge. 
+This tutorial provides a quickstart guide to use Fabric for building RAG applications. The main steps in this tutorial are as following:
 
-RAG can be accomplished with searching websites, specific API, but a common method is to use a Vector Search Index for searching unstructured data in the form of text. The Vector Index consists of searching over a database of chunks of text and ranking the search by a score of how semantically similar the texts are to what the question is. Typically documents and articles are too large for embedding into a vector, so it is common practice to split the large text into chunks. The chunks are inserted into a Vector Index like Azure AI Search and then can be used for retrieval.
-
-This notebook is meant to be a quickstart in Fabric for manipulating some data from [CMU's QA dataset](https://www.cs.cmu.edu/~ark/QA-data/) of Wikipedia articles using spark to take advantage of its pooling, demonstrate how to create a Vector Index using [Azure AI Search](https://learn.microsoft.com/en-us/azure/search/search-what-is-azure-search), and use an [OpenAI](https://learn.microsoft.com/en-us/azure/ai-services/openai/overview) LLM for answering based on the retrieved context.
+1. Set up Azure OpenAI and Azure AI Search Services
+2. Load and manipulate the data from [CMU's QA dataset](https://www.cs.cmu.edu/~ark/QA-data/) of Wikipedia articles
+3. Chunk the data by leveraging Spark pooling for efficient processing
+4. Create embeddings using [Azure OpenAI Services](https://aka.ms/openai-embeddings)
+5. Create a Vector Index using [Azure AI Search](https://aka.ms/what-is-azure-search)
+6. Generate answers based on the retrieved context using [OpenAI](https://aka.ms/azure-openai-overview)
 
 ## Prerequisites
 
