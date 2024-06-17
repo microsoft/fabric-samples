@@ -1,7 +1,7 @@
 # Quickstart: Retrieval Augmented Generation with Azure AI Search, OpenAI, and Spark in Fabric on the CMU Question/Answer Dataset
 
 
-![](img/guidance_fabric.png)
+<img src="https://appliedaipublicdata.blob.core.windows.net/cmuqa-08-09/output/fabric_guidance_genai.png" style="width:1000px;"/>
 
 As disruptive as Large Language Models (LLMs) like OpenAI's chatGPT are, there is still a need to specialize the Generative AI (GenAI) solution by leveraging custom data. You can try a simple approach to improve results by manually adding custom information in a prompt. A more difficult method to get better responses would be to fine tune the LLM with custom data. The strategy that will be demonstrated in this notebook is Retrieval Augmented Generation (RAG), which is dynamically providing additional and relevant information (e.g., data specific to your business) to ground the LLM with knowledge. 
 
@@ -9,11 +9,14 @@ RAG can be accomplished with searching websites, specific API, but a common meth
 
 This notebook is meant to be a quickstart in Fabric for manipulating some data from [CMU's QA dataset](https://www.cs.cmu.edu/~ark/QA-data/) of Wikipedia articles using spark to take advantage of its pooling, demonstrate how to create a Vector Index using [Azure AI Search](https://learn.microsoft.com/en-us/azure/search/search-what-is-azure-search), and use an [OpenAI](https://learn.microsoft.com/en-us/azure/ai-services/openai/overview) LLM for answering based on the retrieved context.
 
-Links for standing up services:
-- [Azure AI Studio for OpenAI](https://learn.microsoft.com/en-us/azure/ai-studio/what-is-ai-studio)
-- [Azure AI Search](https://learn.microsoft.com/en-us/azure/search/search-create-service-portal)
-- [Microsoft Fabric](https://www.microsoft.com/en-us/microsoft-fabric/getting-started)
+## Prerequisites
 
+You need the following services to run this notebook.
+
+- [Microsoft Fabric](https://aka.ms/fabric/getting-started)
+- [Add a lakehouse](https://aka.ms/fabric/addlakehouse) to this notebook. You will download data from a public blob, then store the data in the lakehouse resource.
+- [Azure AI Studio for OpenAI](https://aka.ms/what-is-ai-studio)
+- [Azure AI Search](https://aka.ms/azure-ai-search)
 
 ## Deployment Instructions
 
