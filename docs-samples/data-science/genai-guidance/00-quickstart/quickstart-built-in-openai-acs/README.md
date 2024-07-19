@@ -1,4 +1,4 @@
-# Building Retrieval Augmented Generation in Fabric: A Step-by-Step Guide
+# Building Retrieval Augmented Generation in Fabric using built-in OpenAI: A Step-by-Step Guide
 
 Large Language Models (LLMs) such as OpenAI's ChatGPT are powerful tools, but their effectiveness for business applications and meeting customer needs greatly improves when customized with specific data using Generative AI (GenAI) solutions. Without this customization, LLMs may not deliver optimal results tailored to the requirements and expectations of businesses and their customers. 
 
@@ -6,31 +6,30 @@ One straightforward approach to enhance the results is to manually integrate spe
 
 Implementing RAG involves methods such as web searching or utilizing specific APIs. An effective approach is utilizing a Vector Search Index to efficiently explore unstructured text data. The Vector Index searches through a database of text chunks and ranks them based on how closely they match the meaning of the user's question  or query. Since full documents or articles are usually too large to embed directly into a vector, they are typically split into smaller chunks. These smaller chunks are then indexed in systems like Azure AI Search, making it easier to retrieve relevant information efficiently.
 
-<img src="https://appliedaipublicdata.blob.core.windows.net/cmuqa-08-09/output/fabric_guidance_genai.png" style="width:1000px;"/>
+<img src="https://appliedaipublicdata.blob.core.windows.net/cmuqa-08-09/output/fabric_guidance_genai_synapseml_openai.png" style="width:1000px;"/>
 
 This tutorial provides a quickstart guide to use Fabric for building RAG applications. The main steps in this tutorial are as following:
 
-1. Set up Azure OpenAI and Azure AI Search Services
+1. Set up Azure AI Search Services
 2. Load and manipulate the data from [CMU's QA dataset](https://www.cs.cmu.edu/~ark/QA-data/) of Wikipedia articles
 3. Chunk the data by leveraging Spark pooling for efficient processing
-4. Create embeddings using [Azure OpenAI Services](https://aka.ms/openai-embeddings)
+4. Create embeddings using fabric's built-in [Azure OpenAI Services through Synapse ML](https://learn.microsoft.com/en-us/fabric/data-science/ai-services/how-to-use-openai-sdk-synapse?tabs=synapseml)
 5. Create a Vector Index using [Azure AI Search](https://aka.ms/what-is-azure-search)
-6. Generate answers based on the retrieved context using [OpenAI](https://aka.ms/azure-openai-overview)
+6. Generate answers based on the retrieved context using fabrics built-in [Azure OpenAI through python SDK](https://learn.microsoft.com/en-us/fabric/data-science/ai-services/how-to-use-openai-sdk-synapse?tabs=python)
+
 
 ## Prerequisites
 
 You need the following services to run this notebook.
 
-- [Microsoft Fabric](https://aka.ms/fabric/getting-started)
+- [Microsoft Fabric](https://aka.ms/fabric/getting-started) with F64 Capacity 
 - [Add a lakehouse](https://aka.ms/fabric/addlakehouse) to this notebook. You will download data from a public blob, then store the data in the lakehouse resource.
-- [Azure AI Studio for OpenAI](https://aka.ms/what-is-ai-studio)
 - [Azure AI Search](https://aka.ms/azure-ai-search)
 
 ## Deployment Instructions
 
 Follow these instructions [to import a notebook into Fabric](https://learn.microsoft.com/en-us/fabric/data-engineering/how-to-use-notebook). After uploading the notebook, you will need to ensure you have the following to insert into a cell for the remainder of the code to work.
 
-- OpenAI endpoint and keys
 - Azure AI Search endpoint and keys
 
 Make sure to use the `environment.yaml` to upload into Fabric to create, save, and publish a [Fabric environment](https://learn.microsoft.com/en-us/fabric/data-engineering/create-and-use-environment). 
