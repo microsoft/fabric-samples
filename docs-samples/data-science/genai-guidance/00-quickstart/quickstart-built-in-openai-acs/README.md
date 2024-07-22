@@ -1,4 +1,4 @@
-# Building Retrieval Augmented Generation in Fabric using built-in OpenAI: A Step-by-Step Guide
+# Building Retrieval Augmented Generation in Fabric Using Built-in OpenAI: A Step-by-Step Guide
 
 Large Language Models (LLMs) such as OpenAI's ChatGPT are powerful tools, but their effectiveness for business applications and meeting customer needs greatly improves when customized with specific data using Generative AI (GenAI) solutions. Without this customization, LLMs may not deliver optimal results tailored to the requirements and expectations of businesses and their customers. 
 
