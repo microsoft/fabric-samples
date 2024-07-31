@@ -1,4 +1,4 @@
-# Evaluation of RAG Performance Basics: A Step-by-Step Guide
+# Evaluating the performance of RAG Applications on Fabric: A Step-by-Step Guide
 
 This tutorial provides a quickstart guide to use Fabric for evaluating the performance RAG applications. Performance evaluation is focused on two main components of RAG: the retriever (in our scenario it is based on Azure AI Search) and response generator (an LLM that uses provided user query, retrieved context, and prompt to spit out a reply that can be served to the user). The main steps in this tutorial are as following:
 
@@ -10,6 +10,7 @@ This tutorial provides a quickstart guide to use Fabric for evaluating the perfo
 6. Check-in #2 - evaluate the performance of response generator using Groundedness, Relevance, and Similarity metrics
 7. Visualize results and preserve them in OneLake for future reference and continuous evaluation
 
+The diagram below illustrates in a simplified form how the flow of data within a typical RAG system looks: it starts with a user asking a question, which is first passed to a component referred to as a "retriever" that helps fetch relevant context from pre-created database of knowledge. Next, the query, along with the context and instructive prompt, get passed to a "response generator" components powered by an LLM to generate an answer in conversational form, which will be presented to the user via chat bot interface. In this tutorial, we demonstrate how to "inject" two checkpoints for measuring RAG performance to get insights about the performance of each component and overall system.
 
 <img src="https://appliedaipublicdata.blob.core.windows.net/cmuqa-08-09/output/rag_flow_evaluation_basics.png" style="width:1000px;"/>
  
