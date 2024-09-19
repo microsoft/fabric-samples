@@ -25,6 +25,7 @@ If you already have an Azure OpenAI subscription, you can bring your own API key
 <p align="center">
 <img src="fabric_guidance_modules.png" style="width:350px;"/>
 </p>
+
 ## Prerequisites
 
 You need the following services to run this notebook.
@@ -44,7 +45,7 @@ If you want to use your own Azure OpenAI subscription, you need the OpenAI endpo
 
 ### •	Azure AI Search Endpoint and Keys:
 Ensure you have access to Azure AI Search by providing the correct endpoint and API keys. This enables the notebook to retrieve relevant information efficiently from your dataset.
-Once these resources are set up, use the provided environment.yaml file to upload into Fabric. This will create, save, and publish a new [Fabric environment](https://learn.microsoft.com/en-us/fabric/data-engineering/create-and-use-environment). Be sure to select this environment before running the notebook.
+Once these resources are set up, use the provided [environment.yaml](environment.yaml) file to upload into Fabric. This will create, save, and publish a new [Fabric environment](https://learn.microsoft.com/en-us/fabric/data-engineering/create-and-use-environment). Be sure to select this environment before running the notebook.
 
 ## Modified CMU Question/Answer Dataset
 This tutorial series uses a modified version of the CMU Question/Answer Dataset. Considering the original dataset has different licenses for S08/S09 and S10, the modified dataset has been created of only S08/S09 rows with a reference to the ExtractedPath. For simplicity, the data is cleaned up and refined into a single structured table with the following fields.
