@@ -22,8 +22,9 @@ You can use Fabric's native integration with Azure OpenAI without needing any su
 ### •	Bring-your-own-key:
 If you already have an Azure OpenAI subscription, you can bring your own API keys to use within Fabric. This option provides flexibility for those who want more control over their OpenAI usage.
 
-<img src="fabric_guidance_modules.png" style="width:1000px;"/>
-
+<p align="center">
+<img src="fabric_guidance_modules.png" style="width:350px;"/>
+</p>
 ## Prerequisites
 
 You need the following services to run this notebook.
