@@ -2,7 +2,7 @@
 
 This tutorial series provides a quickstart guide to help you use Microsoft Fabric for developing your Retrieval-Augmented Generation (RAG) applications. It includes three tutorials covering key aspects of building, evaluating, and optimizing RAG in Fabric.
 
-<img src="fabric_guidance_genai.png" style="width:1000px;"/>
+<img src="img/fabric_guidance_genai.png" style="width:1000px;"/>
 
 ### •	Tutorial 1: Building Retrieval Augmented Generation in Fabric
 This tutorial walks you through the process of setting up a RAG pipeline in Fabric. You will learn how to connect your data sources, use Fabric’s tools for data retrieval, and integrate them with Azure OpenAI for generating responses based on the retrieved data.
@@ -23,7 +23,7 @@ You can use Fabric's native integration with Azure OpenAI without needing any su
 If you already have an Azure OpenAI subscription, you can bring your own API keys to use within Fabric. This option provides flexibility for those who want more control over their OpenAI usage.
 
 <p align="center">
-<img src="fabric_guidance_modules.png" style="width:350px;"/>
+<img src="img/fabric_guidance_modules.png" style="width:350px;"/>
 </p>
 
 ## Prerequisites
