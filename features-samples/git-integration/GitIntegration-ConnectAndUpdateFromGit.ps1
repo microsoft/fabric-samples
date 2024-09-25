@@ -31,6 +31,19 @@ $azureDevOpsDetails = @{
     directoryName = "<DIRECTORY NAME>"
 }
 
+# GitHub details
+$gitHubDetails = @{
+    gitProviderType = "GitHub"
+    ownerName = "<OWNER NAME>"
+    repositoryName = "<REPOSITORY NAME>"
+    branchName = "<BRANCH NAME>"
+    directoryName = "<DIRECTORY NAME>"
+}
+
+$connectionId = "<Connection Id>" # Replace with the connection Id that stores the gitProvider credentials (Required for GitHub)
+
+$gitProviderDetails = "<Git Provider Details>" # Replace with specific Git provider, $azureDevOpsDetails or $gitHubDetails
+
 # End Parameters =======================================
 
 $global:baseUrl = "<Base URL>" # Replace with environment-specific base URL. For example: "https://api.fabric.microsoft.com/v1"
@@ -108,12 +121,23 @@ try {
     $connectUrl = "{0}/workspaces/{1}/git/connect" -f $global:baseUrl, $workspace.Id
     
     $connectToGitBody = @{
-        gitProviderDetails =$azureDevOpsDetails
+        gitProviderDetails =$gitProviderDetails
     } | ConvertTo-Json
 
     Invoke-RestMethod -Headers $global:fabricHeaders -Uri $connectUrl -Method POST -Body $connectToGitBody
 
     Write-Host "The workspace '$workspaceName' has been successfully connected to Git." -ForegroundColor Green
+
+    if ($gitProviderDetails.GitProviderType -eq "GitHub") {
+
+        # Configure Git Credentials for GitHub
+        Write-Host "Configuring the Git credentials for the current user's in the workspace '$workspaceName'."
+
+        $updateMyGitCredentialsUrl = "{0}/workspaces/{1}/git/myGitCredentials" -f $global:baseUrl, $workspace.Id
+        Invoke-RestMethod -Headers $global:fabricHeaders -Uri $updateMyGitCredentialsUrl -Method PATCH
+
+        Write-Host "The Git credentials has been successfully configured for the current user." -ForegroundColor Green
+    }
 
     # Initialize Connection
     Write-Host "Initializing Git connection for workspace '$workspaceName'."
