@@ -40,9 +40,10 @@ $gitHubDetails = @{
     directoryName = "<DIRECTORY NAME>"
 }
 
-$connectionId = "<Connection Id>" # Replace with the connection Id that stores the gitProvider credentials (Required for GitHub)
+# Relevant for updating Git credentials for GitHub
+$connectionId = "<CONNECTION ID>" # Replace with the connection Id that stores the gitProvider credentials (Required for GitHub)
 
-$gitProviderDetails = "<Git Provider Details>" # Replace with specific Git provider, $azureDevOpsDetails or $gitHubDetails
+$gitProviderDetails = @{} # Replace with specific Git provider, $azureDevOpsDetails or $gitHubDetails
 
 # End Parameters =======================================
 
@@ -130,13 +131,19 @@ try {
 
     if ($gitProviderDetails.GitProviderType -eq "GitHub") {
 
-        # Configure Git Credentials for GitHub
-        Write-Host "Configuring the Git credentials for the current user's in the workspace '$workspaceName'."
+        # Update Git Credentials for GitHub
+        Write-Host "Updating the Git credentials for the current user in the workspace '$workspaceName'."
 
         $updateMyGitCredentialsUrl = "{0}/workspaces/{1}/git/myGitCredentials" -f $global:baseUrl, $workspace.Id
-        Invoke-RestMethod -Headers $global:fabricHeaders -Uri $updateMyGitCredentialsUrl -Method PATCH
 
-        Write-Host "The Git credentials has been successfully configured for the current user." -ForegroundColor Green
+        $updateMyGitCredentialsBody = @{
+            source = "ConfiguredConnection"
+            connectionId = $connectionId
+        } | ConvertTo-Json
+
+        Invoke-RestMethod -Headers $global:fabricHeaders -Uri $updateMyGitCredentialsUrl -Method PATCH -Body $updateMyGitCredentialsBody
+
+        Write-Host "The Git credentials has been successfully updated for the current user." -ForegroundColor Green
     }
 
     # Initialize Connection
