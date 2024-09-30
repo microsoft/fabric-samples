@@ -40,7 +40,7 @@ $gitHubDetails = @{
     directoryName = "<DIRECTORY NAME>"
 }
 
-# Relevant for updating Git credentials for GitHub
+# Relevant for GitHub authentication
 $connectionId = "<CONNECTION ID>" # Replace with the connection Id that stores the gitProvider credentials (Required for GitHub)
 
 $gitProviderDetails = @{} # Replace with specific Git provider, $azureDevOpsDetails or $gitHubDetails
@@ -121,30 +121,27 @@ try {
 
     $connectUrl = "{0}/workspaces/{1}/git/connect" -f $global:baseUrl, $workspace.Id
     
-    $connectToGitBody = @{
-        gitProviderDetails =$gitProviderDetails
-    } | ConvertTo-Json
+    $connectToGitBody = @{}
 
+    if ($gitProviderDetails.GitProviderType -eq "AzureDevOps") {
+        $connectToGitBody = @{
+            gitProviderDetails =$gitProviderDetails
+        } | ConvertTo-Json
+    }
+
+    if ($gitProviderDetails.GitProviderType -eq "GitHub") {
+        $connectToGitBody = @{
+            gitProviderDetails = $gitProviderDetails
+            myGitCredentials = @{
+                source = "ConfiguredConnection"
+                connectionId = $connectionId
+            }
+        } | ConvertTo-Json
+    }
+        
     Invoke-RestMethod -Headers $global:fabricHeaders -Uri $connectUrl -Method POST -Body $connectToGitBody
 
     Write-Host "The workspace '$workspaceName' has been successfully connected to Git." -ForegroundColor Green
-
-    if ($gitProviderDetails.GitProviderType -eq "GitHub") {
-
-        # Update Git Credentials for GitHub
-        Write-Host "Updating the Git credentials for the current user in the workspace '$workspaceName'."
-
-        $updateMyGitCredentialsUrl = "{0}/workspaces/{1}/git/myGitCredentials" -f $global:baseUrl, $workspace.Id
-
-        $updateMyGitCredentialsBody = @{
-            source = "ConfiguredConnection"
-            connectionId = $connectionId
-        } | ConvertTo-Json
-
-        Invoke-RestMethod -Headers $global:fabricHeaders -Uri $updateMyGitCredentialsUrl -Method PATCH -Body $updateMyGitCredentialsBody
-
-        Write-Host "The Git credentials has been successfully updated for the current user." -ForegroundColor Green
-    }
 
     # Initialize Connection
     Write-Host "Initializing Git connection for workspace '$workspaceName'."
