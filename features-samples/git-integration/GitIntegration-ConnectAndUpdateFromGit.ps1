@@ -31,6 +31,20 @@ $azureDevOpsDetails = @{
     directoryName = "<DIRECTORY NAME>"
 }
 
+# GitHub details
+$gitHubDetails = @{
+    gitProviderType = "GitHub"
+    ownerName = "<OWNER NAME>"
+    repositoryName = "<REPOSITORY NAME>"
+    branchName = "<BRANCH NAME>"
+    directoryName = "<DIRECTORY NAME>"
+}
+
+# Relevant for GitHub authentication
+$connectionId = "<CONNECTION ID>" # Replace with the connection Id that stores the gitProvider credentials (Required for GitHub)
+
+$gitProviderDetails = @{} # Replace with specific Git provider, $azureDevOpsDetails or $gitHubDetails
+
 # End Parameters =======================================
 
 $global:baseUrl = "<Base URL>" # Replace with environment-specific base URL. For example: "https://api.fabric.microsoft.com/v1"
@@ -107,10 +121,24 @@ try {
 
     $connectUrl = "{0}/workspaces/{1}/git/connect" -f $global:baseUrl, $workspace.Id
     
-    $connectToGitBody = @{
-        gitProviderDetails =$azureDevOpsDetails
-    } | ConvertTo-Json
+    $connectToGitBody = @{}
 
+    if ($gitProviderDetails.GitProviderType -eq "AzureDevOps") {
+        $connectToGitBody = @{
+            gitProviderDetails =$gitProviderDetails
+        } | ConvertTo-Json
+    }
+
+    if ($gitProviderDetails.GitProviderType -eq "GitHub") {
+        $connectToGitBody = @{
+            gitProviderDetails = $gitProviderDetails
+            myGitCredentials = @{
+                source = "ConfiguredConnection"
+                connectionId = $connectionId
+            }
+        } | ConvertTo-Json
+    }
+        
     Invoke-RestMethod -Headers $global:fabricHeaders -Uri $connectUrl -Method POST -Body $connectToGitBody
 
     Write-Host "The workspace '$workspaceName' has been successfully connected to Git." -ForegroundColor Green
