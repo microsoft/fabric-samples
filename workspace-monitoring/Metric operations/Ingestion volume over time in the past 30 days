@@ -1,0 +1,7 @@
+//Ingestion volume over time in the past 30 days 
+let Duration =timespan(30);
+EventhouseMetrics 
+| where Timestamp > ago (Duration) 
+| where MetricName == "IngestionVolumeInBytes" 
+|summarize IngestionVolumeInGb=round(sum(MetricSumValue)/1024/1024,2) by bin(Timestamp, 1d) 
+|render linechart 

@@ -1,0 +1,5 @@
+//Ingestions by Ingestion Result status
+let Duration =timespan(30); 
+EventhouseIngestionResultsLogs 
+| where Timestamp > ago (Duration) 
+| summarize count() by Status 

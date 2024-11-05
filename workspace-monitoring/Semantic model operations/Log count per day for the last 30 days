@@ -1,0 +1,4 @@
+// log count per day for last 30d 
+SemanticModelLogs 
+| where Timestamp > ago(30d) 
+| summarize count() by format_datetime(Timestamp, 'yyyy-MM-dd') 

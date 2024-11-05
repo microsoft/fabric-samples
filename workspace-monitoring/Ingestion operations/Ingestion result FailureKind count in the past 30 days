@@ -1,0 +1,8 @@
+//Ingestion Result FailureKind count over time in the past 30 days 
+let Duration =timespan(30); 
+EventhouseMetrics 
+| where Timestamp > ago (Duration) 
+|where MetricName =="IngestionResult" 
+|extend FailureKind=tostring(todynamic(tostring(MetricSpecificDimensions)).FailureKind) 
+|where FailureKind !="None" 
+|summarize Failures=count() by FailureKind 

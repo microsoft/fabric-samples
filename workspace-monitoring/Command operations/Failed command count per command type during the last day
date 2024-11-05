@@ -1,0 +1,6 @@
+//Failed command count per command type in past 1 day
+let Duration =timespan(1d);
+EventhouseCommandLogs 
+|where Timestamp > ago (Duration) 
+| where Status == "Failed" 
+|summarize FailureCount=count() by EventhouseCommandType

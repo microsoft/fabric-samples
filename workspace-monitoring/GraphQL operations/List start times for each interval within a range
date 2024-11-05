@@ -1,0 +1,12 @@
+// Generate a list of start times for each interval within the specified range 
+range IntervalStart from _startTime to _endTime step interval 
+| extend IntervalEnd = IntervalStart + interval 
+| extend IntervalStartBin = bin(IntervalStart, interval) 
+| join kind=leftouter ( 
+    GraphQLMetrics 
+    | where Timestamp >= _startTime and Timestamp <= _endTime 
+    | where ItemId == _graphQLId  
+    | extend MetricIntervalStartBin = bin(Timestamp, interval) 
+    | summarize FailureCount = countif(Status == "Failure"), SuccessCount = countif(Status == "Success") by MetricIntervalStartBin 
+) on $left.IntervalStartBin == $right.MetricIntervalStartBin 
+| project IntervalStartBin, Errors = coalesce(FailureCount, 0), Successes = coalesce(SuccessCount, 0) 

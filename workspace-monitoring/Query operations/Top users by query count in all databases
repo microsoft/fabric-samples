@@ -1,0 +1,9 @@
+//Top X Users by Query Count in all databases in past 30 days 
+let Duration =timespan(30); 
+let Topcount=10; 
+EventhouseQueryLogs 
+| where Timestamp > ago (Duration) 
+|extend UPN=todynamic(tostring(Identity)).claims.upn , AppId=todynamic(tostring(Identity)).claims.AppId 
+|extend User=tostring(iff(isempty(UPN), AppId, UPN)), PrincipalUserType=iff(isempty(UPN), "Application", "User") 
+|summarize QueryCount=count() by User, PrincipalUserType 
+|top Topcount by QueryCount 

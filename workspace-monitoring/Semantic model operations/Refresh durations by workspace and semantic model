@@ -1,0 +1,7 @@
+// refresh durations by workspace and semantic model for last 30d 
+SemanticModelLogs 
+| where Timestamp > ago(30d) 
+| where OperationName == 'CommandEnd' 
+| where User has "Power BI Service" 
+| where EventText has "refresh" 
+| project WorkspaceName, DatasetName = ArtifactName, DurationMs 
