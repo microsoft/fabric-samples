@@ -1,0 +1,10 @@
+//Top 5 most ingested tables 
+let Duration =timespan(30d); 
+EventhouseMetrics 
+| where Timestamp > ago (Duration) 
+| where MetricName == "IngestionVolumeInBytes" 
+|extend Table=tostring(todynamic(tostring(MetricSpecificDimensions)).Table) , Database=tostring(todynamic(tostring(MetricSpecificDimensions)).DatabaseName) 
+|where Table !contains "$" //Remove MVs 
+|summarize IngestionVolumeInGb=round(sum(MetricSumValue)/1024/1024,2) by Table 
+|top 5 by IngestionVolumeInGb 
+|render barchart 

@@ -1,0 +1,49 @@
+// QUERY FOR GRAPHQL API HEALTH INDEX: 
+// API Requests/Sec 
+let _endTime = datetime(2024-10-21T02:49:54Z); 
+let _graphQLId = 'e99a9999-9d9b-9b9f-a999-ab99ce999acf'; 
+let _startTime = datetime(2024-09-21T02:49:54Z); 
+let totalCount = toscalar( 
+    GraphQLMetrics 
+    | where ItemId == _graphQLId
+    | where Timestamp > ago(_endTime - _startTime) 
+    | where MetricName == "Request Latency" 
+    | summarize Count=count() by MetricName 
+    | project Count 
+); 
+let durationInSeconds = toreal((_endTime - _startTime) / 1s); 
+let result = round(toreal(totalCount) / durationInSeconds, 8); 
+let resultString = tostring(result); 
+// Success Rate (percentage): 
+// Success Count. 
+let successCount = toscalar( 
+    GraphQLMetrics 
+    | where ItemId == _graphQLId
+    | where Timestamp > ago(_endTime - _startTime) 
+    | summarize Count = countif(Status == "Success") 
+); 
+// Failure Count. 
+let failureCount = toscalar( 
+    GraphQLMetrics 
+    | where ItemId == _graphQLId
+    | where Timestamp > ago(_endTime - _startTime) 
+    | summarize Count = countif(Status == "Failure") 
+); 
+let totalRequests = todouble(successCount) + todouble(failureCount); 
+// Success Rate. 
+let successPercentage = case( totalRequests == 0.0, 100.0, round((todouble(successCount) / totalRequests) * 100, 2)); 
+let successString = strcat(tostring(successPercentage), '%'); 
+// Health Index. 
+let healthStatus = case( 
+    successPercentage >= 75 and successPercentage <= 100, "Healthy", 
+    successPercentage >= 50 and successPercentage < 75, "Needs attention", 
+    successPercentage < 50, "Unhealthy", 
+    "Unknown" 
+); 
+let resultTable = union 
+        (print Order = 3, Title = "API Request/sec", Value = resultString), 
+        (print Order = 2, Title = "Success rate", Value = successString), 
+        (print Order = 1, Title = "Health", Value = healthStatus) 
+| sort by Order 
+| project Title, Value; 
+resultTable; 

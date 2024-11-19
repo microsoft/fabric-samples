@@ -1,0 +1,8 @@
+//Eventhouse data ingested by Update Policy per Table name target and source 
+let Duration =timespan(30d); 
+EventhouseDataOperationLogs 
+| where Timestamp > ago (Duration) 
+|where DataOperationKind=="UpdatePolicy" 
+|extend SourceTable=['EventhouseDataOperationProperties']['SourceTable'] 
+|extend SourceTable=tostring(todynamic(tostring(EventhouseDataOperationProperties)).SourceTable) 
+| summarize Size=format_bytes( sum(OriginalSizeInBytes)) by  OperationName,DatabaseName, TableName, SourceTable 

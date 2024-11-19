@@ -1,0 +1,5 @@
+//query duration percentiles for a single day in 1 hour bins 
+SemanticModelLogs 
+| where Timestamp >= ago(3d) and Timestamp <= now() 
+| where OperationName == 'QueryEnd' 
+| summarize percentiles(DurationMs, 0.5, 0.9) by bin(Timestamp, 1h) 

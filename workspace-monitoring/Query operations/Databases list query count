@@ -1,0 +1,11 @@
+//Query count for list of databases for past 30 days 
+let Duration =timespan(30);
+let DatabaseList =
+EventhouseQueryLogs 
+|distinct DatabaseName 
+|summarize make_list(DatabaseName) ;
+EventhouseQueryLogs 
+| where Timestamp > ago (Duration) 
+| where DatabaseName in~ (DatabaseList) 
+|summarize QueryCount=count() by DatabaseName 
+|order by QueryCount desc 

@@ -1,0 +1,6 @@
+//Logic to extract Application Name 
+|extend Application = case (SourceApplication =="PowerBI", "PowerBI", SourceApplication =="Kusto Web Explorer","Kusto Web Explorer", SourceApplication =="Fabric RTA" and CorrelationId startswith "Kusto.Web.RTA.QuickQuery", "Quick Query" ,
+SourceApplication =="Fabric RTA" and CorrelationId startswith "Kusto.Web.RTA.QuerySet", "KQL QuerySet", SourceApplication=="Fabric RTA" and CorrelationId startswith "Kusto.Web.RTA.Dashboards", "RT Dashboard", SourceApplication =="Unknown" and CorrelationId startswith "KD2RunQuery", "Data Activator/SDK", "Unknown") 
+|summarize CPUTimeMs=sum(CpuTimeMs) by Application 
+|top Topcount by CPUTimeMs 
+|render piechart 
