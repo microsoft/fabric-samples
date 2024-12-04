@@ -1,0 +1,1250 @@
+swagger: '2.0'
+info:
+  version: v1
+  title: Livy Public API
+host: api.fabric.microsoft.com
+schemes:
+  - https
+paths:
+  /v1/workspaces/{workspaceId}/lakehouses/{lakehouseId}/livyApi/versions/{livyApiVersion}/batches:
+    post:
+      tags:
+        - LivyApiBatch
+      summary: Executes a batch.
+      operationId: LivyApiBatch_ExecuteBatchAsync
+      consumes:
+        - application/json
+        - text/json
+      produces:
+        - application/json
+        - text/json
+      parameters:
+        - name: workspaceId
+          in: path
+          description: ''
+          required: true
+          type: string
+          format: uuid
+        - name: lakehouseId
+          in: path
+          description: ''
+          required: true
+          type: string
+          format: uuid
+        - name: livyApiVersion
+          in: path
+          required: true
+          type: string
+        - name: payload
+          in: body
+          description: ''
+          required: true
+          schema:
+            $ref: '#/definitions/BatchRequest'
+      responses:
+        '202':
+          description: Accepted
+          schema: 
+            $ref: '#/definitions/BatchResponse'
+        default:
+          description: Other status codes
+          schema:
+            $ref: '#/definitions/ErrorResponse'
+    get:
+      tags:
+        - LivyApiBatch
+      summary: List Batch Jobs.
+      operationId: LivyApiBatch_ListBatchJobsAsync
+      consumes: []
+      produces:
+        - application/json
+      parameters:
+        - name: workspaceId
+          in: path
+          description: ''
+          required: true
+          type: string
+          format: uuid
+        - name: lakehouseId
+          in: path
+          description: ''
+          required: true
+          type: string
+          format: uuid
+        - name: livyApiVersion
+          in: path
+          required: true
+          type: string
+        - name: $top
+          in: query
+          type: string
+          description: ''
+        - name: $skip
+          in: query
+          type: string
+          description: ''
+        - name: $count
+          in: query
+          type: boolean
+          description: ''
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/LivySparkActivityList'
+        default:
+          description: Other Status
+          schema:
+            $ref: '#/definitions/ErrorResponse'
+  /v1/workspaces/{workspaceId}/lakehouses/{lakehouseId}/livyApi/versions/{livyApiVersion}/batches/{batchId}:
+    get:
+      tags:
+        - LivyApiBatch
+      summary: Gets a Batch Details.
+      operationId: LivyApiBatch_GetBatchAsync
+      consumes: []
+      produces:
+        - application/json
+      parameters:
+        - name: workspaceId
+          in: path
+          description: ''
+          required: true
+          type: string
+          format: uuid
+        - name: lakehouseId
+          in: path
+          description: ''
+          required: true
+          type: string
+          format: uuid
+        - name: livyApiVersion
+          in: path
+          required: true
+          type: string
+        - name: batchId
+          in: path
+          description: ''
+          required: true
+          type: string
+          format: uuid
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/BatchResponse'
+        default:
+          description: Other status codes
+          schema:
+            $ref: '#/definitions/ErrorResponse'
+    delete:
+      tags:
+        - LivyApiBatch
+      summary: Cancels a Batch Execution.
+      operationId: LivyApiBatch_CancelBatchAsync
+      consumes: []
+      produces:
+        - application/json
+      parameters:
+        - name: workspaceId
+          in: path
+          description: ''
+          required: true
+          type: string
+          format: uuid
+        - name: lakehouseId
+          in: path
+          description: ''
+          required: true
+          type: string
+          format: uuid
+        - name: livyApiVersion
+          in: path
+          required: true
+          type: string
+        - name: batchId
+          in: path
+          description: ''
+          required: true
+          type: string
+          format: uuid
+      responses:
+        '200':
+          description: OK
+        default:
+          description: Other status codes
+          schema:
+            $ref: '#/definitions/ErrorResponse'
+  /v1/workspaces/{workspaceId}/lakehouses/{lakehouseId}/livyApi/versions/{livyApiVersion}/sessions:
+    post:
+      tags:
+        - LivyApiSession
+      summary: Acquire a Spark Session.
+      operationId: LivyApiSession_AcquireSparkSessionAsync
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: workspaceId
+          in: path
+          description: Workspace Id.
+          required: true
+          type: string
+          format: uuid
+        - name: lakehouseId
+          in: path
+          description: Lakehouse Id.
+          required: true
+          type: string
+          format: uuid
+        - name: livyApiVersion
+          in: path
+          required: true
+          type: string
+        - name: payload
+          in: body
+          description: CreateSessionRequest.
+          required: true
+          schema:
+            $ref: '#/definitions/SessionRequest'
+      responses:
+        '202':
+          description: Accepted
+          schema:
+            $ref: '#/definitions/SessionResponse'
+        default:
+          description: Other status code
+          schema:
+            $ref: '#/definitions/ErrorResponse'
+    get:
+      tags:
+        - LivyApiSession
+      summary: List spark sessions.
+      operationId: LivyApiSession_ListSparkSessionsAsync
+      consumes: []
+      produces:
+        - application/json
+        - text/json
+      parameters:
+        - name: workspaceId
+          in: path
+          description: Workspace name.
+          required: true
+          type: string
+          format: uuid
+        - name: lakehouseId
+          in: path
+          description: Lakehouse Id.
+          required: true
+          type: string
+          format: uuid
+        - name: livyApiVersion
+          in: path
+          required: true
+          type: string
+        - name: $top
+          in: query
+          type: string
+          description: ''
+        - name: $skip
+          in: query
+          type: string
+          description: ''
+        - name: $count
+          in: query
+          type: boolean
+          description: ''
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/SessionResponse'
+        default:
+          description: Other status codes
+          schema:
+            $ref: '#/definitions/ErrorResponse'
+  /v1/workspaces/{workspaceId}/lakehouses/{lakehouseId}/livyApi/versions/{livyApiVersion}/sessions/{sessionId}:
+    get:
+      tags:
+        - LivyApiSession
+      summary: Get details of a spark session.
+      operationId: LivyApiSession_GetSparkSessionAsync
+      consumes: []
+      produces:
+        - application/json
+      parameters:
+        - name: workspaceId
+          in: path
+          description: Workspace name.
+          required: true
+          type: string
+          format: uuid
+        - name: lakehouseId
+          in: path
+          description: Lakehouse Id.
+          required: true
+          type: string
+          format: uuid
+        - name: livyApiVersion
+          in: path
+          required: true
+          type: string
+        - name: sessionId
+          in: path
+          description: Spark session Id.
+          required: true
+          type: string
+          format: uuid
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/SessionResponse'
+        default:
+          description: Other status codes
+          schema:
+            $ref: '#/definitions/ErrorResponse'
+    delete:
+      tags:
+        - LivyApiSession
+      summary: Stops and deletes a spark session.
+      operationId: LivyApiSession_DeleteSparkSessionAsync
+      consumes: []
+      produces:
+        - application/json
+        - text/json
+      parameters:
+        - name: workspaceId
+          in: path
+          description: Workspace Id.
+          required: true
+          type: string
+          format: uuid
+        - name: lakehouseId
+          in: path
+          description: Lakehouse Id.
+          required: true
+          type: string
+          format: uuid
+        - name: livyApiVersion
+          in: path
+          required: true
+          type: string
+        - name: sessionId
+          in: path
+          description: Session Id.
+          required: true
+          type: string
+          format: uuid
+      responses:
+        '200':
+          description: OK
+        default:
+          description: Other status codes
+          schema:
+            $ref: '#/definitions/ErrorResponse'
+  /v1/workspaces/{workspaceId}/lakehouses/{lakehouseId}/livyApi/versions/{livyApiVersion}/sessions/{sessionId}/statements:
+    post:
+      tags:
+        - LivyApiSession
+      summary: Execute a statement on a spark session.
+      operationId: LivyApiSession_ExecuteSparkSessionStatementAsync
+      consumes:
+        - application/json
+        - text/json
+      produces:
+        - application/json
+        - text/json
+      parameters:
+        - name: workspaceId
+          in: path
+          description: Workspace Id.
+          required: true
+          type: string
+          format: uuid
+        - name: lakehouseId
+          in: path
+          description: Lakehouse Id.
+          required: true
+          type: string
+          format: uuid
+        - name: livyApiVersion
+          in: path
+          required: true
+          type: string
+        - name: sessionId
+          in: path
+          description: Spark Session Id.
+          required: true
+          type: string
+          format: uuid
+        - name: payload
+          in: body
+          description: ''
+          required: true
+          schema:
+            $ref: '#/definitions/StatementRequest'
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/StatementResponse'
+        default:
+          description: Other status codes.
+          schema:
+            $ref: '#/definitions/ErrorResponse'
+    get:
+      tags:
+        - LivyApiSession
+      summary: List statements in an active session.
+      operationId: LivyApiSession_ListSparkSessionStatementsAsync
+      consumes: []
+      produces:
+        - application/json
+        - text/json
+      parameters:
+        - name: workspaceId
+          in: path
+          description: Workspace name.
+          required: true
+          type: string
+          format: uuid
+        - name: lakehouseId
+          in: path
+          description: Lakehouse Id.
+          required: true
+          type: string
+          format: uuid
+        - name: livyApiVersion
+          in: path
+          required: true
+          type: string
+        - name: sessionId
+          in: path
+          description: ''
+          required: true
+          type: string
+          format: uuid
+      responses:
+        '200':
+          description: OK
+          schema: 
+            $ref: '#/definitions/StatementsResponse'
+        default:
+          description: Other status codes.
+          schema:
+            $ref: '#/definitions/ErrorResponse'
+  /v1/workspaces/{workspaceId}/lakehouses/{lakehouseId}/livyApi/versions/{livyApiVersion}/sessions/{sessionId}/statements/{statementId}:
+    get:
+      tags:
+        - LivyApiSession
+      summary: Gets a spark statement from a spark session.
+      operationId: LivyApiSession_GetSparkSessionStatementAsync
+      consumes: []
+      produces:
+        - application/json
+        - text/json
+      parameters:
+        - name: workspaceId
+          in: path
+          description: Workspace Id.
+          required: true
+          type: string
+          format: uuid
+        - name: lakehouseId
+          in: path
+          description: Lakehouse Id.
+          required: true
+          type: string
+          format: uuid
+        - name: sessionId
+          in: path
+          description: Spark Session Id.
+          required: true
+          type: string
+          format: uuid
+        - name: livyApiVersion
+          in: path
+          required: true
+          type: string
+        - name: statementId
+          in: path
+          description: Statement Id.
+          required: true
+          type: integer
+          format: int32
+        - name: from
+          in: query
+          description: Offset (in byte) which the output should begin from.
+          type: integer
+          format: int32
+        - name: size
+          in: query
+          description: Size (in byte) of the returned output.
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: OK
+        default:
+          description: Other status codes.
+          schema:
+            $ref: '#/definitions/ErrorResponse'
+  /v1/workspaces/{workspaceId}/lakehouses/{lakehouseId}/livyApi/versions/{livyApiVersion}/sessions/{sessionId}/statements/{statementId}/cancel:
+    post:
+      tags:
+        - LivyApiSession
+      summary: Cancels a statement execution.
+      operationId: LivyApiSession_CancelSparkStatementAsync
+      consumes: []
+      produces:
+        - application/json
+        - text/json
+      parameters:
+        - name: workspaceId
+          in: path
+          description: Workspace Id.
+          required: true
+          type: string
+          format: uuid
+        - name: lakehouseId
+          in: path
+          description: Lakehouse Id.
+          required: true
+          type: string
+          format: uuid
+        - name: livyApiVersion
+          in: path
+          required: true
+          type: string
+        - name: sessionId
+          in: path
+          description: Session Id.
+          required: true
+          type: string
+          format: uuid
+        - name: statementId
+          in: path
+          description: ''
+          required: true
+          type: integer
+          format: int32
+
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/StatementCancellationResponse'
+        default:
+          description: Other status codes.
+          schema:
+            $ref: '#/definitions/ErrorResponse'
+  /v1/workspaces/{workspaceId}/lakehouses/{lakehouseId}/livyApi/versions/{livyApiVersion}/sessions/{sessionId}/reset-timeout:
+    post:
+      tags:
+        - LivyApiSession
+      summary: Resets the timeout time of a session.
+      operationId: LivyApiSession_ResetSparkSessionTimeoutAsync
+      consumes: []
+      produces:
+        - application/json
+        - text/json
+      parameters:
+        - name: workspaceId
+          in: path
+          description: Workspace Id.
+          required: true
+          type: string
+          format: uuid
+        - name: lakehouseId
+          in: path
+          description: Lakehouse Id.
+          required: true
+          type: string
+          format: uuid
+        - name: livyApiVersion
+          in: path
+          required: true
+          type: string
+        - name: sessionId
+          in: path
+          description: Session Id.
+          required: true
+          type: string
+          format: uuid
+      responses:
+        '204':
+          description: OK
+        default:
+          description: Other status codes.
+          schema:
+            $ref: '#/definitions/ErrorResponse'
+definitions:
+  StatementResponse:
+    description: Statement Response.
+    type: object
+    properties:
+      id:
+        format: int32
+        type: integer
+      code:
+        type: string
+      state:
+        enum:
+          - waiting
+          - running
+          - available
+          - Error
+          - cancelling
+          - cancelled
+        type: string
+      sourceId:
+        type: string
+      output:
+        $ref: '#/definitions/StatementOutput'
+  StatementOutput:
+    description: Statement Output.
+    type: object
+    properties:
+      status:
+        type: string
+      execution_count:
+        format: int32
+        type: integer
+      data:
+        type: object
+      ename:
+        type: string
+      evalue:
+        type: string
+      traceback:
+        type: array
+        items:
+          type: string
+  BatchRequest:
+    description: Request for runing batch job. 
+    type: object
+    allOf:
+      - $ref: '#/definitions/SessionRequest'
+      - type: object
+    properties:
+      file:
+        type: string
+      className:
+        type: string
+      args:
+        type: array
+        items:
+          type: string
+      jars:
+        type: array
+        items:
+          type: string
+      files:
+        type: array
+        items:
+          type: string
+      pyFiles:
+        type: array
+        items:
+          type: string
+      archives:
+        type: array
+        items:
+          type: string
+  SessionRequest:
+    description: Request for acquiring a Session.
+    type: object
+    properties:
+      name:
+        type: string
+      archives:
+        type: array
+        items:
+          type: string
+      conf:
+        type: object
+        additionalProperties:
+          type: string
+      tags:
+        description: Gets or sets the optional tags.
+        type: object
+        additionalProperties:
+          type: string
+      driverMemory:
+        type: string
+      driverCores:
+        format: int32
+        type: integer
+      executorMemory:
+        type: string
+      executorCores:
+        format: int32
+        type: integer
+      numExecutors:
+        format: int32
+        type: integer
+  StatementRequest:
+    description: Statement Request Body.
+    type: object
+    properties:
+      code:
+        type: string
+      kind:
+        type: string
+      sourceId:
+        type: string
+  LivySessionStateInformation:
+    description: Livy Session State Information.
+    type: object
+    properties:
+      notStartedAt:
+        format: date-time
+        type: string
+      startingAt:
+        format: date-time
+        type: string
+      idleAt:
+        format: date-time
+        type: string
+      deadAt:
+        format: date-time
+        type: string
+      shuttingDownAt:
+        format: date-time
+        type: string
+      killedAt:
+        format: date-time
+        type: string
+      recoveringAt:
+        format: date-time
+        type: string
+      busyAt:
+        format: date-time
+        type: string
+      errorAt:
+        format: date-time
+        type: string
+      currentState:
+        type: string
+      jobCreationRequest:
+        $ref: '#/definitions/SessionRequest'
+  SchedulerInformation:
+    description: Scheduler Information.
+    type: object
+    properties:
+      submittedAt:
+        format: date-time
+        type: string
+      queuedAt:
+        format: date-time
+        type: string
+      scheduledAt:
+        format: date-time
+        type: string
+      endedAt:
+        format: date-time
+        type: string
+      cancellationRequestedAt:
+        format: date-time
+        type: string
+      currentState:
+        enum:
+          - Queued
+          - Scheduled
+          - Ended
+        type: string
+  SparkServicePluginInformation:
+    description: Spark Service Plugin Information.
+    type: object
+    properties:
+      preparationStartedAt:
+        format: date-time
+        type: string
+      resourceAcquisitionStartedAt:
+        format: date-time
+        type: string
+      submissionStartedAt:
+        format: date-time
+        type: string
+      monitoringStartedAt:
+        format: date-time
+        type: string
+      cleanupStartedAt:
+        format: date-time
+        type: string
+      currentState:
+        enum:
+          - Preparation
+          - ResourceAcquisition
+          - Queued
+          - Submission
+          - Monitoring
+          - Cleanup
+          - Ended
+        type: string
+  LivyRequestBase:
+    description: Livy Request Base.
+    type: object
+    properties:
+      name:
+        type: string
+      file:
+        type: string
+      className:
+        type: string
+      args:
+        type: array
+        items:
+          type: string
+      jars:
+        type: array
+        items:
+          type: string
+      files:
+        type: array
+        items:
+          type: string
+      pyFiles:
+        type: array
+        items:
+          type: string
+      archives:
+        type: array
+        items:
+          type: string
+      conf:
+        type: object
+        additionalProperties:
+          type: string
+      driverMemory:
+        type: string
+      driverCores:
+        format: int32
+        type: integer
+      executorMemory:
+        type: string
+      executorCores:
+        format: int32
+        type: integer
+      numExecutors:
+        format: int32
+        type: integer
+  StatementsResponse:
+    description: Livy Statement Response Body.
+    type: object
+    properties:
+      statements:
+        type: array
+        items:
+          $ref: '#/definitions/StatementResponse'
+      total_statements:
+        format: int32
+        type: integer
+  StatementCancellationResponse:
+    description: Livy Statement CancellationResponse.
+    type: object
+    properties:
+      msg:
+        type: string
+  BatchStateInformation:
+    description: Batch State Information.
+    type: object
+    properties:
+      notStartedAt:
+        format: date-time
+        type: string
+      startingAt:
+        format: date-time
+        type: string
+      runningAt:
+        format: date-time
+        type: string
+      deadAt:
+        format: date-time
+        type: string
+      successAt:
+        format: date-time
+        type: string
+      killedAt:
+        format: date-time
+        type: string
+      recoveringAt:
+        format: date-time
+        type: string
+      currentState:
+        type: string
+      jobCreationRequest:
+        $ref: '#/definitions/LivyRequestBase'
+  ErrorResponse:
+    description: The error response.
+    required:
+      - message
+      - errorCode
+    allOf:
+      - $ref: '#/definitions/ErrorResponseDetails'
+    properties:
+      requestId:
+        type: string
+        description: ID of the request associated with the error.
+        readOnly: true
+      moreDetails:
+        description: List of additional error details.
+        type: array
+        items:
+          $ref: '#/definitions/ErrorResponseDetails'
+        readOnly: true
+    readOnly: true
+  ErrorResponseDetails:
+    description: The error response details.
+    required:
+      - message
+      - errorCode
+    properties:
+      errorCode:
+        type: string
+        description: A specific identifier that provides information about an error condition, allowing for standardized communication between our service and its users.
+      message:
+        type: string
+        description: A human readable representation of the error.
+      relatedResource:
+        $ref: '#/definitions/ErrorRelatedResource'
+  ErrorRelatedResource:
+    description: The error related resource details object.
+    required:
+      - resourceId
+      - resourceType
+    properties:
+      resourceId:
+        type: string
+        description: Resource ID involved in the error.
+      resourceType:
+        type: string
+        description: Resource type involved in the error.
+  LivySparkActivityList:
+    description: List of batches or sessions.
+    type: object
+    properties:
+      items:
+        description: List of items.
+        type: array
+        items:
+          $ref: '#/definitions/LivySparkActivity'
+      totalCountOfMatchedItems:
+        format: int32
+        description: Total count of matched items.
+        type: integer
+      pageSize:
+        format: int32
+        description: Page size.
+        type: integer
+  LivySparkActivity:
+    description: Batch or Session description when getting a list.
+    type: object
+    properties:
+      id:
+        description: Activity ID.
+        type: string
+      appId:
+        description: Spark application ID.
+        type: string
+      name:
+        description: Batch or Session Name.
+        type: string
+      workspaceId:
+        description: Workspace ID.
+        type: string
+      submitterId:
+        description: Submitter ID.
+        type: string
+      submitterName:
+        description: Submitter name.
+        type: string
+      artifactId:
+        description: Artifact ID.
+        type: string
+      cancellationReason:
+        description: Cancellation reason.
+        type: string
+      result:
+        description: Job result.
+        enum:
+          - Uncertain
+          - Succeeded
+          - Failed
+          - Cancelled
+        type: string
+      submittedAt:
+        format: date-time
+        description: Submitted at time.
+        type: string
+      startedAt:
+        format: date-time
+        description: Started at time.
+        type: string
+      endedAt:
+        format: date-time
+        description: Ended at time.
+        type: string
+      errorSource:
+        description: Error source.
+        enum:
+          - System
+          - User
+          - Unknown
+          - Dependency
+        type: string
+      errorCode:
+        description: Error Code.
+        type: string
+      tags:
+        description: Optional tags.
+        type: object
+        additionalProperties:
+          type: string
+      schedulerState:
+        description: Scheduler state.
+        enum:
+          - Queued
+          - Scheduled
+          - Ended
+        type: string
+      pluginState:
+        description: Plugin state.
+        enum:
+          - Preparation
+          - ResourceAcquisition
+          - Queued
+          - Submission
+          - Monitoring
+          - Cleanup
+          - Ended
+        type: string
+      livyState:
+        description: Gets or sets livy state.
+        type: string
+      isJobTimedOut:
+        description: If job is timed out.
+        type: boolean
+  BatchResponse:
+    description: Class that represents livy responses for batch.
+    type: object
+    properties:
+      livyInfo:
+        $ref: '#/definitions/BatchStateInformation'
+      fabricBatchStateInfo:
+        $ref: '#/definitions/BatchStateInfo'
+      name:
+        description: Name of the batch.
+        type: string
+      id:
+        description: ID created for the batch.
+        type: string
+      appId:
+        description: Application id of this batch.
+        type: string
+      appInfo:
+        description: Detailed application info.
+        type: object
+        additionalProperties:
+          type: string
+      artifactId:
+        description: Hosting artifact Id.
+        type: string
+      errorInfo:
+        description: Detailed error information.
+        type: array
+        items:
+          $ref: '#/definitions/ErrorInformation'
+      jobType:
+        description: Spark job type.
+        enum:
+          - SparkBatch
+          - SparkSession
+          - ScopeBatch
+          - JupyterEnvironment
+        type: string
+      submitterId:
+        description: ID of e user who submitted the session.
+        type: string
+      submitterName:
+        description: Name of the user who submitted the session.
+        type: string
+      log:
+        description: Log lines.
+        type: array
+        items:
+          type: string
+      pluginInfo:
+        $ref: '#/definitions/SparkServicePluginInformation'
+      schedulerInfo:
+        $ref: '#/definitions/SchedulerInformation'
+      state:
+        description: State of the batch or session.
+        enum:
+          - starting
+          - running
+          - dead
+          - success
+          - killed
+          - idle
+          - error
+          - shutting_down
+          - not_started
+          - busy
+          - recovering
+          - submitting
+          - not_submitted
+        type: string
+      tags:
+        description: Optional tags.
+        type: object
+        additionalProperties:
+          type: string
+      result:
+        enum:
+          - Uncertain
+          - Succeeded
+          - Failed
+          - Cancelled
+        type: string
+      cancellationReason:
+        description: Cancellation reason.
+        type: string
+  BatchStateInfo:
+    description: Batch state info.
+    type: object
+    properties:
+      state:
+        description: State of the batch acquisition.
+        enum:
+          - unknown
+          - expired
+          - queued
+          - libraryPackaging
+          - submitting
+          - cancelling
+          - cancelled
+          - error
+        type: string
+      errorMessage:
+        description: Error message if the state is in "error".
+        type: string
+  ErrorInformation:
+    description: Error Information.
+    type: object
+    properties:
+      message:
+        type: string
+      errorCode:
+        type: string
+      source:
+        enum:
+          - System
+          - User
+          - Unknown
+          - Dependency
+        type: string
+  SessionResponse:
+    type: object
+    properties:
+      fabricSessionStateInfo:
+        $ref: '#/definitions/SessionStateInfo'
+      livyInfo:
+        $ref: '#/definitions/LivySessionStateInformation'
+      name:
+        description: Name of the session.
+        type: string
+      id:
+        description: Session ID created for the session.
+        type: string
+      appId:
+        description: The application id of this session.
+        type: string
+      appInfo:
+        description: Detailed application info.
+        type: object
+        additionalProperties:
+          type: string
+      artifactId:
+        description: Hosting artifact ID.
+        type: string
+      errorInfo:
+        description: Detailed error information.
+        type: array
+        items:
+          $ref: '#/definitions/ErrorInformation'
+      jobType:
+        description: Spark job type.
+        enum:
+          - SparkBatch
+          - SparkSession
+          - ScopeBatch
+          - JupyterEnvironment
+        type: string
+      submitterId:
+        description: ID of the user who submitted the sessionn.
+        type: string
+      submitterName:
+        description: Name of the user who submitted the session.
+        type: string
+      log:
+        description: Log lines.
+        type: array
+        items:
+          type: string
+      pluginInfo:
+        $ref: '#/definitions/SparkServicePluginInformation'
+      schedulerInfo:
+        $ref: '#/definitions/SchedulerInformation'
+      state:
+        description: Gets or sets the session state.
+        enum:
+          - starting
+          - running
+          - dead
+          - success
+          - killed
+          - idle
+          - error
+          - shutting_down
+          - not_started
+          - busy
+          - recovering
+          - submitting
+          - not_submitted
+        type: string
+      tags:
+        description: Optional tags.
+        type: object
+        additionalProperties:
+          type: string
+      result:
+        enum:
+          - Uncertain
+          - Succeeded
+          - Failed
+          - Cancelled
+        type: string
+      cancellationReason:
+        description: Cancellation reason.
+        type: string
+  SessionStateInfo:
+    description: Session state info.
+    type: object
+    properties:
+      state:
+        description: Session acquisiton state.
+        enum:
+          - queued
+          - libraryPackaging
+          - acquiringSession
+          - cancelling
+          - cancelled
+          - error
+          - unknown
+        type: string
+      errorMessage:
+        description: Error message when in "error" state.
+        type: string
