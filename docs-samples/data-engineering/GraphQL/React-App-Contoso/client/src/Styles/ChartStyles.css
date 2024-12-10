@@ -1,0 +1,24 @@
+.custom-pie-chart {
+    height: 300px;
+    width: 400px;
+    align-content: start;
+    /* Add any other styles you'd like */
+  }
+
+  #toggle-switch {
+    width: -webkit-fill-available;
+  }
+
+  .custom-control-input:checked ~ .custom-control-label::before {
+    /* Change the background color to your desired color */
+    background-color: #006D5B;
+    /* You can also adjust other styles here, such as border color */
+  }
+
+  .table-form {
+    display: flex;
+    justify-content: space-around;
+    gap: 10px;
+  }
+
+  
