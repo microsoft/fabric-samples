@@ -6,14 +6,14 @@ This sample project was bootstrapped with [Create React App](https://github.com/
 
 - You need to have [Node.js](https://nodejs.org/) installed on your local machine.
 - You need an existing Fabric capacity. If you don't, [start a Fabric trial](https://learn.microsoft.com/fabric/get-started/fabric-trial).
-- Make sure that you [enable SQL database in Fabric using Admin Portal tenant settings](https://learn.microsoft.com/fabric/database/sql/enable).
+- Make sure that you [enable SQL database in Fabric using tenant settings in the Admin Portal](https://learn.microsoft.com/fabric/database/sql/enable).
 - [Create a new workspace](https://learn.microsoft.com/fabric/get-started/workspaces) or use an existing Fabric workspace.
 - [Create a new SQL database](https://learn.microsoft.com/fabric/database/sql/create) and [load AdventureWorks sample data](https://learn.microsoft.com/fabric/database/sql/load-adventureworks-sample-data). (**Note:** Make sure you have selected and loaded all the tables from AventureWorks sample data.)
 - You must have an API for GraphQL in Fabric that is connected to the Fabric SQL database populated with AdventureWorks sample data. For more information, see [Create GraphQL API from your SQL database in the Fabric](https://learn.microsoft.com/fabric/database/sql/graphql-api).
 
 ## Setup instructions
 
-- Clone the reporsity in your targeted folder:
+- Clone the repository in your targeted folder:
 
 ```sh
 cd <targeted-repository-folder>
