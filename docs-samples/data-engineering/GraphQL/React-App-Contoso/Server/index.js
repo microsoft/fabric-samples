@@ -22,8 +22,8 @@ let auth = new InteractiveBrowserCredential({});
 let tokenPromise = auth.getToken('https://analysis.windows.net/powerbi/api/user_impersonation');
 let accessToken = await tokenPromise;
 
-//Uddate the GraphQL endpoint below with your own GraphQL endpoint created in Fabric by selecting "Copy endpoint" from the GraphQL API ribbon.
-const endpoint = 'https://622e5d1a-5d57-41d4-b515-fda2d6a9993e.z62.msitgraphql.fabric.microsoft.com/v1/workspaces/622e5d1a-5d57-41d4-b515-fda2d6a9993e/graphqlapis/149ce51a-18f7-40c5-9f75-60b0582e9543/graphql';
+//In the placeholder below, insert your GraphQL endpoint created in Fabric by selecting "Copy endpoint" from the GraphQL API ribbon. 
+const endpoint = 'PLACEHOLDER FOR YOUR GRAPHQL ENDPOINT';
 
 const query = `
 query {

@@ -8,7 +8,7 @@ This sample project was bootstrapped with [Create React App](https://github.com/
 - You need an existing Fabric capacity. If you don't, [start a Fabric trial](https://learn.microsoft.com/fabric/get-started/fabric-trial).
 - Make sure that you [enable SQL database in Fabric using tenant settings in the Admin Portal](https://learn.microsoft.com/fabric/database/sql/enable).
 - [Create a new workspace](https://learn.microsoft.com/fabric/get-started/workspaces) or use an existing Fabric workspace.
-- [Create a new SQL database](https://learn.microsoft.com/fabric/database/sql/create) and [load AdventureWorks sample data](https://learn.microsoft.com/fabric/database/sql/load-adventureworks-sample-data). (**Note:** Make sure you have selected and loaded all the tables from AventureWorks sample data.)
+- [Create a new SQL database](https://learn.microsoft.com/fabric/database/sql/create) and [load AdventureWorks sample data](https://learn.microsoft.com/fabric/database/sql/load-adventureworks-sample-data). (**Note:** Make sure you have selected and loaded all the tables from AdventureWorks sample data.)
 - You must have an API for GraphQL in Fabric that is connected to the Fabric SQL database populated with AdventureWorks sample data. For more information, see [Create GraphQL API from your SQL database in the Fabric](https://learn.microsoft.com/fabric/database/sql/graphql-api).
 
 ## Setup instructions
@@ -17,7 +17,7 @@ This sample project was bootstrapped with [Create React App](https://github.com/
 
 ```sh
 cd <targeted-repository-folder>
-git clone <repository-url>
+git clone https://github.com/microsoft/fabric-samples.git
 
 ```
 
@@ -46,7 +46,7 @@ npm install
 
 - **Start the server:**
 
-    From the root directory, start the node.js server first which will be in development mode. You will need to provide log in credentials that have acces to the GraphQL API to log in:
+    From the root directory, start the node.js server first which will be in development mode. You will need to provide log in credentials that have access to the GraphQL API to log in:
 
 ```sh
 npm start
@@ -96,7 +96,7 @@ You don't have to ever use `eject`. The curated feature set is suitable for smal
 
 - Connect a production React App to a Fabric API for GraphQL by checking out the [connect applications to Fabric API for GraphQL](https://learn.microsoft.com/en-us/fabric/data-engineering/connect-apps-api-graphql).
 
-- Troubleshoot issues if `npm run build` fails to minify by refering to the [troubleshooting guide](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- Troubleshoot issues if `npm run build` fails to minify by referring to the [troubleshooting guide](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
 
 - Understand how to create [a progressive web app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
 
