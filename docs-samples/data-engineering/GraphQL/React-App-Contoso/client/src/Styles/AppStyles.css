@@ -1,0 +1,17 @@
+.horizontal-container {
+    display: flex;
+    height: auto;
+    align-items: center; /* Align vertically within the container */
+    justify-content: space-evenly;
+}
+
+.button-container {
+    display: flex;
+    height: auto;
+    justify-content: center;
+}
+
+.button-container .button-color {
+    background-color: rgb(22, 51, 214);
+    margin-left: 32vw;
+}
