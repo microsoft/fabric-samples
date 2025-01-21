@@ -1,0 +1,5 @@
+//Replicated rows and bytes over time per table
+let Duration = timespan(30d); 
+MirroredDatabaseTableExecutionLogs
+| where Timestamp > ago(Duration)
+| summarize sum(ProcessedRows), sum(ProcessedBytes) by ItemName, SourceSchemaName, SourceTableName, bin(Timestamp, 1d)

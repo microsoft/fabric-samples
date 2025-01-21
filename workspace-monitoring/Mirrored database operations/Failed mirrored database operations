@@ -1,0 +1,6 @@
+//Failed mirrored database operations per table in past 1 day
+let Duration = timespan(1d); 
+MirroredDatabaseTableExecutionLogs
+| where Timestamp > ago(Duration)
+| where ErrorType <> ""
+| project Timestamp, ItemName, SourceSchemaName, SourceTableName, OperationName, ErrorType, ErrorMessage
