@@ -1,0 +1,6 @@
+//Snapshotting P50 latency per table in past 7 days
+let Duration = timespan(7d); 
+MirroredDatabaseTableExecutionLogs
+| where Timestamp > ago(Duration)
+| where OperationName == 'Snapshotting'
+| summarize percentile(ReplicatorBatchLatency, 50) by ItemName, SourceSchemaName, SourceTableName
