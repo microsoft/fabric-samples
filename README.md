@@ -22,7 +22,12 @@ This repository is organized into different sections to help you navigate throug
 
 - **Location:** `community-samples` folder.
 - **Description:** These samples have been created by our community. They showcase creative ways to use Microsoft Fabric and provide valuable insights into real-world scenarios.
-  
+
+### [End-to-end samples](./e2e-samples/)
+
+- **Location:** `e2e-samples` folder.
+- **Description:** These samples have been created by our community. They showcase creative ways to use Microsoft Fabric and provide valuable insights into real-world scenarios.
+
 ## Learning Resources
 
 ### Microsoft Learn
