@@ -21,9 +21,9 @@ $commitMessage = "<COMMIT MESSAGE>"      # The commit message
 $principalType = "<PRINCIPAL TYPE>" # Choose either "UserPrincipal" or "ServicePrincipal"
 
 # Relevant for ServicePrincipal
-$clientId = "<CLIENT ID>"
-$tenantId = "<TENANT ID>"
-$servicePrincipalSecret = "<SECRET VALUE>"
+$clientId = "<CLIENT ID>"                   #The application (client) ID of the service principal
+$tenantId = "<TENANT ID>"                   #The directory (tenant) ID of the service principal
+$servicePrincipalSecret = "<SECRET VALUE>"  #The secret value of the service principal
 
 # End Parameters =======================================
 
