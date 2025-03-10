@@ -41,16 +41,9 @@ $gitHubDetails = @{
 }
 
 # Relevant for GitHub authentication
-$connectionName = "<CONNECTION Name>" # Replace with the connection display name that stores the gitProvider credentials (Required for GitHub)
+$connectionId = "<CONNECTION ID>" # Replace with the connection Id that stores the gitProvider credentials (Required for GitHub)
 
 $gitProviderDetails = @{} # Replace with specific Git provider, $azureDevOpsDetails or $gitHubDetails
-
-$principalType = "<PRINCIPAL TYPE>" # Choose either "UserPrincipal" or "ServicePrincipal"
-
-# Relevant for ServicePrincipal
-$clientId = "<CLIENT ID>"                   #The application (client) ID of the service principal
-$tenantId = "<TENANT ID>"                   #The directory (tenant) ID of the service principal
-$servicePrincipalSecret = "<SECRET VALUE>"  #The secret value of the service principal
 
 # End Parameters =======================================
 
@@ -61,60 +54,22 @@ $global:resourceUrl = "https://api.fabric.microsoft.com"
 $global:fabricHeaders = @{}
 
 function SetFabricHeaders() {
-    if ($principalType -eq "UserPrincipal") {
-        $secureFabricToken = GetSecureTokenForUserPrincipal
-    } elseif ($principalType -eq "ServicePrincipal") {
-        $secureFabricToken = GetSecureTokenForServicePrincipal
 
-    } else {
-        throw "Invalid principal type. Please choose either 'UserPrincipal' or 'ServicePrincipal'."
-    }
-
-    # Convert SecureString to plain text
-    $fabricToken = ConvertSecureStringToPlainText($secureFabricToken)
-
-    $global:fabricHeaders = @{
-        'Content-Type' = "application/json"
-        'Authorization' = "Bearer $fabricToken"
-    }
-}
-
-function GetSecureTokenForUserPrincipal() {
-    #Login to Azure interactively
+    #Login to Azure
     Connect-AzAccount | Out-Null
 
     # Get authentication
-    $secureFabricToken = (Get-AzAccessToken -AsSecureString -ResourceUrl $global:resourceUrl).Token
+    $fabricToken = (Get-AzAccessToken -ResourceUrl $global:resourceUrl).Token
 
-    return $secureFabricToken
-}
-
-function GetSecureTokenForServicePrincipal() {
-    $secureServicePrincipalSecret  = ConvertTo-SecureString -String $servicePrincipalSecret -AsPlainText -Force
-    $credential = New-Object -TypeName System.Management.Automation.PSCredential -ArgumentList $clientId, $secureServicePrincipalSecret
-
-    #Login to Azure using service principal
-    Connect-AzAccount -ServicePrincipal -TenantId $tenantId -Credential $credential | Out-Null
-
-    # Get authentication
-    $secureFabricToken = (Get-AzAccessToken -AsSecureString -ResourceUrl $global:resourceUrl).Token
-    
-    return $secureFabricToken
-}
-
-function ConvertSecureStringToPlainText($secureString) {
-    $ssPtr = [System.Runtime.InteropServices.Marshal]::SecureStringToBSTR($secureString)
-    try {
-        $plainText = [System.Runtime.InteropServices.Marshal]::PtrToStringBSTR($ssPtr)
-    } finally {
-        [System.Runtime.InteropServices.Marshal]::ZeroFreeBSTR($ssPtr)
+    $global:fabricHeaders = @{
+        'Content-Type' = "application/json"
+        'Authorization' = "Bearer {0}" -f $fabricToken
     }
-    return $plainText
 }
 
 function GetWorkspaceByName($workspaceName) {
     # Get workspaces    
-    $getWorkspacesUrl = "$global:baseUrl/workspaces"
+    $getWorkspacesUrl = "{0}/workspaces" -f $global:baseUrl
     $workspaces = (Invoke-RestMethod -Headers $global:fabricHeaders -Uri $getWorkspacesUrl -Method GET).value
 
     # Try to find the workspace by display name
@@ -123,39 +78,17 @@ function GetWorkspaceByName($workspaceName) {
     return $workspace
 }
 
-function GetConnectionByName($connectionName) {
-    # Get workspaces    
-    $getConnectionsUrl = "$global:baseUrl/connections"
-    $connections = (Invoke-RestMethod -Headers $global:fabricHeaders -Uri $getConnectionsUrl -Method GET).value
-
-    # Try to find the connection by display name
-    $connection = $connections | Where-Object {$_.DisplayName -eq $connectionName}
-
-    return $connection
-}
-
 function GetErrorResponse($exception) {
     # Relevant only for PowerShell Core
-    # Try to fill based on ErrorDetails.Message
-    $errorResponse = $exception.ErrorDetails.Message
+    $errorResponse = $_.ErrorDetails.Message
 
-    # If still null, try based on exception.Message
     if(!$errorResponse) {
-        $errorResponse = $exception.Message
-    }
-
-    # If still null and exception.Response isn't null, try to read the response stream and fill in
-    if(!$errorResponse -and $exception.Response) {
+        # This is needed to support Windows PowerShell
         $result = $exception.Response.GetResponseStream()
         $reader = New-Object System.IO.StreamReader($result)
         $reader.BaseStream.Position = 0
         $reader.DiscardBufferedData()
-        $errorResponse = $reader.ReadToEnd()
-    }
-
-    # If all else fails, fill in generic error
-    if(!$errorResponse) {
-        $errorResponse = "An error occurred, but no detailed message is available."
+        $errorResponse = $reader.ReadToEnd();
     }
 
     return $errorResponse
@@ -177,7 +110,7 @@ try {
         # Disconnect from Git
         Write-Host "Disconnecting the workspace '$workspaceName' from Git."
 
-        $disconnectUrl = "$global:baseUrl/workspaces/$workspace.Id/git/disconnect"
+        $disconnectUrl = "{0}/workspaces/{1}/git/disconnect" -f $global:baseUrl, $workspace.Id
         Invoke-RestMethod -Headers $global:fabricHeaders -Uri $disconnectUrl -Method POST
 
         Write-Host "The workspace '$workspaceName' has been successfully disconnected from Git." -ForegroundColor Green
@@ -186,7 +119,7 @@ try {
     # Connect to Git
     Write-Host "Connecting the workspace '$workspaceName' to Git."
 
-    $connectUrl = "$global:baseUrl/workspaces/$($workspace.Id)/git/connect"
+    $connectUrl = "{0}/workspaces/{1}/git/connect" -f $global:baseUrl, $workspace.Id
     
     $connectToGitBody = @{}
 
@@ -197,24 +130,15 @@ try {
     }
 
     if ($gitProviderDetails.GitProviderType -eq "GitHub") {
-        
-        $connection = GetConnectionByName $connectionName
-
-        # Verify the existence of the requested connection
-    	if(!$connection) {
-    	  Write-Host "A connection with the requested name was not found." -ForegroundColor Red
-    	  return
-    	}
-
         $connectToGitBody = @{
             gitProviderDetails = $gitProviderDetails
             myGitCredentials = @{
                 source = "ConfiguredConnection"
-                connectionId = $connection.id
+                connectionId = $connectionId
             }
         } | ConvertTo-Json
     }
-   
+        
     Invoke-RestMethod -Headers $global:fabricHeaders -Uri $connectUrl -Method POST -Body $connectToGitBody
 
     Write-Host "The workspace '$workspaceName' has been successfully connected to Git." -ForegroundColor Green
@@ -222,8 +146,8 @@ try {
     # Initialize Connection
     Write-Host "Initializing Git connection for workspace '$workspaceName'."
 
-    $initializeConnectionUrl = "$global:baseUrl/workspaces/$($workspace.Id)/git/initializeConnection"
-    $initializeConnectionResponse = Invoke-RestMethod -Headers $global:fabricHeaders -Uri $initializeConnectionUrl -Method POST
+    $initializeConnectionUrl = "{0}/workspaces/{1}/git/initializeConnection" -f $global:baseUrl, $workspace.Id
+    $initializeConnectionResponse = Invoke-RestMethod -Headers $global:fabricHeaders -Uri $initializeConnectionUrl -Method POST -Body "{}"
 
     Write-Host "The Git connection for workspace '$workspaceName' has been successfully initialized." -ForegroundColor Green
 
@@ -232,7 +156,7 @@ try {
         # Update from Git
         Write-Host "Updating the workspace '$workspaceName' from Git."
 
-        $updateFromGitUrl = "$global:baseUrl/workspaces/$($workspace.Id)/git/updateFromGit"
+        $updateFromGitUrl = "{0}/workspaces/{1}/git/updateFromGit" -f $global:baseUrl, $workspace.Id
 
         $updateFromGitBody = @{ 
             remoteCommitHash = $initializeConnectionResponse.RemoteCommitHash
@@ -246,7 +170,7 @@ try {
         Write-Host "Long Running Operation ID: '$operationId' has been scheduled for updating the workspace '$workspaceName' from Git with a retry-after time of '$retryAfter' seconds." -ForegroundColor Green
         
         # Poll Long Running Operation
-        $getOperationState = "$global:baseUrl/operations/$operationId"
+        $getOperationState = "{0}/operations/{1}" -f $global:baseUrl, $operationId
         do
         {
             $operationState = Invoke-RestMethod -Headers $global:fabricHeaders -Uri $getOperationState -Method GET
