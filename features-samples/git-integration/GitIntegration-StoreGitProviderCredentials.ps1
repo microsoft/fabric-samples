@@ -9,7 +9,7 @@
 # 3. Run PowerShell as an administrator
 # 4. Fill in the parameters below
 # 5. Change PowerShell directory to where this script is saved
-# 6. > ./Connections-StoreGitProviderCredentials.ps1
+# 6. > ./GitIntegration-StoreGitProviderCredentials.ps1
 
 # Parameters - fill these in before running the script!
 # =====================================================
@@ -33,9 +33,9 @@ $gitHubPATConnection = @{
 $principalType = "<PRINCIPAL TYPE>" # Choose either "UserPrincipal" or "ServicePrincipal"
 
 # Relevant for ServicePrincipal
-$clientId = "<CLIENT ID>"
-$tenantId = "<TENANT ID>"
-$servicePrincipalSecret = "<SECRET VALUE>"
+$clientId = "<CLIENT ID>"                   #The application (client) ID of the service principal
+$tenantId = "<TENANT ID>"                   #The directory (tenant) ID of the service principal
+$servicePrincipalSecret = "<SECRET VALUE>"  #The secret value of the service principal
 
 # End Parameters =======================================
 
