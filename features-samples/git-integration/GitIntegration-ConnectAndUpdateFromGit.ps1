@@ -177,7 +177,7 @@ try {
         # Disconnect from Git
         Write-Host "Disconnecting the workspace '$workspaceName' from Git."
 
-        $disconnectUrl = "$global:baseUrl/workspaces/$workspace.Id/git/disconnect"
+        $disconnectUrl = "$global:baseUrl/workspaces/$($workspace.Id)/git/disconnect"
         Invoke-RestMethod -Headers $global:fabricHeaders -Uri $disconnectUrl -Method POST
 
         Write-Host "The workspace '$workspaceName' has been successfully disconnected from Git." -ForegroundColor Green
