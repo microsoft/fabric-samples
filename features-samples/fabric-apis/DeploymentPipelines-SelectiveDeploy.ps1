@@ -312,18 +312,26 @@ function GetDeploymentPipelineStageItemByName($itemName, $itemType, $deploymentP
 
 function GetErrorResponse($exception) {
     # Relevant only for PowerShell Core
-    $errorResponse = $_.ErrorDetails.Message
+    # Try to fill based on ErrorDetails.Message
+    $errorResponse = $exception.ErrorDetails.Message
 
-    if(!$errorResponse) {
-        # This is needed to support Windows PowerShell
-        if (!$exception.Response) {
-            return $exception.Message
-        }
+    # If still null and exception.Response isn't null, try to read the response stream and fill in
+    if(!$errorResponse -and $exception.Response) {
         $result = $exception.Response.GetResponseStream()
         $reader = New-Object System.IO.StreamReader($result)
         $reader.BaseStream.Position = 0
         $reader.DiscardBufferedData()
-        $errorResponse = $reader.ReadToEnd();
+        $errorResponse = $reader.ReadToEnd()
+    }
+
+    # If still null, try based on exception.Message
+    if(!$errorResponse) {
+        $errorResponse = $exception.Message
+    }
+
+    # If all else fails, fill in generic error
+    if(!$errorResponse) {
+        $errorResponse = "An error occurred, but no detailed message is available."
     }
 
     return $errorResponse

@@ -139,11 +139,6 @@ function GetErrorResponse($exception) {
     # Try to fill based on ErrorDetails.Message
     $errorResponse = $exception.ErrorDetails.Message
 
-    # If still null, try based on exception.Message
-    if(!$errorResponse) {
-        $errorResponse = $exception.Message
-    }
-
     # If still null and exception.Response isn't null, try to read the response stream and fill in
     if(!$errorResponse -and $exception.Response) {
         $result = $exception.Response.GetResponseStream()
@@ -151,6 +146,11 @@ function GetErrorResponse($exception) {
         $reader.BaseStream.Position = 0
         $reader.DiscardBufferedData()
         $errorResponse = $reader.ReadToEnd()
+    }
+
+    # If still null, try based on exception.Message
+    if(!$errorResponse) {
+        $errorResponse = $exception.Message
     }
 
     # If all else fails, fill in generic error
