@@ -125,26 +125,18 @@ function GetDeploymentPipelineStageByName($deploymentPipelineStageName, $deploym
 
 function GetErrorResponse($exception) {
     # Relevant only for PowerShell Core
-    # Try to fill based on ErrorDetails.Message
-    $errorResponse = $exception.ErrorDetails.Message
+    $errorResponse = $_.ErrorDetails.Message
 
-    # If still null and exception.Response isn't null, try to read the response stream and fill in
-    if(!$errorResponse -and $exception.Response) {
+    if(!$errorResponse) {
+        # This is needed to support Windows PowerShell
+        if (!$exception.Response) {
+            return $exception.Message
+        }
         $result = $exception.Response.GetResponseStream()
         $reader = New-Object System.IO.StreamReader($result)
         $reader.BaseStream.Position = 0
         $reader.DiscardBufferedData()
-        $errorResponse = $reader.ReadToEnd()
-    }
-
-    # If still null, try based on exception.Message
-    if(!$errorResponse) {
-        $errorResponse = $exception.Message
-    }
-
-    # If all else fails, fill in generic error
-    if(!$errorResponse) {
-        $errorResponse = "An error occurred, but no detailed message is available."
+        $errorResponse = $reader.ReadToEnd();
     }
 
     return $errorResponse
@@ -173,14 +165,15 @@ try {
 
     $deployResponse = Invoke-WebRequest -Headers $global:fabricHeaders -Uri $deployUrl -Method POST -Body $deployBody
 
-    $operationId = $deployResponse.Headers['x-ms-operation-id']
-    $retryAfter = $deployResponse.Headers['Retry-After']
+    $operationId = $deployResponse.Headers['x-ms-operation-id'][0]
+    $retryAfter = $deployResponse.Headers['Retry-After'][0]
     Write-Host "Long Running Operation ID: '$operationId' has been scheduled for deploying from $($sourceStage.displayName) to $($targetStage.displayName) with a retry-after time of '$retryAfter' seconds." -ForegroundColor Green
 
     # Get Long Running Operation Status
     Write-Host "Polling long running operation ID '$operationId' has been started with a retry-after time of '$retryAfter' seconds."
 
     $getOperationState = "{0}/operations/{1}" -f $global:baseUrl, $operationId
+    Write-Host "Getting operation state from: $getOperationState" -ForegroundColor Green
     do
     {
         $operationState = Invoke-RestMethod -Headers $global:fabricHeaders -Uri $getOperationState -Method GET
