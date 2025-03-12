@@ -1,7 +1,7 @@
-# This sample script calls the Fabric API to programmatically commit all changes from workspace to Git.
+# This sample script calls the Fabric API to programmatically create connection with Git provider credentials.
 
 # For documentation, please see:
-# https://learn.microsoft.com/en-us/rest/api/fabric/core/git/commit-to-git
+# https://learn.microsoft.com/en-us/rest/api/fabric/core/connections/create-connection
 
 # Instructions:
 # 1. Install PowerShell (https://learn.microsoft.com/en-us/powershell/scripting/install/installing-powershell)
@@ -9,14 +9,26 @@
 # 3. Run PowerShell as an administrator
 # 4. Fill in the parameters below
 # 5. Change PowerShell directory to where this script is saved
-# 6. > ./GitIntegration-CommitAll.ps1
-# 7. [Optional] Wait for long running operation to be completed - see LongRunningOperation-Polling.ps1
+# 6. > ./GitIntegration-StoreGitProviderCredentials.ps1
 
 # Parameters - fill these in before running the script!
 # =====================================================
 
-$workspaceName = "<WORKSPACE NAME>"      # The name of the workspace
-$commitMessage = "<COMMIT MESSAGE>"      # The commit message
+# Connection with personal access token for GitHubSourceControl
+$gitHubPATConnection = @{
+    connectivityType = "ShareableCloud"
+    displayName = "<CONNECTION NAME>"
+    connectionDetails = @{
+        type = "GitHubSourceControl"
+        creationMethod = "GitHubSourceControl.Contents"
+    }
+    credentialDetails = @{
+        credentials = @{
+            credentialType = "Key"
+            key = "<PAT>"
+        }
+    }
+}
 
 $principalType = "<PRINCIPAL TYPE>" # Choose either "UserPrincipal" or "ServicePrincipal"
 
@@ -85,17 +97,6 @@ function ConvertSecureStringToPlainText($secureString) {
     return $plainText
 }
 
-function GetWorkspaceByName($workspaceName) {
-    # Get workspaces    
-    $getWorkspacesUrl = "$global:baseUrl/workspaces"
-    $workspaces = (Invoke-RestMethod -Headers $global:fabricHeaders -Uri $getWorkspacesUrl -Method GET).value
-
-    # Try to find the workspace by display name
-    $workspace = $workspaces | Where-Object {$_.DisplayName -eq $workspaceName}
-
-    return $workspace
-}
-
 function GetErrorResponse($exception) {
     # Relevant only for PowerShell Core
     $errorResponse = $_.ErrorDetails.Message
@@ -117,32 +118,18 @@ function GetErrorResponse($exception) {
 
 try {
     SetFabricHeaders
-
-    $workspace = GetWorkspaceByName $workspaceName 
-    
-    # Verify the existence of the requested workspace
-	if(!$workspace) {
-	  Write-Host "A workspace with the requested name was not found." -ForegroundColor Red
-	  return
-	}
 	
-    # Commit to Git
-    Write-Host "Committing all changes from workspace '$workspaceName' to Git."
+    Write-Host "Creating connection with Git provider credentials..."
 
-    $commitToGitUrl = "$global:baseUrl/workspaces/$($workspace.Id)/git/commitToGit"
+    $connectionsUrl = "$global:baseUrl/connections"
 
-    $commitToGitBody = @{ 		
-        mode = "All"
-        comment = $commitMessage
-    } | ConvertTo-Json
+    $gitHubPATConnectionBody = $gitHubPATConnection | ConvertTo-Json
 
-    $commitToGitResponse = Invoke-WebRequest -Headers $global:fabricHeaders -Uri $commitToGitUrl -Method POST -Body $commitToGitBody
+    $response = Invoke-RestMethod -Headers $global:fabricHeaders -Uri $connectionsUrl -Method POST -Body $gitHubPATConnectionBody
 
-    $operationId = $commitToGitResponse.Headers['x-ms-operation-id']
-    $retryAfter = $commitToGitResponse.Headers['Retry-After']
-    Write-Host "Long Running Operation ID: '$operationId' has been scheduled for committing changes from workspace '$workspaceName' to Git with a retry-after time of '$retryAfter' seconds." -ForegroundColor Green
+    Write-Host "Connection created successfully! Connection ID: $($response.id)" -ForegroundColor Green
 
 } catch {
     $errorResponse = GetErrorResponse($_.Exception)
-    Write-Host "Failed to commit changes from workspace '$workspaceName' to Git. Error reponse: $errorResponse" -ForegroundColor Red
+    Write-Host "Failed to create connection. . Error reponse: $errorResponse" -ForegroundColor Red
 }

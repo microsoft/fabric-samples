@@ -22,6 +22,13 @@ $sourceStageName = "<SOURCE STAGE NAME>"                    # The name of the so
 $targetStageName = "<TARGET STAGE NAME>"                    # The name of the target stage
 $deploymentNote = "<DEPLOYMENT NOTE>"                       # The deployment note (Optional)
 
+$principalType = "<PRINCIPAL TYPE>" # Choose either "UserPrincipal" or "ServicePrincipal"
+
+# Relevant for ServicePrincipal
+$clientId = "<CLIENT ID>"                   #The application (client) ID of the service principal
+$tenantId = "<TENANT ID>"                   #The directory (tenant) ID of the service principal
+$servicePrincipalSecret = "<SECRET VALUE>"  #The secret value of the service principal
+
 # End Parameters =======================================
 
 $global:baseUrl = "<Base URL>" # Replace with environment-specific base URL. For example: "https://api.fabric.microsoft.com/v1"
@@ -31,16 +38,55 @@ $global:resourceUrl = "https://api.fabric.microsoft.com"
 $global:fabricHeaders = @{}
 
 function SetFabricHeaders() {
-    # Login to Azure
-    Connect-AzAccount | Out-Null
+    if ($principalType -eq "UserPrincipal") {
+        $secureFabricToken = GetSecureTokenForUserPrincipal
+    } elseif ($principalType -eq "ServicePrincipal") {
+        $secureFabricToken = GetSecureTokenForServicePrincipal
 
-    # Get authentication
-    $fabricToken = (Get-AzAccessToken -ResourceUrl $global:resourceUrl).Token
+    } else {
+        throw "Invalid principal type. Please choose either 'UserPrincipal' or 'ServicePrincipal'."
+    }
+
+    # Convert SecureString to plain text
+    $fabricToken = ConvertSecureStringToPlainText($secureFabricToken)
 
     $global:fabricHeaders = @{
         'Content-Type' = "application/json"
-        'Authorization' = "Bearer {0}" -f $fabricToken
+        'Authorization' = "Bearer $fabricToken"
     }
+}
+
+function GetSecureTokenForUserPrincipal() {
+    #Login to Azure interactively
+    Connect-AzAccount | Out-Null
+
+    # Get authentication
+    $secureFabricToken = (Get-AzAccessToken -AsSecureString -ResourceUrl $global:resourceUrl).Token
+
+    return $secureFabricToken
+}
+
+function GetSecureTokenForServicePrincipal() {
+    $secureServicePrincipalSecret  = ConvertTo-SecureString -String $servicePrincipalSecret -AsPlainText -Force
+    $credential = New-Object -TypeName System.Management.Automation.PSCredential -ArgumentList $clientId, $secureServicePrincipalSecret
+
+    #Login to Azure using service principal
+    Connect-AzAccount -ServicePrincipal -TenantId $tenantId -Credential $credential | Out-Null
+
+    # Get authentication
+    $secureFabricToken = (Get-AzAccessToken -AsSecureString -ResourceUrl $global:resourceUrl).Token
+    
+    return $secureFabricToken
+}
+
+function ConvertSecureStringToPlainText($secureString) {
+    $ssPtr = [System.Runtime.InteropServices.Marshal]::SecureStringToBSTR($secureString)
+    try {
+        $plainText = [System.Runtime.InteropServices.Marshal]::PtrToStringBSTR($ssPtr)
+    } finally {
+        [System.Runtime.InteropServices.Marshal]::ZeroFreeBSTR($ssPtr)
+    }
+    return $plainText
 }
 
 function GetDeploymentPipelineByName($deploymentPipelineName) {
@@ -119,8 +165,8 @@ try {
 
     $deployResponse = Invoke-WebRequest -Headers $global:fabricHeaders -Uri $deployUrl -Method POST -Body $deployBody
 
-    $operationId = $deployResponse.Headers['x-ms-operation-id']
-    $retryAfter = $deployResponse.Headers['Retry-After']
+    $operationId = $deployResponse.Headers['x-ms-operation-id'][0]
+    $retryAfter = $deployResponse.Headers['Retry-After'][0]
     Write-Host "Long Running Operation ID: '$operationId' has been scheduled for deploying from $($sourceStage.displayName) to $($targetStage.displayName) with a retry-after time of '$retryAfter' seconds." -ForegroundColor Green
 
     # Get Long Running Operation Status
