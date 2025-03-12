@@ -173,7 +173,6 @@ try {
     Write-Host "Polling long running operation ID '$operationId' has been started with a retry-after time of '$retryAfter' seconds."
 
     $getOperationState = "{0}/operations/{1}" -f $global:baseUrl, $operationId
-    Write-Host "Getting operation state from: $getOperationState" -ForegroundColor Green
     do
     {
         $operationState = Invoke-RestMethod -Headers $global:fabricHeaders -Uri $getOperationState -Method GET
