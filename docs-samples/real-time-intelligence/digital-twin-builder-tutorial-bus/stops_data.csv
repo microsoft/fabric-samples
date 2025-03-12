@@ -1,0 +1,575 @@
+Stop_Code,Stop_Name,Location_Easting,Location_Northing,Road_Name,Borough,Borough_ID,Suggested_Locality,Locality_ID
+17207,Abbey Wood Road,547362,178860,Knee Hill,Greenwich,6,Abbey Wood,263
+13212,Greening Street,547150,178737,Mcleod Road,Greenwich,6,Abbey Wood,263
+18112,Mcleod Road / Bostall Lane,546900,178668,Mcleod Road,Greenwich,6,Abbey Wood,263
+14610,Bostall Gardens,546684,178596,Mcleod Road,Greenwich,6,Abbey Wood,263
+17706,Cassilda Road,546410,178519,Basildon Road,Greenwich,6,Abbey Wood,263
+17411,Eynsham Drive / Blithdale Road,546438,178841,Eynsham Drive,Greenwich,6,Abbey Wood,263
+15809,Harrow Manorway / Yarnton Way,547347,179498,Harrow Manor Way,Bexley,18,Abbey Wood,263
+18604,Overton Road,547358,179302,Harrow Manor Way,Bexley,18,Abbey Wood,263
+14601,Harrow Manorway / Lensbury Way,547341,179416,Harrow Manor Way,Greenwich,6,Abbey Wood,263
+14613,Hartslock Drive,547816,179628,Yarnton Way,Bexley,18,Abbey Wood,263
+15905,Limestone Walk,547884,179651,Yarnton Way,Bexley,18,Abbey Wood,263
+13604,The Business Academy,548222,179547,Yarnton Way,Bexley,18,Abbey Wood,263
+19806,Harrow Manorway / Abbey Wood Station #,547430,179022,Harrow Manor Way,Bexley,18,Abbey Wood,263
+16500,Woodhurst Road,546258,178750,Blithdale Road,Greenwich,6,Abbey Wood,263
+18803,Brookdene Road,546087,178737,Blithdale Road,Greenwich,6,Abbey Wood,263
+21012,Sedgemere Road,547401,179242,Sedgemere Road,Bexley,18,Abbey Wood,263
+11102,Lanridge Road,547784,179103,Alsike Road,Bexley,18,Abbey Wood,263
+10604,Buckwheat Court,547956,179115,Alsike Road,Bexley,18,Abbey Wood,263
+15506,Parkway,548292,179409,Alsike Road,Bexley,18,Abbey Wood,263
+18009,Abbey Wood Station,547384,179050,Harrow Manor Way,Bexley,18,Abbey Wood,263
+15513,Bromyard Avenue,521384,180098,The Vale,Ealing,27,Acton,288
+19802,Denehurst Gardens,519648,180240,Uxbridge Road,Ealing,27,Acton,288
+18703,Acton Fire Station,519685,180172,Gunnersbury Lane,Ealing,27,Acton,288
+17413,Steyne Road,519887,180197,Acton High Street,Ealing,27,Acton,288
+13201,East Acton Lane,520993,180064,The Vale,Ealing,27,Acton,288
+13313,Second Avenue,521651,180102,The Vale,Ealing,27,Acton,288
+10105,Third Avenue,521632,180084,The Vale,Ealing,27,Acton,288
+21001,Larden Road,521244,180086,The Vale,Ealing,27,Acton,288
+19812,Acton Park,520818,180052,The Vale,Ealing,27,Acton,288
+14602,Acton Central Station #,520658,180055,The Vale,Ealing,27,Acton,288
+17009,Acton Old Town Hall,520353,180069,Acton High Street,Ealing,27,Acton,288
+13601,Acton Park / Greenview Close,521054,180131,East Acton Lane,Ealing,27,Acton,288
+18007,Acacia Road,520159,180836,Horn Lane,Ealing,27,Acton,288
+18710,Creswick Road,520109,180686,Horn Lane,Ealing,27,Acton,288
+11710,Faraday Road,520221,180949,Horn Lane,Ealing,27,Acton,288
+17001,Goldsmith Close,520994,180455,East Acton Lane,Ealing,27,Acton,288
+12900,Rosemont Road,519954,180349,Steyne Road,Ealing,27,Acton,288
+11003,Acton Market Place,520033,180339,Horn Lane,Ealing,27,Acton,288
+14609,King Street,519998,180152,Acton High Street,Ealing,27,Acton,288
+13605,Wolsey Crescent,538059,162652,Montacute Road,Croydon,20,Addington,409
+17313,Grenville Road,538182,162456,Montacute Road,Croydon,20,Addington,409
+14805,Fieldway Tram Stop >T<,537741,163086,Lodge Lane,Croydon,20,Addington,409
+15912,Salcot Crescent,538235,162273,Salcot Crescent,Croydon,20,Addington,409
+18607,Central Parade,538431,161988,Central Parade,Croydon,20,Addington,409
+19509,New Addington Baptist Church,538786,161900,Arnhem Drive,Croydon,20,Addington,409
+11712,Calley Down Crescent,539065,161856,Arnhem Drive,Croydon,20,Addington,409
+12905,King Henry'S Drive / Homestead Way,539328,161591,King Henry'S Drive,Croydon,20,Addington,409
+10805,Frimley Close,538635,163328,Headley Drive,Croydon,20,Addington,409
+19605,Goldcrest Community Centre,538665,163118,Goldcrest Way,Croydon,20,Addington,409
+15812,Goldcrest Way / King Henry'S Drive,538644,162911,Goldcrest Way,Croydon,20,Addington,409
+19405,New Addington Tram Stop >T<,538150,162337,Tram Stop Slip Road,Croydon,20,Addington,409
+19604,Fieldway,537553,163406,Lodge Lane,Croydon,20,Addington,409
+11607,Applegarth,537682,163430,Fieldway,Croydon,20,Addington,409
+18611,The Coppins,537928,163634,Fieldway,Croydon,20,Addington,409
+18200,Foxcombe,537907,163761,Fieldway,Croydon,20,Addington,409
+21007,Merrow Way,538430,163521,Merrow Way,Croydon,20,Addington,409
+21004,Walsingham Road,538368,162357,Gascoigne Road,Croydon,20,Addington,409
+17704,Frensham Drive,538132,163350,Headley Drive,Croydon,20,Addington,409
+15111,Dunley Drive,537919,163203,Headley Drive,Croydon,20,Addington,409
+17711,Ivers Way,537760,163158,Headley Drive,Croydon,20,Addington,409
+15511,Meridian High School,539342,161480,King Henry'S Drive,Croydon,20,Addington,409
+10713,Addington Village Interchange >T<,537064,163772,Addington Village Interchange,Croydon,20,Addington,409
+15508,Addington Village Interchange <T>,537083,163770,Addington Village Interchange,Croydon,20,Addington,409
+15505,Addington Village Interchange,537106,163768,Addington Village Interchange,Croydon,20,Addington,409
+19813,Kestrel Way,538767,162820,King Henry'S Drive,Croydon,20,Addington,409
+12512,Redstart Close,539048,162111,King Henry'S Drive,Croydon,20,Addington,409
+18712,Vulcan Way,538983,162362,King Henry'S Drive,Croydon,20,Addington,409
+15907,Brierley,537860,163542,Fieldway,Croydon,20,Addington,409
+16512,Warbank Crescent,539193,161838,King Henry'S Drive,Croydon,20,Addington,409
+18209,Betchworth Way,538052,162806,King Henry'S Drive,Croydon,20,Addington,409
+10802,Tilford Avenue,538312,162906,King Henry'S Drive,Croydon,20,Addington,409
+18701,Canning Road,533653,166209,Lower Addiscombe Road,Croydon,20,Addiscombe,228
+17707,Lower Addiscombe Road / Davidson Road,533149,166360,Lower Addiscombe Road,Croydon,20,Addiscombe,228
+12501,Ashburton Road,534022,165756,Addiscombe Road,Croydon,20,Addiscombe,228
+12901,Northway Road,533972,166759,Morland Road,Croydon,20,Addiscombe,228
+19409,Parkview Road,534408,166512,Lower Addiscombe Road,Croydon,20,Addiscombe,228
+21009,Davidson Road,533084,166369,Lower Addiscombe Road,Croydon,20,Addiscombe,228
+19810,Ashburton Park,534831,166870,Lower Addiscombe Road,Croydon,20,Addiscombe,228
+19809,Brockenhurst Road,534685,166677,Lower Addiscombe Road,Croydon,20,Addiscombe,228
+15504,Addiscombe Tram Stop >T<,534241,166362,Lower Addiscombe Road,Croydon,20,Addiscombe,228
+15501,Leslie Grove,533182,166266,Cherry Orchard Road,Croydon,20,Addiscombe,228
+15906,Mapledale Avenue,534419,165669,Addiscombe Road,Croydon,20,Addiscombe,228
+11713,Sandilands Tram Stop >T<,533875,165756,Addiscombe Road,Croydon,20,Addiscombe,228
+17710,Woodside Green,534489,167178,Woodside Green,Croydon,20,Addiscombe,228
+10706,Blackhorse Lane,534304,166988,Woodside Green,Croydon,20,Addiscombe,228
+17412,Gordon Crescent,533568,166555,Morland Road,Croydon,20,Addiscombe,228
+18602,Havelock Road,533966,166184,Lower Addiscombe Road,Croydon,20,Addiscombe,228
+17705,Bingham Road,534913,166378,Shirley Road,Croydon,20,Addiscombe,228
+12904,Birch Tree Way,534692,165758,Addiscombe Road,Croydon,20,Addiscombe,228
+20113,Alexandra Place,533123,166394,Davidson Road,Croydon,20,Addiscombe,228
+14605,Brampton Road,533546,167078,Davidson Road,Croydon,20,Addiscombe,228
+19503,Towpath Way,533746,167329,Canal Walk,Croydon,20,Addiscombe,228
+12908,Lebanon Road Tram Stop >T<,533403,165746,Addiscombe Road,Croydon,20,Addiscombe,228
+17703,Burnham Gardens,533758,166647,Morland Road,Croydon,20,Addiscombe,228
+16407,Woodside Tram Stop >T<,534800,167105,Spring Lane,Croydon,20,Addiscombe,228
+17012,Garrick Crescent,533153,165653,Park Hill Road,Croydon,20,Addiscombe,228
+10804,Queenswood Gardens,540491,186950,Aldersbrook Road,Redbridge,14,Aldersbrook,161
+21013,Park Road,540943,186862,Aldersbrook Road,Redbridge,14,Aldersbrook,161
+14106,New Road,534648,181307,Commercial Road,Tower Hamlets,5,Aldgate,391
+18711,Whitechapel Stn <> / Royal London Hosp,534670,181782,Whitechapel Road,Tower Hamlets,5,Aldgate,391
+15108,Whitechapel Stn <> # / Royal London Hosp,534804,181849,Whitechapel Road,Tower Hamlets,5,Aldgate,391
+19505,Sidney Street,535018,181906,Mile End Road,Tower Hamlets,5,Aldgate,391
+18807,Darling Row,534973,182040,Cambridge Heath Road,Tower Hamlets,5,Aldgate,391
+17113,The East London Mosque,534364,181656,Whitechapel Road,Tower Hamlets,5,Aldgate,391
+16410,Booth Memorial,535098,181950,Mile End Road,Tower Hamlets,5,Aldgate,391
+17008,Brushfield Street,533687,181751,Commercial Street,Tower Hamlets,5,Aldgate,391
+19800,Lolesworth Close,533735,181624,Commercial Street,Tower Hamlets,5,Aldgate,391
+18806,Aldgate East Station <>,533856,181395,Commercial Street,Tower Hamlets,5,Aldgate,391
+20112,Cambridge Heath Road,534870,181874,Whitechapel Road,Tower Hamlets,5,Aldgate,391
+17102,Aldgate Station <>,533689,181224,Aldgate High Street,City of London,0,Aldgate,391
+10810,St Botolph Street,533660,181315,St Botolph Street,City of London,0,Aldgate,391
+15503,Aldgate Bus Station,533653,181194,Aldgate Bus Station,City of London,0,Aldgate,391
+17213,Commercial Road,534596,181203,Cannon Street Road,Tower Hamlets,5,Aldgate,391
+18000,Old Montague Street,534437,181896,Vallance Road,Tower Hamlets,5,Aldgate,391
+18706,Underwood Road,534409,182027,Vallance Road,Tower Hamlets,5,Aldgate,391
+14606,Cavell Street,534872,181737,Cavell Street,Tower Hamlets,5,Aldgate,391
+19411,Albert Road,529497,190857,Durnsford Road,Haringey,31,Alexandra Palace,375
+12902,Palace Gates Road,530205,190496,Bedford Road,Haringey,31,Alexandra Palace,375
+15804,Glacier Way,518082,183457,Ealing Road,Brent,28,Alperton,212
+11112,Vicars Bridge Close,518164,183263,Ealing Road,Brent,28,Alperton,212
+15901,Vicar'S Bridge,518247,183169,Hanger Lane,Ealing,27,Alperton,212
+14108,Alperton Station <>,518079,183810,Ealing Road,Brent,28,Alperton,212
+15800,Aintree Road,516990,183689,Bilton Road,Ealing,27,Alperton,212
+17109,Lee Road,517206,183658,Bilton Road,Ealing,27,Alperton,212
+11709,Brooklands Drive,517467,183637,Bilton Road,Ealing,27,Alperton,212
+19501,Athlon Road,517820,183476,Glacier Way,Brent,28,Alperton,212
+10106,Manor Farm Road,517592,183506,Manor Farm Road,Brent,28,Alperton,212
+11603,Alperton Sainsbury'S,517854,183490,Glacier Way,Brent,28,Alperton,212
+11010,Seymour Villas,534646,169771,Anerley Road,Bromley,19,Anerley,9
+19808,Anerley Road / Anerley Station #,534540,169869,Anerley Road,Bromley,19,Anerley,9
+15805,Anerley Park,534401,170017,Anerley Road,Bromley,19,Anerley,9
+16510,Anerley Station #,534611,169877,Anerley Station Road,Bromley,19,Anerley,9
+19901,Jasmine Grove,534705,169932,Anerley Station Road,Bromley,19,Anerley,9
+10612,Barnet Way / Apex Corner,521035,192799,Watford Way (Barnet By-Pass),Barnet,30,Apex Corner,56
+13603,Apex Corner,520988,192795,Watford Way (Barnet By-Pass),Barnet,30,Apex Corner,56
+11605,Glendor Gardens,520862,192785,Selvage Lane,Barnet,30,Apex Corner,56
+18704,The Fairway,520949,193427,Barnet Way (Barnet By-Pass),Barnet,30,Apex Corner,56
+14103,Mill Hill / The Rising Sun,521832,193485,Highwood Hill,Barnet,30,Apex Corner,56
+13202,Marsh Hill / Marsh Lane,521305,193202,Marsh Lane,Barnet,30,Apex Corner,56
+12503,Brickfield Lane,521749,195210,Barnet Road,Barnet,30,Arkley,80
+18005,Rowley Green Road,522385,195758,Barnet Road,Barnet,30,Arkley,80
+18011,Bowes Road,530141,192043,Brownlow Road,Enfield,32,Arnos Grove,303
+17406,Telford Road,529812,192302,Bowes Road,Enfield,32,Arnos Grove,303
+18208,Broomfield Lane,530286,192464,Powys Lane,Enfield,32,Arnos Grove,303
+17002,York Road,530093,191837,Brownlow Road,Enfield,32,Arnos Grove,303
+19412,Pymmes Road,530412,192065,Bowes Road,Enfield,32,Arnos Grove,303
+17304,Ravenscraig Road,529154,192468,Bowes Road,Enfield,32,Arnos Grove,303
+15109,Riefield Road,544576,174505,Bexley Road,Greenwich,6,Avery HIll,88
+20104,Blackfen Road / Boundary Road,545207,174499,Blackfen Road,Bexley,18,Avery HIll,88
+14607,Rennets Wood Road,544927,174472,Bexley Road,Greenwich,6,Avery HIll,88
+16406,Avery Hill / Riefield Road,544541,174625,Riefield Road,Greenwich,6,Avery HIll,88
+10113,North Street,543997,184122,London Road,Barking and Dagenham,16,Barking,347
+10603,Blake Avenue,545380,183925,Ripple Road,Barking and Dagenham,16,Barking,347
+19413,Barking Town Centre,544231,184187,London Road,Barking and Dagenham,16,Barking,347
+15112,Longbridge Road,544497,184586,Fanshawe Avenue,Barking and Dagenham,16,Barking,347
+18810,Park Avenue,544667,184579,Longbridge Road,Barking and Dagenham,16,Barking,347
+19601,Hulse Avenue / Barking Park,544870,184769,Longbridge Road,Barking and Dagenham,16,Barking,347
+10700,Thurlestone Avenue,545661,185358,Longbridge Road,Redbridge,14,Barking,347
+10100,Capel Gardens,545892,185495,Longbridge Road,Redbridge,14,Barking,347
+14101,King Edwards Road,544724,183764,Ripple Road,Barking and Dagenham,16,Barking,347
+13302,Greatfields Park,545163,183521,Movers Lane,Barking and Dagenham,16,Barking,347
+19406,Tudor Road,545615,183950,Ripple Road,Barking and Dagenham,16,Barking,347
+17300,Barking Bus Garage,545409,185149,Longbridge Road,Barking and Dagenham,16,Barking,347
+12509,Levett Road,545387,184880,Upney Lane,Barking and Dagenham,16,Barking,347
+10103,Salisbury Avenue,545453,184706,Upney Lane,Barking and Dagenham,16,Barking,347
+17401,Barking Community Hospital,545718,184459,Upney Lane,Barking and Dagenham,16,Barking,347
+19402,Upney Station <>,545883,184225,Upney Lane,Barking and Dagenham,16,Barking,347
+10610,Barking Station <> #,544437,184322,Station Parade,Barking and Dagenham,16,Barking,347
+19906,Gascoigne Primary School,544365,183591,Gascoigne Road,Barking and Dagenham,16,Barking,347
+10701,St Margarets,544670,183686,King Edward'S Road,Barking and Dagenham,16,Barking,347
+13301,"Barking Bus Garage, Fair Cross",545337,184972,Upney Lane,Barking and Dagenham,16,Barking,347
+17405,Barking Abbey,544094,184066,North Street,Barking and Dagenham,16,Barking,347
+17202,Cowbridge Lane,543938,184497,North Street,Barking and Dagenham,16,Barking,347
+11009,Vicarage Field Shopping Centre,544394,184100,Ripple Road,Barking and Dagenham,16,Barking,347
+19600,Sunningdale Avenue,544484,183959,Ripple Road,Barking and Dagenham,16,Barking,347
+19602,Barking Station,544507,184421,Longbridge Road,Barking and Dagenham,16,Barking,347
+15909,Shearwater Close,546413,182565,Galleons Drive,Barking and Dagenham,16,Barking Riverside,169
+17110,Barking Riverside,546457,182405,Mallards Road,Barking and Dagenham,16,Barking Riverside,169
+14608,Rivergate Centre,546430,182428,Mallards Road,Barking and Dagenham,16,Barking Riverside,169
+12906,Tomswood Hill,544468,190603,Fencepiece Road,Redbridge,14,Barkingside Fairlop,313
+19801,Barkingside Station <>,544536,189677,Tanners Lane,Redbridge,14,Barkingside Fairlop,313
+17305,Barkingside Magistrates Court,544294,189733,Tanners Lane,Redbridge,14,Barkingside Fairlop,313
+13213,Sandringham Gardens,544429,189743,Tanners Lane,Redbridge,14,Barkingside Fairlop,313
+15510,Waverley Gardens,544382,190075,Barkingside High Street,Redbridge,14,Barkingside Fairlop,313
+13210,Lord Avenue,542536,189264,Woodford Avenue,Redbridge,14,Barkingside Fairlop,313
+10601,Woodford Bridge Road,542447,189359,Woodford Avenue,Redbridge,14,Barkingside Fairlop,313
+18202,Brandville Gardens,544112,189464,Cranbrook Road,Redbridge,14,Barkingside Fairlop,313
+15100,Barkingside High Street,544272,189985,Fremantle Road,Redbridge,14,Barkingside Fairlop,313
+12913,Mossford Lane,543851,190058,Clayhall Avenue,Redbridge,14,Barkingside Fairlop,313
+13611,Beaminster Gardens,543598,190065,Clayhall Avenue,Redbridge,14,Barkingside Fairlop,313
+10710,Berkeley Avenue,543411,190072,Clayhall Avenue,Redbridge,14,Barkingside Fairlop,313
+17409,Caterham Avenue,543063,190100,Clayhall Avenue,Redbridge,14,Barkingside Fairlop,313
+19607,Couchmore Avenue,542623,190099,Clayhall Avenue,Redbridge,14,Barkingside Fairlop,313
+10705,Claybury Broadway,542100,190010,Clayhall Avenue Bus Lay-By,Redbridge,14,Barkingside Fairlop,313
+14603,Fullwell Cross,544469,190248,Barkingside High Street,Redbridge,14,Barkingside Fairlop,313
+14807,Fremantle Road,544299,189926,Barkingside High Street,Redbridge,14,Barkingside Fairlop,313
+20108,Barkingside Police Station,544271,189830,Barkingside High Street,Redbridge,14,Barkingside Fairlop,313
+16408,Aintree Crescent,544284,190438,Fullwell Avenue,Redbridge,14,Barkingside Fairlop,313
+15101,Fencepiece Road,544413,190562,Tomswood Hill,Redbridge,14,Barkingside Fairlop,313
+11105,Clayhall / The Glade,542847,190612,Fullwell Avenue,Redbridge,14,Barkingside Fairlop,313
+18813,Barkingside Tesco,544270,189571,Tesco Access Road,Redbridge,14,Barkingside Fairlop,313
+10708,Peel Drive,542395,190105,Clayhall Avenue,Redbridge,14,Barkingside Fairlop,313
+12513,Peareswood Road,551588,177021,Northend Road,Bexley,18,Barnehurst,69
+12909,Dale View,551991,176471,Whitehall Lane,Bexley,18,Barnehurst,69
+17212,Parkside Avenue / Manor Way,550723,176098,Parkside Avenue,Bexley,18,Barnehurst,69
+16511,Howbury Lane / Slade Green Station #,552235,176487,Howbury Lane,Bexley,18,Barnehurst,69
+18210,Northall Road / Barnehurst Station #,550210,176151,Northall Road,Bexley,18,Barnehurst,69
+16501,Parkside Cross,550937,176088,Parkside Avenue,Bexley,18,Barnehurst,69
+18709,Northend Road / Colyers Lane,551584,176793,Northend Road,Bexley,18,Barnehurst,69
+11109,Colyers Walk,551105,176892,Colyers Lane,Bexley,18,Barnehurst,69
+15512,Masefield Close,551961,176692,Bridge Road,Bexley,18,Barnehurst,69
+20103,Barnehurst Road / Randolph Close,550138,175915,Barnehurst Road,Bexley,18,Barnehurst,69
+15803,Bridge Road / Whitehall Lane,551804,176538,Bridge Road,Bexley,18,Barnehurst,69
+19903,Whitehall Lane / Bridge Road,551776,176475,Whitehall Lane,Bexley,18,Barnehurst,69
+11111,Washington Road,522518,177172,Castelnau,Richmond upon Thames,24,Barnes,198
+14107,Newport Road,522452,176957,Castelnau,Richmond upon Thames,24,Barnes,198
+19510,Glebe Road,522126,176523,Church Road,Richmond upon Thames,24,Barnes,198
+15902,Barnes High Street,521732,176407,Barnes High Street,Richmond upon Thames,24,Barnes,198
+19612,Caledonian Road Station <>,530595,184924,Caledonian Road,Islington,3,Barnsbury,377
+13200,Hillmarton Road,530590,185197,Caledonian Road,Islington,3,Barnsbury,377
+11613,North Road / Hillmarton Road,530533,185168,Hillmarton Road,Islington,3,Barnsbury,377
+18004,Lough Road,530912,185015,Mackenzie Road,Islington,3,Barnsbury,377
+11108,Offord Road,531127,184478,Westbourne Road,Islington,3,Barnsbury,377
+20109,Lowther Road,531034,185083,Mackenzie Road,Islington,3,Barnsbury,377
+10600,Market Road Gardens,530485,184773,Market Road,Islington,3,Barnsbury,377
+12506,Caledonian Road / Market Road Gardens,530497,184787,Market Road,Islington,3,Barnsbury,377
+14802,Ellington Street,531014,184670,Westbourne Road,Islington,3,Barnsbury,377
+10109,The Latchmere,527487,176462,Battersea Bridge Road,Wandsworth,10,Battersea,20
+12912,Battersea Bridge,527075,177231,Battersea Bridge Road,Wandsworth,10,Battersea,20
+17010,Battersea Bridge / Hester Road,527103,177219,Battersea Bridge Road,Wandsworth,10,Battersea,20
+15808,Petworth Street,527355,176810,Battersea Bridge Road,Wandsworth,10,Battersea,20
+13610,Harris Academy / Battersea,527981,176613,Battersea Park Road,Wandsworth,10,Battersea,20
+20102,Battersea Park Library,528278,176681,Battersea Park Road,Wandsworth,10,Battersea,20
+11705,Macduff Road,528378,176731,Battersea Park Road,Wandsworth,10,Battersea,20
+14105,Battersea High Street,526754,176623,Vicarage Crescent,Wandsworth,10,Battersea,20
+10808,Sopwith Way,528651,177241,Queenstown Road,Wandsworth,10,Battersea,20
+13609,Manor Road,537446,169515,Beckenham High Street,Bromley,19,Beckenham,250
+14109,Beckenham High Street / War Memorial,537084,169357,Beckenham High Street,Bromley,19,Beckenham,250
+17307,Croydon Road / War Memorial,536933,169342,Croydon Road,Bromley,19,Beckenham,250
+19900,Beckenham Library,536539,169548,Beckenham Road,Bromley,19,Beckenham,250
+10608,Brackley Road,537461,170394,Southend Road,Bromley,19,Beckenham,250
+18101,Beckenham Junction Station # >T<,537435,169662,Beckenham High Street,Bromley,19,Beckenham,250
+17205,Copers Cope Road,537472,169986,Southend Road,Bromley,19,Beckenham,250
+14104,Hayne Road,536737,169490,Beckenham Road,Bromley,19,Beckenham,250
+18203,St Edmund'S Hall,537147,169300,Village Way,Bromley,19,Beckenham,250
+11113,Beckenham Junction Stn # >T</ Rectory Rd,537409,169826,Beckenham Junction Station Forecourt,Bromley,19,Beckenham,250
+17103,Vicarage Drive,537042,169618,Rectory Road,Bromley,19,Beckenham,250
+17701,Blakeney Road / Hayne Road,536871,169837,Blakeney Road,Bromley,19,Beckenham,250
+17404,Old School Close,536054,169329,Churchfields Road,Bromley,19,Beckenham,250
+18802,Blandford Road,536191,169550,Churchfields Road,Bromley,19,Beckenham,250
+20105,Kent House Station #,535997,169726,Beckenham Road,Bromley,19,Beckenham,250
+13306,Silverwood Close,537152,170405,Brackley Road,Bromley,19,Beckenham,250
+13612,Catford Police Station,538039,172116,Bromley Road,Lewisham,7,Beckenham Hill,265
+11008,Green Man Community Hub,538321,171752,Bromley Road,Lewisham,7,Beckenham Hill,265
+11110,Southend Lane / Bromley Road,538190,171775,Southend Lane,Lewisham,7,Beckenham Hill,265
+16508,Dunfield Road,537954,171601,Southend Lane,Lewisham,7,Beckenham Hill,265
+19500,Whitefoot Lane / Bromley Road,538313,171896,Whitefoot Lane,Lewisham,7,Beckenham Hill,265
+18006,Southend Lane,538133,171937,Bromley Road,Lewisham,7,Beckenham Hill,265
+16504,Tollgate Road,543062,181741,Woolwich Manor Way,Newham,17,Beckton,13
+21000,Albatross Close,543023,181958,Woolwich Manor Way,Newham,17,Beckton,13
+19507,Swallow Street,542562,181694,Tollgate Road,Newham,17,Beckton,13
+16502,Beckton Station [Dlr],543108,181432,Woolwich Manor Way,Newham,17,Beckton,13
+18001,Covelees Wall,543375,181261,Woolwich Manor Way,Newham,17,Beckton,13
+13311,Ferndale Street,543613,181107,Ferndale Street,Newham,17,Beckton,13
+15502,Beckton Bus Station,543019,181471,Beckton Bus Station,Newham,17,Beckton,13
+13312,Kingsford Way,542782,181681,Tollgate Road,Newham,17,Beckton,13
+14100,Martins Corner / Valence Avenue,547732,185803,Wood Lane,Barking and Dagenham,16,Becontree,62
+18105,Lindisfarne Road,547550,186200,Bennett'S Castle Lane,Barking and Dagenham,16,Becontree,62
+17702,Marlborough Road,547569,185426,Porters Avenue,Barking and Dagenham,16,Becontree,62
+11100,Wroxall Road,547417,185089,Gale Street,Barking and Dagenham,16,Becontree,62
+11700,Becontree Station <>,547636,184542,Gale Street,Barking and Dagenham,16,Becontree,62
+19807,Gale Street,547701,184370,Hedgemans Road,Barking and Dagenham,16,Becontree,62
+18102,Hatfield Road,548421,184464,Hedgemans Road,Barking and Dagenham,16,Becontree,62
+21008,The Sydney Russell School,548047,185474,Parsloes Avenue,Barking and Dagenham,16,Becontree,62
+11004,Barnmead Road,548739,185023,Parsloes Avenue,Barking and Dagenham,16,Becontree,62
+17210,Singleton Road,548787,185012,Parsloes Avenue,Barking and Dagenham,16,Becontree,62
+12907,Lindsey Road,546977,185732,Longbridge Road,Barking and Dagenham,16,Becontree,62
+15106,Stamford Road / Health Centre,547525,184346,Woodward Road,Barking and Dagenham,16,Becontree,62
+18013,Becontree Avenue,546622,185781,Longbridge Road,Barking and Dagenham,16,Becontree,62
+11600,Parsloes Avenue,547773,185701,Porters Avenue,Barking and Dagenham,16,Becontree,62
+18107,Cornwallis Road,547866,185700,Parsloes Avenue,Barking and Dagenham,16,Becontree,62
+11000,Plough Lane,530219,164003,Stafford Road,Sutton,21,Beddington,159
+20107,Mellows Park,530075,163987,Stafford Road,Sutton,21,Beddington,159
+13303,Guy Road,529950,164992,Croydon Road,Sutton,21,Beddington,159
+13606,Croydon Road / Plough Lane,530149,164842,Croydon Road,Sutton,21,Beddington,159
+18610,Wilson'S School,530354,163889,Mollison Drive,Sutton,21,Beddington,159
+21005,Spitfire Road,530364,163320,Mollison Drive,Sutton,21,Beddington,159
+11011,St Elphege'S School,530393,163555,Mollison Drive,Sutton,21,Beddington,159
+10609,Garden Close,530196,164190,Plough Lane,Sutton,21,Beddington,159
+14113,Bethany Waye,509311,173931,Staines Road,Hounslow,25,Bedfont,196
+16404,Hounslow Road,510920,174469,Staines Road,Hounslow,25,Bedfont,196
+11706,St Dunstans Road,509874,172224,Feltham High Street,Hounslow,25,Bedfont,196
+15910,Browells Lane,510500,172823,Feltham High Street,Hounslow,25,Bedfont,196
+10707,Elmwood Avenue,510350,172597,Feltham High Street,Hounslow,25,Bedfont,196
+18201,Chertsey Road,509588,172122,Ashford Road,Hounslow,25,Bedfont,196
+18603,The Vale,511026,174456,Hounslow Road,Hounslow,25,Bedfont,196
+11702,Vernon Road,510006,172330,Feltham High Street,Hounslow,25,Bedfont,196
+19603,Ludlow Road,509943,171918,Sunbury Road,Hounslow,25,Bedfont,196
+13207,Carlton Avenue,510987,174198,Hounslow Road,Hounslow,25,Bedfont,196
+20110,Lower Feltham / Three Horseshoes,509574,171892,Walton Gardens,Hounslow,25,Bedfont,196
+14806,Hazelmere Close,508958,174405,Hatton Road,Hounslow,25,Bedfont,196
+13211,West Road,508672,174056,Hatton Road,Hounslow,25,Bedfont,196
+11602,Bedfont Close,508511,173883,Hatton Road,Hounslow,25,Bedfont,196
+16411,Spinney Drive,508391,173770,Stanwell Road,Hounslow,25,Bedfont,196
+10803,Bedfont Library,508839,173736,Staines Road,Hounslow,25,Bedfont,196
+17403,Feltham Station #,510517,173290,Feltham Station Forecourt,Hounslow,25,Bedfont,196
+20106,Denham Road,511020,174058,Carlton Avenue,Hounslow,25,Bedfont,196
+12911,Sparrow Farm Drive,511520,173916,Sparrow Farm Drive (Northern Section),Hounslow,25,Bedfont,196
+10101,Belmont Station # / Brighton Road,525637,162156,Brighton Road,Sutton,21,Belmont,38
+10809,Royal Marsden Hospital / Downs Road,525990,161929,Downs Road,Sutton,21,Belmont,38
+17108,Downs Road / Banstead Road South,526263,161796,Downs Road,Sutton,21,Belmont,38
+13308,Gatton Close,525837,162613,Brighton Road,Sutton,21,Belmont,38
+17708,Downs Road / Belmont Station #,525857,162002,Cotswold Road,Sutton,21,Belmont,38
+17203,Belmont Station #,525615,162050,Downs Road,Sutton,21,Belmont,38
+10800,Belsize Park Station <>,527317,185115,Haverstock Hill,Camden,2,Belsize Park,296
+17201,England'S Lane,527567,184645,England'S Lane,Camden,2,Belsize Park,296
+19902,Belsize Square,526832,184800,Belsize Park,Camden,2,Belsize Park,296
+12504,Steele'S Road / Steele'S Village,527838,184676,Haverstock Hill,Camden,2,Belsize Park,296
+17709,Belsize Village,526989,184965,Belsize Avenue,Camden,2,Belsize Park,296
+17311,Belvedere Police Station,549277,178400,Picardy Road,Bexley,18,Belvedere,66
+19401,Kentish Road,549350,178695,Picardy Road,Bexley,18,Belvedere,66
+17100,Gilbert Road,549228,179112,Gilbert Road,Bexley,18,Belvedere,66
+12910,Halt Robin Lane,549829,179009,Lower Road,Bexley,18,Belvedere,66
+19908,Parsonage Manorway,549071,177552,Bedonwell Road,Bexley,18,Belvedere,66
+11005,All Saints Church,549204,178235,Nuxley Road,Bexley,18,Belvedere,66
+18103,Lenham Road,548545,177658,Bedonwell Road,Bexley,18,Belvedere,66
+19911,Shinglewell Road,549116,177558,Parsonage Manorway,Bexley,18,Belvedere,66
+15903,Trinity School,550176,178447,Erith Road,Bexley,18,Belvedere,66
+15507,Victoria Street,548945,178200,Albert Road,Bexley,18,Belvedere,66
+14604,Albert Road / Nuxley Road,549001,178023,Albert Road,Bexley,18,Belvedere,66
+21006,Boss Street,533614,179839,Tooley Street,Southwark,8,Bermondsey,22
+14111,Spa Road,533647,179074,Grange Road,Southwark,8,Bermondsey,22
+19410,Bermondsey Station <>,534378,179457,Jamaica Road,Southwark,8,Bermondsey,22
+14803,Reverdy Road,534116,178849,Southwark Park Road,Southwark,8,Bermondsey,22
+17106,Longfield Estate,533790,178858,Dunton Road,Southwark,8,Bermondsey,22
+11704,Southwark Park Road / St James'S Road,534373,178821,Southwark Park Road,Southwark,8,Bermondsey,22
+17107,St James'S Road / Southwark Park Road,534409,178762,St James'S Road,Southwark,8,Bermondsey,22
+11611,Dockhead,533929,179627,Jamaica Road,Southwark,8,Bermondsey,22
+17003,Sheppard Drive,534757,178302,Rotherhithe New Road,Southwark,8,Bermondsey,22
+14600,Kirby Estate,534728,179463,Southwark Park Road,Southwark,8,Bermondsey,22
+17310,Maltby Street,533713,179412,Abbey Street,Southwark,8,Bermondsey,22
+18702,Electric Parade,517574,167184,Balaclava Road,Kingston upon Thames,23,Berrylands,189
+18811,St Mary'S Road,517204,166780,Effingham Road,,,Berrylands,189
+19904,Mountcombe Close,518127,166851,Upper Brighton Road,Kingston upon Thames,23,Berrylands,189
+14801,Claremont Road / Surbiton Station #,518064,167441,Claremont Road,Kingston upon Thames,23,Berrylands,189
+11601,Regent Road,518890,167695,Surbiton Hill Park,Kingston upon Thames,23,Berrylands,189
+15107,St Mark'S Church,518342,167584,St Mark'S Hill,Kingston upon Thames,23,Berrylands,189
+16509,Surbiton Station #,518135,167416,St Mark'S Hill,Kingston upon Thames,23,Berrylands,189
+13310,Burney Avenue,518617,167892,Villiers Avenue,Kingston upon Thames,23,Berrylands,189
+11708,Maplehurst Close,518139,168146,Surbiton Road,Kingston upon Thames,23,Berrylands,189
+18700,Fakruddin Street,534383,182176,Vallance Road,Tower Hamlets,5,Bethnal Green,402
+20111,Blendon / Penhill Road,547259,174225,Blackfen Road,Bexley,18,Bexley,217
+15103,Vicarage Road,549818,173224,Vicarage Road,Bexley,18,Bexley,217
+11107,The Anchor,548332,173965,Bridgen Road,Bexley,18,Bexley,217
+15807,Riverdale Road,548537,173887,Bridgen Road,Bexley,18,Bexley,217
+19912,Lyndhurst Road,549755,176017,Erith Road,Bexley,18,Bexleyheath,242
+19403,Long Lane,549691,175823,Erith Road,Bexley,18,Bexleyheath,242
+18205,Upton Road,548212,175423,Bexleyheath Broadway,Bexley,18,Bexleyheath,242
+18605,Bexleyheath / Highland Road,549479,175171,Bexleyheath Broadway,Bexley,18,Bexleyheath,242
+10606,Pickford Lane / Bowford Avenue,548345,176565,Pickford Lane,Bexley,18,Bexleyheath,242
+16413,Mayplace Rd West / Bexleyheath Clock Twr,549339,175287,Mayplace Road West,Bexley,18,Bexleyheath,242
+17312,Pelham Road,549210,175537,Woolwich Road,Bexley,18,Bexleyheath,242
+15900,Garden Avenue,549284,175825,Woolwich Road,Bexley,18,Bexleyheath,242
+18612,Long Lane / Woolwich Road,549381,176121,Long Lane,Bexley,18,Bexleyheath,242
+15811,Mayplace Road East / Pinnacle Hill,549812,175555,Mayplace Road East,Bexley,18,Bexleyheath,242
+10110,Erith Road,549715,175520,Mayplace Road East,Bexley,18,Bexleyheath,242
+13204,Arbuthnot Lane,548483,174272,Arbuthnot Lane,Bexley,18,Bexleyheath,242
+15509,Townley Grammar School,548820,174645,Townley Road,Bexley,18,Bexleyheath,242
+17204,Latham Road,548985,174869,Townley Road,Bexley,18,Bexleyheath,242
+18801,Bexleyheath Library,549051,175162,Townley Road,Bexley,18,Bexleyheath,242
+14810,Tower Road,549504,175400,Mayplace Road West,Bexley,18,Bexleyheath,242
+20100,Friswell Place,549154,175317,Friswell Place Bus Stand,Bexley,18,Bexleyheath,242
+21011,Albion Road,548927,175166,Albion Road,Bexley,18,Bexleyheath,242
+10702,Blackbrook Lane,542903,168988,Bickley Park Road,Bromley,19,Bickley,160
+13205,Southborough Road / Bickley Station #,542359,168923,Bickley Park Road,Bromley,19,Bickley,160
+15908,St George'S Road,542667,168666,Hawthorne Road,Bromley,19,Bickley,160
+15904,Hawthorne Road,542357,168641,Southlands Grove,Bromley,19,Bickley,160
+10712,Baytree Close,541490,169805,Orchard Road,Bromley,19,Bickley,160
+16403,Hill Brow,541766,169870,Sundridge Avenue,Bromley,19,Bickley,160
+19611,Aperfield Road,542569,158450,Main Road,Bromley,19,Biggin Hill,47
+14808,St Winifred'S Road,542675,158408,Main Road,Bromley,19,Biggin Hill,47
+17000,Stock Hill,541489,158995,Sunningvale Avenue,Bromley,19,Biggin Hill,47
+18805,Rosehill Road,541432,158727,Sunningvale Avenue,Bromley,19,Biggin Hill,47
+13613,Birkbeck Station # >T<,535280,169139,Elmers End Road,Bromley,19,Birkbeck,267
+19606,Ash Grove,535159,169311,Elmers End Road,Bromley,19,Birkbeck,267
+10102,Felmingham Road,535119,169128,Marlow Road,Bromley,19,Birkbeck,267
+11609,Hollies Avenue,545639,173104,Halfway Street,Bexley,18,Blackfen Lamorbey,109
+13203,Corbylands Road,545254,173260,Halfway Street,Bexley,18,Blackfen Lamorbey,109
+12507,Queenswood Road,545617,174602,Blackfen Road,Bexley,18,Blackfen Lamorbey,109
+17209,Annandale Road,545764,173502,Willersley Avenue,Bexley,18,Blackfen Lamorbey,109
+17700,Sycamore Avenue,546032,174543,Blackfen Road,Bexley,18,Blackfen Lamorbey,109
+11101,Oaklands Avenue,545933,173664,Willersley Avenue,Bexley,18,Blackfen Lamorbey,109
+17407,Blackfen Road / Westwood Lane,546308,174491,Blackfen Road,Bexley,18,Blackfen Lamorbey,109
+11007,Blackheath Station #,539652,175980,Blackheath Village,Lewisham,7,Blackheath,246
+19608,Priory Park,539723,175552,Lee Road,Greenwich,6,Blackheath,246
+19913,Blackheath Hospital,539461,175765,Lee Terrace,Lewisham,7,Blackheath,246
+19400,Royal Parade,539545,176211,Royal Parade,Lewisham,7,Blackheath,246
+16412,Hoe Street / The Bell,537501,189763,Forest Road,Waltham Forest,13,Blackhorse Road,376
+15105,Wolsey Avenue,536825,189746,Forest Road,Waltham Forest,13,Blackhorse Road,376
+14612,Crooked Billet Roundabout,537503,190816,Chingford Road,Waltham Forest,13,Blackhorse Road,376
+15110,Cazenove Road,537540,190509,Chingford Road,Waltham Forest,13,Blackhorse Road,376
+12505,Forest Road / Bell Corner,537445,189836,Chingford Road,Waltham Forest,13,Blackhorse Road,376
+10711,Jewel Road,537244,189595,Hoe Street,Waltham Forest,13,Blackhorse Road,376
+18608,Grove Road,537487,188457,Hoe Street,Waltham Forest,13,Blackhorse Road,376
+10613,Hoe Street,537408,189229,Church Hill,Waltham Forest,13,Blackhorse Road,376
+15102,Renness Road,536531,189676,Higham Hill Road,Waltham Forest,13,Blackhorse Road,376
+18213,Carisbrooke Road,536437,188911,Mission Grove,Waltham Forest,13,Blackhorse Road,376
+19907,Walthamstow Central Station <> #,537403,188980,Hoe Street,Waltham Forest,13,Blackhorse Road,376
+17104,Walthamstow Bus Station,537277,189052,Walthamstow Central Bus Station,Waltham Forest,13,Blackhorse Road,376
+17302,Walthamstow Bus Station <> #,537244,189095,Walthamstow Central Bus Station,Waltham Forest,13,Blackhorse Road,376
+17006,Blackwall Tunnel / East India Dock Road,538381,181015,Blackwall Tunnel Northern Approach,Tower Hamlets,5,Blackwall,399
+18804,Blackwall Tunnel,538330,181044,East India Dock Road,Tower Hamlets,5,Blackwall,399
+13309,Blackwall Station [Dlr],538413,180691,Blackwall Dlr Station Forecourt,Tower Hamlets,5,Blackwall,399
+11703,Southwark Bridge Road,532325,180146,Southwark Street,Southwark,8,Borough,360
+18100,Union Street,532512,179888,Borough High Street,Southwark,8,Borough,360
+14112,The Hop Exchange,532553,180151,Southwark Street,Southwark,8,Borough,360
+13608,Lavington Street,532108,180204,Southwark Street,Southwark,8,Borough,360
+14611,Blackfriars Road,531703,180370,Southwark Street,Southwark,8,Borough,360
+18110,Stamford Street,531640,180330,Blackfriars Road,Southwark,8,Borough,360
+15806,Southwark Street,532271,180121,Southwark Bridge Road,Southwark,8,Borough,360
+19610,London Bridge Station <> #,532833,180183,London Bridge Street,Southwark,8,Borough,360
+11002,Boston Manor Road,517121,177901,Great West Road,Hounslow,25,Boston Manor,201
+13206,The Musical Museum,518622,177897,Brentford High Street,Hounslow,25,Boston Manor,201
+17308,Watermans Centre,518303,177742,Brentford High Street,Hounslow,25,Boston Manor,201
+21003,Half Acre,517637,177564,Half Acre,Hounslow,25,Boston Manor,201
+14809,Brentford Station #,517286,177899,Boston Manor Road,Hounslow,25,Boston Manor,201
+15810,Challis Road,517808,178403,Ealing Road,Hounslow,25,Boston Manor,201
+16400,Bounds Green Station <>,530034,191581,Brownlow Road,Haringey,31,Bounds Green,309
+15113,Tottenhall Road,530988,191974,Green Lanes,Enfield,32,Bounds Green,309
+11612,Woodfield Way,529845,191303,Durnsford Road,Haringey,31,Bounds Green,309
+17306,Roman Road Market,536909,183638,Parnell Road,Tower Hamlets,5,Bow,404
+19803,Tredegar Road,537171,183360,Fairfield Road,Tower Hamlets,5,Bow,404
+13300,Pixley Street,536873,181427,Burdett Road,Tower Hamlets,5,Bow Common,254
+18212,Burdett Road / St Paul'S Church,536896,181681,St Paul'S Way,Tower Hamlets,5,Bow Common,254
+15801,Watts Grove,537443,181977,Devons Road,Tower Hamlets,5,Bow Common,254
+10813,Cleveland Gardens,524055,186859,Pennine Drive,Barnet,30,Brent Cross,439
+18800,Spalding Road,523419,187949,Spalding Road,Barnet,30,Brent Cross,439
+10104,Tilling Road,523069,187469,Tilling Road,Barnet,30,Brent Cross,439
+18609,Pennine Drive,523751,186543,Claremont Road,Barnet,30,Brent Cross,439
+12500,Ashley Road,535215,197158,Green Street,Enfield,32,Brimsdown,149
+16507,Mayfield Road,535774,197046,Green Street,Enfield,32,Brimsdown,149
+18003,Sherborne Avenue,535116,197495,Carterhatch Lane,Enfield,32,Brimsdown,149
+12511,Gresham Road / Brixton Police Station,531170,175699,Gresham Road,Lambeth,9,Brixton,273
+19613,Blenheim Gardens,530722,174463,Brixton Hill,Lambeth,9,Brixton,273
+19910,Villa Road,531176,175961,Brixton Road,Lambeth,9,Brixton,273
+15911,Western Road,531349,175685,Gresham Road,Lambeth,9,Brixton,273
+11604,Brixton Station Road,531511,175521,Gresham Road,Lambeth,9,Brixton,273
+17410,Kellett Road,531347,175163,Railton Road,Lambeth,9,Brixton,273
+18113,St Matthew'S Church,531031,175105,Effra Road,Lambeth,9,Brixton,273
+18002,Loughborough Park / Elveden House,531641,175048,Loughborough Park,Lambeth,9,Brixton,273
+17301,Dalberg Road / Effra Parade,531348,174689,Dalberg Road,Lambeth,9,Brixton,273
+11013,Northcote Road,532571,167119,Whitehorse Road,Croydon,20,Broad Green,226
+16513,Croydon Crematorium,530892,167427,Thornton Road,Croydon,20,Broad Green,226
+17101,Lombard Roundabout,530853,166996,Thornton Road,Croydon,20,Broad Green,226
+14804,Therapia Lane / Croydon Cemetery,530331,167154,Mitcham Road,Croydon,20,Broad Green,226
+17303,Priory Road,531168,166560,Mitcham Road,Croydon,20,Broad Green,226
+17013,Canterbury Road,531537,167010,London Road,Croydon,20,Broad Green,226
+12903,Bellwood Road,535852,175154,Ivydale Road,Southwark,8,Brockley,10
+15802,Braxfield Road,536679,175241,Brockley Road,Lewisham,7,Brockley,10
+17112,Brockley Station #,536505,175725,Brockley Road,Lewisham,7,Brockley,10
+10607,Brockill Crescent,536003,175420,Frendsbury Road,Lewisham,7,Brockley,10
+19506,Endwell Road,536360,175952,Endwell Road,Lewisham,7,Brockley,10
+13607,Freelands Road,540939,169493,Widmore Road,Bromley,19,Bromley,428
+13600,Widmore Road / Kentish Way,540580,169434,Widmore Road,Bromley,19,Bromley,428
+16402,Bromley High Street / The Mall,540348,168907,Bromley High Street,Bromley,19,Bromley,428
+17211,Highfield Drive,539661,168506,Cumberland Road,Bromley,19,Bromley,428
+17105,Hayesford Park Drive,540153,167902,Cameron Road,Bromley,19,Bromley,428
+14813,Mays Hill Road,539364,168954,Kingswood Road,Bromley,19,Bromley,428
+15913,Tylney Road,541734,168820,Page Heath Villas,Bromley,19,Bromley,428
+11104,The Avenue / Beaconsfield Road,541813,168618,The Avenue,Bromley,19,Bromley,428
+19511,Great Elms Road,541163,168302,Homesdale Road,Bromley,19,Bromley,428
+11012,Bow Church Station [Dlr],537423,182880,Bow Road,Tower Hamlets,5,Bromley-by-Bow,405
+18808,St Leonard'S Street,537838,182907,Bromley High Street,Tower Hamlets,5,Bromley-by-Bow,405
+18012,Rounton Road,537455,182580,Campbell Road,Tower Hamlets,5,Bromley-by-Bow,405
+20101,Brondesbury Station #,524770,184468,Kilburn High Road,Brent,28,Brondesbury,298
+14811,Brondesbury Park Station # / The Avenue,524156,184052,Brondesbury Park,Brent,28,Brondesbury,298
+18010,Tottenham Town Hall,533739,189444,Tottenham High Road,Haringey,31,Bruce Grove Tottenham High Road,342
+10801,Tottenham Police Station,533778,189713,Tottenham High Road,Haringey,31,Bruce Grove Tottenham High Road,342
+17011,Mount Pleasant Road,533167,189567,Philip Lane,Haringey,31,Bruce Grove Tottenham High Road,342
+16409,Scotland Green,533909,190480,Tottenham High Road,Haringey,31,Bruce Grove Tottenham High Road,342
+18705,Ladysmith Road,534012,190201,Dowsett Road,Haringey,31,Bruce Grove Tottenham High Road,342
+18812,Carlisle Road,520503,189991,Edgware Road,Barnet,30,Burnt Oak,205
+11707,Oak Gardens,520059,190428,Stag Lane,Brent,28,Burnt Oak,205
+17713,Gunter Grove,520576,190911,Watling Avenue,Barnet,30,Burnt Oak,205
+19804,Cressingham Road,520840,191021,Montrose Avenue,Barnet,30,Burnt Oak,205
+10704,Trinity Avenue / Bush Hill Park Stn #,534156,195322,Great Cambridge Road,Enfield,32,Bush Hill Park,91
+16506,Vestry Road,533283,176714,Peckham Road,Southwark,8,Camberwell,278
+10602,Valmar Road,532491,176452,Coldharbour Lane,Southwark,8,Camberwell,278
+18111,Grove Lane / Champion Park,533025,176064,Grove Lane,Southwark,8,Camberwell,278
+18204,The Blue Bridge,538299,180005,Preston'S Road,Tower Hamlets,5,Canary Wharf,437
+11608,West India Avenue,537151,180351,West India Avenue,Tower Hamlets,5,Canary Wharf,437
+18707,Admirals Way,537573,179816,Marsh Wall,Tower Hamlets,5,Canary Wharf,437
+10806,Blake Road,539717,182144,Hermit Road,Newham,17,Canning Town,244
+17200,Canning Town Bus Station,539487,181350,Canning Town Bus Station,Newham,17,Canning Town,244
+19811,Chargeable Lane,540301,182218,Barking Road,Newham,17,Canning Town,244
+18606,Star Primary School,539408,182056,Star Lane,Newham,17,Canning Town,244
+10807,Canonbury Station >Lol<,532345,185098,Grosvenor Avenue,Islington,3,Canonbury,379
+13307,Kingsley Avenue,526961,164558,Ringstead Road,Sutton,21,Carshalton,16
+17712,Pound Street,527751,164378,Pound Street,Sutton,21,Carshalton,16
+16401,Wrythe Green,527458,165174,Wrythe Lane,Sutton,21,Carshalton,16
+17206,Crichton Road,527575,163213,Stanley Park Road,Sutton,21,Carshalton,16
+14102,St John'S Road,527547,165412,Green Wrythe Lane,Sutton,21,Carshalton,16
+19502,Lonsdale Road,522743,177731,Castelnau,Richmond upon Thames,24,Castelnau,187
+18207,Hainault Road,548861,188189,Chadwell Heath High Road,Barking and Dagenham,16,Chadwell Heath,354
+21010,Haywards Close,547078,188716,Chadwell Heath Lane,Redbridge,14,Chadwell Heath,354
+14800,Weyman Road,541356,177053,Shooters Hill Road,Greenwich,6,Charlton,247
+19805,Nadine Street,541255,178186,Charlton Church Lane,Greenwich,6,Charlton,247
+18211,Elliscombe Road,541140,178132,Wellington Gardens,Greenwich,6,Charlton,247
+19905,Cheam Road / Gander Green Lane,524958,163838,Cheam Road,Sutton,21,Cheam,145
+18109,Cheam Station #,524311,163426,Station Way,Sutton,21,Cheam,145
+10709,Sydney Street / Chelsea Old Town Hall,527210,178172,Sydney Street,Kensington and Chelsea,12,Chelsea,318
+11701,Holmwood Road,517932,164361,Hook Road,Kingston upon Thames,23,Chessington,111
+19408,Chessington North Station #,518410,164093,Bridge Road,Kingston upon Thames,23,Chessington,111
+11103,Church Rise,518742,164109,Moor Lane,Kingston upon Thames,23,Chessington,111
+16505,Mansfield Road,517879,164081,Hook Road,Kingston upon Thames,23,Chessington,111
+16503,Gilders Road,519007,163918,Gilders Road,Kingston upon Thames,23,Chessington,111
+10811,Buxton Road,538904,194487,Station Road,Waltham Forest,13,Chingford,15
+13305,Chingford Green,538504,194403,The Green,Waltham Forest,13,Chingford,15
+14110,Kings Road / Friday Hill,538996,193926,King'S Road,Waltham Forest,13,Chingford,15
+19508,Victoria Park,525736,191330,Ballards Lane,Barnet,30,Church End,233
+17111,Clapham North & High Street Stns <> #,529861,175559,Clapham High Street,Lambeth,9,Clapham,358
+17208,Chatfield Road,526445,175537,York Road,Wandsworth,10,Clapham Junction,271
+17309,Queenstown Road,528468,175765,Lavender Hill,Wandsworth,10,Clapham Junction,271
+10605,Clapham Junction Station # / Grant Road,527160,175639,Grant Road,Wandsworth,10,Clapham Junction,271
+18809,Fountayne Road,534269,186997,Cazenove Road,Hackney,4,Clapton,331
+17402,Homerton Hospital,535712,185257,Homerton Grove,Hackney,4,Clapton Park,389
+21002,Peace Close,528815,195731,Bramley Road,Enfield,32,Cockfosters,27
+10107,Hillfoot Road,550094,190496,Collier Row Lane,Havering,15,Collier Row,142
+10611,Heather Close,550914,190726,Pettits Lane North,Havering,15,Collier Row,142
+18206,Campbell Close,551092,191540,Havering Road,Havering,15,Collier Row,142
+13208,Gobions Farm,549281,190970,Collier Row Road,Havering,15,Collier Row,142
+18104,Alexandra Park Road,528548,190237,Colney Hatch Lane,Haringey,31,Colney Hatch,240
+10703,Rosebery Road,529020,190488,Alexandra Park Road,Haringey,31,Colney Hatch,240
+15500,Everington Road,528084,190454,Coppetts Road,Barnet,30,Colney Hatch,240
+12508,Southampton Street / Covent Garden,530418,180720,Strand,Westminster,1,Covent Garden,444
+17004,Aldwych,530625,180948,Aldwych,Westminster,1,Covent Garden,444
+11001,High Holborn,530439,181504,High Holborn,Camden,2,Covent Garden,444
+19404,Aldwych / The Royal Courts Of Justice,530822,181068,Aldwych,Westminster,1,Covent Garden,444
+13602,Ilford Broadway,543642,186422,Ilford High Road,Redbridge,14,Cranbrook,432
+13209,Beal Road,543456,186808,Cranbrook Road,Redbridge,14,Cranbrook,432
+13304,Craneswater,509758,176966,Bath Road,Hillingdon,26,Cranford,65
+11711,Kings Gardens,557280,187682,Front Lane,Havering,15,Cranham,86
+15104,Haling Park Road,532536,163876,Brighton Road,Croydon,20,Croydon,430
+17007,St Paul'S United Reformed Church,533519,164086,Croham Road,Croydon,20,Croydon,430
+17400,East Croydon Station #  >T<,532835,165681,George Street,Croydon,20,Croydon,430
+19513,Crystal Terrace,532665,170800,Hermitage Road,Croydon,20,Crystal Palace,251
+10812,Rockmount Primary School,532856,170482,Chevening Road,Croydon,20,Crystal Palace,251
+19504,Heathway,548972,184912,Parsloes Avenue,Barking and Dagenham,16,Dagenham,184
+17408,Connor Road,548948,186117,Heathway,Barking and Dagenham,16,Dagenham,184
+10112,Wavelengths,537406,177333,Deptford Church Street,Lewisham,7,Deptford,284
+18106,Meyrick Road,522031,184788,Willesden High Road,Brent,28,Dollis Hill,369
+18600,Southall Police Station,513007,180368,Southall High Street,Ealing,27,Dormers Wells,202
+11606,Southall Broadway,512792,180313,South Road,Ealing,27,Dormers Wells,202
+18708,Grove Park Station #,540600,172069,Baring Road,Lewisham,7,Downham,180
+17005,Scarlet Road,539132,172285,Waters Road,Lewisham,7,Downham,180
+16405,Stafford Court,515936,181325,Framfield Road,Ealing,27,Drayton Green,357
+10108,The Knoll,517147,181643,Castlebar Hill,Ealing,27,Ealing,429
+12510,Chandos Avenue,517716,178991,South Ealing Road,Ealing,27,Ealing,429
+18601,Midholm,525660,189067,Falloden Way,Barnet,30,East Finchley,236
+18108,East Ham Station <>,542342,184300,High Street North,Newham,17,East Ham,346
+11106,Mortlake Cemetery,519977,176010,Clifford Avenue,Richmond upon Thames,24,East Sheen,157
+19609,Holy Trinity School,508247,191777,Rickmansworth Road,Hillingdon,26,Eastbury,46
+10111,Potter Street Hill,510648,191013,Hillside Road,Hillingdon,26,Eastbury,46
+18713,The Glen,508829,191518,Green Lane,Hillingdon,26,Eastbury,46
+14812,Gibbs Green,520691,192572,Selvage Lane,Barnet,30,Edgwarebury,204
+18008,Centre Common Road / War Memorial,544228,170310,Centre Common Road,Bromley,19,Elmstead,120
+19909,Mainridge Road,543608,171719,Green Lane,Greenwich,6,Elmstead,120
+18613,Erith Town Centre / Riverside,551454,178010,Bexley Road,Bexley,18,Erith,181
+12502,Westmoreland Avenue,553295,189309,Squirrels Heath Lane,Havering,15,Gidea Park,420
+11006,Regarder Road,546559,192252,New North Road,Redbridge,14,Grange Hill,132
+15813,Sunnycroft Road,513515,182027,Allenby Road,Ealing,27,Greenford,210
+19407,Clapton Pond,534935,185867,Lower Clapton Road,Hackney,4,Hackney,390
+19512,Powerscroft Road / Lower Clapton Road,535164,185559,Powerscroft Road,Hackney,4,Hackney,390
+11610,Fairford Way,555522,191793,Petersfield Avenue,Havering,15,Harold Hill,165
