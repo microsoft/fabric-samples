@@ -364,7 +364,7 @@
         }
       }
     },
-    "/v1/workspaces/{workspaceId}/{itemType}/{itemId}/livySessions/{livyId}/applications/{appId}/{attemptId}/logs?type=executor": {
+    "/v1/workspaces/{workspaceId}/{itemType}/{itemId}/livySessions/{livyId}/applications/{appId}/logs?type=executor": {
       "get": {
         "tags": [
           "ExecutorLog"
@@ -412,13 +412,6 @@
             "in": "path",
             "required": true,
             "type": "string"
-          },
-          {
-            "name": "attemptId",
-            "in": "path",
-            "required": false,
-            "type": "integer",
-            "format": "int32"
           },
           {
             "name": "fileName",
