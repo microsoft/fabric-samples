@@ -1,0 +1,461 @@
+swagger: '2.0'
+info:
+  version: v1
+  title: Spark Application Monitoring Public API
+host: api.fabric.microsoft.com
+schemes:
+  - https
+paths:
+  /v1/workspaces/{workspaceId}/{itemType}/{itemId}/livySessions/{livyId}/applications/{appId}/{attemptId}/logs?type=driver&meta=true:
+    get:
+      tags:
+        - DriverLog
+      summary: Get driver log metadata
+      operationId: DriverLog_Metadata
+      produces:
+        - application/json
+      parameters:
+        - name: workspaceId
+          in: path
+          description: ''
+          required: true
+          type: string
+          format: uuid
+        - name: itemType
+          in: path
+          description: ''
+          required: true
+          type: string
+          enum:
+            - notebooks
+            - sparkJobDefinitions
+            - lakehouses
+        - name: itemId
+          in: path
+          description: ''
+          required: true
+          type: string
+          format: uuid
+        - name: livyId
+          in: path
+          required: true
+          type: string
+          format: uuid
+        - name: appId
+          in: path
+          required: true
+          type: string
+        - name: attemptId
+          in: path
+          required: false
+          type: integer
+        - name: fileName
+          in: query
+          required: true
+          type: string
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/ContainerLogMeta'
+  /v1/workspaces/{workspaceId}/{itemType}/{itemId}/livySessions/{livyId}/applications/{appId}/{attemptId}/logs?type=rollingdriver&meta=true:
+    get:
+      tags:
+        - DriverLog
+      summary: Get driver rolloing log metadata
+      operationId: DriverLog_Metadata_Rolling
+      produces:
+        - application/json
+      parameters:
+        - name: workspaceId
+          in: path
+          description: ''
+          required: true
+          type: string
+          format: uuid
+        - name: itemType
+          in: path
+          description: ''
+          required: true
+          type: string
+          enum:
+            - notebooks
+            - sparkJobDefinitions
+            - lakehouses
+        - name: itemId
+          in: path
+          description: ''
+          required: true
+          type: string
+          format: uuid
+        - name: livyId
+          in: path
+          required: true
+          type: string
+          format: uuid
+        - name: appId
+          in: path
+          required: true
+          type: string
+        - name: attemptId
+          in: path
+          required: false
+          type: integer
+          format: int32
+        - name: filenamePrefix
+          in: query
+          required: false
+          type: string
+          enum:
+            - stdout
+            - stderr
+        - name: offset
+          in: query
+          required: false
+          type: integer
+          format: int32
+        - name: maxResults
+          in: query
+          required: false
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/ContainerLogMetas'
+  /v1/workspaces/{workspaceId}/{itemType}/{itemId}/livySessions/{livyId}/applications/{appId}/{attemptId}/logs?type=driver:
+    get:
+      tags:
+        - DriverLog
+      summary: Get driver log content
+      operationId: DriverLog_Content
+      produces:
+        - application/octet-stream
+        - ''
+      parameters:
+        - name: workspaceId
+          in: path
+          description: ''
+          required: true
+          type: string
+          format: uuid
+        - name: itemType
+          in: path
+          description: ''
+          required: true
+          type: string
+          enum:
+            - notebooks
+            - sparkJobDefinitions
+            - lakehouses
+        - name: itemId
+          in: path
+          description: ''
+          required: true
+          type: string
+          format: uuid
+        - name: livyId
+          in: path
+          required: true
+          type: string
+          format: uuid
+        - name: appId
+          in: path
+          required: true
+          type: string
+        - name: attemptId
+          in: path
+          required: false
+          type: integer
+          format: int32
+        - name: fileName
+          in: query
+          required: true
+          type: string
+        - name: containerId
+          in: query
+          required: false
+          type: string
+        - name: isDownload
+          in: query
+          required: false
+          type: boolean
+        - name: isPartial
+          in: query
+          required: false
+          type: boolean
+        - name: offset
+          in: query
+          required: false
+          type: integer
+          format: int64
+        - name: size
+          in: query
+          required: false
+          type: integer
+          format: int64
+      responses:
+        '200':
+          description: OK
+  /v1/workspaces/{workspaceId}/{itemType}/{itemId}/livySessions/{livyId}/applications/{appId}/{attemptId}/logs?type=executor&meta=true:
+    get:
+      tags:
+        - ExecutorLog
+      summary: Get executor log metadata
+      operationId: ExecutorLog_Metadata
+      produces:
+        - application/json
+      parameters:
+        - name: workspaceId
+          in: path
+          description: ''
+          required: true
+          type: string
+          format: uuid
+        - name: itemType
+          in: path
+          description: ''
+          required: true
+          type: string
+          enum:
+            - notebooks
+            - sparkJobDefinitions
+            - lakehouses
+        - name: itemId
+          in: path
+          description: ''
+          required: true
+          type: string
+          format: uuid
+        - name: livyId
+          in: path
+          required: true
+          type: string
+          format: uuid
+        - name: appId
+          in: path
+          required: true
+          type: string
+        - name: attemptId
+          in: path
+          required: false
+          type: integer
+          format: int32
+        - name: containerId
+          in: query
+          required: false
+          type: string
+        - name: filenamePrefix
+          in: query
+          required: false
+          type: string
+        - name: offset
+          in: query
+          required: false
+          type: integer
+          format: int32
+        - name: maxResults
+          in: query
+          required: false
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/ContainerLogMetas'
+  /v1/workspaces/{workspaceId}/{itemType}/{itemId}/livySessions/{livyId}/applications/{appId}/logs?type=executor:
+    get:
+      tags:
+        - ExecutorLog
+      summary: Get executor log content
+      operationId: ExecutorLog_Content
+      produces:
+        - application/octet-stream
+        - text/plain
+      parameters:
+        - name: workspaceId
+          in: path
+          description: ''
+          required: true
+          type: string
+          format: uuid
+        - name: itemType
+          in: path
+          description: ''
+          required: true
+          type: string
+          enum:
+            - notebooks
+            - sparkJobDefinitions
+            - lakehouses
+        - name: itemId
+          in: path
+          description: ''
+          required: true
+          type: string
+          format: uuid
+        - name: livyId
+          in: path
+          required: true
+          type: string
+          format: uuid
+        - name: appId
+          in: path
+          required: true
+          type: string
+        - name: fileName
+          in: query
+          required: true
+          type: string
+        - name: containerId
+          in: query
+          required: true
+          type: string
+        - name: size
+          in: query
+          required: false
+          type: integer
+          format: int64
+      responses:
+        '200':
+          description: OK
+  /v1/workspaces/{workspaceId}/{itemType}/{itemId}/livySessions/{livyId}/applications/none/logs?type=livy&meta=true:
+    get:
+      tags:
+        - LivyLog
+      summary: Get Livy log metadata
+      operationId: LivyLog_Metadata
+      produces:
+        - application/json
+      parameters:
+        - name: workspaceId
+          in: path
+          description: ''
+          required: true
+          type: string
+          format: uuid
+        - name: itemType
+          in: path
+          description: ''
+          required: true
+          type: string
+          enum:
+            - notebooks
+            - sparkJobDefinitions
+            - lakehouses
+        - name: itemId
+          in: path
+          description: ''
+          required: true
+          type: string
+          format: uuid
+        - name: livyId
+          in: path
+          required: true
+          type: string
+          format: uuid
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/FileMetadata'
+  /v1/workspaces/{workspaceId}/{itemType}/{itemId}/livySessions/{livyId}/applications/none/{attemptId}/logs?type=livy:
+    get:
+      tags:
+        - LivyLog
+      summary: Get Livy log content
+      operationId: LivyLog_Content
+      produces:
+        - application/octet-stream
+      parameters:
+        - name: workspaceId
+          in: path
+          description: ''
+          required: true
+          type: string
+          format: uuid
+        - name: itemType
+          in: path
+          description: ''
+          required: true
+          type: string
+          enum:
+            - notebooks
+            - sparkJobDefinitions
+            - lakehouses
+        - name: itemId
+          in: path
+          description: ''
+          required: true
+          type: string
+          format: uuid
+        - name: livyId
+          in: path
+          required: true
+          type: string
+          format: uuid
+        - name: isDownload
+          in: query
+          required: false
+          type: boolean
+        - name: isPartial
+          in: query
+          required: false
+          type: boolean
+        - name: offset
+          in: query
+          required: false
+          type: integer
+          format: int64
+        - name: size
+          in: query
+          required: false
+          type: integer
+          format: int64
+      responses:
+        '200':
+          description: OK
+definitions:
+  FileMetadata:
+    description: Metadata of a log file
+    type: object
+    properties:
+      fileName:
+        type: string
+      length:
+        format: int64
+        type: integer
+      lastModified:
+        type: string
+      creationTime:
+        type: string
+      metaData:
+        type: object
+        additionalProperties:
+          type: string
+  ContainerLogMeta:
+    description: Metadata of a log file with the corresponding container and node information
+    type: object
+    properties:
+      containerId:
+        type: string
+      nodeId:
+        type: string
+      containerLogMeta:
+        $ref: '#/definitions/FileMetadata'
+  ContainerLogMetas:
+    description: Metadata of one or more log files with the corresponding container and node information
+    type: object
+    properties:
+      containerId:
+        type: string
+      nodeId:
+        type: string
+      containerLogMeta:
+        type: array
+        items:
+          $ref: '#/definitions/FileMetadata'
