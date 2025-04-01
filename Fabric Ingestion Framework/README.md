@@ -7,9 +7,13 @@ In this folder, we provide a metadata driven ingestion framework that you can le
 
 # Key Contributors
 Winnie Li - winnieli@microsoft.com
+
 RK Iyer - raiy@microsoft.com
+
 Gyani Sinha - gyanisinha@microsoft.com
+
 Dharmendra Keshari - dhkeshar@microsoft.com
+
 
 # Implementation
 
@@ -82,7 +86,7 @@ Auditing can be performed for all the files & data wherein copy is successful an
 # Supported Ingestion Implementation
 The data sources currently available in this repository is:
 
-- ![Azure PostgreSQL DB](./PostgreSQL%20to%20Fabric%20Lakehouse/)
+- [Azure PostgreSQL DB](./PostgreSQL%20to%20Fabric%20Lakehouse/)
 
 Please refer to the folder for more details.
 
