@@ -143,32 +143,28 @@ GO
         - Audit  
         - Notification  
         - AzurePostgreSQL_To_Fabric_Lakehouse
-6. Import the PL_Audit pipeline
-- Pipeline Name: PL_Auditing_PG
-	Description: This pipeline facilitates auditing of the records ingested into data lake. Auditing includes identifying any errors or issues that may have occurred during the process, as well as reviewing performance metrics to identify areas for improvement. Below is the screenshot of the pipeline activities.
-
+6. Import the PL_Audit pipeline from pipelines folder.
+    **Pipeline Name**: PL_Auditing_PG. This pipeline facilitates auditing of the records ingested into data lake. Auditing includes identifying any errors or issues that may have occurred during the process, as well as reviewing performance metrics to identify areas for improvement. Below is the screenshot of the pipeline activities.
 
     ![image](./images/PGToFabric6.png)
-7. Import the PL_SendEmailNotification pipeline
-- Pipeline Name: PL_SendEmailNotification_PG
-   Description: This pipeline sends email/Teams notification on success or failure. This will invoke Microsoft Teams & Email activity. Below is the screenshot of the pipeline activities.
-
-
+    
+    While importing the pipeline provide connection details to Azure SQL DB used for storing metadata. After importing, make sure Connection,Database & Stored procedure name are used correctly by using 'Test connection'.
+7. Import the PL_SendEmailNotification pipeline from pipelines folder.
+    **Pipeline Name**: PL_SendEmailNotification_PG.This pipeline sends email notification on success or failure. This will invoke Email activity. Below is the screenshot of the pipeline activities.
+ 
     ![image](./images/PGToFabric7.png)
-8. Import the PL_SendTeamsNotification pipeline
-- Teams notification:
-![image](./images/PGToFabric8.png)
-9. Import the PL_DynamicIngestionPipelineFullLoad_PGSQL pipeline
+9. Import the PL_DynamicIngestionPipelineFullLoad_PGSQL pipeline from pipelines folder.
 - Pipeline Name: PL_DynamicIngestionPipelineFullLoad_PG
 - Description: This pipeline is used for full load to Lakehouse. This will invoke auditing and mail notification in case of success or failure. Below is the screenshot of the pipeline activities.
 
     ![image](./images/PGToFabric4.png)
-10. Import the PL_DynamicIngestionPipelineIncrmLoad_PGSQL pipeline
+    While importing the pipeline provide connection details to Azure SQL DB used for storing metadata, PostgreSQL DB which is the source DB. After importing, make sure Connection,Database, Workspace, Pipeline are used correctly by using 'Test connection' in all activities.
+10. Import the PL_DynamicIngestionPipelineIncrmLoad_PGSQL pipeline from pipelines folder.
 - Pipeline Name: PL_DynamicIngestionPipelineIncreLoad_PG
 - Description: This activity will iterate over all the objects fetched from the control table during incremental load. This will invoke auditing and mail notification in case of success or failure. Below is the screenshot of the pipeline activities.
 
     ![image](./images/PGToFabric5.png)
-
+    While importing the pipeline provide connection details to Azure SQL DB used for storing metadata, PostgreSQL DB which is the source DB. After importing, make sure Connection,Database, Workspace, Pipeline are used correctly by using 'Test connection' in all activities.
 11. Download the 'PostgreSQL_FullLoad_Script.sql' script and execute it on Postgresql DB.
 12. Run PL_DynamicIngestionPipelineFullLoad_PGSQL. Validate if the data is loaded into the Lakehouse.
 13. Download the 'PostgreSQL_IncrementalLoad_Script.sql' script and execute it on Postgresql DB.
