@@ -1,4 +1,5 @@
-# Data Ingestion Framework in Fabric
+# Metadata-driven Data Ingestion Framework in Fabric
+
 
 Building an effective Lakehouse begins with building a strong foundation with ingestion layer. Ingestion refers to the process of collecting, importing, and processing raw data from various sources into the data lake. Data ingestion is fundamental to the success of a data lake as it enables the consolidation, exploration, and processing of diverse and raw data. It lays the foundation for downstream analytics, machine learning, and reporting activities, providing organizations with the flexibility and agility needed to derive meaningful insights from their data. See this blog post for more details on the framework: https://blog.fabric.microsoft.com/en-us/blog/demystifying-data-ingestion-in-fabric-fundamental-components-for-ingesting-data-into-a-fabric-lakehouse-using-fabric-data-pipelines?ft=RK%20Iyer:author
 
