@@ -6,11 +6,11 @@ In this folder, we provide a metadata driven ingestion framework that you can le
 
 
 # Key Contributors
-Winnie Li
-Dharmendra Keshari
-Gyani Sinha
-RK Iyer
-Abhishek Narain
+- Winnie Li
+- Dharmendra Keshari
+- Gyani Sinha
+- RK Iyer
+- Abhishek Narain
 
 # Implementation
 
