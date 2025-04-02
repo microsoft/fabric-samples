@@ -6,15 +6,11 @@ In this folder, we provide a metadata driven ingestion framework that you can le
 
 
 # Key Contributors
-Winnie Li - winnieli@microsoft.com
-
-Dharmendra Keshari - dhkeshar@microsoft.com
-
-Gyani Sinha - gyanisinha@microsoft.com
-
-RK Iyer - raiy@microsoft.com
-
-Abhishek Narain - abnarain@microsoft.com
+Winnie Li
+Dharmendra Keshari
+Gyani Sinha
+RK Iyer
+Abhishek Narain
 
 # Implementation
 
