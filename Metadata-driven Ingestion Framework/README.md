@@ -19,14 +19,13 @@ Abhishek Narain - abnarain@microsoft.com
 # Implementation
 
 **Ingestion** can be divided in 2 types - 
-- One time Ingestion
+- **One time Ingestion**
   One time ingestion/load refers to initial ingestion of historical data to data lake.
-- Incremental ingestion
+- **Incremental ingestion**
   Post one time ingestion, incremental ingestion that only capture the new data. 
 
 # Metadata-driven Data Ingestion Framework Components
-The Metadata-driven Data Ingestion Framework Components comprises of the following components:
-![Framework outline](./PostgreSQL%20to%20Fabric%20Lakehouse/images/PGToFabric1.png)
+The Metadata-driven Data Ingestion Framework Components comprises of the following components represented using Task flow:![metdata-driven-ingestion-taskflow](./images/meta-datadriven-ingestion-taskflow.png)
 
 ## Components
 |**#**|**Component Name**  |**Purpose**  |
@@ -92,13 +91,15 @@ Auditing can be performed for all the files & data wherein copy is successful an
 The data sources currently available in this repository is:
 
 - [Azure PostgreSQL DB](./PostgreSQL%20to%20Fabric%20Lakehouse/)
-
 Please refer to the folder for more details.
 
+Note - This can be extended to other sources easily.
 
 # Supported Target Format
 The supported target formats are:
-- Lakehouse
+- Lakehouse Tables
+- Lakehouse Files
+- Datawarehouse
 
 <!-- LICENSE -->
 ## License
