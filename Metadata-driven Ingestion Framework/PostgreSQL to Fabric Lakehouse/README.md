@@ -169,4 +169,8 @@ GO
 
     ![image](./images/PGToFabric5.png)
 
+11. Download the 'PostgreSQL_FullLoad_Script.sql' script and execute it on Postgresql DB.
+12. Run PL_DynamicIngestionPipelineFullLoad_PGSQL. Validate if the data is loaded into the Lakehouse.
+13. Download the 'PostgreSQL_IncrementalLoad_Script.sql' script and execute it on Postgresql DB.
+14. Run PL_DynamicIngestionPipelineIncrmLoad_PGSQL. Validate if the incremental data is loaded into the Lakehouse.
 
