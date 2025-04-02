@@ -1,7 +1,6 @@
 # Metadata-driven Data Ingestion Framework in Fabric
 
-
-Building an effective Lakehouse begins with building a strong foundation with ingestion layer. Ingestion refers to the process of collecting, importing, and processing raw data from various sources into the data lake. Data ingestion is fundamental to the success of a data lake as it enables the consolidation, exploration, and processing of diverse and raw data. It lays the foundation for downstream analytics, machine learning, and reporting activities, providing organizations with the flexibility and agility needed to derive meaningful insights from their data. See this blog post for more details on the framework: https://blog.fabric.microsoft.com/en-us/blog/demystifying-data-ingestion-in-fabric-fundamental-components-for-ingesting-data-into-a-fabric-lakehouse-using-fabric-data-pipelines?ft=RK%20Iyer:author
+Building an effective Lakehouse begins with building a strong foundation with ingestion layer. Ingestion refers to the process of collecting, importing, and processing raw data from various sources into the data lake. Data ingestion is fundamental to the success of a data lake as it enables the consolidation, exploration, and processing of diverse and raw data. It lays the foundation for downstream analytics, machine learning, and reporting activities, providing organizations with the flexibility and agility needed to derive meaningful insights from their data. See this [blog](https://blog.fabric.microsoft.com/en-us/blog/demystifying-data-ingestion-in-fabric-fundamental-components-for-ingesting-data-into-a-fabric-lakehouse-using-fabric-data-pipelines?ft=RK%20Iyer:author) post for more details on the framework.
 
 In this folder, we provide a metadata driven ingestion framework that you can leverage to easily manage the ingestion process and audit the results. 
 
@@ -9,20 +8,25 @@ In this folder, we provide a metadata driven ingestion framework that you can le
 # Key Contributors
 Winnie Li - winnieli@microsoft.com
 
-RK Iyer - raiy@microsoft.com
+Dharmendra Keshari - dhkeshar@microsoft.com
 
 Gyani Sinha - gyanisinha@microsoft.com
 
-Dharmendra Keshari - dhkeshar@microsoft.com
+RK Iyer - raiy@microsoft.com
 
+Abhishek Narain - abnarain@microsoft.com
 
 # Implementation
 
 **Ingestion** can be divided in 2 types - 
-- ## One time Ingestion
+- One time Ingestion
   One time ingestion/load refers to initial ingestion of historical data to data lake.
-- ## Incremental ingestion
+- Incremental ingestion
   Post one time ingestion, incremental ingestion that only capture the new data. 
+
+# Metadata-driven Data Ingestion Framework Components
+The Metadata-driven Data Ingestion Framework Components comprises of the following components:
+![Framework outline](./PostgreSQL%20to%20Fabric%20Lakehouse/images/PGToFabric1.png)
 
 ## Components
 |**#**|**Component Name**  |**Purpose**  |
