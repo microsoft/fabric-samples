@@ -8,7 +8,7 @@ This folder provides a simple-to-use metadata-driven framework to ingest data ta
 - Microsoft Azure Tenant with an active subscription 
 - Fabric Capacity – F2 / Trial
 - [Azure SQL Database](https://learn.microsoft.com/en-us/training/modules/provision-azure-sql-db/3-create-your-database) (for storing the metadata)
-- [Azure PostreSQL for flexible server] (https://learn.microsoft.com/en-us/azure/postgresql/flexible-server/quickstart-create-server?tabs=portal-create-flexible%2Cportal-get-connection%2Cportal-delete-resources)
+- [Azure PostreSQL for flexible server](https://learn.microsoft.com/en-us/azure/postgresql/flexible-server/quickstart-create-server?tabs=portal-create-flexible%2Cportal-get-connection%2Cportal-delete-resources)
 
 ### Implementation
 For step by step implementation instructions, please refer to the step-by step guide document.

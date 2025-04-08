@@ -26,7 +26,7 @@ The Metadata-driven Data Ingestion Framework Components comprises of the followi
 ## Components
 |**#**|**Component Name**  |**Purpose**  |
 |--|--|--|
-| 1 |Control Table | Control table is used to control and select an item from the source system to be moved into a data lake.|
+| 1 |Control Table | The control table manages the selection and ingestion of specific items from the source system into the data lake.|
 | 2 | Data Ingestion| Data Copy component is used to copy the data from source system to data lake. Typically, same format is used for ingesting data from Source to Bronze Layer/Staging layer but we have the flexibility to change the source type during ingestion.|
 | 3 | Auditing |Auditing component is used to audit the records ingested into data lake. Auditing includes identifying any errors or issues that may have occurred during the process, as well as reviewing performance metrics to identify areas for improvement|
 | 4 | Notification | Notification component is used to notify in case of success or failure events. This is super critical to ensure that the operation team is notified during all critical events.|
