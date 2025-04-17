@@ -65,8 +65,8 @@ Auditing can be performed for all the files & data wherein copy is successful an
 |Column Name  | Type | Purpose |
 |--|--|--|
 | source_type (*)| nvarchar(20) | Type of source (Blob,ADLS Gen2,Database,AWS S3)  |
-| event_run_id (*)| nvarchar(50) | Captured from Pipeline run id (ADF System variable) e.g. 36ff2fde-dd85-4b1f-982e-651530df7c90. This will be JobId in case of Databricks.  |
-| event_activity_run_id  | nvarchar(50) | Captured from Activity run id (ADF System variable) 36ff2fde-dd85-4b1f-982e-651530df7c90 |
+| event_run_id (*)| nvarchar(50) | Captured from Pipeline run id (ADF System variable) e.g. 0000aaaa-11bb-cccc-dd22-eeeeee333333. This will be JobId in case of Databricks.  |
+| event_activity_run_id  | nvarchar(50) | Captured from Activity run id (ADF System variable) 0000aaaa-11bb-cccc-dd22-eeeeee333333 |
 | item_name (*) | nvarchar(150) | Actual Item Captured from source e.g. For files Container/foldername  & for Database it will be Database.schemaname.tablename  |
 | data_read (*) | nvarchar(50) | Total amount of data retrieved from source data store, including data copied in this run and data resumed from the last failed run.   |
 | data_written (*)| nvarchar(50) | The actual amount of data written/committed to the sink. The size may be different from dataRead size, as it relates to how each data store stores the data. |
