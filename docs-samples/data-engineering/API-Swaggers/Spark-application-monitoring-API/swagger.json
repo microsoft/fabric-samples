@@ -969,7 +969,7 @@
           "format": "int64"
         },
         "capacityExceeded": {
-          "description": "True if the limit of 10k tasks exceeded. When true, all properties in data are empty",
+          "description": "True if the limitation of 10k tasks exceeds. When true, all properties in data are empty",
           "format": "boolean"
         },
         "idleTime": {
