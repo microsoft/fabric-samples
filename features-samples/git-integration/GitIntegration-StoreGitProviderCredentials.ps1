@@ -123,7 +123,7 @@ try {
 
     $connectionsUrl = "$global:baseUrl/connections"
 
-    $gitHubPATConnectionBody = $gitHubPATConnection | ConvertTo-Json
+    $gitHubPATConnectionBody = $gitHubPATConnection | ConvertTo-Json -Depth 10
 
     $response = Invoke-RestMethod -Headers $global:fabricHeaders -Uri $connectionsUrl -Method POST -Body $gitHubPATConnectionBody
 
