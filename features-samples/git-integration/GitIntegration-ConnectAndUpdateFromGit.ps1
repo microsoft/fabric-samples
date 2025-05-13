@@ -40,8 +40,8 @@ $gitHubDetails = @{
     directoryName = "<DIRECTORY NAME>"
 }
 
-# Relevant for GitHub authentication
-$connectionName = "<CONNECTION Name>" # Replace with the connection display name that stores the gitProvider credentials (Required for GitHub)
+# Relevant for Configured Connection authentication
+$connectionName = "<CONNECTION Name>" # Replace with the connection display name that stores the gitProvider credentials (Required for GitHub. For ADO it is required only when using ConfiguredConnection)
 
 $gitProviderDetails = @{} # Replace with specific Git provider, $azureDevOpsDetails or $gitHubDetails
 
@@ -183,8 +183,27 @@ try {
     $connectToGitBody = @{}
 
     if ($gitProviderDetails.GitProviderType -eq "AzureDevOps") {
+        #Leave only one of the following two (delete the other one):
+        # 1. Automatic (SSO)
         $connectToGitBody = @{
-            gitProviderDetails =$gitProviderDetails
+            gitProviderDetails = $gitProviderDetails
+        } | ConvertTo-Json
+
+        # 2. ConfiguredConnection
+        $connection = GetConnectionByName $connectionName
+
+        # Verify the existence of the requested connection
+    	if(!$connection) {
+    	  Write-Host "A connection with the requested name was not found." -ForegroundColor Red
+    	  return
+    	}
+        
+        $connectToGitBody = @{
+            gitProviderDetails = $gitProviderDetails
+            myGitCredentials = @{
+                source = "ConfiguredConnection"
+                connectionId = $connection.id
+            }
         } | ConvertTo-Json
     }
 

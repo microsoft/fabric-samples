@@ -30,12 +30,39 @@ $gitHubPATConnection = @{
     }
 }
 
+# Connection with ServicePrincipal details for AzureDevOpsSourceControl
+$adoSPConnection = @{
+    connectivityType = "ShareableCloud"
+    displayName = "<CONNECTION NAME>"
+    connectionDetails = @{
+        type = "AzureDevOpsSourceControl"
+        creationMethod = "AzureDevOpsSourceControl.Contents"
+        parameters = @(
+            @{
+                dataType = "Text"
+                name = "url"
+                value = "<Repo url in Azure DevOps>"
+            }
+        )
+    }
+    credentialDetails = @{
+        credentials = @{
+            credentialType = "ServicePrincipal"
+            tenantId = "<SP tenant (directory) id (Guid)>"
+            servicePrincipalClientId = "<SP APP (clint) id (Guid)>"
+            servicePrincipalSecret = "<SP Secret>"
+        }
+    }
+}
+
+#Note: AzureDevOps for UserPrincipal is not supported (since it requires interactive OAuth2)
 $principalType = "<PRINCIPAL TYPE>" # Choose either "UserPrincipal" or "ServicePrincipal"
 
 # Relevant for ServicePrincipal
 $clientId = "<CLIENT ID>"                   #The application (client) ID of the service principal
 $tenantId = "<TENANT ID>"                   #The directory (tenant) ID of the service principal
 $servicePrincipalSecret = "<SECRET VALUE>"  #The secret value of the service principal
+$connection = $gitHubPATConnection          # Choose either "$gitHubPATConnection" or "$adoSPConnection"
 
 # End Parameters =======================================
 
@@ -123,9 +150,9 @@ try {
 
     $connectionsUrl = "$global:baseUrl/connections"
 
-    $gitHubPATConnectionBody = $gitHubPATConnection | ConvertTo-Json
+    $connectionBody = $connection | ConvertTo-Json -Depth 10
 
-    $response = Invoke-RestMethod -Headers $global:fabricHeaders -Uri $connectionsUrl -Method POST -Body $gitHubPATConnectionBody
+    $response = Invoke-RestMethod -Headers $global:fabricHeaders -Uri $connectionsUrl -Method POST -Body $connectionBody
 
     Write-Host "Connection created successfully! Connection ID: $($response.id)" -ForegroundColor Green
 
