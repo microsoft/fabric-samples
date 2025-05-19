@@ -1,0 +1,197 @@
+Stop_Code,Stop_Name,Latitude,Longitude,Road_Name,Borough,Borough_ID,Suggested_Locality,Locality_ID
+10050,Tomswood Hill,51.52453107,0.033785409,Fencepiece Road,Redbridge,14,Barkingside Fairlop,313
+10051,Wanstead Lane,51.42179433,-0.200332542,The Drive,Redbridge,14,Redbridge,353
+10052,Quex Road,51.47761039,-0.453824081,Quex Road,Camden,2,Kilburn,299
+10053,Northwold Road / Stoke Newington Common,51.34395181,-0.313232429,Northwold Road,Hackney,4,Stoke Newington,380
+10054,Gladstone Avenue,51.43084717,0.073216237,High Street North,Newham,17,East Ham,346
+10055,Kenmore Road,51.52939454,-0.222877044,Streatfield Road,Harrow,29,Queensbury,18
+10056,Duncombe Hill,51.64532069,0.221326702,Brockley Rise,Lewisham,7,Honor Oak,274
+10057,Chatfield Road,51.40406512,-0.075595499,York Road,Wandsworth,10,Clapham Junction,271
+10058,Danemead Grove,51.54638936,-0.243414974,Pett's Hill,Ealing,27,Northolt Park,166
+10059,Hesa Road,51.43810778,0.223102858,Coldharbour Lane,Hillingdon,26,Hayes,29
+10060,Salisbury Road,51.55632173,-0.285417795,Brentwood Road,Havering,15,Gidea Park,420
+10061,Muswell Hill,51.56393898,-0.035488481,Muswell Hill Broadway,Haringey,31,Fortis Green,417
+10062,Emmanuel Parish Church,51.30542986,0.054629229,Lea Bridge Road,Waltham Forest,13,Lea Bridge,343
+10063,Bellegrove Road / Welling Way,51.66295933,-0.505913069,Bellegrove Road,Bexley,18,Welling,243
+10100,Brewhouse Lane,51.33463448,-0.38751628,Putney Bridge Road,Wandsworth,10,Putney,397
+10101,Grange Wood,51.67194692,-0.144575284,Hurst Road,Bexley,18,Bexley,217
+10102,Wallington Station #,51.28369725,0.063046462,Railway Approach Turning Circle,Sutton,21,Wallington,256
+10103,Heston Health Centre,51.50928913,-0.142203357,Cranford Lane,Hounslow,25,Heston,40
+10104,Chambers Road,51.44382474,-0.329838897,Parkhurst Road,Islington,3,Holloway,333
+10105,Windrush Lane,51.3351383,-0.083240489,Perry Vale,Lewisham,7,Forest Hill,8
+10106,Carlton Road,51.41440806,0.104691057,Elm Road,Bexley,18,Sidcup,216
+10107,Walthamstow Market,51.64748896,0.103735482,Hoe Street,Waltham Forest,13,Blackhorse Road,376
+10108,Pratt Walk,51.50898653,-0.040389451,Lambeth Road,Lambeth,9,Lambeth,394
+10109,Orchard Road / Griffin Road,51.34063344,-0.268835904,Orchard Road,Greenwich,6,Plumstead,264
+10110,Hornsey Lane,51.44492586,0.040377595,Stanhope Road,Haringey,31,Highgate Village,302
+10111,Shortlands Road,51.4679691,0.183410652,Lea Bridge Road,Waltham Forest,13,Lea Bridge,343
+10112,Farm Road,51.63056414,-0.373390687,Hale Lane,Barnet,30,Edgwarebury,204
+10113,The Royal Albert,51.42259423,-0.312765797,Lower Road,Bromley,19,Orpington,188
+10150,Breakspear Road,51.2924984,-0.313294221,Bury Street,Hillingdon,26,Ruislip,412
+10151,Plumstead Common Road / Erindale Terrace,51.59696876,-0.257458753,Plumstead Common Road,Greenwich,6,Plumstead,264
+10152,Ham Parade,51.36789645,-0.123126778,Richmond Road,Richmond upon Thames,24,Ham,83
+10153,Repton Avenue,51.50298786,-0.35179449,Main Road,Havering,15,Gidea Park,420
+10154,Cheam Broadway,51.57656864,0.115863413,Ewell Road,Sutton,21,Cheam,145
+10155,Roehampton University / Main Entrance,51.55872477,-0.355214909,Roehampton Lane,Wandsworth,10,Roehampton,1
+10156,Deans Lane,51.64616656,0.247598575,Deansbrook Road,Barnet,30,Edgwarebury,204
+10157,Ivers Way,51.50322786,0.070234989,Headley Drive,Croydon,20,Addington,409
+10158,Church Crescent,51.64522677,0.192495547,Church Crescent,Hackney,4,London Fields,388
+10159,Crystal Palace Road,51.34409987,-0.22484039,Whateley Road,Southwark,8,East Dulwich,279
+10160,St Christopher'S Hospice,51.40621959,-0.179656651,Lawrie Park Road,Lewisham,7,Upper Sydenham,252
+10161,Southborough Road / Bickley Station #,51.51039031,-0.141281615,Bickley Park Road,Bromley,19,Bickley,160
+10162,London Wall,51.53387073,-0.504694528,Moorgate,City of London,0,The City,448
+10163,Canonbury Square,51.3881559,0.255982278,Canonbury Road,Islington,3,Islington,378
+10200,Grasmere Gardens,51.61074306,0.197186846,Woodford Avenue,Redbridge,14,Redbridge,353
+10201,Stratton Road,51.665429,0.012356435,Dagnam Park Drive,Havering,15,Harold Hill,165
+10202,Burnt Oak Broadway,51.47718716,0.08848689,Burnt Oak Broadway,Barnet,30,Burnt Oak,205
+10203,White Hart Lane Station #,51.42534749,0.138836525,White Hart Lane,Haringey,31,Tottenham,310
+10204,Taunton Lane,51.38168814,0.332980437,Waddington Avenue,Croydon,20,Old Coulsdon,54
+10205,Tudor Road,51.33441774,-0.298954719,Pinner Hill Road,Harrow,29,Pinner Green,158
+10206,The Catford Broadway,51.56119021,-0.097569439,Rushey Green,Lewisham,7,Ladywell,266
+10207,Banstead Road South / Downs Road,51.37535346,-0.130706776,Banstead Road South,Sutton,21,Belmont,38
+10208,Beckenham Hill Road / Primrose Close,51.38828787,-0.261957985,Beckenham Hill Road,Lewisham,7,Beckenham Hill,265
+10209,Ickburgh School,51.63854681,-0.364982645,Kenworthy Road,Hackney,4,Homerton,349
+10210,Vicarage Way,51.49904614,-0.335484697,Imperial Drive,Harrow,29,Rayners Lane,208
+10211,Headstone Lane Station #,51.56014098,-0.015268637,Headstone Lane,Harrow,29,Harrow Weald,206
+10212,Haldan Road,51.39336942,-0.315043708,Winchester Road,Waltham Forest,13,Highams Park Hale End,92
+10213,Great West Road / Renfrew Road,51.52339193,0.10399553,Bath Road,Hounslow,25,Hounslow,426
+10250,Lower Edmonton School,51.45165127,-0.221915522,Church Street,Enfield,32,Winchmore Hill,90
+10251,Bullsmoor Lane / Mollison Avenue,51.60457506,0.015085282,Hertford Road,Enfield,32,Waltham Cross,127
+10252,Gloucester Road,51.31207358,0.294534937,Stanley Road,Richmond upon Thames,24,Fulwell,190
+10253,Palmers Green / The Triangle,51.50483634,0.169412913,Green Lanes,Enfield,32,Palmers Green,21
+10254,Stepney Green,51.63523258,-0.409238348,Mile End Road,Tower Hamlets,5,Stepney,401
+10255,Telford Road,51.40640806,-0.006462505,Dormer'S Wells Lane,Ealing,27,Dormers Wells,202
+10256,Ardoch Road,51.51282879,-0.284735108,Torridon Road,Lewisham,7,Ladywell,266
+10257,Douglas Road,51.30677805,0.213219108,Thornhill Road,Kingston upon Thames,23,Tolworth,112
+10258,Clapham Junction / The Falcon,51.39749763,-0.245839651,St John'S Road,Wandsworth,10,Clapham Junction,271
+10259,Kings Road,51.46821273,0.165051636,Upper Richmond Road West,Richmond upon Thames,24,East Sheen,157
+10260,Nonsuch Park,51.49296513,0.217361735,Ewell Road,Sutton,21,Cheam,145
+10261,North Finchley Bus Station,51.64392662,-0.482345442,Kingsway,Barnet,30,Woodside Park,235
+10262,South Kensington Museums,51.46163107,0.001867308,Exhibition Road,Kensington and Chelsea,12,South Kensington,320
+10263,Claybury Broadway,51.65354676,-0.386969454,Woodford Avenue,Redbridge,14,Barkingside Fairlop,313
+10300,North Cheam / Queen Victoria,51.34312984,0.330985997,London Road,Sutton,21,North Cheam,172
+10301,Well Hall Road / Dunblane Road,51.50480176,-0.478459768,Well Hall Road,Greenwich,6,Eltham,245
+10302,Martindale Road,51.67519709,-0.485335802,Staines Road,Hounslow,25,Hounslow,426
+10303,Harefield Library,51.67882051,0.247329729,Park Lane,Hillingdon,26,Harefield,74
+10304,Cavalry Barracks,51.60935581,-0.451959876,Beavers Lane,Hounslow,25,Hounslow,426
+10305,Wickham Court Road,51.63692066,0.078333832,Wickham Court Road,Bromley,19,Spring Park,152
+10306,Peter Hills School,51.67229704,0.180952063,Salter Road,Southwark,8,Rotherhithe,185
+10307,Doubletree London Docklands,51.56708158,0.160069896,Rotherhithe Street,Southwark,8,Rotherhithe,185
+10308,Whalebone Lane North,51.57691316,-0.310268676,Rose Lane,Barking and Dagenham,16,Chadwell Heath,354
+10309,Hollybush Walk,51.37079338,-0.093864514,Somerleyton Road,Lambeth,9,Brixton,273
+10310,Stanley Avenue,51.59328899,0.271335647,Ealing Road,Brent,28,Wembley,231
+10311,Sury Basin,51.61925427,-0.419245583,Sury Basin,Kingston upon Thames,23,Kingston upon Thames,433
+10312,Newham Town Hall,51.63925799,-0.171410307,High Street South,Newham,17,East Ham,346
+10313,Belgrave Close,51.58830755,-0.070577095,Sandway Road,Bromley,19,St Mary Cray,452
+10350,Coombe Girls School,51.52061882,-0.032791881,Clarence Avenue,Kingston upon Thames,23,New Malden,194
+10351,Safari Cinema,51.6078791,-0.371195398,Station Road,Harrow,29,Harrow,424
+10352,Blaney Crescent,51.58768467,-0.45525289,Folkestone Road,Newham,17,Gooseley,453
+10353,Meadow Way,51.50821292,-0.310933062,Field End Road,Hillingdon,26,Eastcote Village,137
+10354,The Grove,51.29473349,0.248251918,Great Eastern Road,Newham,17,Stratford,438
+10355,The Glade / Keston Avenue,51.29794431,-0.181783006,The Glade,Croydon,20,Old Coulsdon,54
+10356,Kingsway / Holborn Station <>,51.34349836,-0.224128381,Kingsway,Camden,2,Covent Garden,444
+10357,Broomfield Street,51.56425194,-0.40389086,Upper North Street,Tower Hamlets,5,Poplar,253
+10358,Malden Road,51.4196683,0.092294241,Malden Road,Camden,2,Gospel Oak,335
+10359,Parkway,51.28812011,-0.440843557,Delancey Street,Camden,2,Primrose Hill,336
+10360,Woodlands Road,51.66647324,-0.206814028,Wood Street,Waltham Forest,13,Upper Walthamstow Wood Street,311
+10361,Raleigh Gardens,51.53286494,0.00751698,Raleigh Gardens,Merton,22,Mitcham,219
+10362,Whetstone Police Station,51.44435777,0.180352448,Friern Barnet Lane,Barnet,30,Oakleigh Park,239
+10363,Brettenham Road,51.50765526,-0.0529426,Chingford Road,Waltham Forest,13,Blackhorse Road,376
+10400,St Augustine'S Road,51.38830771,0.150522693,Abbey Road,Bexley,18,Belvedere,66
+10401,Lambeth Palace,51.33667589,0.019785887,Lambeth Road,Lambeth,9,Lambeth,394
+10402,Cassilda Road,51.54044923,-0.310589257,Basildon Road,Greenwich,6,Abbey Wood,263
+10403,Felmingham Road,51.46675598,-0.013776907,Marlow Road,Bromley,19,Birkbeck,267
+10404,Albury Close,51.57026212,-0.20653645,Broad Lane,Richmond upon Thames,24,Hampton,41
+10405,Mount Vernon Hospital,51.53715469,-0.41162132,Private Road In Mount Vernon Hospital Grounds,Hillingdon,26,Eastbury,46
+10406,St Dunstan'S Hill,51.49579184,-0.254370017,Cheam Road,Sutton,21,Cheam,145
+10407,Frankfurt Road,51.63564843,0.271830637,Herne Hill,Southwark,8,Herne Hill,276
+10408,Duke Of York Square,51.56878048,-0.276329376,King'S Road,Kensington and Chelsea,12,Chelsea,318
+10409,Carfax Road,51.36643048,-0.340518242,Elm Park Avenue,Havering,15,Elm Park,59
+10410,Bow Church,51.52526287,-0.2440073,Bow Road,Tower Hamlets,5,Bromley-by-Bow,405
+10411,Trelawney Road,51.33276789,0.275049772,New North Road,Redbridge,14,Hainault,131
+10412,Battersea High Street,51.28993115,0.29754232,Falcon Road,Wandsworth,10,Clapham Junction,271
+10413,North Cheam / Sainsbury'S,51.35407641,0.211507375,London Road,Sutton,21,North Cheam,172
+10450,Whipps Cross / Wood Street,51.36854613,0.264373893,Lea Bridge Road,Waltham Forest,13,Upper Walthamstow Wood Street,311
+10451,Mount View Road,51.66789245,-0.381336225,Ferme Park Road,Haringey,31,Stroud Green,334
+10452,Sylvan Hill,51.45543314,-0.151060302,Church Road,Croydon,20,Crystal Palace,251
+10453,Arrowsmith Road,51.5066063,-0.362763797,The Lowe,Redbridge,14,Grange Hill,132
+10454,Waterloo Station / Tenison Way <> #,51.46101529,0.109255758,Tenison Way Bus Station,Lambeth,9,Waterloo,361
+10455,Wimbledon Magistrates Court,51.40414911,-0.040913994,Alexandra Road,Merton,22,Wimbledon,218
+10456,Sam Philip Recreation Ground,51.33543131,0.289390163,Shepiston Lane,Hillingdon,26,Harlington,33
+10457,Ilford Hill,51.30969285,0.211747299,Ilford Hill,Redbridge,14,Cranbrook,432
+10458,Havering Green,51.28023438,-0.400312775,North Road,Havering,15,Havering-atte-Bower,125
+10459,Hickman Avenue,51.34049265,0.201683747,Larkshall Road,Waltham Forest,13,Highams Park Hale End,92
+10460,Duncrievie Road,51.36210485,-0.504307756,Hither Green Lane,Lewisham,7,Hither Green,128
+10461,Darcy Road,51.35427973,0.112363961,Stanford Road,Merton,22,Norbury,225
+10462,Hillingdon Station <>,51.44978718,-0.153948834,Hillingdon Station Forecourt,Hillingdon,26,Hillingdon,51
+10463,Randell'S Road,51.5913132,-0.327822213,York Way,Islington,3,Kings Cross,338
+10500,Warwick Road / University Of West London,51.3258282,0.079416149,St Mary'S Road,Ealing,27,Ealing,429
+10501,North Finchley High Road,51.58585561,0.037496833,Woodhouse Road,Barnet,30,Woodside Park,235
+10502,Medfield Street,51.36349622,0.18862687,Medfield Street,Wandsworth,10,Roehampton,1
+10503,Surbiton Station #,51.63016447,0.314514568,Victoria Road,Kingston upon Thames,23,Berrylands,189
+10504,Hanover Park,51.56660748,-0.453905262,Rye Lane,Southwark,8,Peckham,281
+10505,Ye Olde Cherry Tree,51.39136303,0.178188436,The Green,Enfield,32,Southgate,260
+10506,Cressida Road,51.46198046,-0.264328166,St John'S Way,Islington,3,Holloway,333
+10507,East Finchley Cemetery,51.4184507,-0.311926191,East End Road,Barnet,30,East Finchley,236
+10508,Brook Street,51.40412093,-0.036422166,Erith Road,Bexley,18,Erith,181
+10509,Sidmouth Road,51.46951663,0.174212052,Willesden Lane,Brent,28,Willesden Green,370
+10510,Swakeleys Drive,51.43179811,0.21761699,Long Lane,Hillingdon,26,Ickenham,413
+10511,Cheltenham Road,51.58463704,0.062368851,Repton Road,Bromley,19,Chelsfield,115
+10512,Stanborough Road,51.47200301,-0.158920517,Bridge Road,Hounslow,25,Hounslow,426
+10513,Adelphi Way,51.410535,-0.054688617,Adelphi Way,Hillingdon,26,Hillingdon,51
+10550,Wilmot Street,51.50685879,-0.213191672,Bethnal Green Road,Tower Hamlets,5,Bethnal Green,402
+10551,St Mary'S Church / Putney Pier >R<,51.66091947,0.134518651,Putney Bridge,Wandsworth,10,Putney,397
+10552,Glyn Road,51.66288316,-0.200998577,Homerton High Street,Hackney,4,Clapton Park,389
+10553,Coventry Road,51.654125,0.127976707,Cranbrook Road,Redbridge,14,Cranbrook,432
+10554,Smith Close,51.53864747,-0.143321826,Salter Road,Southwark,8,Rotherhithe,185
+10555,Fentiman Road,51.59551334,-0.109564966,Clapham Road,Lambeth,9,Oval Kennington,393
+10556,Bodiam Way,51.55753349,-0.410585681,Bodiam Way,Brent,28,Hanger Hill,213
+10557,Cromwell Avenue,51.47558286,-0.280871399,Masons Hill,Bromley,19,Bromley,428
+10558,Morley Crescent West,51.37123448,0.023422852,Streatfield Road,Harrow,29,Harrow Weald,206
+10559,Rosslyn Hill,51.45953843,0.241324074,Pond Street,Camden,2,Hampstead,294
+10560,North Cheam Sports Club,51.49264798,-0.422750294,London Road,Sutton,21,North Cheam,172
+10561,Rennets Wood Road,51.37692563,-0.434415261,Bexley Road,Greenwich,6,Avery HIll,88
+10562,Shakespeare Road,51.66846273,-0.306688477,Hammers Lane,Barnet,30,Mill Hill,414
+10563,Alexandra Road,51.49430601,-0.352179999,South End Road,Havering,15,South Hornchurch,58
+10600,Grosvenor Road,51.59077099,-0.131631047,West Ealing Broadway,Ealing,27,Ealing,429
+10601,Eden Street,51.45409437,0.202854031,Eden Street,Kingston upon Thames,23,Kingston upon Thames,433
+10602,Effra Parade,51.42196982,0.282510979,Railton Road,Lambeth,9,Brixton,273
+10603,Linkfield Road,51.52748915,-0.266915863,London Road,Hounslow,25,Isleworth,178
+10604,Beecroft Road,51.32862517,-0.1060028,Brockley Road,Lewisham,7,Crofton Park,275
+10605,Elmers End / Tesco,51.67357487,0.216701806,Croydon Road,Bromley,19,Elmers End,411
+10606,Eastman Dental Hospital,51.31146398,-0.432082094,Gray'S Inn Road,Camden,2,Somers Town,441
+10607,Pinner Station <>,51.41470656,-0.050872271,Bridge Street,Harrow,29,Pinner Green,158
+10608,Barkantine Clinic / Hutchings Street,51.66449112,0.27932829,Westferry Road,Tower Hamlets,5,Millwall,14
+10609,Blueberry Gardens,51.4463048,0.159120086,Rutherwick Rise,Croydon,20,Smitham Coulsdon,53
+10610,Horncastle Road,51.31248199,-0.22877167,Alnwick Road,Greenwich,6,Hither Green,128
+10611,Kneller Hall,51.58394441,0.225914861,Kneller Road,Richmond upon Thames,24,Whitton,146
+10612,Burnley Road,51.43204123,0.035273424,Dudden Hill Lane,Brent,28,Dollis Hill,369
+10613,Junction Road,51.35760964,-0.423646952,Junction Road,Islington,3,Gospel Oak,335
+10650,Deptford High Street,51.32835768,0.271937032,Evelyn Street,Lewisham,7,Deptford,284
+10651,Durlston Road,51.38068447,0.272795233,Richmond Road,Kingston upon Thames,23,Kingston upon Thames,433
+10652,Garden Court,51.46921587,-0.484899923,Hanworth Road,Richmond upon Thames,24,Hanworth,82
+10653,Ellerslie Road,51.44117552,0.124843944,Bloemfontein Road,Hammersmith and Fulham,11,Shepherd's Bush,435
+10654,Richmond Station # <>,51.31666597,-0.291755134,The Quadrant,Richmond upon Thames,24,Richmond,416
+10655,Caledonian Road / Camden Road,51.58774796,-0.335328796,Caledonian Road,Islington,3,Holloway,333
+10656,Park Road,51.53111775,-0.028162798,Uxbridge Road,Hillingdon,26,Hayes,29
+10657,King Charles Road,51.60360713,-0.132245883,Ewell Road,Kingston upon Thames,23,Tolworth,112
+10658,Ealing Broadway Station <> #,51.38020164,0.314460923,The Broadway,Ealing,27,Ealing,429
+10659,Villa Road,51.5691217,0.032738544,Brixton Road,Lambeth,9,Brixton,273
+10660,Alston Road,51.50704846,0.120336628,St Albans Road,Barnet,30,Monken Hadley,410
+10661,Dore Gardens,51.38964158,-0.314028089,St Helier Avenue,Merton,22,Rosehill St Helier,174
+10662,Trinity Avenue,51.58101572,0.041608456,East End Road,Barnet,30,East Finchley,236
+10663,Mossford Lane,51.35987699,-0.349118812,Fullwell Avenue,Redbridge,14,Barkingside Fairlop,313
+10700,Monmouth Road,51.35667198,-0.136233464,Hertford Road,Enfield,32,Lower Edmonton,306
+10701,Peckham Post Office,51.45767275,-0.311162151,Peckham High Street,Southwark,8,Peckham,281
+10702,Brockill Crescent,51.65319836,0.114152046,Frendsbury Road,Lewisham,7,Brockley,10
+10703,Denehurst Gardens,51.3624843,-0.267913199,Uxbridge Road,Ealing,27,Acton,288
+10704,Goodmayes Road / Goodmayes Station#,51.33065825,-0.38018958,Seven Kings High Road,Redbridge,14,Goodmayes,367
+10705,Rosslyn Crescent,51.3662873,-0.345509951,East Lane,Brent,28,North Wembley,55
+10706,Waxwell Lane,51.39421674,-0.415708878,Uxbridge Road,Harrow,29,Pinner Green,158
+10707,The Parkway,51.40234523,-0.485081061,Great South-West Road,Hounslow,25,Cranford,65
+10708,Grove Tavern,51.64182674,-0.225163203,Lordship Lane,Southwark,8,East Dulwich,279
+10709,Rushden Gardens,51.55562203,-0.027135314,Engel Park,Barnet,30,Mill Hill,414
+10710,Hounslow West Station <>,51.3037484,-0.411937009,Hounslow West Station Forecourt,Hounslow,25,Hounslow,426
+10711,Angus Gardens,51.54032507,0.104382967,Lanacre Avenue,Barnet,30,Burnt Oak,205
+10712,Fortismere Avenue,51.31472337,0.294670019,Fortis Green,Haringey,31,Fortis Green,417
+10713,Croxley Green,51.38723081,-0.028811304,Midfield Way,Bromley,19,St Paul's Cray,50
