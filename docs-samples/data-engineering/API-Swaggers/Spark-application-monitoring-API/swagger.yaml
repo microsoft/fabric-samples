@@ -569,6 +569,145 @@ paths:
           description: OK
           schema:
             $ref: '#/definitions/ResourceUsageSnapshot'
+  /v1/workspaces/{workspaceId}/{itemType}/{itemId}/livySessions/{livyId}/applications/{appId}/{attemptId}/advices:
+    get:
+      tags:
+        - SparkAdvisor
+      summary: Get advice list
+      operationId: SparkAdvisor_List
+      produces:
+        - application/json
+      parameters:
+        - name: workspaceId
+          in: path
+          required: true
+          type: string
+          format: uuid
+        - name: itemType
+          in: path
+          required: true
+          type: string
+          enum:
+            - notebooks
+            - sparkJobDefinitions
+            - lakehouses
+        - name: itemId
+          in: path
+          required: true
+          type: string
+          format: uuid
+        - name: livyId
+          in: path
+          required: true
+          type: string
+          format: uuid
+        - name: appId
+          in: path
+          required: true
+          type: string
+        - name: attemptId
+          in: path
+          required: false
+          type: integer
+          format: int32
+        - name: stageId
+          in: query
+          description: The specific stage ID to get advices on
+          required: false
+          type: integer
+          format: int64
+        - name: jobId
+          in: query
+          description: The specific job ID to get advices on
+          required: false
+          type: integer
+          format: int64
+        - name: exectionId
+          in: query
+          description: The specific exection (SQL query) ID to get advices on
+          required: false
+          type: integer
+          format: int64
+        - name: jobGroupId
+          in: query
+          description: The specific job group (statement) ID to get advices on
+          required: false
+          type: string
+        - name: executorId
+          in: query
+          description: The specific executor ID to get advices on
+          required: false
+          type: string
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/AdviseDataJson'
+  /v1/workspaces/{workspaceId}/{itemType}/{itemId}/livySessions/{livyId}/applications/{appId}/{attemptId}/advices/{filter}/{byId}:
+    get:
+      tags:
+        - SparkAdvisor
+      summary: Get advice by filter
+      operationId: SparkAdvisor_ByFilter
+      produces:
+        - application/json
+      parameters:
+        - name: workspaceId
+          in: path
+          required: true
+          type: string
+          format: uuid
+        - name: itemType
+          in: path
+          required: true
+          type: string
+          enum:
+            - notebooks
+            - sparkJobDefinitions
+            - lakehouses
+        - name: itemId
+          in: path
+          required: true
+          type: string
+          format: uuid
+        - name: livyId
+          in: path
+          required: true
+          type: string
+          format: uuid
+        - name: appId
+          in: path
+          required: true
+          type: string
+        - name: attemptId
+          in: path
+          required: false
+          type: integer
+          format: int32
+        - name: filter
+          in: path
+          required: true
+          type: string
+          enum:
+            - stages
+            - jobs
+            - executions
+            - jobGroups
+            - executors
+        - name: byId
+          in: path
+          description: The specific ID to filter. Type is "int64" if it follows the filter of "stages", "jobs" or "executions"; Type is "string" if it follows the filter of "jobGroups" or "executors"
+          required: true
+          type: object
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/AdviseDataJson'
 definitions:
   FileMetadata:
     description: Metadata of a log file
@@ -766,3 +905,43 @@ definitions:
         format: int64
       data:
         $ref: '#/definitions/ResourceUsageSnapshotData'
+  AdviseDataJson:
+    type: object
+    properties:
+      id:
+        description: The ID of the advice
+        type: integer
+        format: int64
+      name:
+        description: The name of the advice
+        type: string
+      description:
+        description: The description of the advice
+        type: string
+      helplink:
+        description: A web page or documentation to reference or help further
+        type: string
+      source:
+        description: Could be "System", "User" or "Dependency"
+        type: string
+      level:
+        description: Could be "info", "warn" or "error"
+        type: string
+      stageId:
+        description: The stage ID which the advice is provided on. Ignore it if the value is -1
+        type: integer
+        format: int64
+      jobId:
+        description: The job ID which the advice is provided on. Ignore it if the value is -1
+        type: integer
+        format: int64
+      executionId:
+        description: The execution (SQL query) ID which the advice is provided on. Ignore it if the value is -1
+        type: integer
+        format: int64
+      jobGroupId:
+        description: The job group (statement) ID which the advice is provided on
+        type: string
+      executorId:
+        description: The executor ID which the advice is provided on
+        type: string
