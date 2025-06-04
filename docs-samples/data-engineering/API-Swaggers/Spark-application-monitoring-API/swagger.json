@@ -1254,6 +1254,10 @@
           "description": "A web page or documentation to reference or help further",
           "type": "string"
         },
+        "detail": {
+          "description": "More details in rich text format",
+          "$ref": "#/definitions/JsonAdviseDetail"
+        },
         "source": {
           "description": "Could be \"System\", \"User\" or \"Dependency\"",
           "type": "string"
@@ -1284,6 +1288,112 @@
         "executorId": {
           "description": "The executor ID which the advice is provided on",
           "type": "string"
+        }
+      }
+    },
+    "JsonAdviseDetail": {
+      "type": "object",
+      "properties": {
+        "data": {
+          "oneOf": {
+            "$ref": "#/definitions/TaskError",
+            "$ref": "#/definitions/DataSkew",
+            "$ref": "#/definitions/TimeSkew"
+          }
+        }
+      }
+    },
+    "TaskError": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "description": "The name of the error or exception",
+          "type": "string"
+        },
+        "tsg": {
+          "description": "The trouble shooting guide to follow",
+          "type": "string"
+        },
+        "taskTypes": {
+          "description": "The types of Spark tasks, could be \"ResultTask\", \"ShuffleMapTask\"...",
+          "type": "string"
+        },
+        "helplink": {
+          "description": "The web page or documentation to reference or help further",
+          "type": "string"
+        },
+        "executorIds": {
+          "description": "The executor IDs",
+          "type": "string"
+        },
+        "stageIds": {
+          "description": "The stage IDs",
+          "type": "string"
+        },
+        "count": {
+          "description": "The task count",
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
+    "DataSkew": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "description": "The stage name",
+          "type": "string"
+        },
+        "stageId": {
+          "description": "The stage ID",
+          "type": "string"
+        },
+        "skewedTaskPercentage": {
+          "description": "The percentage of skewed tasks",
+          "type": "string"
+        },
+        "maxDataRead": {
+          "description": "Max data read, in MiB",
+          "type": "string"
+        },
+        "meanDataRead": {
+          "description": "Mean data read, in MiB",
+          "type": "string"
+        },
+        "taskDataReadSkewness": {
+          "description": "The data read skewness of tasks within the stage, measured by \"Pearson's Second Coefficient of Skewness\"",
+          "type": "number",
+          "format": "double"
+        }
+      }
+    },
+    "TimeSkew": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "description": "The stage name",
+          "type": "string"
+        },
+        "stageId": {
+          "description": "The stage ID",
+          "type": "string"
+        },
+        "skewedTaskPercentage": {
+          "description": "The percentage of skewed tasks",
+          "type": "string"
+        },
+        "maxTaskDuration": {
+          "description": "Max duration, in second",
+          "type": "string"
+        },
+        "meanTaskDuration": {
+          "description": "Mean duration, in second",
+          "type": "string"
+        },
+        "taskDurationSkewness": {
+          "description": "The duration skewness of tasks within the stage, measured by \"Pearson's Second Coefficient of Skewness\"",
+          "type": "number",
+          "format": "double"
         }
       }
     }
