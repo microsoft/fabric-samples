@@ -569,7 +569,7 @@ paths:
           description: OK
           schema:
             $ref: '#/definitions/ResourceUsageSnapshot'
-  /v1/workspaces/{workspaceId}/{itemType}/{itemId}/livySessions/{livyId}/applications/{appId}/{attemptId}/advices:
+  /v1/workspaces/{workspaceId}/{itemType}/{itemId}/livySessions/{livyId}/applications/{appId}/{attemptId}/advice:
     get:
       tags:
         - SparkAdvisor
@@ -612,30 +612,30 @@ paths:
           format: int32
         - name: stageId
           in: query
-          description: The specific stage ID to get advices on
+          description: The specific stage ID to get advice on
           required: false
           type: integer
           format: int64
         - name: jobId
           in: query
-          description: The specific job ID to get advices on
+          description: The specific job ID to get advice on
           required: false
           type: integer
           format: int64
         - name: exectionId
           in: query
-          description: The specific exection (SQL query) ID to get advices on
+          description: The specific exection (SQL query) ID to get advice on
           required: false
           type: integer
           format: int64
         - name: jobGroupId
           in: query
-          description: The specific job group (statement) ID to get advices on
+          description: The specific job group (statement) ID to get advice on
           required: false
           type: string
         - name: executorId
           in: query
-          description: The specific executor ID to get advices on
+          description: The specific executor ID to get advice on
           required: false
           type: string
       responses:
@@ -645,7 +645,7 @@ paths:
             type: array
             items:
               $ref: '#/definitions/AdviseDataJson'
-  /v1/workspaces/{workspaceId}/{itemType}/{itemId}/livySessions/{livyId}/applications/{appId}/{attemptId}/advices/{filter}/{byId}:
+  /v1/workspaces/{workspaceId}/{itemType}/{itemId}/livySessions/{livyId}/applications/{appId}/{attemptId}/advice/{filter}/{byId}:
     get:
       tags:
         - SparkAdvisor
@@ -919,8 +919,11 @@ definitions:
         description: The description of the advice
         type: string
       helplink:
-        description: A web page or documentation to reference or help further
+        description: The web page or documentation to reference or help further
         type: string
+      detail:
+        description: More details in rich text format
+        $ref: '#/definitions/JsonAdviseDetail'
       source:
         description: Could be "System", "User" or "Dependency"
         type: string
@@ -928,15 +931,15 @@ definitions:
         description: Could be "info", "warn" or "error"
         type: string
       stageId:
-        description: The stage ID which the advice is provided on. Ignore it if the value is -1
+        description: The stage ID which the advice is provided on. Ignore stageId if its value is -1
         type: integer
         format: int64
       jobId:
-        description: The job ID which the advice is provided on. Ignore it if the value is -1
+        description: The job ID which the advice is provided on. Ignore jobId if its value is -1
         type: integer
         format: int64
       executionId:
-        description: The execution (SQL query) ID which the advice is provided on. Ignore it if the value is -1
+        description: The execution (SQL query) ID which the advice is provided on. Ignore executionId if its value is -1
         type: integer
         format: int64
       jobGroupId:
@@ -945,3 +948,80 @@ definitions:
       executorId:
         description: The executor ID which the advice is provided on
         type: string
+  JsonAdviseDetail:
+    type: object
+    properties:
+      data:
+        oneOf:
+          - $ref: '#/definitions/TaskError'
+          - $ref: '#/definitions/DataSkew'
+          - $ref: '#/definitions/TimeSkew'
+  TaskError:
+    type: object
+    properties:
+      name:
+        description: The name of the error or exception
+        type: string
+      tsg:
+        description: The trouble shooting guide to follow
+        type: string
+      taskTypes:
+        description: 'The types of Spark tasks, could be "ResultTask", "ShuffleMapTask"...'
+        type: string
+      helplink:
+        description: The web page or documentation to reference or help further
+        type: string
+      executorIds:
+        description: The executor IDs
+        type: string
+      stageIds:
+        description: The stage IDs
+        type: string
+      count:
+        description: The task count
+        type: integer
+        format: int32
+  DataSkew:
+    type: object
+    properties:
+      name:
+        description: The stage name
+        type: string
+      stageId:
+        description: The stage ID
+        type: string
+      skewedTaskPercentage:
+        description: The percentage of skewed tasks
+        type: string
+      maxDataRead:
+        description: 'Max data read, in MiB'
+        type: string
+      meanDataRead:
+        description: 'Mean data read, in MiB'
+        type: string
+      taskDataReadSkewness:
+        description: The data read skewness of tasks within the stage, measured by "Pearson's Second Coefficient of Skewness"
+        type: number
+        format: double
+  TimeSkew:
+    type: object
+    properties:
+      name:
+        description: The stage name
+        type: string
+      stageId:
+        description: The stage ID
+        type: string
+      skewedTaskPercentage:
+        description: The percentage of skewed tasks
+        type: string
+      maxTaskDuration:
+        description: 'Max duration, in second'
+        type: string
+      meanTaskDuration:
+        description: 'Mean duration, in second'
+        type: string
+      taskDurationSkewness:
+        description: The duration skewness of tasks within the stage, measured by "Pearson's Second Coefficient of Skewness"
+        type: number
+        format: double
