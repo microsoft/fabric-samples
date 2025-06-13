@@ -2,7 +2,7 @@
 
 A PySpark-based repository for detecting and anonymizing Personally Identifiable Information (PII) using Microsoft Presidio, Faker, and Microsoft Fabric.
 
-![FabricPIIAnonymization_Implementation](/images/FabricPIIAnonymization_Implementation.png)
+![FabricPIIAnonymization_Implementation](images/FabricPIIAnonymization_Implementation.png)
 
 # 🚀 Features
 
@@ -43,8 +43,7 @@ This notebook contains function designed to process DataFrames containing column
 ## 🧰 Environment Setup
 1. **Fabric workspace** with sufficient permissions to create and manage custom environments.
     1. Create a new Fabric lakehouse or use existing lakehouse within Fabric. Refer [this](https://learn.microsoft.com/en-us/fabric/data-engineering/tutorial-build-lakehouse#create-a-lakehouse) for more details.
-    1. Create a folder "data" and subfolder "customer-profile-sample-data" in lakehouse. Download the sample data file from "customer-profile-sample-data" folder from [this](/data/customer-profile-sample-data/) location and upload in the Lakehouse subfolder.<br>
-    ![Customer-profile-sample-data](/images/customer-profile-sample-data.png)
+    1. Create a folder "data" and subfolder "customer-profile-sample-data" in lakehouse. Download the sample data file from "customer-profile-sample-data" folder from [this](data/customer-profile-sample-data/) location and upload in the Lakehouse subfolder.
 1. **Configure Spark Pool** Make sure to create (or select) a valid Spark pool that you can attach to your Fabric environment.
 1. **Create a New Environment**
     1. In your Fabric workspace, go to "Workspace settings", "Data Engineering/Science","Spark settings","Environment" tab and select "New Environment".
