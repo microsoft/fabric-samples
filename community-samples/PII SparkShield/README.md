@@ -67,7 +67,7 @@ This notebook contains function designed to process DataFrames containing column
         1. Create a folder "presidio" and within that, create a folder "models". Installing the large model from the lakehouse as it exceeds the size limit for custom libraries in the Fabric environment. Upload the .whl file to your Lakehouse (or any location accessible by Spark). The spaCy model can be downloaded from [here](https://spacy.io/models/en#en_core_web_lg).
         2. You will install it within the notebook rather than from this environment.
         This approach is necessary because the environment setup UI may restrict the size of packages you can add directly.
-        ![alt text](/images/en-core-web-lg-model.png)
+        ![alt text](images/en-core-web-lg-model.png)
     1. Review Save & Publish
     Confirm your chosen libraries appear under the Custom Library or Public Library tabs.
     Click "Save" to finalize your environment setup.
