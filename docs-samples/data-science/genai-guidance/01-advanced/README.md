@@ -43,4 +43,6 @@ Insights from Teams conversations, Release 1.0
 
 6/17/2025
 
+Download: [link](https://aka.ms/funwithteams) 
+
 Alexandra Savelieva, Journey McDowell
