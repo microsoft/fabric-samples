@@ -1,0 +1,9 @@
+//Eventhouse Data Operations by Size past xx days 
+let Duration =timespan(1d);
+EventhouseDataOperationLogs 
+| where Timestamp > ago (Duration) 
+|extend OperationKindName=case (DataOperationKind =="RowStoreSeal", "Streaming Ingestion (Seal)", DataOperationKind=="BatchIngest", "Batch Ingestion", DataOperationKind=="UpdatePolicy", "Update Policy", 
+DataOperationKind =="MaterializedView", "Materialized View" ,"Other") 
+| summarize Size=sum(OriginalSizeInBytes) by OperationKindName 
+|extend Size = format_bytes(Size) 
+|project OperationKindName, Size 

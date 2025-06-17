@@ -1,0 +1,768 @@
+swagger: '2.0'
+info:
+  version: v1
+  title: Spark Application Monitoring Public API
+host: api.fabric.microsoft.com
+schemes:
+  - https
+paths:
+  /v1/workspaces/{workspaceId}/{itemType}/{itemId}/livySessions/{livyId}/applications/{appId}/{attemptId}/logs?type=driver&meta=true:
+    get:
+      tags:
+        - DriverLog
+      summary: Get driver log metadata
+      operationId: DriverLog_Metadata
+      produces:
+        - application/json
+      parameters:
+        - name: workspaceId
+          in: path
+          description: ''
+          required: true
+          type: string
+          format: uuid
+        - name: itemType
+          in: path
+          description: ''
+          required: true
+          type: string
+          enum:
+            - notebooks
+            - sparkJobDefinitions
+            - lakehouses
+        - name: itemId
+          in: path
+          description: ''
+          required: true
+          type: string
+          format: uuid
+        - name: livyId
+          in: path
+          required: true
+          type: string
+          format: uuid
+        - name: appId
+          in: path
+          required: true
+          type: string
+        - name: attemptId
+          in: path
+          required: false
+          type: integer
+        - name: fileName
+          in: query
+          required: true
+          type: string
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/ContainerLogMeta'
+  /v1/workspaces/{workspaceId}/{itemType}/{itemId}/livySessions/{livyId}/applications/{appId}/{attemptId}/logs?type=rollingdriver&meta=true:
+    get:
+      tags:
+        - DriverLog
+      summary: Get driver rolloing log metadata
+      operationId: DriverLog_Metadata_Rolling
+      produces:
+        - application/json
+      parameters:
+        - name: workspaceId
+          in: path
+          description: ''
+          required: true
+          type: string
+          format: uuid
+        - name: itemType
+          in: path
+          description: ''
+          required: true
+          type: string
+          enum:
+            - notebooks
+            - sparkJobDefinitions
+            - lakehouses
+        - name: itemId
+          in: path
+          description: ''
+          required: true
+          type: string
+          format: uuid
+        - name: livyId
+          in: path
+          required: true
+          type: string
+          format: uuid
+        - name: appId
+          in: path
+          required: true
+          type: string
+        - name: attemptId
+          in: path
+          required: false
+          type: integer
+          format: int32
+        - name: filenamePrefix
+          in: query
+          required: false
+          type: string
+          enum:
+            - stdout
+            - stderr
+        - name: offset
+          in: query
+          required: false
+          type: integer
+          format: int32
+        - name: maxResults
+          in: query
+          required: false
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/ContainerLogMetas'
+  /v1/workspaces/{workspaceId}/{itemType}/{itemId}/livySessions/{livyId}/applications/{appId}/{attemptId}/logs?type=driver:
+    get:
+      tags:
+        - DriverLog
+      summary: Get driver log content
+      operationId: DriverLog_Content
+      produces:
+        - application/octet-stream
+        - ''
+      parameters:
+        - name: workspaceId
+          in: path
+          description: ''
+          required: true
+          type: string
+          format: uuid
+        - name: itemType
+          in: path
+          description: ''
+          required: true
+          type: string
+          enum:
+            - notebooks
+            - sparkJobDefinitions
+            - lakehouses
+        - name: itemId
+          in: path
+          description: ''
+          required: true
+          type: string
+          format: uuid
+        - name: livyId
+          in: path
+          required: true
+          type: string
+          format: uuid
+        - name: appId
+          in: path
+          required: true
+          type: string
+        - name: attemptId
+          in: path
+          required: false
+          type: integer
+          format: int32
+        - name: fileName
+          in: query
+          required: true
+          type: string
+        - name: containerId
+          in: query
+          required: false
+          type: string
+        - name: isDownload
+          in: query
+          required: false
+          type: boolean
+        - name: isPartial
+          in: query
+          required: false
+          type: boolean
+        - name: offset
+          in: query
+          required: false
+          type: integer
+          format: int64
+        - name: size
+          in: query
+          required: false
+          type: integer
+          format: int64
+      responses:
+        '200':
+          description: OK
+  /v1/workspaces/{workspaceId}/{itemType}/{itemId}/livySessions/{livyId}/applications/{appId}/{attemptId}/logs?type=executor&meta=true:
+    get:
+      tags:
+        - ExecutorLog
+      summary: Get executor log metadata
+      operationId: ExecutorLog_Metadata
+      produces:
+        - application/json
+      parameters:
+        - name: workspaceId
+          in: path
+          description: ''
+          required: true
+          type: string
+          format: uuid
+        - name: itemType
+          in: path
+          description: ''
+          required: true
+          type: string
+          enum:
+            - notebooks
+            - sparkJobDefinitions
+            - lakehouses
+        - name: itemId
+          in: path
+          description: ''
+          required: true
+          type: string
+          format: uuid
+        - name: livyId
+          in: path
+          required: true
+          type: string
+          format: uuid
+        - name: appId
+          in: path
+          required: true
+          type: string
+        - name: attemptId
+          in: path
+          required: false
+          type: integer
+          format: int32
+        - name: containerId
+          in: query
+          required: false
+          type: string
+        - name: filenamePrefix
+          in: query
+          required: false
+          type: string
+        - name: offset
+          in: query
+          required: false
+          type: integer
+          format: int32
+        - name: maxResults
+          in: query
+          required: false
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/ContainerLogMetas'
+  /v1/workspaces/{workspaceId}/{itemType}/{itemId}/livySessions/{livyId}/applications/{appId}/logs?type=executor:
+    get:
+      tags:
+        - ExecutorLog
+      summary: Get executor log content
+      operationId: ExecutorLog_Content
+      produces:
+        - application/octet-stream
+        - text/plain
+      parameters:
+        - name: workspaceId
+          in: path
+          description: ''
+          required: true
+          type: string
+          format: uuid
+        - name: itemType
+          in: path
+          description: ''
+          required: true
+          type: string
+          enum:
+            - notebooks
+            - sparkJobDefinitions
+            - lakehouses
+        - name: itemId
+          in: path
+          description: ''
+          required: true
+          type: string
+          format: uuid
+        - name: livyId
+          in: path
+          required: true
+          type: string
+          format: uuid
+        - name: appId
+          in: path
+          required: true
+          type: string
+        - name: fileName
+          in: query
+          required: true
+          type: string
+        - name: containerId
+          in: query
+          required: true
+          type: string
+        - name: size
+          in: query
+          required: false
+          type: integer
+          format: int64
+      responses:
+        '200':
+          description: OK
+  /v1/workspaces/{workspaceId}/{itemType}/{itemId}/livySessions/{livyId}/applications/none/logs?type=livy&meta=true:
+    get:
+      tags:
+        - LivyLog
+      summary: Get Livy log metadata
+      operationId: LivyLog_Metadata
+      produces:
+        - application/json
+      parameters:
+        - name: workspaceId
+          in: path
+          description: ''
+          required: true
+          type: string
+          format: uuid
+        - name: itemType
+          in: path
+          description: ''
+          required: true
+          type: string
+          enum:
+            - notebooks
+            - sparkJobDefinitions
+            - lakehouses
+        - name: itemId
+          in: path
+          description: ''
+          required: true
+          type: string
+          format: uuid
+        - name: livyId
+          in: path
+          required: true
+          type: string
+          format: uuid
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/FileMetadata'
+  /v1/workspaces/{workspaceId}/{itemType}/{itemId}/livySessions/{livyId}/applications/none/{attemptId}/logs?type=livy:
+    get:
+      tags:
+        - LivyLog
+      summary: Get Livy log content
+      operationId: LivyLog_Content
+      produces:
+        - application/octet-stream
+      parameters:
+        - name: workspaceId
+          in: path
+          description: ''
+          required: true
+          type: string
+          format: uuid
+        - name: itemType
+          in: path
+          description: ''
+          required: true
+          type: string
+          enum:
+            - notebooks
+            - sparkJobDefinitions
+            - lakehouses
+        - name: itemId
+          in: path
+          description: ''
+          required: true
+          type: string
+          format: uuid
+        - name: livyId
+          in: path
+          required: true
+          type: string
+          format: uuid
+        - name: isDownload
+          in: query
+          required: false
+          type: boolean
+        - name: isPartial
+          in: query
+          required: false
+          type: boolean
+        - name: offset
+          in: query
+          required: false
+          type: integer
+          format: int64
+        - name: size
+          in: query
+          required: false
+          type: integer
+          format: int64
+      responses:
+        '200':
+          description: OK
+  /v1/workspaces/{workspaceId}/{itemType}/{itemId}/livySessions/{livyId}/applications/{appId}/{attemptId}/resourceUsage:
+    get:
+      tags:
+        - ResourceUsage
+      summary: Get resource usage timeline
+      operationId: ResourceUsage_Timeline
+      produces:
+        - application/json
+      parameters:
+        - name: workspaceId
+          in: path
+          required: true
+          type: string
+          format: uuid
+        - name: itemType
+          in: path
+          required: true
+          type: string
+          enum:
+            - notebooks
+            - sparkJobDefinitions
+            - lakehouses
+        - name: itemId
+          in: path
+          required: true
+          type: string
+          format: uuid
+        - name: livyId
+          in: path
+          required: true
+          type: string
+          format: uuid
+        - name: appId
+          in: path
+          required: true
+          type: string
+        - name: attemptId
+          in: path
+          required: false
+          type: integer
+          format: int32
+        - name: jobGroup
+          in: query
+          description: "Only list the timeline of jobs within the given jobGroups. Multiple jobGroups could be specified as: ?jobGroup=1&jobGroup=2"
+          required: false
+          type: string
+        - name: jobLimit
+          in: query
+          description: The max number of jobs to list per time point
+          required: false
+          type: integer
+          format: int32
+        - name: executorLimit
+          in: query
+          description: The max number of executors to list per time point
+          required: false
+          type: integer
+          format: int32
+        - name: executorJobLimit
+          in: query
+          description: The max number of executor-job info to list per time point
+          required: false
+          type: integer
+          format: int32
+        - name: start
+          in: query
+          description: The lower bound of time points to list
+          required: false
+          type: integer
+          format: int64
+        - name: end
+          in: query
+          description: The upper bound of time points to list
+          required: false
+          type: integer
+          format: int64
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/ResourceUsageInfo'
+  /v1/workspaces/{workspaceId}/{itemType}/{itemId}/livySessions/{livyId}/applications/{appId}/{attemptId}/resourceUsage/{timestamp}:
+    get:
+      tags:
+        - ResourceUsage
+      summary: Get resource usage shapshot
+      operationId: ResourceUsage_Snapshot
+      produces:
+        - application/json
+      parameters:
+        - name: workspaceId
+          in: path
+          required: true
+          type: string
+          format: uuid
+        - name: itemType
+          in: path
+          required: true
+          type: string
+          enum:
+            - notebooks
+            - sparkJobDefinitions
+            - lakehouses
+        - name: itemId
+          in: path
+          required: true
+          type: string
+          format: uuid
+        - name: livyId
+          in: path
+          required: true
+          type: string
+          format: uuid
+        - name: appId
+          in: path
+          required: true
+          type: string
+        - name: attemptId
+          in: path
+          required: false
+          type: integer
+          format: int32
+        - name: timestamp
+          in: path
+          description: The specific timestamp to query
+          required: true
+          type: integer
+          format: int64
+        - name: jobGroup
+          in: query
+          description: "Only list the timeline of jobs within the given jobGroups. Multiple jobGroups could be specified as: ?jobGroup=1&jobGroup=2"
+          required: false
+          type: string
+        - name: jobLimit
+          in: query
+          description: The max number of jobs to list per time point
+          required: false
+          type: integer
+          format: int32
+        - name: executorLimit
+          in: query
+          description: The max number of executors to list per time point
+          required: false
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/ResourceUsageSnapshot'
+definitions:
+  FileMetadata:
+    description: Metadata of a log file
+    type: object
+    properties:
+      fileName:
+        type: string
+      length:
+        format: int64
+        type: integer
+      lastModified:
+        type: string
+      creationTime:
+        type: string
+      metaData:
+        type: object
+        additionalProperties:
+          type: string
+  ContainerLogMeta:
+    description: Metadata of a log file with the corresponding container and node information
+    type: object
+    properties:
+      containerId:
+        type: string
+      nodeId:
+        type: string
+      containerLogMeta:
+        $ref: '#/definitions/FileMetadata'
+  ContainerLogMetas:
+    description: Metadata of one or more log files with the corresponding container and node information
+    type: object
+    properties:
+      containerId:
+        type: string
+      nodeId:
+        type: string
+      containerLogMeta:
+        type: array
+        items:
+          $ref: '#/definitions/FileMetadata'
+  ResourceUsageExecutor:
+    description: Per-executor core and task information
+    type: object
+    properties:
+      executorId:
+        type: string
+      coreCount:
+        description: Count of running cores on the executor
+        type: integer
+        format: int32
+      taskCount:
+        description: Count of running tasks on the executor
+        type: integer
+        format: int32
+  ResourceUsageJob:
+    description: Per-job task information
+    type: object
+    properties:
+      jobId:
+        type: integer
+        format: int32
+      taskCount:
+        description: Count of running tasks of the job
+        type: integer
+        format: int32
+  ResourceUsageExecutorJob:
+    description: Per-executor job information
+    type: object
+    properties:
+      executorId:
+        type: string
+      resourceUsageJob:
+        description: Running jobs which have tasks running on the executor
+        type: array
+        items:
+          $ref: '#/definitions/ResourceUsageJob'
+  ResourceUsageData:
+    type: object
+    properties:
+      timestamps:
+        type: array
+        items:
+          type: integer
+          format: int32
+      isPartials:
+        description: Any filter applied due to limit at the corresponding timestamp
+        type: array
+        items:
+          type: boolean
+      allocatedCores:
+        description: Count of cores in "allocated" status at the corresponding timestamp
+        type: array
+        items:
+          type: number
+          format: double
+      idleCores:
+        description: Count of cores in "idle" status at the corresponding timestamp
+        type: array
+        items:
+          type: number
+          format: double
+      runningCores:
+        description: Count of cores in "running" status at the corresponding timestamp
+        type: array
+        items:
+          type: number
+          format: double
+      executors:
+        description: Per-executor core and task information at the corresponding timestamp
+        type: array
+        items:
+          type: array
+          items:
+            $ref: '#/definitions/ResourceUsageExecutor'
+      jobs:
+        description: Per-job task information at the corresponding timestamp
+        type: array
+        items:
+          type: array
+          items:
+            $ref: '#/definitions/ResourceUsageJob'
+      executorJobs:
+        description: Per-executor job information at the corresponding timestamp
+        type: array
+        items:
+          type: array
+          items:
+            $ref: '#/definitions/ResourceUsageExecutorJob'
+  ResourceUsageInfo:
+    type: object
+    properties:
+      resourceUsageApiVersion:
+        type: integer
+        format: int32
+      duration:
+        description: 'The duration of the given Spark application, in milli-second'
+        type: integer
+        format: int64
+      capacityExceeded:
+        description: True if the limitation of 10k tasks exceeds. When true, all properties in data are empty
+        format: boolean
+      idleTime:
+        description: The duration when the given Spark application is in idle, in milli-second
+        type: integer
+        format: int64
+      coreEfficiency:
+        description: The overview usage rate of executor cores
+        type: number
+        format: double
+      data:
+        $ref: '#/definitions/ResourceUsageData'
+  ResourceUsageSnapshotData:
+    type: object
+    properties:
+      timestamp:
+        description: Timestamp of the time point which is closest to the given timestamp
+        type: integer
+        format: int64
+      isPartial:
+        description: Any filter applied due to limit at the timestamp
+        type: boolean
+      allocatedCores:
+        description: Count of cores in "allocated" status at the timestamp
+        type: number
+        format: double
+      idleCores:
+        description: Count of cores in "idle" status at the timestamp
+        type: number
+        format: double
+      runningCores:
+        description: Count of cores in "running" status at the timestamp
+        type: number
+        format: double
+      executors:
+        description: Per-executor core and task information at the timestamp
+        type: array
+        items:
+          $ref: '#/definitions/ResourceUsageExecutor'
+      jobs:
+        description: Per-job task information at the timestamp
+        type: array
+        items:
+          $ref: '#/definitions/ResourceUsageJob'
+      executorJobs:
+        description: Per-executor job information at the timestamp
+        type: array
+        items:
+          $ref: '#/definitions/ResourceUsageExecutorJob'
+  ResourceUsageSnapshot:
+    type: object
+    properties:
+      queryTime:
+        description: The timestamp specified in the request
+        type: integer
+        format: int64
+      data:
+        $ref: '#/definitions/ResourceUsageSnapshotData'

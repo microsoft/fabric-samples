@@ -1,0 +1,10 @@
+//Top X Users by CPU Time in selected databases in past 30 days 
+let Duration =timespan(30);
+let Topcount=10; 
+EventhouseQueryLogs 
+| where Timestamp > ago (Duration) 
+|extend UPN=todynamic(tostring(Identity)).claims.upn , AppId=todynamic(tostring(Identity)).claims.AppId 
+|extend User=tostring(iff(isempty(UPN), AppId, UPN)), PrincipalUserType=iff(isempty(UPN), "Application", "User") 
+| extend CpuTimeMs=totimespan(CpuTimeMs*10000) 
+|summarize CPUTimeMs=sum(CpuTimeMs) by User, PrincipalUserType 
+|top Topcount by CPUTimeMs 

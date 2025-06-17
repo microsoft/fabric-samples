@@ -1,0 +1,13 @@
+// Number of Requests for bar chart, showing total requests versus errors: 
+let _endTime = datetime(2024-10-21T02:49:54Z); 
+let _graphQLId = 'e99a9999-9d9b-9b9f-a999-ab99ce999acf'; 
+let _startTime = datetime(2024-09-21T02:49:54Z); 
+// Define the time span for the intervals (e.g., 1 hour) 
+let timeRange = _endTime - _startTime; 
+let interval = case( 
+    timeRange <= 1h, 5m,    // 5 minutes if the time range is 1 hour or less 
+    timeRange <= 1d, 2h,    // 2 hours if the time range is 1 day or less 
+    timeRange <= 7d, 1d,    // 1 day if the time range is 1 week or less (7 days) 
+    timeRange <= 30d, 2d,   // 2 days if the time range is 1 month or less (30 days) 
+    1d                      // Default to 1 day for any longer ranges 
+); 

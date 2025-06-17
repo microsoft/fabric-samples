@@ -1,0 +1,8 @@
+// Number of API requests during the specified time. 
+let _endTime = datetime(2024-10-21T02:49:54Z); 
+let _graphQLId = 'e99a9999-9d9b-9b9f-a999-ab99ce999acf'; 
+let _startTime = datetime(2024-09-21T02:49:54Z); 
+GraphQLMetrics 
+| where Timestamp > ago(_endTime - _startTime) 
+| where ItemId == _graphQLId 
+| summarize Count=count() 

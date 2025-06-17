@@ -1,0 +1,6 @@
+//Query count over time for all workspace databases in past 30 days- Linechart 
+let Duration =timespan(30);
+EventhouseQueryLogs 
+| where Timestamp > ago (Duration) 
+|summarize count() by bin(Timestamp, 1d) 
+|render linechart 

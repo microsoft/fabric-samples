@@ -1,0 +1,8 @@
+//Eventhouse Activity CPU Minutes per data operation for past xx days 
+let Duration =timespan(1d); 
+EventhouseDataOperationLogs 
+| where Timestamp > ago (Duration) 
+|extend OperationType=case ( DataOperationKind=="BatchIngest", "Batch Ingestion", DataOperationKind=="UpdatePolicy", "Update Policy", 
+DataOperationKind =="MaterializedView", "Materialized View" ,"Other") 
+| summarize ActivityMinutes=sum(CpuTimeMs)/1000/60 by OperationType, bin (Timestamp,1h) 
+|render linechart 

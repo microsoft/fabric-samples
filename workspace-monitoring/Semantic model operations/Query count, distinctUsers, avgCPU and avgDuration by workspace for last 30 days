@@ -1,0 +1,9 @@
+// query count, distinctUsers, avgCPU, avgDuration by workspace for last 30d 
+SemanticModelLogs 
+| where Timestamp > ago(30d) 
+| where OperationName == "QueryEnd"
+| summarize QueryCount=count() 
+    , Users = dcount(User) 
+    //, AvgCPU = avg(CpuMs) //CPU time is not an available metric 
+    , AvgDuration = avg(DurationMs) 
+by WorkspaceId 

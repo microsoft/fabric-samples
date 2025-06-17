@@ -1,0 +1,33 @@
+.execute database script with (ContinueOnErrors=false)
+<|
+//
+// Create staging/raw table - Bronze layer
+.alter table RawData (BikepointID:string,Street:string,Neighbourhood:string,Latitude:dynamic,Longitude:dynamic,No_Bikes:long,No_Empty_Docks:long,Timestamp:datetime) with (folder="Bronze")
+//
+//Create table to store transformed data - Silver layer
+.create table TransformedData (BikepointID: int, Street: string, Neighbourhood: string, Latitude: dynamic, Longitude: dynamic, No_Bikes: long, No_Empty_Docks: long, Timestamp: datetime, BikesToBeFilled: long, Action: string) with (folder="Silver")
+//
+//Create function with the transformation logic to be executed as and when data lands in Raw table
+.create-or-alter function TransformRawData() {
+RawData
+| parse BikepointID with * "BikePoints_" BikepointID:int
+| extend BikesToBeFilled = No_Empty_Docks - No_Bikes
+| extend Action = iff(BikesToBeFilled > 0, tostring(BikesToBeFilled), "NA")
+ }
+//
+//Apply update policy on target/transformed table so the transformed data starts flowing into the target table
+.alter table TransformedData policy update
+```[{
+    "IsEnabled": true,
+    "Source": "RawData",
+    "Query": "TransformRawData()",
+    "IsTransactional": false,
+    "PropagateIngestionProperties": false
+}]```
+//
+//Create materialized view for pre-aggregating data - Gold layer
+.create-or-alter materialized-view with (folder="Gold") AggregatedData on table TransformedData
+{
+    TransformedData
+    | summarize arg_max(Timestamp,No_Bikes) by BikepointID
+}

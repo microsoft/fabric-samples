@@ -1,0 +1,7 @@
+//Succeeded vs Failed Queries over time in past 30 days Linechart 
+let Duration =timespan(30);
+EventhouseQueryLogs 
+| where Timestamp > ago (Duration) 
+| where Status in("Failed","Throttled") 
+|summarize Count=count() by Status, bin(Timestamp, 1d)
+|render linechart 

@@ -1,0 +1,10 @@
+//Ingestion Result count over time in the past 30 days 
+let Duration =timespan(30); 
+EventhouseMetrics 
+| where Timestamp > ago (Duration) 
+|where MetricName =="IngestionResult" 
+|extend Table=tostring(todynamic(tostring(MetricSpecificDimensions)).Table) , Database=tostring(todynamic(tostring(MetricSpecificDimensions)).DatabaseName) 
+|extend Result=tostring(todynamic(tostring(MetricSpecificDimensions)).IngestionResultDetails), FailureKind=tostring(todynamic(tostring(MetricSpecificDimensions)).FailureKind) 
+|summarize Results=count() by Result 
+|order by Results desc 
+|render barchart

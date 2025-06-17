@@ -1,0 +1,346 @@
+{
+    "$schema": "https://pbiadx.powerbi.com/static/d/schema/60/dashboard.json",
+    "id": "a0a0a0a0-bbbb-cccc-dddd-e1e1e1e1e1e1",
+    "eTag": "\"4A1bC2dE3fH4iJ5kL6mN7oP8qR9sT0u\"",
+    "schema_version": "60",
+    "title": "Tutorial_dashboard",
+    "tiles": [
+      {
+        "id": "b1b1b1b1-cccc-dddd-eeee-f2f2f2f2f2f2",
+        "title": "Bus states snapshot",
+        "visualType": "multistat",
+        "pageId": "c2c2c2c2-dddd-eeee-ffff-a3a3a3a3a3a3",
+        "layout": {
+          "x": 0,
+          "y": 0,
+          "width": 12,
+          "height": 3
+        },
+        "queryRef": {
+          "kind": "query",
+          "queryId": "d3d3d3d3-eeee-ffff-aaaa-b4b4b4b4b4b4"
+        },
+        "visualOptions": {
+          "multiStat__textSize": "auto",
+          "multiStat__valueColumn": null,
+          "colorRulesDisabled": true,
+          "colorStyle": "light",
+          "multiStat__displayOrientation": "horizontal",
+          "multiStat__labelColumn": null,
+          "multiStat__slot": {
+            "width": 4,
+            "height": 1
+          },
+          "colorRules": []
+        }
+      },
+      {
+        "id": "e4e4e4e4-ffff-aaaa-bbbb-c5c5c5c5c5c5",
+        "title": "Trip map",
+        "visualType": "map",
+        "pageId": "c2c2c2c2-dddd-eeee-ffff-a3a3a3a3a3a3",
+        "layout": {
+          "x": 0,
+          "y": 3,
+          "width": 12,
+          "height": 7
+        },
+        "queryRef": {
+          "kind": "query",
+          "queryId": "f5f5f5f5-aaaa-bbbb-cccc-d6d6d6d6d6d6"
+        },
+        "visualOptions": {
+          "map__type": "bubble",
+          "map__latitudeColumn": "Latitude",
+          "map__longitudeColumn": "Longitude",
+          "map__labelColumn": null,
+          "map__sizeColumn": "DelayInSeconds",
+          "map__sizeDisabled": true,
+          "map__geoType": "numeric",
+          "map__geoPointColumn": null
+        }
+      },
+      {
+        "id": "a6a6a6a6-bbbb-cccc-dddd-e7e7e7e7e7e7",
+        "title": "Trip map (sized by delay)",
+        "visualType": "map",
+        "pageId": "c2c2c2c2-dddd-eeee-ffff-a3a3a3a3a3a3",
+        "layout": {
+          "x": 0,
+          "y": 10,
+          "width": 12,
+          "height": 7
+        },
+        "queryRef": {
+          "kind": "query",
+          "queryId": "b7b7b7b7-cccc-dddd-eeee-c8c8c8c8c8c8"
+        },
+        "visualOptions": {
+          "map__type": "bubble",
+          "map__latitudeColumn": "Latitude",
+          "map__longitudeColumn": "Longitude",
+          "map__labelColumn": null,
+          "map__sizeColumn": "DelayInSeconds",
+          "map__sizeDisabled": false,
+          "map__geoType": "numeric",
+          "map__geoPointColumn": null
+        }
+      },
+      {
+        "id": "c8c8c8c8-dddd-eeee-ffff-a9a9a9a9a9a9",
+        "title": "Delay status",
+        "visualType": "table",
+        "pageId": "c2c2c2c2-dddd-eeee-ffff-a3a3a3a3a3a3",
+        "layout": {
+          "x": 12,
+          "y": 0,
+          "width": 12,
+          "height": 7
+        },
+        "queryRef": {
+          "kind": "query",
+          "queryId": "d9d9d9d9-eeee-ffff-aaaa-b0b0b0b0b0b0"
+        },
+        "visualOptions": {
+          "table__enableRenderLinks": true,
+          "colorRulesDisabled": true,
+          "colorStyle": "light",
+          "crossFilterDisabled": false,
+          "drillthroughDisabled": false,
+          "crossFilter": [],
+          "drillthrough": [],
+          "table__renderLinks": [],
+          "colorRules": []
+        }
+      },
+      {
+        "id": "e0e0e0e0-ffff-aaaa-bbbb-c1c1c1c1c1c1",
+        "title": "Estimated lateness",
+        "visualType": "table",
+        "pageId": "c2c2c2c2-dddd-eeee-ffff-a3a3a3a3a3a3",
+        "layout": {
+          "x": 12,
+          "y": 7,
+          "width": 12,
+          "height": 7
+        },
+        "queryRef": {
+          "kind": "query",
+          "queryId": "f1f1f1f1-aaaa-bbbb-cccc-d2d2d2d2d2d2"
+        },
+        "visualOptions": {
+          "table__enableRenderLinks": true,
+          "colorRulesDisabled": true,
+          "colorStyle": "light",
+          "crossFilterDisabled": false,
+          "drillthroughDisabled": false,
+          "crossFilter": [],
+          "drillthrough": [],
+          "table__renderLinks": [],
+          "colorRules": []
+        }
+      },
+      {
+        "id": "a2a2a2a2-bbbb-cccc-dddd-e3e3e3e3e3e3",
+        "title": "Delays by bus and route (top 10)",
+        "visualType": "column",
+        "pageId": "c2c2c2c2-dddd-eeee-ffff-a3a3a3a3a3a3",
+        "layout": {
+          "x": 12,
+          "y": 14,
+          "width": 6,
+          "height": 7
+        },
+        "queryRef": {
+          "kind": "query",
+          "queryId": "b3b3b3b3-cccc-dddd-eeee-f4f4f4f4f4f4"
+        },
+        "visualOptions": {
+          "multipleYAxes": {
+            "base": {
+              "id": "-1",
+              "label": "Avg delay (min)",
+              "columns": [],
+              "yAxisMaximumValue": null,
+              "yAxisMinimumValue": null,
+              "yAxisScale": "linear",
+              "horizontalLines": []
+            },
+            "additional": [],
+            "showMultiplePanels": false
+          },
+          "hideLegend": true,
+          "legendLocation": "bottom",
+          "xColumnTitle": "Bus line",
+          "xColumn": null,
+          "yColumns": [
+            "AvgDelayMin"
+          ],
+          "seriesColumns": [
+            "StopCode"
+          ],
+          "xAxisScale": "linear",
+          "verticalLine": "",
+          "crossFilterDisabled": false,
+          "drillthroughDisabled": false,
+          "crossFilter": [],
+          "drillthrough": []
+        }
+      },
+      {
+        "id": "c4c4c4c4-dddd-eeee-ffff-a5a5a5a5a5a5",
+        "title": "Delays by stop (top 10)",
+        "visualType": "column",
+        "pageId": "c2c2c2c2-dddd-eeee-ffff-a3a3a3a3a3a3",
+        "layout": {
+          "x": 18,
+          "y": 14,
+          "width": 6,
+          "height": 7
+        },
+        "queryRef": {
+          "kind": "query",
+          "queryId": "d5d5d5d5-eeee-ffff-aaaa-b6b6b6b6b6b6"
+        },
+        "visualOptions": {
+          "multipleYAxes": {
+            "base": {
+              "id": "-1",
+              "label": "Avg delay (min)",
+              "columns": [],
+              "yAxisMaximumValue": null,
+              "yAxisMinimumValue": null,
+              "yAxisScale": "linear",
+              "horizontalLines": []
+            },
+            "additional": [],
+            "showMultiplePanels": false
+          },
+          "hideLegend": true,
+          "legendLocation": "bottom",
+          "xColumnTitle": "Stop name",
+          "xColumn": null,
+          "yColumns": [
+            "AvgDelayMinutes"
+          ],
+          "seriesColumns": null,
+          "xAxisScale": "linear",
+          "verticalLine": "",
+          "crossFilterDisabled": false,
+          "drillthroughDisabled": false,
+          "crossFilter": [],
+          "drillthrough": []
+        }
+      }
+    ],
+    "baseQueries": [],
+    "parameters": [
+      {
+        "kind": "duration",
+        "id": "e6e6e6e6-ffff-aaaa-bbbb-c7c7c7c7c7c7",
+        "displayName": "Time range",
+        "description": "",
+        "beginVariableName": "_startTime",
+        "endVariableName": "_endTime",
+        "defaultValue": {
+          "kind": "dynamic",
+          "count": 1,
+          "unit": "hours"
+        },
+        "showOnPages": {
+          "kind": "all"
+        }
+      }
+    ],
+    "dataSources": [
+      {
+        "kind": "kusto-trident",
+        "scopeId": "kusto-trident",
+        "clusterUri": "https://xxxx.zx.kusto.fabric.microsoft.com",
+        "database": "f7f7f7f7-aaaa-bbbb-cccc-d8d8d8d8d8d8",
+        "name": "Tutorial",
+        "id": "a8a8a8a8-bbbb-cccc-dddd-e9e9e9e9e9e9",
+        "workspace": "b9b9b9b9-cccc-dddd-eeee-f0f0f0f0f0f0"
+      }
+    ],
+    "pages": [
+      {
+        "name": "Page 1",
+        "id": "c2c2c2c2-dddd-eeee-ffff-a3a3a3a3a3a3"
+      }
+    ],
+    "queries": [
+      {
+        "dataSource": {
+          "kind": "inline",
+          "dataSourceId": "a8a8a8a8-bbbb-cccc-dddd-e9e9e9e9e9e9"
+        },
+        "text": "Bus_timeseries()\n| where PreciseTimestamp between (['_startTime'] .. ['_endTime']) //current time is in UTC\n| project BusState, StopCode, TripId\n| summarize Count = count() by BusState ",
+        "id": "d3d3d3d3-eeee-ffff-aaaa-b4b4b4b4b4b4",
+        "usedVariables": [
+          "_endTime",
+          "_startTime"
+        ]
+      },
+      {
+        "dataSource": {
+          "kind": "inline",
+          "dataSourceId": "a8a8a8a8-bbbb-cccc-dddd-e9e9e9e9e9e9"
+        },
+        "text": "Bus_timeseries()\n| where PreciseTimestamp between (['_startTime'] .. ['_endTime']) //current time is in UTC\n| extend PredictedArrival = PreciseTimestamp + totimespan(TimeToNextStation)   \n| extend DelayInSeconds = (PredictedArrival - ScheduleTime) / 1s\n| project TripId, StopCode, DelayInSeconds, PreciseTimestamp\n| join kind=inner (\n    Stop_property()\n    | project Stop_Code, Latitude, Longitude\n  ) on $left.StopCode == $right.Stop_Code\n| project TripId, StopCode, Latitude, Longitude, DelayInSeconds",
+        "id": "f5f5f5f5-aaaa-bbbb-cccc-d6d6d6d6d6d6",
+        "usedVariables": [
+          "_endTime",
+          "_startTime"
+        ]
+      },
+      {
+        "dataSource": {
+          "kind": "inline",
+          "dataSourceId": "a8a8a8a8-bbbb-cccc-dddd-e9e9e9e9e9e9"
+        },
+        "text": "Bus_timeseries()\n| where PreciseTimestamp between (['_startTime'] .. ['_endTime']) //current time is in UTC\n| extend PredictedArrival = PreciseTimestamp + totimespan(TimeToNextStation)   \n| extend DelayInSeconds = (PredictedArrival - ScheduleTime) / 1s\n| project TripId, StopCode, DelayInSeconds, PreciseTimestamp\n| join kind=inner (\n    Stop_property()\n    | project Stop_Code, Latitude, Longitude\n  ) on $left.StopCode == $right.Stop_Code\n| project TripId, StopCode, Latitude, Longitude, DelayInSeconds",
+        "id": "b7b7b7b7-cccc-dddd-eeee-c8c8c8c8c8c8",
+        "usedVariables": [
+          "_endTime",
+          "_startTime"
+        ]
+      },
+      {
+        "dataSource": {
+          "kind": "inline",
+          "dataSourceId": "a8a8a8a8-bbbb-cccc-dddd-e9e9e9e9e9e9"
+        },
+        "text": "//Start with the function generated by the eventhouse projection to get your time series bus data\nBus_timeseries()\n// Parse your travel‑time string into a timespan\n| extend TimeToNextStationSpan = totimespan(TimeToNextStation)  \n// Compute when the bus will actually arrive\n| extend PredictedArrival = PreciseTimestamp + TimeToNextStationSpan  \n// Compare that prediction to the schedule\n| extend Delay = PredictedArrival - ScheduleTime\n| extend DelayRounded        = format_timespan(Delay, 'hh:mm:ss')\n// Flag and label a delay of more than 5 minutes\n| extend IsDelayed = Delay > 5m  \n| extend DelayLabel = iff(IsDelayed, \"Delayed\", \"On‑Time\")              \n// Select final output columns\n| project\n    TripId,\n    BusLine,\n    StopCode,\n    DelayLabel,\n    DelayRounded,\n    PreciseTimestamp,\n    TimeToNextStationSpan,\n    PredictedArrival,\n    ScheduledArrival = ScheduleTime",
+        "id": "d9d9d9d9-eeee-ffff-aaaa-b0b0b0b0b0b0",
+        "usedVariables": []
+      },
+      {
+        "dataSource": {
+          "kind": "inline",
+          "dataSourceId": "a8a8a8a8-bbbb-cccc-dddd-e9e9e9e9e9e9"
+        },
+        "text": "Bus_timeseries()\n// Compute when the bus will actually arrive at the next stop\n| extend PredictedArrival = PreciseTimestamp + totimespan(TimeToNextStation)\n// Classify \"will be late\" as a boolean\n| extend WillBeLate = PredictedArrival > todatetime(ScheduleTime) + 5m\n// Select final output columns\n| project\n    PreciseTimestamp,\n    StopCode,\n    PredictedArrival,\n    WillBeLate",
+        "id": "f1f1f1f1-aaaa-bbbb-cccc-d2d2d2d2d2d2",
+        "usedVariables": []
+      },
+      {
+        "dataSource": {
+          "kind": "inline",
+          "dataSourceId": "a8a8a8a8-bbbb-cccc-dddd-e9e9e9e9e9e9"
+        },
+        "text": "Bus_timeseries()\n| extend \n    // inline compute delay minutes without a two‑step PredictedArrival alias\n    DelayMinutes = \n      (\n        PreciseTimestamp \n        + totimespan(TimeToNextStation)\n        - todatetime(ScheduleTime)\n      ) / 1m\n| summarize \n    AvgDelayMin = round(avg(DelayMinutes), 0)    // round to whole minutes\n  by BusLine, StopCode\n| top 10 by AvgDelayMin",
+        "id": "b3b3b3b3-cccc-dddd-eeee-f4f4f4f4f4f4",
+        "usedVariables": []
+      },
+      {
+        "dataSource": {
+          "kind": "inline",
+          "dataSourceId": "a8a8a8a8-bbbb-cccc-dddd-e9e9e9e9e9e9"
+        },
+        "text": "// Compute delay for each event\nlet delays = \n  Bus_timeseries()\n  | extend TimeToNextStationSpan = totimespan(TimeToNextStation)\n  | extend PredictedArrival = PreciseTimestamp + TimeToNextStationSpan\n  | extend Delay = PredictedArrival - todatetime(ScheduleTime);\n// Join to Stop metadata\ndelays\n| join kind=inner (\n    Stop_property()\n    | project Stop_Code, DisplayName, Borough, Suggested_Locality\n  ) on $left.StopCode == $right.Stop_Code\n// Aggregate\n| summarize\n    AvgDelayMinutes = avg(Delay)      // average timespan\n      / 1m,                           // convert to minutes\n    TotalRuns = count(),\n    LateRuns = countif(Delay > 5m)\n  by Stop_Code, DisplayName, Borough, Locality=Suggested_Locality\n| extend PercentLate = round((todouble(LateRuns) / TotalRuns * 100), 2)\n| top 10 by AvgDelayMinutes",
+        "id": "d5d5d5d5-eeee-ffff-aaaa-b6b6b6b6b6b6",
+        "usedVariables": []
+      }
+    ]
+  }

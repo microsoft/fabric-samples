@@ -1,0 +1,6 @@
+//Top X Commands by CPU Sec in the past 1d 
+let Duration =timespan(1d);
+let Topcount=10;
+EventhouseCommandLogs
+| where Timestamp > ago (Duration)
+| summarize CpuTimeMs=sum(CpuTimeMs) by EventhouseCommandType 

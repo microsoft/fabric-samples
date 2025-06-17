@@ -1,0 +1,5 @@
+// average query duration by day for last 30d 
+SemanticModelLogs 
+| where Timestamp > ago(30d) 
+| where OperationName == 'QueryEnd' 
+| summarize avg(DurationMs) by format_datetime(Timestamp, 'yyyy-MM-dd') 

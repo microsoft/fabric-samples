@@ -1,0 +1,8 @@
+//Top X Users by Command CPU Sec in the past 1d 
+let Duration =timespan(1d);
+let Topcount=10;
+EventhouseCommandLogs
+| where Timestamp > ago (Duration)
+|extend UPN=todynamic(tostring(Identity)).claims.upn , AppId=todynamic(tostring(Identity)).claims.AppId
+|extend User=tostring(iff(isempty(UPN), AppId, UPN)), PrincipalUserType=iff(isempty(UPN), "Application", "User")
+| summarize CpuTimeMs=sum(CpuTimeMs) by User 

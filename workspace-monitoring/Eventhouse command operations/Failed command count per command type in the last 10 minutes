@@ -1,0 +1,6 @@
+//Failed command count per command type in past 10 minutes 
+let Duration =timespan(10m);
+EventhouseCommandLogs 
+|where Timestamp > ago (Duration) 
+| where Status == "Failed" 
+|project-reorder Timestamp, EventhouseCommandType, CommandText, Status 
