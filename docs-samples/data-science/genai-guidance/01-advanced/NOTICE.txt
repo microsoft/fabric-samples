@@ -1,0 +1,21 @@
+## Teams Channel Fictional Conversations
+This is a synthetically generated data for demonstrating how to process conversational data from Microsoft GraphAPI at scale and extract insights, such as automatically build a FAQ for discussion forums, without exposing any production data from your company's M365. 
+
+**LLM endpoint**: Azure OpenAI GPT4o
+
+**Platform**: Microsoft Fabric
+
+**Approach**: we start with a set of N themes (human-defined); with LLM, generate a set of M questions randomly picking one of N themes at each iteration; for each question, generate a discussion thread.  
+
+**Themes**: "Chemistry", "Hiking", "Cooking", "Watercolor", "Leadership", "Reading", and"Education"
+
+**Structure**: Microsoft Graph API (https://learn.microsoft.com/en-us/graph/teams-messaging-overview)
+
+### History 
+Insights from Teams conversations, Release 1.0
+
+6/17/2025
+
+Alexandra Savelieva, Journey McDowell
+
+Please use this dataset only for non-commercial, educational, or illustrative purposes. When in doubt, follow the terms of the CC BY 4.0 license and avoid any use that could be interpreted as commercial or redistributive beyond the scope of this tutorial. This applies to the dataset in all copies.
