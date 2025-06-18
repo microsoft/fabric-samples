@@ -1,6 +1,6 @@
 # Build an Adaptive Enterprise Knowledge Base: A Practical Guide
 
-This tutorial provides a  guide to help you build advanced GenAI-powered applications from tribal conversational knowledge. 
+This tutorial provides a guide to help you build advanced GenAI-powered applications from tribal conversational knowledge.
 
 It focuses on extracting knowledge from data of an online forum, which can be an instrumental pattern for automatically generating FAQ (frequently asked questions), an adaptive knowledge base for optimizing retrieval performance of a RAG system, or a benchmark.
 
@@ -26,7 +26,7 @@ Follow these instructions [to import a notebook into Fabric](https://learn.micro
 After uploading the notebook, you will need to ensure you have the following to insert into a cell for the remainder of the code to work.
 
 ## Synthetic Teams Dataset
-This is a synthetic data for demonstrating how to process conversational data from GraphAPI at scale and extract insights, such as automatically build a FAQ for discussion forums, without exposing any real production data of Microsoft. 
+This is a synthetic data for demonstrating how to process conversational data from Microsoft GraphAPI at scale and extract insights, such as automatically build a FAQ for discussion forums, without exposing any production data from your company's M365. 
 
 **LLM endpoint**: Azure OpenAI GPT4o
 
@@ -36,7 +36,7 @@ This is a synthetic data for demonstrating how to process conversational data fr
 
 **Themes**: "Chemistry", "Hiking", "Cooking", "Watercolor", "Leadership", "Reading", and"Education"
 
-**Structure**: GraphAPI (https://learn.microsoft.com/en-us/graph/teams-messaging-overview)
+**Structure**: Microsoft Graph API (https://learn.microsoft.com/en-us/graph/teams-messaging-overview)
 
 ### History 
 Insights from Teams conversations, Release 1.0
@@ -46,3 +46,5 @@ Insights from Teams conversations, Release 1.0
 Download: [link](https://aka.ms/funwithteams) 
 
 Alexandra Savelieva, Journey McDowell
+
+Please use this dataset only for non-commercial, educational, or illustrative purposes. When in doubt, follow the terms of the CC BY 4.0 license and avoid any use that could be interpreted as commercial or redistributive beyond the scope of this tutorial. This applies to the dataset in all copies.
