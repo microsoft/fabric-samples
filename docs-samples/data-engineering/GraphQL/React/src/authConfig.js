@@ -12,7 +12,7 @@ import { LogLevel } from "@azure/msal-browser";
  */
 
 export const graphqlConfig = {
-    graphqlEndpoint: "`Enter_the_GraphQL_Endpoint_Here"
+    graphqlEndpoint: "Enter_the_GraphQL_Endpoint_Here"
 };
 
 export const msalConfig = {
