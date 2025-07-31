@@ -1,0 +1,25 @@
+# Sample queries for the Customer type.
+query GET_CUSTOMERS($after: String, $first: Int, $filter: CustomerFilterInput, $orderBy: CustomerOrderByInput) {
+    customers(after: $after, first: $first, filter: $filter, orderBy: $orderBy) {
+        items {
+            CustomerID
+            FirstName
+            LastName
+        }
+    }
+}
+
+mutation ADD_CUSTOMER($input: CreateCustomerInput!) {
+    createCustomer(item: $input) {
+        CustomerID
+        FirstName
+        LastName
+        Title
+        Phone
+        PasswordHash
+        PasswordSalt
+        rowguid
+        ModifiedDate
+        NameStyle
+    }
+}
