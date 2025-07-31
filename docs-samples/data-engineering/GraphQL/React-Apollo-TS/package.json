@@ -1,0 +1,51 @@
+{
+  "name": "react-apollo-ts",
+  "version": "1.0.0",
+  "description": "A minimal React TypeScript project with Apollo GraphQL Client",
+  "main": "index.js",
+  "scripts": {
+    "restore": "npm install  --legacy-peer-deps",
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "codegen": "graphql-codegen --config codegen.yml",
+    "eject": "react-scripts eject"
+  },
+  "keywords": [
+    "react",
+    "typescript",
+    "apollo",
+    "graphql"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@apollo/client": "^3.8.8",
+    "@azure/identity": "^4.10.2",
+    "graphql": "^16.8.1",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-scripts": "^5.0.1"
+  },
+  "devDependencies": {
+    "@graphql-codegen/cli": "^5.0.7",
+    "@graphql-codegen/typescript": "^4.1.6",
+    "@graphql-codegen/typescript-graphql-request": "^6.3.0",
+    "@graphql-codegen/typescript-react-apollo": "^4.3.3",
+    "@types/react": "^18.2.45",
+    "@types/react-dom": "^18.2.18",
+    "typescript": "^5.8.3"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
