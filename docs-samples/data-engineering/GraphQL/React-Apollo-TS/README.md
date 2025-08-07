@@ -39,7 +39,7 @@ npm install
    - Replace `'https://your-graphql-endpoint.com/graphql'` with your actual GraphQL endpoint
    - Add authentication related config in the `AUTH_CONFIG` constant following the steps in the "Create a Microsoft Entra app" section in the [documentation](https://learn.microsoft.com/en-us/fabric/data-engineering/connect-apps-api-graphql#create-a-microsoft-entra-app).
 
-4. Update the GraphQL schema:
+4. If you prefer to use a different GraphQL schema:
    - Replace `schema.graphql` with your actual GraphQL schema
    - Update the queries in `src/App.tsx` to match your schema
    - for codegen, Update the `src/operations/queries.graphql` to match your schema
