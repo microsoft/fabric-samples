@@ -1,2 +1,9 @@
 schema: './schema.graphql'
 documents: 'src/**/*.{ts,tsx,graphql,gql}'
+#
+## Remote schema option
+#schema:
+#  - http://api.endpoint/graphql:
+#      headers:
+#        Authorization: Bearer <Enter_the_Access_Token_Here>
+#documents: 'src/**/*.{ts,tsx,graphql,gql}'

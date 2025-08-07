@@ -5,11 +5,10 @@
   "main": "index.js",
   "scripts": {
     "restore": "npm install  --legacy-peer-deps",
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "codegen": "graphql-codegen --config codegen.yml",
-    "eject": "react-scripts eject"
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "codegen": "graphql-codegen --config codegen.yml"
   },
   "keywords": [
     "react",
@@ -24,8 +23,7 @@
     "@azure/identity": "^4.10.2",
     "graphql": "^16.8.1",
     "react": "^18.3.1",
-    "react-dom": "^18.3.1",
-    "react-scripts": "^5.0.1"
+    "react-dom": "^18.3.1"
   },
   "devDependencies": {
     "@graphql-codegen/cli": "^5.0.7",
@@ -34,18 +32,8 @@
     "@graphql-codegen/typescript-react-apollo": "^4.3.3",
     "@types/react": "^18.2.45",
     "@types/react-dom": "^18.2.18",
-    "typescript": "^5.8.3"
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+    "@vitejs/plugin-react": "^4.2.1",
+    "typescript": "^5.8.3",
+    "vite": "^5.1.4"
   }
 }
