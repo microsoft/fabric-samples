@@ -1,4 +1,4 @@
-StoreId,StoreName,City,Country,Latitude,Longitude
+StoreId,StoreName,City,Region,Latitude,Longitude
 S-PAR-01,Lakeshore Paris 1,Paris,France,48.8566,2.3522
 S-BER-01,Lakeshore Berlin 1,Berlin,Germany,52.52,13.405
 S-AMS-01,Lakeshore Amsterdam 1,Amsterdam,Netherlands,52.3676,4.9041
