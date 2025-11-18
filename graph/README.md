@@ -1,6 +1,6 @@
 # Fabric Graph GQL Example Datasets
 
-This repository contains example datasets used in the [documentation for graph in Microsoft Fabric](https://learn.microsoft.com/fabric/graph).
+This repository contains example datasets that can be used as companions to the [documentation for graph in Microsoft Fabric](https://learn.microsoft.com/fabric/graph).
 
 ## Datasets
 
