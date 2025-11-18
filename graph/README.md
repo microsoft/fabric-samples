@@ -12,7 +12,7 @@ This repository contains example datasets that can be used as companions to the 
 For each dataset, the following files are provided:
 
 - `zip`: The tables in delta parquet format (in the root folder of the zip file)
-- `gty`: The GQL graph type for the data set (optional)
+- `gty`: The GQL graph type for the data set (optional, documents the intended graph model)
 - `md`: Additional remarks (optional)
 
 ## How to Use
@@ -25,6 +25,8 @@ For each dataset, the following files are provided:
    - Extract the contents into the `Tables` section.
 
 3. The Lakehouse will recognise Delta format and register tables automatically.
+
+4. From here, continue with the [Quickstart Guide for Graph in Microsoft Fabric](https://learn.microsoft.com/en-us/fabric/graph/quickstart).
 
 ## Notes
 
