@@ -1,0 +1,128 @@
+(:TagClass => { id :: UINT64 NOT NULL, name :: STRING, url :: STRING }),
+
+CONSTRAINT tag_class_pk
+FOR (n:TagClass) REQUIRE (n.id) IS KEY,
+
+(:TagClass)-[:isSubclassOf]->(:TagClass),
+
+(:Tag => { id :: UINT64 NOT NULL, name :: STRING, url :: STRING }),
+
+(:Tag)-[:hasType]->(:TagClass),
+
+CONSTRAINT tag_pk
+FOR (n:Tag) REQUIRE (n.id) IS KEY,
+
+ABSTRACT
+(:Place => { id :: UINT64 NOT NULL, name :: STRING, url :: STRING }),
+
+(:City => :Place),
+
+(:Country => :Place),
+
+(:Continent => :Place),
+
+CONSTRAINT place_pk
+FOR (n:Place) REQUIRE (n.id) IS KEY,
+
+(:City)-[:isPartOf]->(:Country),
+
+(:Country)-[:isPartOf]->(:Continent),
+
+ABSTRACT
+(:Organization => { id :: UINT64 NOT NULL, name :: STRING, url :: STRING }),
+
+(:University => :Organization),
+
+(:Company => :Organization),
+
+CONSTRAINT organization_pk
+FOR (n:Organization) REQUIRE (n.id) IS KEY,
+
+(:University)-[:isLocatedIn]->(:City),
+
+(:Company)-[:isLocatedIn]->(:Country),
+
+(:Person => {
+    id :: UINT64 NOT NULL,
+    creationDate :: ZONED DATETIME,
+    firstName :: STRING,
+    lastName :: STRING,
+    gender :: STRING,
+    birthday :: UINT64,
+    browserUsed :: STRING,
+    locationIP :: STRING
+}),
+
+CONSTRAINT person_pk
+FOR (n:Person) REQUIRE (n.id) IS KEY,
+
+(:Person)-[:hasInterest]->(:Tag),
+
+(:Person)-[:isLocatedIn]->(:City),
+
+(:Person)-[:studyAt { classYear :: UINT64 }]->(:University),
+
+(:Person)-[:workAt { workFrom :: UINT64 }]->(:Company),
+
+(:Person)-[:knows { creationDate :: ZONED DATETIME }]->(:Person),
+
+(:Forum => {
+    id :: UINT64 NOT NULL,
+    creationDate :: ZONED DATETIME,
+    title :: STRING
+}),
+
+CONSTRAINT forum_pk
+FOR (n:Forum) REQUIRE (n.id) IS KEY,
+
+(:Forum)-[:hasTag]->(:Tag),
+
+(:Forum)-[:hasMember { creationDate :: ZONED DATETIME, joinDate :: UINT64 }]->(:Person),
+
+(:Forum)-[:hasModerator]->(:Person),
+
+ABSTRACT
+(:Message => {
+    id :: UINT64 NOT NULL,
+    creationDate :: ZONED DATETIME,
+    browserUsed :: STRING,
+    locationIP :: STRING,
+    content :: STRING,
+    length :: UINT64
+}),
+
+CONSTRAINT message_pk
+FOR (n:Message) REQUIRE (n.id) IS KEY,
+
+(:Post => :Message += {
+    language :: STRING,
+    imageFile :: STRING
+}),
+
+(:Person)-[:likes { creationDate :: ZONED DATETIME }]->(:Post),
+
+(:Post)-[:hasCreator]->(:Person),
+
+(:Post)-[:isLocatedIn]->(:Country),
+
+(:Forum)-[:containerOf]->(:Post),
+
+(:Comment => :Message),
+
+(:Person)-[:likes { creationDate :: ZONED DATETIME }]->(:Comment),
+
+(:Comment)-[:hasCreator]->(:Person),
+
+(:Comment)-[:isLocatedIn]->(:Country),
+
+(:Comment)-[:replyOf]->(<:Message),
+
+(:Person)-[:likes { creationDate :: ZONED DATETIME }]->(<:Message),
+
+(<:Message)-[:hasCreator]->(:Person),
+
+(<:Message)-[:isLocatedIn]->(:Country),
+
+(<:Message)-[:hasTag]->(:Tag)
+
+
