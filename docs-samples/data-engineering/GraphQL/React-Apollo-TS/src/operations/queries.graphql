@@ -10,6 +10,7 @@ query GET_CUSTOMERS(
       CustomerID
       FirstName
       LastName
+    }
   }
 }
 
