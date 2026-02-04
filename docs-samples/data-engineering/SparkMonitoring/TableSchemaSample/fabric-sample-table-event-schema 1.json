@@ -1,0 +1,30 @@
+[
+  {
+    "applicationId_s": "application_1760177020679_0001",
+    "applicationName_s": "Notebook_1_af56f1ca-6067-432f-9a7d-7c2689aa8262",
+    "artifactId_g": "82188809-a007-44bc-9c6f-fa5f30383749",
+    "artifactType_s": "SynapseNotebook",
+    "capacityId_g": "b8e0e63e-cb9a-44de-a5d3-531d2a01388b",
+    "Category": "EventLog",
+    "Event_s": "SparkListenerApplicationEnd",
+    "executorId_s": "driver",
+    "executorMax_s": 9,
+    "executorMin_s": 1,
+    "ExtraFields": {
+      "Category": "EventLog",
+      "JobId": "1"
+    },
+    "fabricEnvId_g": "688c6dbf-abbd-46b5-bafa-90bfd469ee4c",
+    "fabricLivyId_g": "af56f1ca-6067-432f-9a7d-7c2689aa8262",
+    "fabricTenantId_g": "72f988bf-86f1-41af-91ab-2d7cd011db47",
+    "fabricWorkspaceId_g": "f0ecfc0d-1d5d-4188-8f6b-8c1893e7d330",
+    "isHighConcurrencyEnabled_s": false,
+    "Properties": {
+      "Event": "org.apache.spark.scheduler.SparkListenerSourceIdJobGroupIdUpdate",
+      "JobGroupId": "3",
+      "JobSourceId": "default"
+    },
+    "TimeGenerated": "2025-10-11T10:05:38.08Z",
+    "userId_g": "c4c27030-503e-4a94-ad74-704c991a2c02"
+  }
+]
