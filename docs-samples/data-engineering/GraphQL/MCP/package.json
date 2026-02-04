@@ -1,7 +1,7 @@
 {
   "type": "module",
   "dependencies": {
-    "@modelcontextprotocol/sdk": "^1.13.1",
+    "@modelcontextprotocol/sdk": "^1.26.0",
     "dotenv": "^16.4.5",
     "express": "^5.1.0",
     "gql": "^1.1.2",
