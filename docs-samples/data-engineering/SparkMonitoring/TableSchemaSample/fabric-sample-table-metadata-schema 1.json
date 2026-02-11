@@ -1,0 +1,22 @@
+[
+  {
+    "ArtifactId_g": "73c26ea1-3415-4b2a-9fd8-e6e0fa185d78",
+    "ApplicationName_s": "E2E_diagnostic_all_methods_a2ae8806-8b22-4ff1-9028-5f9becdc7bfd",
+    "ArtifactKind_s": "SynapseNotebook",
+    "CorrelationId": "a2ae8806-8b22-4ff1-9028-5f9becdc7bfd",
+    "CustomerTenantId_g": "72f988bf-86f1-41af-91ab-2d7cd011db47",
+    "DurationMs": 0,
+    "ExtraFields": {},
+    "FabricEnvId_g": "688c6dbf-abbd-46b5-bafa-90bfd469ee4c",
+    "Level": "Informational",
+    "OperationId_g": "c0bedde0-d813-43f6-8f02-d1ffd9a19571",
+    "OperationName": "SparkListenerApplicationStart",
+    "PremiumCapacityId_g": "b8e0e63e-cb9a-44de-a5d3-531d2a01388b",
+    "PlatformMonitoringCategory_s": "Operational",
+    "PlatformMonitoringTableName_s": "SparkApplicationEvents",
+    "TimeGenerated": "2025-10-10T03:38:17.643Z",
+    "UserId_g": "c4c27030-503e-4a94-ad74-704c991a2c02",
+    "WorkspaceId_g": "f0ecfc0d-1d5d-4188-8f6b-8c1893e7d330",
+    "WorkspaceName_s": "testMonitorWorkspace"
+  }
+]
