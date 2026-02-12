@@ -51,7 +51,7 @@ This server connects to a Microsoft Fabric GraphQL API using OAuth2 client crede
 
 #### Notes
 
-- The server will automatically obtain and refresh an access token for Microsoft Fabric.
+- The server will automatically obtain and refresh an access token for Microsoft Fabric on calls to the server's tools (introspect-schema and query-graphql).
 - All requests to the Fabric API are authenticated.
 - See [Microsoft's documentation](https://learn.microsoft.com/en-us/fabric/data-engineering/api-graphql-service-principal) for full details on configuring Service Principal access.
 - See [Fabric API for GraphQL introspection and schema export](https://learn.microsoft.com/en-us/fabric/data-engineering/api-graphql-introspection-schema-export) for enabling introspection and exporting your schema.
