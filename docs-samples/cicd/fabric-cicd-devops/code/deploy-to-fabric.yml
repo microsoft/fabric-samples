@@ -1,6 +1,6 @@
 trigger:
   branches:
-    include: [dev,test,prod]
+    include: [test,prod]
   paths:
     include:
     - fabric/**
