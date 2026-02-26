@@ -1,0 +1,30 @@
+[
+  {
+    "applicationId_s": "<APPLICATION_ID>",
+    "applicationName_s": "<NOTEBOOK_NAME>",
+    "artifactId_g": "<ARTIFACT_GUID>",
+    "artifactType_s": "SynapseNotebook",
+    "capacityId_g": "<CAPACITY_GUID>",
+    "Category": "EventLog",
+    "Event_s": "SparkListenerApplicationEnd",
+    "executorId_s": "driver",
+    "executorMax_s": 9,
+    "executorMin_s": 1,
+    "ExtraFields": {
+      "Category": "EventLog",
+      "JobId": "1"
+    },
+    "fabricEnvId_g": "<FABRIC_ENV_GUID>",
+    "fabricLivyId_g": "<FABRIC_LIVY_GUID>",
+    "fabricTenantId_g": "<FABRIC_TENANT_GUID>",
+    "fabricWorkspaceId_g": "<FABRIC_WORKSPACE_GUID>",
+    "isHighConcurrencyEnabled_s": false,
+    "Properties": {
+      "Event": "org.apache.spark.scheduler.SparkListenerSourceIdJobGroupIdUpdate",
+      "JobGroupId": "3",
+      "JobSourceId": "default"
+    },
+    "TimeGenerated": "<TIME_GENERATED>",
+    "userId_g": "<USER_ID>"
+  }
+]

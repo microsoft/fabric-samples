@@ -1,0 +1,28 @@
+[
+  {
+    "applicationId_s": "<APPLICATION_ID>",
+    "applicationName_s": "<NOTEBOOK_NAME>",
+    "artifactId_g": "<ARTIFACT_GUID>",
+    "artifactType_s": "SynapseNotebook",
+    "capacityId_g": "<CAPACITY_GUID>",
+    "Category": "Log",
+    "executorId_s": "driver",
+    "executorMax_s": 9,
+    "executorMin_s": 1,
+    "ExtraFields": {
+      "Category": "Log",
+      "JobId": "1"
+    },
+    "fabricEnvId_g": "<FABRIC_ENV_GUID>",
+    "fabricLivyId_g": "<FABRIC_LIVY_GUID>",
+    "fabricTenantId_g": "<FABRIC_TENANT_GUID>",
+    "fabricWorkspaceId_g": "<FABRIC_WORKSPACE_GUID>",
+    "isHighConcurrencyEnabled_s": false,
+    "Level": "INFO",
+    "logger_name_s": "org.apache.spark.scheduler.dynalloc.ExecutorMonitor",
+    "Message": "Executor 1 is removed. Remove reason statistics: (gracefully decommissioned: 1, decommision unfinished: 0, driver killed: 0, unexpectedly exited: 0).",
+    "thread_name_s": "spark-listener-group-executorManagement",
+    "TimeGenerated": "<TIME_GENERATED>",
+    "userId_g": "<USER_ID>"
+  }
+]
