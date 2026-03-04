@@ -1,0 +1,35 @@
+[
+  {
+    "applicationId_s": "<APPLICATION_ID>",
+    "applicationName_s": "<NOTEBOOK_NAME>",
+    "artifactId_g": "<ARTIFACT_GUID>",
+    "artifactType_s": "SynapseNotebook",
+    "capacityId_g": "<CAPACITY_GUID>",
+    "Category": "Metrics",
+    "executorId_s": "driver",
+    "executorMax_s": 9,
+    "executorMin_s": 1,
+    "ExtraFields": {
+      "Category": "Metrics",
+      "JobId": "1"
+    },
+    "fabricEnvId_g": "<FABRIC_ENV_GUID>",
+    "fabricLivyId_g": "<FABRIC_LIVY_GUID>",
+    "fabricTenantId_g": "<FABRIC_TENANT_GUID>",
+    "fabricWorkspaceId_g": "<FABRIC_WORKSPACE_GUID>",
+    "isHighConcurrencyEnabled_s": false,
+    "metric_type_s": "Gauge",
+    "name_s": "<METRIC_NAME>",
+    "Properties": {
+      "Count": 42,
+      "DurationUnits": "milliseconds",
+      "M15Rate": 1.05811426422289,
+      "MetricType": "Gauge",
+      "Name": "<METRIC_NAME>",
+      "Value": 0
+    },
+    "TimeGenerated": "<TIME_GENERATED>",
+    "userId_g": "<USER_ID>",
+    "value_d": 1234567890123.456
+  }
+]

@@ -1,0 +1,22 @@
+[
+  {
+    "ArtifactId_g": "<ARTIFACT_GUID>",
+    "ApplicationName_s": "<NOTEBOOK_NAME>",
+    "ArtifactKind_s": "SynapseNotebook",
+    "CorrelationId": "<CORRELATION_ID>",
+    "CustomerTenantId_g": "<CUSTOMER_TENANT_GUID>",
+    "DurationMs": 0,
+    "ExtraFields": {},
+    "FabricEnvId_g": "<FABRIC_ENV_GUID>",
+    "Level": "Informational",
+    "OperationId_g": "<OPERATION_ID>",
+    "OperationName": "SparkListenerApplicationStart",
+    "PremiumCapacityId_g": "<PREMIUM_CAPACITY_GUID>",
+    "PlatformMonitoringCategory_s": "Operational",
+    "PlatformMonitoringTableName_s": "SparkApplicationEvents",
+    "TimeGenerated": "<TIME_GENERATED>",
+    "UserId_g": "<USER_ID>",
+    "WorkspaceId_g": "<WORKSPACE_ID>",
+    "WorkspaceName_s": "<WORKSPACE_NAME>"
+  }
+]
