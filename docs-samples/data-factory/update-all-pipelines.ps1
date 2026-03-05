@@ -2,6 +2,7 @@
 Purpose:
 - Updates the "Last Modified By" property for all Data Pipelines in a Fabric workspace.
 - The script does this by patching each pipeline item and appending a timestamp to its description.
+- There is a feature that allows users to take ownership of Fabric items: (https://learn.microsoft.com/fabric/fundamentals/item-ownership-take-over). This "takeover" feature is enabled only if the user trying to take the ownership of that pipeline is not already the owner of that pipeline, and has both read and write permission on that pipeline. Even after the pipeline ownership is taken over by the User, there is still a need to update the "Last modified by" property, and this script can do that for all pipelines in a workspace.
 
 How to use:
 1. Sign in to Fabric and open the target workspace.
@@ -39,7 +40,7 @@ function LogMessage($message)
 function ListPipelines($workspaceId) {
     LogMessage "Listing Pipelines in Workspace $workspaceId"
 
-    # List Pipelines in Workspace (https://learn.microsoft.com/en-us/rest/api/fabric/core/items/list-items?tabs=HTTP)
+    # List Pipelines in Workspace (https://learn.microsoft.com/rest/api/fabric/core/items/list-items)
     $listPipelinesResponse = Invoke-RestMethod -URI "$fabricEndpoint/v1/workspaces/$workspaceId/items?type=DataPipeline" -Method GET -Headers @{Authorization="Bearer $token"}
 
     LogMessage "Pipelines: $listPipelinesResponse"
@@ -50,7 +51,7 @@ function ListPipelines($workspaceId) {
 function GetPipeline($workspaceId, $pipelineId) {
     LogMessage "Getting Pipeline $pipelineId"
 
-    # Get-Item For Pipeline Artifact (https://learn.microsoft.com/en-us/rest/api/fabric/core/items/get-item?tabs=HTTP)
+    # Get-Item For Pipeline Item (https://learn.microsoft.com/rest/api/fabric/core/items/get-item)
     $getPipelineArtifactMetadata = Invoke-RestMethod -URI "$fabricEndpoint/v1/workspaces/$workspaceId/items/$pipelineId" -Method GET -Headers @{Authorization="Bearer $token"}
 
     LogMessage "Pipeline Artifact Metadata: $getPipelineArtifactMetadata"
@@ -68,7 +69,7 @@ function UpdatePipeline($workspaceId, $pipelineId, $displayName, $description) {
     }
 "@
 
-    # Update-Item for Pipeline Artifact (https://learn.microsoft.com/en-us/rest/api/fabric/core/items/update-item?tabs=HTTP)
+    # Update-Item for Pipeline Artifact (https://learn.microsoft.com/rest/api/fabric/core/items/update-item)
     $updatedPipelineArtifactMetadata = Invoke-RestMethod -URI "$fabricEndpoint/v1/workspaces/$workspaceId/items/$pipelineId" -Method PATCH -Headers @{Authorization="Bearer $token"} -Body $updatePipelineRequest -ContentType "application/json"
 
     LogMessage "Updated Pipeline Artifact Metadata: $updatedPipelineArtifactMetadata"
