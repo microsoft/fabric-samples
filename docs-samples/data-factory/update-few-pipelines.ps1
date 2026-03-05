@@ -2,7 +2,7 @@
 Purpose:
 - Updates the "Last Modified By" property for one or more selected Data Pipelines in a Fabric workspace.
 - The script does this by patching each selected pipeline item and appending a timestamp to its description.
-- There is a feature that allows users to take ownership of Fabric items: (https://learn.microsoft.com/fabric/fundamentals/item-ownership-take-over). This "takeover" feature is enabled only if the user trying to take the ownership of that pipeline is not already the owner of that pipeline, and has both read and write permission on that pipeline. Even after the pipeline ownership is taken over by the User, there is still a need to update the "Last modified by" property, and this script can do that for all pipelines in a workspace.
+- There is a feature that allows users to take ownership of Fabric items: (https://learn.microsoft.com/fabric/fundamentals/item-ownership-take-over). This "takeover" feature is enabled only if the user trying to take the ownership of that pipeline is not already the owner of that pipeline, and has both read and write permission on that pipeline. Even after the pipeline ownership is taken over by the User, there is still a need to update the "Last modified by" property, and this script can do that for listed pipelines.
 
 How to use:
 1. Sign in to Fabric and open the target workspace.
