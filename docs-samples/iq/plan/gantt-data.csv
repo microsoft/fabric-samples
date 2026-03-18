@@ -3,13 +3,13 @@ REQUIREMENTS,Project Plan,01-Mar-25,15-Apr-25,80,Jack,,10-Jan-25,27-Jan-25
 REQUIREMENTS,Requirements Gathering,06-Feb-25,25-Mar-25,100,Earl King,,01-Feb-25,06-Mar-25
 REQUIREMENTS,Team Hiring,15-Jan-25,27-Jan-25,100,Jack,,16-Mar-25,06-Apr-25
 REQUIREMENTS,Walkthroughs,15-Apr-25,15-May-25,55,John,Business Case Preparation,07-Apr-25,16-Apr-25
-REQUIREMENTS,UI/UX,14-Feb-25,14-Apr-25, 75,Matthew,,10-May-25,18-May-25
+REQUIREMENTS,UI/UX,14-Feb-25,14-Apr-25,75,Matthew,,10-May-25,18-May-25
 DESIGN,Business Case Preparation,10-May-25,30-May-25,87,Randy,,18-May-25,08-Jun-25
 DESIGN,Design Walk-through,10-Jul-25,30-Jul-25,30,Mai,,01-Jun-25,01-Jul-25
 DESIGN,Review,26-Jul-25,28-Aug-25,100,Earl King,,10-Jul-25,13-Jul-25
 DESIGN,Systems Architecture,24-May-25,17-Jun-25,100,Randy,Back end development,25-Jul-25,20-Aug-25
 DESIGN,UI/UX,13-Jun-25,12-Jul-25,43,Mai,,20-Sep-25,20-Aug-25
-DEVELOPMENT,Back end development,24-Aug-25,28-Sept-25,78,Laura,, 17-Aug-25,01-Sep-25
+DEVELOPMENT,Back end development,24-Aug-25,28-Sept-25,78,Laura,,17-Aug-25,01-Sep-25
 DEVELOPMENT,Development Walk-through,12-Oct-25,18-Oct-25,100,Marin,,23-Sep-25,08-Oct-25
 DEVELOPMENT,Front-end development,20-Sep-25,17-Oct-25,34,Marin,UI/UX,30-Sep-25,16-Oct-25
-DEVELOPMENT,Internal audit,01-Aug-25,30-Aug-25,30,Larry,,
+DEVELOPMENT,Internal audit,01-Aug-25,30-Aug-25,30,Larry,,,
