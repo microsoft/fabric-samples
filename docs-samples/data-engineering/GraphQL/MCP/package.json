@@ -3,7 +3,7 @@
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.13.1",
     "dotenv": "^16.4.5",
-    "express": "^5.1.0",
+    "express": "^5.2.1",
     "gql": "^1.1.2",
     "graphql": "^16.11.0",
     "graphql-request": "^7.2.0",
