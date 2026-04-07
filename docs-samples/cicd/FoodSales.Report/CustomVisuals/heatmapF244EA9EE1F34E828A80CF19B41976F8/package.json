@@ -1,0 +1,29 @@
+{
+  "version": "1.1.9",
+  "author": {
+    "name": "Weiwei Cui",
+    "email": "weiweicui@outlook.com"
+  },
+  "resources": [
+    {
+      "resourceId": "rId0",
+      "sourceType": 5,
+      "file": "resources/heatmapF244EA9EE1F34E828A80CF19B41976F8.pbiviz.json"
+    }
+  ],
+  "visual": {
+    "guid": "heatmapF244EA9EE1F34E828A80CF19B41976F8",
+    "name": "heatmap",
+    "displayName": "Heat map",
+    "version": "1.1.9",
+    "description": "Visualize the density of data points as a heatmap",
+    "supportUrl": "https://weiweicui.github.io/PowerBI-Heatmap/",
+    "gitHubUrl": "https://github.com/weiweicui/PowerBI-Heatmap",
+    "visualClassName": "Visual"
+  },
+  "metadata": {
+    "pbivizjson": {
+      "resourceId": "rId0"
+    }
+  }
+}
