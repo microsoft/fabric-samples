@@ -53,13 +53,12 @@ table Order_Details
 
 	column Discount
 		dataType: double
+		formatString: 0.00%;-0.00%;0.00%
 		lineageTag: e6ca9cf4-89aa-429f-9cad-416961fb4e43
 		summarizeBy: sum
 		sourceColumn: Discount
 
 		annotation SummarizationSetBy = Automatic
-
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	partition Order_Details-d7c5ad66-6959-47f5-92e4-645f5e55bdf4 = m
 		mode: import

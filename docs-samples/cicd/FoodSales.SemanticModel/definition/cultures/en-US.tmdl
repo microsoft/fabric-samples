@@ -4,7 +4,6 @@ cultureInfo en-US
 			{
 			  "Version": "2.0.0",
 			  "Language": "en-US",
-			  "DynamicImprovement": "HighConfidence",
 			  "Entities": {
 			    "order_details.revenue": {
 			      "Definition": {
