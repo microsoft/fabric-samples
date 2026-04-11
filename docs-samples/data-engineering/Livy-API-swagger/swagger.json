@@ -17,18 +17,16 @@
         "summary": "Executes a batch.",
         "operationId": "LivyApiBatch_ExecuteBatchAsync",
         "consumes": [
-          "application/json",
-          "text/json"
+          "application/json"
         ],
         "produces": [
-          "application/json",
-          "text/json"
+          "application/json"
         ],
         "parameters": [
           {
             "name": "workspaceId",
             "in": "path",
-            "description": "",
+            "description": "The workspace ID.",
             "required": true,
             "type": "string",
             "format": "uuid"
@@ -36,7 +34,7 @@
           {
             "name": "lakehouseId",
             "in": "path",
-            "description": "",
+            "description": "The lakehouse ID.",
             "required": true,
             "type": "string",
             "format": "uuid"
@@ -45,12 +43,13 @@
             "name": "livyApiVersion",
             "in": "path",
             "required": true,
-            "type": "string"
+            "type": "string",
+            "description": "The Livy API version."
           },
           {
             "name": "payload",
             "in": "body",
-            "description": "",
+            "description": "The request payload.",
             "required": true,
             "schema": {
               "$ref": "#/definitions/BatchRequest"
@@ -65,7 +64,7 @@
             }
           },
           "default": {
-            "description": "Other status codes",
+            "description": "Other status codes.",
             "schema": {
               "$ref": "#/definitions/ErrorResponse"
             }
@@ -76,7 +75,7 @@
         "tags": [
           "LivyApiBatch"
         ],
-        "summary": "List Batch Jobs.",
+        "summary": "Lists batch jobs.",
         "operationId": "LivyApiBatch_ListBatchJobsAsync",
         "consumes": [],
         "produces": [
@@ -86,7 +85,7 @@
           {
             "name": "workspaceId",
             "in": "path",
-            "description": "",
+            "description": "The workspace ID.",
             "required": true,
             "type": "string",
             "format": "uuid"
@@ -94,7 +93,7 @@
           {
             "name": "lakehouseId",
             "in": "path",
-            "description": "",
+            "description": "The lakehouse ID.",
             "required": true,
             "type": "string",
             "format": "uuid"
@@ -103,25 +102,26 @@
             "name": "livyApiVersion",
             "in": "path",
             "required": true,
-            "type": "string"
+            "type": "string",
+            "description": "The Livy API version."
           },
           {
             "name": "$top",
             "in": "query",
             "type": "string",
-            "description": ""
+            "description": "Maximum number of items to return."
           },
           {
             "name": "$skip",
             "in": "query",
             "type": "string",
-            "description": ""
+            "description": "Number of items to skip."
           },
           {
             "name": "$count",
             "in": "query",
             "type": "boolean",
-            "description": ""
+            "description": "Whether to include total count."
           }
         ],
         "responses": {
@@ -132,7 +132,7 @@
             }
           },
           "default": {
-            "description": "Other Status",
+            "description": "Other status codes.",
             "schema": {
               "$ref": "#/definitions/ErrorResponse"
             }
@@ -145,7 +145,7 @@
         "tags": [
           "LivyApiBatch"
         ],
-        "summary": "Gets a Batch Details.",
+        "summary": "Gets batch details.",
         "operationId": "LivyApiBatch_GetBatchAsync",
         "consumes": [],
         "produces": [
@@ -155,7 +155,7 @@
           {
             "name": "workspaceId",
             "in": "path",
-            "description": "",
+            "description": "The workspace ID.",
             "required": true,
             "type": "string",
             "format": "uuid"
@@ -163,7 +163,7 @@
           {
             "name": "lakehouseId",
             "in": "path",
-            "description": "",
+            "description": "The lakehouse ID.",
             "required": true,
             "type": "string",
             "format": "uuid"
@@ -172,12 +172,13 @@
             "name": "livyApiVersion",
             "in": "path",
             "required": true,
-            "type": "string"
+            "type": "string",
+            "description": "The Livy API version."
           },
           {
             "name": "batchId",
             "in": "path",
-            "description": "",
+            "description": "The batch job ID.",
             "required": true,
             "type": "string",
             "format": "uuid"
@@ -191,7 +192,7 @@
             }
           },
           "default": {
-            "description": "Other status codes",
+            "description": "Other status codes.",
             "schema": {
               "$ref": "#/definitions/ErrorResponse"
             }
@@ -202,7 +203,7 @@
         "tags": [
           "LivyApiBatch"
         ],
-        "summary": "Cancels a Batch Execution.",
+        "summary": "Cancels a batch execution.",
         "operationId": "LivyApiBatch_CancelBatchAsync",
         "consumes": [],
         "produces": [
@@ -212,7 +213,7 @@
           {
             "name": "workspaceId",
             "in": "path",
-            "description": "",
+            "description": "The workspace ID.",
             "required": true,
             "type": "string",
             "format": "uuid"
@@ -220,7 +221,7 @@
           {
             "name": "lakehouseId",
             "in": "path",
-            "description": "",
+            "description": "The lakehouse ID.",
             "required": true,
             "type": "string",
             "format": "uuid"
@@ -229,12 +230,13 @@
             "name": "livyApiVersion",
             "in": "path",
             "required": true,
-            "type": "string"
+            "type": "string",
+            "description": "The Livy API version."
           },
           {
             "name": "batchId",
             "in": "path",
-            "description": "",
+            "description": "The batch job ID.",
             "required": true,
             "type": "string",
             "format": "uuid"
@@ -245,7 +247,7 @@
             "description": "OK"
           },
           "default": {
-            "description": "Other status codes",
+            "description": "Other status codes.",
             "schema": {
               "$ref": "#/definitions/ErrorResponse"
             }
@@ -258,7 +260,7 @@
         "tags": [
           "LivyApiSession"
         ],
-        "summary": "Acquire a Spark Session.",
+        "summary": "Acquires a Spark session.",
         "operationId": "LivyApiSession_AcquireSparkSessionAsync",
         "consumes": [
           "application/json"
@@ -270,7 +272,7 @@
           {
             "name": "workspaceId",
             "in": "path",
-            "description": "Workspace Id.",
+            "description": "The workspace ID.",
             "required": true,
             "type": "string",
             "format": "uuid"
@@ -278,7 +280,7 @@
           {
             "name": "lakehouseId",
             "in": "path",
-            "description": "Lakehouse Id.",
+            "description": "The lakehouse ID.",
             "required": true,
             "type": "string",
             "format": "uuid"
@@ -287,12 +289,13 @@
             "name": "livyApiVersion",
             "in": "path",
             "required": true,
-            "type": "string"
+            "type": "string",
+            "description": "The Livy API version."
           },
           {
             "name": "payload",
             "in": "body",
-            "description": "CreateSessionRequest.",
+            "description": "The request payload.",
             "required": true,
             "schema": {
               "$ref": "#/definitions/SessionRequest"
@@ -307,7 +310,7 @@
             }
           },
           "default": {
-            "description": "Other status code",
+            "description": "Other status codes.",
             "schema": {
               "$ref": "#/definitions/ErrorResponse"
             }
@@ -318,18 +321,17 @@
         "tags": [
           "LivyApiSession"
         ],
-        "summary": "List spark sessions.",
+        "summary": "Lists Spark sessions.",
         "operationId": "LivyApiSession_ListSparkSessionsAsync",
         "consumes": [],
         "produces": [
-          "application/json",
-          "text/json"
+          "application/json"
         ],
         "parameters": [
           {
             "name": "workspaceId",
             "in": "path",
-            "description": "Workspace name.",
+            "description": "The workspace ID.",
             "required": true,
             "type": "string",
             "format": "uuid"
@@ -337,7 +339,7 @@
           {
             "name": "lakehouseId",
             "in": "path",
-            "description": "Lakehouse Id.",
+            "description": "The lakehouse ID.",
             "required": true,
             "type": "string",
             "format": "uuid"
@@ -346,25 +348,26 @@
             "name": "livyApiVersion",
             "in": "path",
             "required": true,
-            "type": "string"
+            "type": "string",
+            "description": "The Livy API version."
           },
           {
             "name": "$top",
             "in": "query",
             "type": "string",
-            "description": ""
+            "description": "Maximum number of items to return."
           },
           {
             "name": "$skip",
             "in": "query",
             "type": "string",
-            "description": ""
+            "description": "Number of items to skip."
           },
           {
             "name": "$count",
             "in": "query",
             "type": "boolean",
-            "description": ""
+            "description": "Whether to include total count."
           }
         ],
         "responses": {
@@ -375,7 +378,7 @@
             }
           },
           "default": {
-            "description": "Other status codes",
+            "description": "Other status codes.",
             "schema": {
               "$ref": "#/definitions/ErrorResponse"
             }
@@ -388,7 +391,7 @@
         "tags": [
           "LivyApiSession"
         ],
-        "summary": "Get details of a spark session.",
+        "summary": "Gets details of a Spark session.",
         "operationId": "LivyApiSession_GetSparkSessionAsync",
         "consumes": [],
         "produces": [
@@ -398,7 +401,7 @@
           {
             "name": "workspaceId",
             "in": "path",
-            "description": "Workspace name.",
+            "description": "The workspace ID.",
             "required": true,
             "type": "string",
             "format": "uuid"
@@ -406,7 +409,7 @@
           {
             "name": "lakehouseId",
             "in": "path",
-            "description": "Lakehouse Id.",
+            "description": "The lakehouse ID.",
             "required": true,
             "type": "string",
             "format": "uuid"
@@ -415,12 +418,13 @@
             "name": "livyApiVersion",
             "in": "path",
             "required": true,
-            "type": "string"
+            "type": "string",
+            "description": "The Livy API version."
           },
           {
             "name": "sessionId",
             "in": "path",
-            "description": "Spark session Id.",
+            "description": "The Spark session ID.",
             "required": true,
             "type": "string",
             "format": "uuid"
@@ -434,7 +438,7 @@
             }
           },
           "default": {
-            "description": "Other status codes",
+            "description": "Other status codes.",
             "schema": {
               "$ref": "#/definitions/ErrorResponse"
             }
@@ -445,18 +449,17 @@
         "tags": [
           "LivyApiSession"
         ],
-        "summary": "Stops and deletes a spark session.",
+        "summary": "Stops and deletes a Spark session.",
         "operationId": "LivyApiSession_DeleteSparkSessionAsync",
         "consumes": [],
         "produces": [
-          "application/json",
-          "text/json"
+          "application/json"
         ],
         "parameters": [
           {
             "name": "workspaceId",
             "in": "path",
-            "description": "Workspace Id.",
+            "description": "The workspace ID.",
             "required": true,
             "type": "string",
             "format": "uuid"
@@ -464,7 +467,7 @@
           {
             "name": "lakehouseId",
             "in": "path",
-            "description": "Lakehouse Id.",
+            "description": "The lakehouse ID.",
             "required": true,
             "type": "string",
             "format": "uuid"
@@ -473,12 +476,13 @@
             "name": "livyApiVersion",
             "in": "path",
             "required": true,
-            "type": "string"
+            "type": "string",
+            "description": "The Livy API version."
           },
           {
             "name": "sessionId",
             "in": "path",
-            "description": "Session Id.",
+            "description": "The Spark session ID.",
             "required": true,
             "type": "string",
             "format": "uuid"
@@ -489,7 +493,7 @@
             "description": "OK"
           },
           "default": {
-            "description": "Other status codes",
+            "description": "Other status codes.",
             "schema": {
               "$ref": "#/definitions/ErrorResponse"
             }
@@ -502,21 +506,19 @@
         "tags": [
           "LivyApiSession"
         ],
-        "summary": "Execute a statement on a spark session.",
+        "summary": "Executes a statement on a Spark session.",
         "operationId": "LivyApiSession_ExecuteSparkSessionStatementAsync",
         "consumes": [
-          "application/json",
-          "text/json"
+          "application/json"
         ],
         "produces": [
-          "application/json",
-          "text/json"
+          "application/json"
         ],
         "parameters": [
           {
             "name": "workspaceId",
             "in": "path",
-            "description": "Workspace Id.",
+            "description": "The workspace ID.",
             "required": true,
             "type": "string",
             "format": "uuid"
@@ -524,7 +526,7 @@
           {
             "name": "lakehouseId",
             "in": "path",
-            "description": "Lakehouse Id.",
+            "description": "The lakehouse ID.",
             "required": true,
             "type": "string",
             "format": "uuid"
@@ -533,12 +535,13 @@
             "name": "livyApiVersion",
             "in": "path",
             "required": true,
-            "type": "string"
+            "type": "string",
+            "description": "The Livy API version."
           },
           {
             "name": "sessionId",
             "in": "path",
-            "description": "Spark Session Id.",
+            "description": "The Spark session ID.",
             "required": true,
             "type": "string",
             "format": "uuid"
@@ -546,7 +549,7 @@
           {
             "name": "payload",
             "in": "body",
-            "description": "",
+            "description": "The request payload.",
             "required": true,
             "schema": {
               "$ref": "#/definitions/StatementRequest"
@@ -572,18 +575,17 @@
         "tags": [
           "LivyApiSession"
         ],
-        "summary": "List statements in an active session.",
+        "summary": "Lists statements in an active session.",
         "operationId": "LivyApiSession_ListSparkSessionStatementsAsync",
         "consumes": [],
         "produces": [
-          "application/json",
-          "text/json"
+          "application/json"
         ],
         "parameters": [
           {
             "name": "workspaceId",
             "in": "path",
-            "description": "Workspace name.",
+            "description": "The workspace ID.",
             "required": true,
             "type": "string",
             "format": "uuid"
@@ -591,7 +593,7 @@
           {
             "name": "lakehouseId",
             "in": "path",
-            "description": "Lakehouse Id.",
+            "description": "The lakehouse ID.",
             "required": true,
             "type": "string",
             "format": "uuid"
@@ -600,12 +602,13 @@
             "name": "livyApiVersion",
             "in": "path",
             "required": true,
-            "type": "string"
+            "type": "string",
+            "description": "The Livy API version."
           },
           {
             "name": "sessionId",
             "in": "path",
-            "description": "",
+            "description": "The Spark session ID.",
             "required": true,
             "type": "string",
             "format": "uuid"
@@ -632,18 +635,17 @@
         "tags": [
           "LivyApiSession"
         ],
-        "summary": "Gets a spark statement from a spark session.",
+        "summary": "Gets a Spark statement from a Spark session.",
         "operationId": "LivyApiSession_GetSparkSessionStatementAsync",
         "consumes": [],
         "produces": [
-          "application/json",
-          "text/json"
+          "application/json"
         ],
         "parameters": [
           {
             "name": "workspaceId",
             "in": "path",
-            "description": "Workspace Id.",
+            "description": "The workspace ID.",
             "required": true,
             "type": "string",
             "format": "uuid"
@@ -651,7 +653,7 @@
           {
             "name": "lakehouseId",
             "in": "path",
-            "description": "Lakehouse Id.",
+            "description": "The lakehouse ID.",
             "required": true,
             "type": "string",
             "format": "uuid"
@@ -659,7 +661,7 @@
           {
             "name": "sessionId",
             "in": "path",
-            "description": "Spark Session Id.",
+            "description": "The Spark session ID.",
             "required": true,
             "type": "string",
             "format": "uuid"
@@ -668,12 +670,13 @@
             "name": "livyApiVersion",
             "in": "path",
             "required": true,
-            "type": "string"
+            "type": "string",
+            "description": "The Livy API version."
           },
           {
             "name": "statementId",
             "in": "path",
-            "description": "Statement Id.",
+            "description": "The statement ID.",
             "required": true,
             "type": "integer",
             "format": "int32"
@@ -695,7 +698,10 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/StatementResponse"
+            }
           },
           "default": {
             "description": "Other status codes.",
@@ -715,14 +721,13 @@
         "operationId": "LivyApiSession_CancelSparkStatementAsync",
         "consumes": [],
         "produces": [
-          "application/json",
-          "text/json"
+          "application/json"
         ],
         "parameters": [
           {
             "name": "workspaceId",
             "in": "path",
-            "description": "Workspace Id.",
+            "description": "The workspace ID.",
             "required": true,
             "type": "string",
             "format": "uuid"
@@ -730,7 +735,7 @@
           {
             "name": "lakehouseId",
             "in": "path",
-            "description": "Lakehouse Id.",
+            "description": "The lakehouse ID.",
             "required": true,
             "type": "string",
             "format": "uuid"
@@ -739,12 +744,13 @@
             "name": "livyApiVersion",
             "in": "path",
             "required": true,
-            "type": "string"
+            "type": "string",
+            "description": "The Livy API version."
           },
           {
             "name": "sessionId",
             "in": "path",
-            "description": "Session Id.",
+            "description": "The Spark session ID.",
             "required": true,
             "type": "string",
             "format": "uuid"
@@ -752,7 +758,7 @@
           {
             "name": "statementId",
             "in": "path",
-            "description": "",
+            "description": "The statement ID.",
             "required": true,
             "type": "integer",
             "format": "int32"
@@ -779,18 +785,17 @@
         "tags": [
           "LivyApiSession"
         ],
-        "summary": "Resets the timeout time of a session.",
+        "summary": "Resets the timeout of a session.",
         "operationId": "LivyApiSession_ResetSparkSessionTimeoutAsync",
         "consumes": [],
         "produces": [
-          "application/json",
-          "text/json"
+          "application/json"
         ],
         "parameters": [
           {
             "name": "workspaceId",
             "in": "path",
-            "description": "Workspace Id.",
+            "description": "The workspace ID.",
             "required": true,
             "type": "string",
             "format": "uuid"
@@ -798,7 +803,7 @@
           {
             "name": "lakehouseId",
             "in": "path",
-            "description": "Lakehouse Id.",
+            "description": "The lakehouse ID.",
             "required": true,
             "type": "string",
             "format": "uuid"
@@ -807,12 +812,13 @@
             "name": "livyApiVersion",
             "in": "path",
             "required": true,
-            "type": "string"
+            "type": "string",
+            "description": "The Livy API version."
           },
           {
             "name": "sessionId",
             "in": "path",
-            "description": "Session Id.",
+            "description": "The Spark session ID.",
             "required": true,
             "type": "string",
             "format": "uuid"
@@ -821,6 +827,495 @@
         "responses": {
           "204": {
             "description": "OK"
+          },
+          "default": {
+            "description": "Other status codes.",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponse"
+            }
+          }
+        }
+      }
+    },
+    "/v1/workspaces/{workspaceId}/lakehouses/{lakehouseId}/livyApi/versions/{livyApiVersion}/highConcurrencySessions": {
+      "post": {
+        "tags": [
+          "LivyApiHCSession"
+        ],
+        "summary": "Acquires a high concurrency Spark session.",
+        "operationId": "LivyApiHCSession_AcquireHighConcurrencySparkSessionAsync",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "workspaceId",
+            "in": "path",
+            "description": "The workspace ID.",
+            "required": true,
+            "type": "string",
+            "format": "uuid"
+          },
+          {
+            "name": "lakehouseId",
+            "in": "path",
+            "description": "The lakehouse ID.",
+            "required": true,
+            "type": "string",
+            "format": "uuid"
+          },
+          {
+            "name": "livyApiVersion",
+            "in": "path",
+            "description": "The Livy API version.",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "payload",
+            "in": "body",
+            "description": "High concurrency session request payload.",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/HighConcurrencySessionRequest"
+            }
+          }
+        ],
+        "responses": {
+          "202": {
+            "description": "Accepted",
+            "schema": {
+              "$ref": "#/definitions/HighConcurrencySessionResponse"
+            }
+          },
+          "default": {
+            "description": "Other status codes.",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponse"
+            }
+          }
+        }
+      }
+    },
+    "/v1/workspaces/{workspaceId}/lakehouses/{lakehouseId}/livyApi/versions/{livyApiVersion}/highConcurrencySessions/{highConcurrencySessionId}": {
+      "get": {
+        "tags": [
+          "LivyApiHCSession"
+        ],
+        "summary": "Gets a high concurrency Spark session.",
+        "operationId": "LivyApiHCSession_GetHighConcurrencySparkSessionAsync",
+        "consumes": [],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "workspaceId",
+            "in": "path",
+            "description": "The workspace ID.",
+            "required": true,
+            "type": "string",
+            "format": "uuid"
+          },
+          {
+            "name": "lakehouseId",
+            "in": "path",
+            "description": "The lakehouse ID.",
+            "required": true,
+            "type": "string",
+            "format": "uuid"
+          },
+          {
+            "name": "livyApiVersion",
+            "in": "path",
+            "description": "The Livy API version.",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "highConcurrencySessionId",
+            "in": "path",
+            "description": "The high concurrency session ID.",
+            "required": true,
+            "type": "string",
+            "format": "uuid"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/HighConcurrencySessionResponse"
+            }
+          },
+          "default": {
+            "description": "Other status codes.",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponse"
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "LivyApiHCSession"
+        ],
+        "summary": "Deletes a high concurrency Spark session.",
+        "operationId": "LivyApiHCSession_DeleteHighConcurrencySparkSessionAsync",
+        "consumes": [],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "workspaceId",
+            "in": "path",
+            "description": "The workspace ID.",
+            "required": true,
+            "type": "string",
+            "format": "uuid"
+          },
+          {
+            "name": "lakehouseId",
+            "in": "path",
+            "description": "The lakehouse ID.",
+            "required": true,
+            "type": "string",
+            "format": "uuid"
+          },
+          {
+            "name": "livyApiVersion",
+            "in": "path",
+            "description": "The Livy API version.",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "highConcurrencySessionId",
+            "in": "path",
+            "description": "The high concurrency session ID.",
+            "required": true,
+            "type": "string",
+            "format": "uuid"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "default": {
+            "description": "Other status codes.",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponse"
+            }
+          }
+        }
+      }
+    },
+    "/v1/workspaces/{workspaceId}/lakehouses/{lakehouseId}/livyApi/versions/{livyApiVersion}/highConcurrencySessions/{sessionId}/repls/{replId}/statements": {
+      "post": {
+        "tags": [
+          "LivyApiHCSession"
+        ],
+        "summary": "Executes a Spark session statement in REPL.",
+        "operationId": "LivyApiHCSession_ExecuteSparkSessionStatementInReplAsync",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "workspaceId",
+            "in": "path",
+            "description": "The workspace ID.",
+            "required": true,
+            "type": "string",
+            "format": "uuid"
+          },
+          {
+            "name": "lakehouseId",
+            "in": "path",
+            "description": "The lakehouse ID.",
+            "required": true,
+            "type": "string",
+            "format": "uuid"
+          },
+          {
+            "name": "sessionId",
+            "in": "path",
+            "description": "The Spark session ID.",
+            "required": true,
+            "type": "string",
+            "format": "uuid"
+          },
+          {
+            "name": "replId",
+            "in": "path",
+            "description": "The REPL ID.",
+            "required": true,
+            "type": "string",
+            "format": "uuid"
+          },
+          {
+            "name": "livyApiVersion",
+            "in": "path",
+            "description": "The Livy API version.",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "payload",
+            "in": "body",
+            "description": "Statement request payload.",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/StatementRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/StatementResponse"
+            }
+          },
+          "default": {
+            "description": "Other status codes.",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponse"
+            }
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "LivyApiHCSession"
+        ],
+        "summary": "Lists Spark session statements in REPL.",
+        "operationId": "LivyApiHCSession_ListSparkSessionStatementsInReplAsync",
+        "consumes": [],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "workspaceId",
+            "in": "path",
+            "description": "The workspace ID.",
+            "required": true,
+            "type": "string",
+            "format": "uuid"
+          },
+          {
+            "name": "lakehouseId",
+            "in": "path",
+            "description": "The lakehouse ID.",
+            "required": true,
+            "type": "string",
+            "format": "uuid"
+          },
+          {
+            "name": "sessionId",
+            "in": "path",
+            "description": "The Spark session ID.",
+            "required": true,
+            "type": "string",
+            "format": "uuid"
+          },
+          {
+            "name": "replId",
+            "in": "path",
+            "description": "The REPL ID.",
+            "required": true,
+            "type": "string",
+            "format": "uuid"
+          },
+          {
+            "name": "livyApiVersion",
+            "in": "path",
+            "description": "The Livy API version.",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/StatementsResponse"
+            }
+          },
+          "default": {
+            "description": "Other status codes.",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponse"
+            }
+          }
+        }
+      }
+    },
+    "/v1/workspaces/{workspaceId}/lakehouses/{lakehouseId}/livyApi/versions/{livyApiVersion}/highConcurrencySessions/{sessionId}/repls/{replId}/statements/{statementId}": {
+      "get": {
+        "tags": [
+          "LivyApiHCSession"
+        ],
+        "summary": "Gets a Spark session statement in REPL.",
+        "operationId": "LivyApiHCSession_GetSparkSessionStatementInReplAsync",
+        "consumes": [],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "workspaceId",
+            "in": "path",
+            "description": "The workspace ID.",
+            "required": true,
+            "type": "string",
+            "format": "uuid"
+          },
+          {
+            "name": "lakehouseId",
+            "in": "path",
+            "description": "The lakehouse ID.",
+            "required": true,
+            "type": "string",
+            "format": "uuid"
+          },
+          {
+            "name": "sessionId",
+            "in": "path",
+            "description": "The Spark session ID.",
+            "required": true,
+            "type": "string",
+            "format": "uuid"
+          },
+          {
+            "name": "replId",
+            "in": "path",
+            "description": "The REPL ID.",
+            "required": true,
+            "type": "string",
+            "format": "uuid"
+          },
+          {
+            "name": "statementId",
+            "in": "path",
+            "description": "The statement ID.",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "livyApiVersion",
+            "in": "path",
+            "description": "The Livy API version.",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "from",
+            "in": "query",
+            "description": "Offset (in byte) which the output should begin from.",
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "size",
+            "in": "query",
+            "description": "Size (in byte) of the returned output.",
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/StatementResponse"
+            }
+          },
+          "default": {
+            "description": "Other status codes.",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponse"
+            }
+          }
+        }
+      }
+    },
+    "/v1/workspaces/{workspaceId}/lakehouses/{lakehouseId}/livyApi/versions/{livyApiVersion}/highConcurrencySessions/{sessionId}/repls/{replId}/statements/{statementId}/cancel": {
+      "post": {
+        "tags": [
+          "LivyApiHCSession"
+        ],
+        "summary": "Cancels a Spark session statement in REPL.",
+        "operationId": "LivyApiHCSession_CancelSparkSessionStatementInReplAsync",
+        "consumes": [],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "workspaceId",
+            "in": "path",
+            "description": "The workspace ID.",
+            "required": true,
+            "type": "string",
+            "format": "uuid"
+          },
+          {
+            "name": "lakehouseId",
+            "in": "path",
+            "description": "The lakehouse ID.",
+            "required": true,
+            "type": "string",
+            "format": "uuid"
+          },
+          {
+            "name": "sessionId",
+            "in": "path",
+            "description": "The Spark session ID.",
+            "required": true,
+            "type": "string",
+            "format": "uuid"
+          },
+          {
+            "name": "replId",
+            "in": "path",
+            "description": "The REPL ID.",
+            "required": true,
+            "type": "string",
+            "format": "uuid"
+          },
+          {
+            "name": "statementId",
+            "in": "path",
+            "description": "The statement ID.",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "livyApiVersion",
+            "in": "path",
+            "description": "The Livy API version.",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/StatementCancellationResponse"
+            }
           },
           "default": {
             "description": "Other status codes.",
@@ -892,7 +1387,7 @@
       }
     },
     "BatchRequest": {
-      "description": "Request for runing batch job.",
+      "description": "Batch job request.",
       "type": "object",
       "allOf": [
         {
@@ -961,7 +1456,7 @@
           }
         },
         "tags": {
-          "description": "Gets or sets the optional tags.",
+          "description": "Optional tags.",
           "type": "object",
           "additionalProperties": {
             "type": "string"
@@ -1208,7 +1703,7 @@
       }
     },
     "StatementCancellationResponse": {
-      "description": "Livy Statement CancellationResponse.",
+      "description": "Statement cancellation response.",
       "type": "object",
       "properties": {
         "msg": {
@@ -1449,7 +1944,7 @@
           "type": "string"
         },
         "livyState": {
-          "description": "Gets or sets livy state.",
+          "description": "The Livy state.",
           "type": "string"
         },
         "isJobTimedOut": {
@@ -1459,7 +1954,7 @@
       }
     },
     "BatchResponse": {
-      "description": "Class that represents livy responses for batch.",
+      "description": "Batch response.",
       "type": "object",
       "properties": {
         "livyInfo": {
@@ -1477,7 +1972,7 @@
           "type": "string"
         },
         "appId": {
-          "description": "Application id of this batch.",
+          "description": "Application ID of this batch.",
           "type": "string"
         },
         "appInfo": {
@@ -1488,7 +1983,7 @@
           }
         },
         "artifactId": {
-          "description": "Hosting artifact Id.",
+          "description": "Hosting artifact ID.",
           "type": "string"
         },
         "errorInfo": {
@@ -1509,7 +2004,7 @@
           "type": "string"
         },
         "submitterId": {
-          "description": "ID of e user who submitted the session.",
+          "description": "ID of the user who submitted the batch.",
           "type": "string"
         },
         "submitterName": {
@@ -1616,6 +2111,7 @@
       }
     },
     "SessionResponse": {
+      "description": "Spark session response.",
       "type": "object",
       "properties": {
         "fabricSessionStateInfo": {
@@ -1633,7 +2129,7 @@
           "type": "string"
         },
         "appId": {
-          "description": "The application id of this session.",
+          "description": "The application ID of this session.",
           "type": "string"
         },
         "appInfo": {
@@ -1665,7 +2161,7 @@
           "type": "string"
         },
         "submitterId": {
-          "description": "ID of the user who submitted the sessionn.",
+          "description": "ID of the user who submitted the session.",
           "type": "string"
         },
         "submitterName": {
@@ -1686,7 +2182,7 @@
           "$ref": "#/definitions/SchedulerInformation"
         },
         "state": {
-          "description": "Gets or sets the session state.",
+          "description": "The session state.",
           "enum": [
             "starting",
             "running",
@@ -1731,7 +2227,105 @@
       "type": "object",
       "properties": {
         "state": {
-          "description": "Session acquisiton state.",
+          "description": "Session acquisition state.",
+          "enum": [
+            "queued",
+            "libraryPackaging",
+            "acquiringSession",
+            "cancelling",
+            "cancelled",
+            "error",
+            "unknown"
+          ],
+          "type": "string"
+        },
+        "errorMessage": {
+          "description": "Error message when in \"error\" state.",
+          "type": "string"
+        }
+      }
+    },
+    "HighConcurrencySessionRequest": {
+      "description": "Request for acquiring a high concurrency Spark session.",
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/SessionRequest"
+        }
+      ],
+      "properties": {
+        "sessionTag": {
+          "description": "Optional session tag.",
+          "type": "string"
+        }
+      }
+    },
+    "HighConcurrencySessionResponse": {
+      "description": "Response for a high concurrency Spark session.",
+      "type": "object",
+      "properties": {
+        "id": {
+          "description": "High concurrency session ID.",
+          "type": "string"
+        },
+        "state": {
+          "description": "Public-facing high concurrency session state. Internal intermediate states are collapsed into AcquiringHighConcurrencySession.",
+          "$ref": "#/definitions/HighConcurrencySessionState"
+        },
+        "fabricSessionStateInfo": {
+          "description": "State information for the underlying Livy session being provisioned. This field is only present when the session encounters an error or when session state information is available during provisioning. It is absent from most successful responses.",
+          "$ref": "#/definitions/FabricSessionStateInfo"
+        },
+        "sessionId": {
+          "description": "The Livy session ID. May be absent while the session is being acquired.",
+          "type": "string"
+        },
+        "workspaceId": {
+          "description": "Workspace ID.",
+          "type": "string"
+        },
+        "artifactId": {
+          "description": "Artifact ID.",
+          "type": "string"
+        },
+        "creatorId": {
+          "description": "Creator ID.",
+          "type": "string"
+        },
+        "createdAt": {
+          "description": "Session creation time.",
+          "format": "date-time",
+          "type": "string"
+        },
+        "replId": {
+          "description": "REPL ID. This field is null at session creation (202 response) and only populated once the session reaches the Idle state.",
+          "type": "string"
+        },
+        "sessionTag": {
+          "description": "Session tag used to convey which Livy session a high concurrency session should get packed under.",
+          "type": "string"
+        }
+      }
+    },
+    "HighConcurrencySessionState": {
+      "description": "Public-facing high concurrency session state. Internal intermediate states are collapsed into AcquiringHighConcurrencySession.",
+      "type": "string",
+      "enum": [
+        "NotStarted",
+        "AcquiringHighConcurrencySession",
+        "Idle",
+        "Dead",
+        "Killed",
+        "Failed",
+        "Deleting"
+      ]
+    },
+    "FabricSessionStateInfo": {
+      "description": "State information about the underlying Livy session being provisioned for the high concurrency session. This object is conditionally present in HighConcurrencySessionResponse \u2014 it appears only when there is an error or when the underlying session is actively being provisioned.",
+      "type": "object",
+      "properties": {
+        "state": {
+          "description": "Underlying session acquisition state.",
           "enum": [
             "queued",
             "libraryPackaging",
