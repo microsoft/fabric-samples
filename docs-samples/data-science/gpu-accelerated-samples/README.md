@@ -10,6 +10,7 @@ Jupyter notebooks demonstrating GPU acceleration using NVIDIA RAPIDS libraries o
 - CUDA 12.x
 - Python 3.12+
 - RAPIDS 25.x (cuDF, cuML, cuCIM)
+- PyOD (`pip install pyod`) for anomaly detection demo
 - Conda environment recommended
 
 ## Notebooks
@@ -19,12 +20,14 @@ Jupyter notebooks demonstrating GPU acceleration using NVIDIA RAPIDS libraries o
 | [rapids-gpu-accelerated-demo.ipynb](rapids-gpu-accelerated-demo.ipynb) | End-to-end GPU vs CPU benchmark: DataFrames, strings, KMeans, Random Forest, text embeddings, and KNN search |
 | [cudf-pandas-stock-analysis.ipynb](cudf-pandas-stock-analysis.ipynb) | Stock market data analysis using GPU-accelerated pandas (read, merge, resample, plot) |
 | [cuml-scikit-learn-accelerator-demo.ipynb](cuml-scikit-learn-accelerator-demo.ipynb) | Drop-in GPU acceleration for scikit-learn (PCA, UMAP, KNN, HDBSCAN on activity recognition data) |
+| [pyod-gpu-anomaly-detection-demo.ipynb](pyod-gpu-anomaly-detection-demo.ipynb) | GPU-accelerated anomaly detection with PyOD and cuml.accel (IForest, PCA, KNN, CBLOF, HDBSCAN) |
 
 ### Notes
 
 - **cudf-pandas-stock-analysis.ipynb** uses `%load_ext cudf.pandas` which must be the very first executed statement before any `import pandas`. In Fabric, pandas may be pre-imported by the environment — if so, add `cudf.pandas` to the Fabric session pre-run script.
 - **cuml-scikit-learn-accelerator-demo.ipynb** downloads the UCI HAR dataset to `/tmp/HAR_data/` on first run (requires internet access).
 - **cudf-pandas-stock-analysis.ipynb** downloads stock price data from Yahoo Finance (requires internet access).
+- **pyod-gpu-anomaly-detection-demo.ipynb** uses `cuml.accel` for GPU acceleration. Dataset is synthetic (generated in-notebook). Increase `N_TRAIN` to 100K+ for meaningful GPU speedups.
 
 ## cuCIM Medical Imaging
 
