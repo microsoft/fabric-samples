@@ -1,0 +1,5 @@
+SupplierId,SupplierName,Country,ServiceLevelTargetPct,PrimaryContactRole,Active
+SUP-001,Northstar Frozen Foods,US,98.0,Cold Chain Operations,true
+SUP-002,Cascade Fresh Products,US,97.0,Fresh Category Manager,true
+SUP-003,Harbor Pantry Brands,US,96.0,Account Operations,true
+SUP-004,Alpine Prepared Foods,CA,97.5,Export Operations,true

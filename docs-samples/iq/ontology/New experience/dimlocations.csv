@@ -1,0 +1,10 @@
+LocationId,LocationType,Name,Region,City,StateProvince,Country,PriorityTier,OperatingStatus,SellingAreaSqFt,StorageCapacityPallets,Latitude,Longitude
+S-SEA-01,STORE,Seattle Market,West,Seattle,WA,US,Tier 1,OPEN,42000,,47.6062,-122.3321
+S-PDX-01,STORE,Portland Market,West,Portland,OR,US,Tier 1,OPEN,36000,,45.5152,-122.6784
+S-SFO-01,STORE,San Francisco Market,West,San Francisco,CA,US,Tier 1,OPEN,40000,,37.7749,-122.4194
+S-DEN-01,STORE,Denver Market,Central,Denver,CO,US,Tier 2,OPEN,33000,,39.7392,-104.9903
+S-BOS-01,STORE,Boston Market,East,Boston,MA,US,Tier 1,OPEN,39000,,42.3601,-71.0589
+S-NYC-01,STORE,New York Market,East,New York,NY,US,Tier 2,OPEN,46000,,40.7128,-74.006
+DC-ONT-01,DC,Ontario Distribution Center,West,Ontario,CA,US,,OPEN,,28000,34.0633,-117.6509
+DC-CHI-01,DC,Chicago Distribution Center,Central,Chicago,IL,US,,OPEN,,32000,41.8781,-87.6298
+DC-NJ-01,DC,New Jersey Distribution Center,East,Newark,NJ,US,,OPEN,,30000,40.7357,-74.1724
