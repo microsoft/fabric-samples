@@ -1,0 +1,9 @@
+ProductId,ProductName,Brand,Category,Subcategory,StorageClass,MinimumStorageTempC,MaximumStorageTempC,ShelfLifeDays,SellByDateRequired,SupplierId,StandardUnitPrice,StandardUnitCost
+P-FRZ-001,Vanilla Bean Ice Cream,Lakeshore Select,Frozen,Ice Cream,FROZEN,-25.0,-18.0,180,true,SUP-001,6.99,3.20
+P-FRZ-002,Four Cheese Pizza,Northstar Kitchen,Frozen,Pizza,FROZEN,-25.0,-18.0,270,true,SUP-001,8.49,4.10
+P-FRZ-003,Wild Blueberries,Cascade Valley,Frozen,Fruit,FROZEN,-25.0,-18.0,365,true,SUP-004,5.79,2.70
+P-PER-001,Organic Whole Milk,Cascade Dairy,Dairy,Milk,PERISHABLE,1.0,4.0,14,true,SUP-002,4.29,2.15
+P-PER-002,Garden Salad Kit,Cascade Fresh,Produce,Prepared Salad,PERISHABLE,1.0,5.0,7,true,SUP-002,5.49,2.60
+P-GEN-001,Premium Paper Towels,Harbor Home,Household,Paper Goods,AMBIENT,,,,false,SUP-003,12.99,7.25
+P-GEN-002,Medium Roast Coffee,Harbor Pantry,Grocery,Coffee,AMBIENT,,,365,false,SUP-003,10.99,5.40
+P-GEN-003,Honey Oat Cereal,Harbor Pantry,Grocery,Cereal,AMBIENT,,,240,false,SUP-003,4.99,2.20

@@ -1,0 +1,13 @@
+UnitId,StoreId,Model,Zone,MinimumSafeTempC,MaximumSafeTempC,CommissionedDate,Active
+RU-SEA-01,S-SEA-01,ArcticSafe A500,Frozen A,-25.0,-18.0,2024-03-15,true
+RU-SEA-02,S-SEA-01,ArcticSafe A500,Frozen B,-25.0,-18.0,2024-05-20,true
+RU-PDX-01,S-PDX-01,ArcticSafe A500,Frozen A,-25.0,-18.0,2024-03-15,true
+RU-PDX-02,S-PDX-01,ArcticSafe A500,Frozen B,-25.0,-18.0,2024-05-20,true
+RU-SFO-01,S-SFO-01,ArcticSafe A500,Frozen A,-25.0,-18.0,2024-03-15,true
+RU-SFO-02,S-SFO-01,ArcticSafe A500,Frozen B,-25.0,-18.0,2024-05-20,true
+RU-DEN-01,S-DEN-01,ArcticSafe A500,Frozen A,-25.0,-18.0,2024-03-15,true
+RU-DEN-02,S-DEN-01,ArcticSafe A500,Frozen B,-25.0,-18.0,2024-05-20,true
+RU-BOS-01,S-BOS-01,ArcticSafe A500,Frozen A,-25.0,-18.0,2024-03-15,true
+RU-BOS-02,S-BOS-01,ArcticSafe A500,Frozen B,-25.0,-18.0,2024-05-20,true
+RU-NYC-01,S-NYC-01,ArcticSafe A500,Frozen A,-25.0,-18.0,2024-03-15,true
+RU-NYC-02,S-NYC-01,ArcticSafe A500,Frozen B,-25.0,-18.0,2024-05-20,true
