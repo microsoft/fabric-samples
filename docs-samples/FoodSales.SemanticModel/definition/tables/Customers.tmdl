@@ -1,0 +1,108 @@
+table Customers
+	lineageTag: 8e47b52e-1c1a-4029-b6cc-25200d213fcf
+
+	column CustomerID
+		dataType: string
+		isHidden
+		lineageTag: a8149fa2-7af6-4b3c-981f-169cfbb0d402
+		summarizeBy: none
+		sourceColumn: CustomerID
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column CompanyName
+		dataType: string
+		lineageTag: d50cbb9d-12a1-4ea2-b727-bf0cba391815
+		summarizeBy: none
+		sourceColumn: CompanyName
+
+		annotation SummarizationSetBy = Automatic
+
+	column ContactName
+		dataType: string
+		lineageTag: 8ef3ac01-1d7d-4327-840a-8d61fd23b630
+		summarizeBy: none
+		sourceColumn: ContactName
+
+		annotation SummarizationSetBy = Automatic
+
+	column ContactTitle
+		dataType: string
+		lineageTag: fea0dbf9-d538-453e-98bc-ee21c1521386
+		summarizeBy: none
+		sourceColumn: ContactTitle
+
+		annotation SummarizationSetBy = Automatic
+
+	column Address
+		dataType: string
+		lineageTag: 8dc4862e-a6c6-405a-bb12-12bc3e9dc0d3
+		summarizeBy: none
+		sourceColumn: Address
+
+		annotation SummarizationSetBy = Automatic
+
+	column City
+		dataType: string
+		lineageTag: cfe1c64f-d7e6-45cf-9901-9e57b874034f
+		summarizeBy: none
+		sourceColumn: City
+
+		annotation SummarizationSetBy = Automatic
+
+	column Region
+		dataType: string
+		lineageTag: 5ff5da3a-1293-415a-a5ff-7e3546f1333c
+		summarizeBy: none
+		sourceColumn: Region
+
+		annotation SummarizationSetBy = Automatic
+
+	column PostalCode
+		dataType: string
+		lineageTag: d565f8ea-81b1-473d-9b63-309a7540b12c
+		summarizeBy: none
+		sourceColumn: PostalCode
+
+		annotation SummarizationSetBy = Automatic
+
+	column Country
+		dataType: string
+		lineageTag: a68f9260-3ded-4b7a-91d2-b9087c12a0ef
+		summarizeBy: none
+		sourceColumn: Country
+
+		annotation SummarizationSetBy = Automatic
+
+	column Phone
+		dataType: string
+		lineageTag: eb2f253b-3ac1-4063-ab3d-bbde24852db6
+		summarizeBy: none
+		sourceColumn: Phone
+
+		annotation SummarizationSetBy = Automatic
+
+	column Fax
+		dataType: string
+		lineageTag: 8f66ba25-78e9-43b7-8b30-6346ba3b1e01
+		summarizeBy: none
+		sourceColumn: Fax
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Customers-45ba0a1e-6421-4591-9a6e-0c798d5dc433 = m
+		mode: import
+		source =
+				let
+				    Source = OData.Feed("https://services.odata.org/Northwind/Northwind.svc"),
+				    Customers_table = Source{[Name="Customers",Signature="table"]}[Data],
+				    #"Replaced Value" = Table.ReplaceValue(Customers_table,null,"US",Replacer.ReplaceValue,{"Region"})
+				in
+				    #"Replaced Value"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+
