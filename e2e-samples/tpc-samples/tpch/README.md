@@ -1,0 +1,1 @@
+# TPCH setup scripts and queries
