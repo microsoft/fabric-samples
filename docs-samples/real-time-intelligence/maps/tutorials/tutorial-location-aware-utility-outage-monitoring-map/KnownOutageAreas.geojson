@@ -1,0 +1,20 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {"OutageId": "OUT-201", "OutageName": "Capitol Hill Feeder Investigation", "OperatingDistrict": "Central", "Status": "Investigating", "Priority": "High", "Cause": "Unknown", "AffectedCustomers": 420},
+      "geometry": {"type": "Polygon", "coordinates": [[[-122.3270, 47.6060], [-122.3130, 47.6060], [-122.3130, 47.6280], [-122.3270, 47.6280], [-122.3270, 47.6060]]]}
+    },
+    {
+      "type": "Feature",
+      "properties": {"OutageId": "OUT-202", "OutageName": "Fremont Switching Event", "OperatingDistrict": "North", "Status": "Crew dispatched", "Priority": "Medium", "Cause": "Equipment failure", "AffectedCustomers": 185},
+      "geometry": {"type": "Polygon", "coordinates": [[[-122.3600, 47.6460], [-122.3410, 47.6460], [-122.3410, 47.6610], [-122.3600, 47.6610], [-122.3600, 47.6460]]]}
+    },
+    {
+      "type": "Feature",
+      "properties": {"OutageId": "OUT-203", "OutageName": "West Seattle Voltage Event", "OperatingDistrict": "West", "Status": "Monitoring", "Priority": "Medium", "Cause": "Under investigation", "AffectedCustomers": 260},
+      "geometry": {"type": "Polygon", "coordinates": [[[-122.3940, 47.5420], [-122.3560, 47.5420], [-122.3560, 47.5840], [-122.3940, 47.5840], [-122.3940, 47.5420]]]}
+    }
+  ]
+}

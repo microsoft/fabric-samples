@@ -1,0 +1,106 @@
+IncidentId,EventOffsetSeconds,StreetAddress,City,StateOrProvince,PostalCode,CountryRegion,IncidentType,Priority,Status
+INC-2001,0,425 Harvard Ave E,Seattle,WA,98102,US,Power outage,High,New
+INC-2002,20,1515 Broadway,Seattle,WA,98122,US,Flickering lights,Medium,New
+INC-2003,40,1620 Broadway,Seattle,WA,98122,US,Power outage,High,New
+INC-2004,60,1701 Broadway,Seattle,WA,98122,US,Voltage issue,Medium,New
+INC-2005,80,1410 E John St,Seattle,WA,98112,US,Transformer noise,High,New
+INC-2006,100,1111 E Pike St,Seattle,WA,98122,US,Power outage,High,New
+INC-2007,120,1423 10th Ave,Seattle,WA,98122,US,Flickering lights,Medium,New
+INC-2008,140,564 12th Ave,Seattle,WA,98122,US,Power outage,High,New
+INC-2009,160,2300 E Yesler Way,Seattle,WA,98122,US,Voltage issue,Medium,New
+INC-2010,180,2101 E Yesler Way,Seattle,WA,98122,US,Transformer noise,Low,New
+INC-2011,200,2323 E Cherry St,Seattle,WA,98122,US,Power outage,High,New
+INC-2012,220,1400 E Union St,Seattle,WA,98122,US,Flickering lights,Medium,New
+INC-2013,240,805 E Pine St,Seattle,WA,98122,US,Power outage,High,New
+INC-2014,260,1001 E Madison St,Seattle,WA,98122,US,Voltage issue,Medium,New
+INC-2015,280,500 23rd Ave,Seattle,WA,98122,US,Transformer noise,Low,New
+INC-2016,300,425 Harvard Ave E,Seattle,WA,98102,US,Power outage,Critical,New
+INC-2017,320,1515 Broadway,Seattle,WA,98122,US,Downed line,Critical,New
+INC-2018,340,564 12th Ave,Seattle,WA,98122,US,Power outage,High,New
+INC-2019,360,2300 E Yesler Way,Seattle,WA,98122,US,Flickering lights,Medium,New
+INC-2020,380,2323 E Cherry St,Seattle,WA,98122,US,Voltage issue,High,New
+INC-2021,420,5614 22nd Ave NW,Seattle,WA,98107,US,Power outage,High,New
+INC-2022,440,731 N 35th St,Seattle,WA,98103,US,Flickering lights,Medium,New
+INC-2023,460,4020 Fremont Ave N,Seattle,WA,98103,US,Power outage,High,New
+INC-2024,480,5701 22nd Ave NW,Seattle,WA,98107,US,Voltage issue,Medium,New
+INC-2025,500,2232 NW Market St,Seattle,WA,98107,US,Transformer noise,High,New
+INC-2026,520,5420 22nd Ave NW,Seattle,WA,98107,US,Power outage,High,New
+INC-2027,540,5300 Leary Ave NW,Seattle,WA,98107,US,Flickering lights,Medium,New
+INC-2028,560,4300 Fremont Ave N,Seattle,WA,98103,US,Power outage,High,New
+INC-2029,580,3400 Stone Way N,Seattle,WA,98103,US,Voltage issue,Medium,New
+INC-2030,600,3501 Phinney Ave N,Seattle,WA,98103,US,Transformer noise,Low,New
+INC-2031,620,7201 Greenwood Ave N,Seattle,WA,98103,US,Power outage,High,New
+INC-2032,640,6501 5th Ave NE,Seattle,WA,98115,US,Flickering lights,Medium,New
+INC-2033,660,7201 E Green Lake Dr N,Seattle,WA,98115,US,Power outage,High,New
+INC-2034,680,7500 Greenwood Ave N,Seattle,WA,98103,US,Voltage issue,Medium,New
+INC-2035,700,4701 Sand Point Way NE,Seattle,WA,98105,US,Transformer noise,Low,New
+INC-2036,720,5614 22nd Ave NW,Seattle,WA,98107,US,Power outage,Critical,New
+INC-2037,740,731 N 35th St,Seattle,WA,98103,US,Downed line,Critical,New
+INC-2038,760,4020 Fremont Ave N,Seattle,WA,98103,US,Power outage,High,New
+INC-2039,780,2232 NW Market St,Seattle,WA,98107,US,Flickering lights,Medium,New
+INC-2040,800,5300 Leary Ave NW,Seattle,WA,98107,US,Voltage issue,High,New
+INC-2041,840,1000 4th Ave,Seattle,WA,98104,US,Power outage,High,New
+INC-2042,860,600 4th Ave,Seattle,WA,98104,US,Flickering lights,Medium,New
+INC-2043,880,700 5th Ave,Seattle,WA,98104,US,Power outage,High,New
+INC-2044,900,401 5th Ave,Seattle,WA,98104,US,Voltage issue,Medium,New
+INC-2045,920,1301 5th Ave,Seattle,WA,98101,US,Transformer noise,High,New
+INC-2046,940,1423 1st Ave,Seattle,WA,98101,US,Power outage,High,New
+INC-2047,960,2001 Western Ave,Seattle,WA,98121,US,Flickering lights,Medium,New
+INC-2048,980,305 Harrison St,Seattle,WA,98109,US,Power outage,High,New
+INC-2049,1000,400 Broad St,Seattle,WA,98109,US,Voltage issue,Medium,New
+INC-2050,1020,201 Thomas St,Seattle,WA,98109,US,Transformer noise,Low,New
+INC-2051,1040,1000 4th Ave,Seattle,WA,98104,US,Power outage,Critical,New
+INC-2052,1060,600 4th Ave,Seattle,WA,98104,US,Downed line,Critical,New
+INC-2053,1080,700 5th Ave,Seattle,WA,98104,US,Power outage,High,New
+INC-2054,1100,1301 5th Ave,Seattle,WA,98101,US,Flickering lights,Medium,New
+INC-2055,1120,1423 1st Ave,Seattle,WA,98101,US,Voltage issue,High,New
+INC-2056,1160,9125 Rainier Ave S,Seattle,WA,98118,US,Power outage,High,New
+INC-2057,1180,4900 Rainier Ave S,Seattle,WA,98118,US,Flickering lights,Medium,New
+INC-2058,1200,3829 S Edmunds St,Seattle,WA,98118,US,Power outage,High,New
+INC-2059,1220,4721 Rainier Ave S,Seattle,WA,98118,US,Voltage issue,Medium,New
+INC-2060,1240,7300 Rainier Ave S,Seattle,WA,98118,US,Transformer noise,High,New
+INC-2061,1260,8800 Rainier Ave S,Seattle,WA,98118,US,Power outage,High,New
+INC-2062,1280,9252 57th Ave S,Seattle,WA,98118,US,Flickering lights,Medium,New
+INC-2063,1300,2701 Beacon Ave S,Seattle,WA,98144,US,Power outage,High,New
+INC-2064,1320,2821 Beacon Ave S,Seattle,WA,98144,US,Voltage issue,Medium,New
+INC-2065,1340,3801 Beacon Ave S,Seattle,WA,98108,US,Transformer noise,Low,New
+INC-2066,1360,7054 32nd Ave S,Seattle,WA,98118,US,Power outage,High,New
+INC-2067,1380,5000 Rainier Ave S,Seattle,WA,98118,US,Flickering lights,Medium,New
+INC-2068,1400,6000 Rainier Ave S,Seattle,WA,98118,US,Power outage,High,New
+INC-2069,1420,7100 Martin Luther King Jr Way S,Seattle,WA,98118,US,Voltage issue,Medium,New
+INC-2070,1440,8300 Rainier Ave S,Seattle,WA,98118,US,Transformer noise,Low,New
+INC-2071,1460,9125 Rainier Ave S,Seattle,WA,98118,US,Power outage,Critical,New
+INC-2072,1480,4900 Rainier Ave S,Seattle,WA,98118,US,Downed line,Critical,New
+INC-2073,1500,3829 S Edmunds St,Seattle,WA,98118,US,Power outage,High,New
+INC-2074,1520,7300 Rainier Ave S,Seattle,WA,98118,US,Flickering lights,Medium,New
+INC-2075,1540,8800 Rainier Ave S,Seattle,WA,98118,US,Voltage issue,High,New
+INC-2076,1600,2306 42nd Ave SW,Seattle,WA,98116,US,Power outage,High,New
+INC-2077,1620,3411 SW Raymond St,Seattle,WA,98126,US,Flickering lights,Medium,New
+INC-2078,1640,5423 Delridge Way SW,Seattle,WA,98106,US,Power outage,High,New
+INC-2079,1660,4700 42nd Ave SW,Seattle,WA,98116,US,Voltage issue,Medium,New
+INC-2080,1680,4515 44th Ave SW,Seattle,WA,98116,US,Transformer noise,High,New
+INC-2081,1700,2733 California Ave SW,Seattle,WA,98116,US,Power outage,High,New
+INC-2082,1720,2326 California Ave SW,Seattle,WA,98116,US,Flickering lights,Medium,New
+INC-2083,1740,2801 SW Thistle St,Seattle,WA,98126,US,Power outage,High,New
+INC-2084,1760,6500 SW Admiral Way,Seattle,WA,98116,US,Voltage issue,Medium,New
+INC-2085,1780,3000 California Ave SW,Seattle,WA,98116,US,Transformer noise,Low,New
+INC-2086,1800,4408 Delridge Way SW,Seattle,WA,98106,US,Power outage,High,New
+INC-2087,1820,7344 35th Ave SW,Seattle,WA,98126,US,Flickering lights,Medium,New
+INC-2088,1840,2600 SW Barton St,Seattle,WA,98126,US,Power outage,High,New
+INC-2089,1860,9010 35th Ave SW,Seattle,WA,98126,US,Voltage issue,Medium,New
+INC-2090,1880,2550 34th Ave SW,Seattle,WA,98126,US,Transformer noise,Low,New
+INC-2091,1900,2306 42nd Ave SW,Seattle,WA,98116,US,Power outage,Critical,New
+INC-2092,1920,3411 SW Raymond St,Seattle,WA,98126,US,Downed line,Critical,New
+INC-2093,1940,5423 Delridge Way SW,Seattle,WA,98106,US,Power outage,High,New
+INC-2094,1960,4700 42nd Ave SW,Seattle,WA,98116,US,Flickering lights,Medium,New
+INC-2095,1980,4408 Delridge Way SW,Seattle,WA,98106,US,Voltage issue,High,New
+INC-2096,2070,12501 28th Ave NE,Seattle,WA,98125,US,Power outage,Medium,New
+INC-2097,2140,12755 Greenwood Ave N,Seattle,WA,98133,US,Flickering lights,Low,New
+INC-2098,2210,10548 5th Ave NE,Seattle,WA,98125,US,Transformer noise,Low,New
+INC-2099,2280,14350 15th Ave NE,Seattle,WA,98125,US,Voltage issue,Medium,New
+INC-2100,2350,11001 35th Ave NE,Seattle,WA,98125,US,Power outage,Medium,New
+INC-2101,2420,10049 Lake City Way NE,Seattle,WA,98125,US,Flickering lights,Low,New
+INC-2102,2490,11730 15th Ave NE,Seattle,WA,98125,US,Transformer noise,Low,New
+INC-2103,2560,13000 Linden Ave N,Seattle,WA,98133,US,Voltage issue,Medium,New
+INC-2104,2630,14300 Greenwood Ave N,Seattle,WA,98133,US,Power outage,Medium,New
+INC-2105,2700,12360 Lake City Way NE,Seattle,WA,98125,US,Flickering lights,Low,New
