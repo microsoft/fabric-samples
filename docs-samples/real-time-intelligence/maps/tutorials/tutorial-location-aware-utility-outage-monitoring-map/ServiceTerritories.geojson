@@ -1,0 +1,30 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {"TerritoryId": "TERR-N", "TerritoryName": "North Service Territory", "OperatingDistrict": "North", "Status": "Active"},
+      "geometry": {"type": "Polygon", "coordinates": [[[-122.4200, 47.6350], [-122.2400, 47.6350], [-122.2400, 47.7350], [-122.4200, 47.7350], [-122.4200, 47.6350]]]}
+    },
+    {
+      "type": "Feature",
+      "properties": {"TerritoryId": "TERR-C", "TerritoryName": "Central Service Territory", "OperatingDistrict": "Central", "Status": "Active"},
+      "geometry": {"type": "Polygon", "coordinates": [[[-122.3300, 47.5850], [-122.2400, 47.5850], [-122.2400, 47.6350], [-122.3300, 47.6350], [-122.3300, 47.5850]]]}
+    },
+    {
+      "type": "Feature",
+      "properties": {"TerritoryId": "TERR-D", "TerritoryName": "Downtown Service Territory", "OperatingDistrict": "Downtown", "Status": "Active"},
+      "geometry": {"type": "Polygon", "coordinates": [[[-122.3600, 47.5850], [-122.3300, 47.5850], [-122.3300, 47.6350], [-122.3600, 47.6350], [-122.3600, 47.5850]]]}
+    },
+    {
+      "type": "Feature",
+      "properties": {"TerritoryId": "TERR-S", "TerritoryName": "South Service Territory", "OperatingDistrict": "South", "Status": "Active"},
+      "geometry": {"type": "Polygon", "coordinates": [[[-122.3400, 47.4900], [-122.2400, 47.4900], [-122.2400, 47.5850], [-122.3400, 47.5850], [-122.3400, 47.4900]]]}
+    },
+    {
+      "type": "Feature",
+      "properties": {"TerritoryId": "TERR-W", "TerritoryName": "West Service Territory", "OperatingDistrict": "West", "Status": "Active"},
+      "geometry": {"type": "Polygon", "coordinates": [[[-122.4200, 47.4900], [-122.3400, 47.4900], [-122.3400, 47.5850], [-122.4200, 47.5850], [-122.4200, 47.4900]]]}
+    }
+  ]
+}

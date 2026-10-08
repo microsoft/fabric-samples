@@ -1,0 +1,19 @@
+IncidentId,EventOffsetSeconds,StreetAddress,City,StateOrProvince,PostalCode,CountryRegion,IncidentType,Priority,Status
+INC-1001,0,425 Harvard Ave E,Seattle,WA,98102,US,Power outage,High,New
+INC-1002,25,425 Harvard Ave E,Seattle,WA,98102,US,Flickering lights,Medium,New
+INC-1003,55,564 12th Ave,Seattle,WA,98122,US,Power outage,High,New
+INC-1004,95,2300 E Yesler Way,Seattle,WA,98122,US,Voltage issue,Medium,New
+INC-1005,155,425 Harvard Ave E,Seattle,WA,98102,US,Transformer noise,High,New
+INC-1006,300,5614 22nd Ave NW,Seattle,WA,98107,US,Power outage,High,New
+INC-1007,330,731 N 35th St,Seattle,WA,98103,US,Flickering lights,Medium,New
+INC-1008,370,4020 Fremont Ave N,Seattle,WA,98103,US,Power outage,High,New
+INC-1009,420,5614 22nd Ave NW,Seattle,WA,98107,US,Voltage issue,Medium,New
+INC-1010,480,731 N 35th St,Seattle,WA,98103,US,Transformer noise,Low,New
+INC-1011,600,2306 42nd Ave SW,Seattle,WA,98116,US,Power outage,High,New
+INC-1012,640,3411 SW Raymond St,Seattle,WA,98126,US,Flickering lights,Medium,New
+INC-1013,690,5423 Delridge Way SW,Seattle,WA,98106,US,Power outage,High,New
+INC-1014,750,2306 42nd Ave SW,Seattle,WA,98116,US,Voltage issue,Medium,New
+INC-1015,820,3411 SW Raymond St,Seattle,WA,98126,US,Transformer noise,Low,New
+INC-1016,960,12501 28th Ave NE,Seattle,WA,98125,US,Power outage,Medium,New
+INC-1017,1110,9125 Rainier Ave S,Seattle,WA,98118,US,Downed line,Critical,New
+INC-1018,1320,12755 Greenwood Ave N,Seattle,WA,98133,US,Flickering lights,Low,New

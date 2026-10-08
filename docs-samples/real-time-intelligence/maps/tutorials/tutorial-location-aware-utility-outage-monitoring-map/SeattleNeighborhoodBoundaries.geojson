@@ -1,0 +1,50 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {"Neighborhood": "Capitol Hill"},
+      "geometry": {"type": "Polygon", "coordinates": [[[-122.3350, 47.6150], [-122.3150, 47.6150], [-122.3150, 47.6350], [-122.3350, 47.6350], [-122.3350, 47.6150]]]}
+    },
+    {
+      "type": "Feature",
+      "properties": {"Neighborhood": "Central District"},
+      "geometry": {"type": "Polygon", "coordinates": [[[-122.3250, 47.5900], [-122.2850, 47.5900], [-122.2850, 47.6150], [-122.3250, 47.6150], [-122.3250, 47.5900]]]}
+    },
+    {
+      "type": "Feature",
+      "properties": {"Neighborhood": "Ballard"},
+      "geometry": {"type": "Polygon", "coordinates": [[[-122.4050, 47.6550], [-122.3700, 47.6550], [-122.3700, 47.6850], [-122.4050, 47.6850], [-122.4050, 47.6550]]]}
+    },
+    {
+      "type": "Feature",
+      "properties": {"Neighborhood": "Fremont"},
+      "geometry": {"type": "Polygon", "coordinates": [[[-122.3700, 47.6400], [-122.3350, 47.6400], [-122.3350, 47.6650], [-122.3700, 47.6650], [-122.3700, 47.6400]]]}
+    },
+    {
+      "type": "Feature",
+      "properties": {"Neighborhood": "Admiral District"},
+      "geometry": {"type": "Polygon", "coordinates": [[[-122.4100, 47.5650], [-122.3700, 47.5650], [-122.3700, 47.5950], [-122.4100, 47.5950], [-122.4100, 47.5650]]]}
+    },
+    {
+      "type": "Feature",
+      "properties": {"Neighborhood": "Delridge"},
+      "geometry": {"type": "Polygon", "coordinates": [[[-122.3900, 47.5350], [-122.3450, 47.5350], [-122.3450, 47.5650], [-122.3900, 47.5650], [-122.3900, 47.5350]]]}
+    },
+    {
+      "type": "Feature",
+      "properties": {"Neighborhood": "Lake City"},
+      "geometry": {"type": "Polygon", "coordinates": [[[-122.3150, 47.7000], [-122.2750, 47.7000], [-122.2750, 47.7350], [-122.3150, 47.7350], [-122.3150, 47.7000]]]}
+    },
+    {
+      "type": "Feature",
+      "properties": {"Neighborhood": "Rainier Beach"},
+      "geometry": {"type": "Polygon", "coordinates": [[[-122.2850, 47.4950], [-122.2450, 47.4950], [-122.2450, 47.5350], [-122.2850, 47.5350], [-122.2850, 47.4950]]]}
+    },
+    {
+      "type": "Feature",
+      "properties": {"Neighborhood": "Bitter Lake"},
+      "geometry": {"type": "Polygon", "coordinates": [[[-122.3750, 47.7000], [-122.3350, 47.7000], [-122.3350, 47.7350], [-122.3750, 47.7350], [-122.3750, 47.7000]]]}
+    }
+  ]
+}
