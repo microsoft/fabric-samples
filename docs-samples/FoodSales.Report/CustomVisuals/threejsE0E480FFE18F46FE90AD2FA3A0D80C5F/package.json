@@ -1,0 +1,29 @@
+{
+  "version": "1.6.0",
+  "author": {
+    "name": "Jack Butts",
+    "email": "buttsjofficial@gmail.com"
+  },
+  "resources": [
+    {
+      "resourceId": "rId0",
+      "sourceType": 5,
+      "file": "resources/threejsE0E480FFE18F46FE90AD2FA3A0D80C5F.pbiviz.json"
+    }
+  ],
+  "visual": {
+    "guid": "threejsE0E480FFE18F46FE90AD2FA3A0D80C5F",
+    "name": "pbi-globalization-v1_6",
+    "displayName": "Globe Data Bars",
+    "version": "1.6.0",
+    "description": "An interactive and customizable 3D globe with data bars & tooltips",
+    "supportUrl": "https://www.dreameater.net",
+    "gitHubUrl": "https://github.com/buttsj/pbi-globalization",
+    "visualClassName": "Visual"
+  },
+  "metadata": {
+    "pbivizjson": {
+      "resourceId": "rId0"
+    }
+  }
+}

@@ -1,0 +1,160 @@
+table Orders
+	lineageTag: 7a163937-5757-4be4-9416-85428e2680c9
+
+	column OrderID
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 8377bc01-4713-469f-a7fd-a89477a000ea
+		summarizeBy: none
+		sourceColumn: OrderID
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column CustomerID
+		dataType: string
+		isHidden
+		lineageTag: 2a91eebb-4568-46b7-97e4-cc767018207a
+		summarizeBy: none
+		sourceColumn: CustomerID
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column EmployeeID
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 13f554d6-43e3-45da-8739-bbcc35b8fecf
+		summarizeBy: count
+		sourceColumn: EmployeeID
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column OrderDate
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 734412d2-0794-4c4f-aded-75c8e29688e2
+		summarizeBy: none
+		sourceColumn: OrderDate
+
+		variation Variation
+			isDefault
+			relationship: 2d53d235-04ac-4ed8-8ef5-9ca9eddf8501
+			defaultHierarchy: LocalDateTable_7ef188e6-2db9-4290-aa60-6d6d185c654f.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column RequiredDate
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 404817c4-150a-46b8-baba-84685500f58b
+		summarizeBy: none
+		sourceColumn: RequiredDate
+
+		variation Variation
+			isDefault
+			relationship: 615fdd92-5e43-4efe-8a0d-423272453443
+			defaultHierarchy: LocalDateTable_d6647606-e75a-42be-a141-5b5dc67aebdf.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Shipped Date'
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: ac64783d-b1d7-4b0c-9b55-e04cc86c201e
+		summarizeBy: none
+		sourceColumn: Shipped Date
+
+		variation Variation
+			isDefault
+			relationship: 9b6d2f78-062b-432d-89c1-69ff6717b62c
+			defaultHierarchy: LocalDateTable_cde5d4de-d289-40fd-b18f-100e83821e85.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column ShipVia
+		dataType: int64
+		formatString: 0
+		lineageTag: 6cf0bdbe-02f9-4d46-aefb-71ae124d76fa
+		summarizeBy: sum
+		sourceColumn: ShipVia
+
+		annotation SummarizationSetBy = Automatic
+
+	column Freight
+		dataType: double
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: 9a526e30-4acc-4a98-a2a6-6d30d5091147
+		summarizeBy: sum
+		sourceColumn: Freight
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	column ShipName
+		dataType: string
+		lineageTag: 7d494c42-154d-4b23-8401-09a73cc5bcbe
+		summarizeBy: none
+		sourceColumn: ShipName
+
+		annotation SummarizationSetBy = Automatic
+
+	column ShipAddress
+		dataType: string
+		lineageTag: f1868319-ab47-4574-907b-ff7365ba169c
+		summarizeBy: none
+		sourceColumn: ShipAddress
+
+		annotation SummarizationSetBy = Automatic
+
+	column ShipCity
+		dataType: string
+		lineageTag: bfbf9507-b534-4f1b-aae7-6784679eaa57
+		summarizeBy: none
+		sourceColumn: ShipCity
+
+		annotation SummarizationSetBy = Automatic
+
+	column ShipRegion
+		dataType: string
+		lineageTag: 191a49e4-4baf-44fe-a2fe-0956a193a73f
+		summarizeBy: none
+		sourceColumn: ShipRegion
+
+		annotation SummarizationSetBy = Automatic
+
+	column ShipPostalCode
+		dataType: string
+		lineageTag: 0a1a09f6-63c4-46b3-ac80-26c2d3e03129
+		summarizeBy: none
+		sourceColumn: ShipPostalCode
+
+		annotation SummarizationSetBy = Automatic
+
+	column ShipCountry
+		dataType: string
+		lineageTag: 21228db7-adfc-4090-a8db-1578696ccaf0
+		summarizeBy: none
+		sourceColumn: ShipCountry
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Orders-611be5d7-ed50-4633-aec8-05b1f0cfda73 = m
+		mode: import
+		source =
+				let
+				    Source = OData.Feed("https://services.odata.org/Northwind/Northwind.svc"),
+				    Orders_table = Source{[Name="Orders",Signature="table"]}[Data],
+				    #"Renamed Columns" = Table.RenameColumns(Orders_table,{{"ShippedDate", "Shipped Date"}})
+				in
+				    #"Renamed Columns"
+
+	annotation PBI_ResultType = Table
+
