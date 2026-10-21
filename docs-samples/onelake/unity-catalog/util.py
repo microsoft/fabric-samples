@@ -16,26 +16,40 @@ class Utils:
     def get_dbx_uc_tables(databricks_config):
         all_tables = []
 
-        dbx_workspace = databricks_config['dbx_workspace']
+        dbx_workspace = databricks_config['dbx_workspace'].rstrip('/')
         dbx_token = databricks_config['dbx_token']
         dbx_uc_catalog = databricks_config['dbx_uc_catalog']
         dbx_uc_schemas = databricks_config['dbx_uc_schemas']
-  
-        for schema in dbx_uc_schemas:
-            url = f"{dbx_workspace}/api/2.1/unity-catalog/tables?catalog_name={dbx_uc_catalog}&schema_name={schema}"
-            payload = {}
-            headers = {
-                'Authorization': f'Bearer {dbx_token}',
-                'Content-Type': 'application/json'
-            }
-            response = requests.get(url, data=payload, headers=headers)
+        if not dbx_uc_schemas:
+            raise ValueError("At least one Unity Catalog schema is required")
 
-            if response.status_code == 200:
-                response_json = json.loads(response.text)
-                all_tables.extend(response_json['tables'])
-            else:
-                print(f"! Upps [{response.status_code}] Cannot connect to Unity Catalog. Please review configs.")
-                return None
+        url = f"{dbx_workspace}/api/2.1/unity-catalog/tables"
+        headers = {'Authorization': f'Bearer {dbx_token}'}
+        for schema in dbx_uc_schemas:
+            params = {
+                'catalog_name': dbx_uc_catalog,
+                'schema_name': schema,
+                'max_results': 0,
+            }
+            seen_tokens = set()
+            while True:
+                response = requests.get(url, params=params, headers=headers, timeout=30)
+                response.raise_for_status()
+                page = response.json()
+                if (not isinstance(page, dict)
+                        or not isinstance(page.get('tables', []), list)
+                        or (page and 'tables' not in page and 'next_page_token' not in page)):
+                    raise ValueError(f"Unexpected Unity Catalog response for schema {schema!r}")
+                all_tables.extend(page.get('tables', []))
+
+                token = page.get('next_page_token')
+                if token is None or token == '':
+                    break
+                if not isinstance(token, str) or token in seen_tokens:
+                    raise ValueError(f"Invalid pagination token for schema {schema!r}")
+                seen_tokens.add(token)
+                params['page_token'] = token
+
         return all_tables
 
     # Fabric utils
