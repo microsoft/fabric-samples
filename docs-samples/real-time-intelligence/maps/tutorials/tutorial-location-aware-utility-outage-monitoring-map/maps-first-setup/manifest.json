@@ -1,0 +1,25 @@
+{
+  "format_version": 1,
+  "package": "utility-outage-monitoring-maps-first-setup",
+  "source_assets": "Seven unchanged files from the adjacent original tutorial sample directory",
+  "original_sample_zip_sha256": "63b618a8b0aa2a133c0ac2e91ff69b431f11e708fd101bca27ff4795c03fea17",
+  "sha256": {
+    ".gitignore": "82580d9f3e04a246cf01b98b46da6967601b9084efcd2d967580f8a38e7da941",
+    "CurrentOutageConditions.kql": "38c2bad2e4ce77563322628d3bd4c1cf4d6e64c997fd9dabeb3d6456fd164d7c",
+    "LICENSE": "9906940f61b1f0b533fa7d99baf55178b2808fbe113ea51dfbfad8572ccd5f2b",
+    "README.md": "7ad0639e9c44ad5b96f66605146ff4b00d1d3535150455c9841a295f42689d85",
+    "data/KnownOutageAreas.geojson": "0328a04ee930f8f99f936b0392229683154ddb46c7daa05f64b56ac098f1f310",
+    "data/NeighborhoodDistrictLookup.csv": "ca27742fcfde03562a5e4b32e3e069b112eb632a99a595b3f7597ab0da4c1520",
+    "data/RepairCrews.csv": "5f7e3e58ddb5d79e2fe5d93098fbc372cdfe206af98a81fd08292c0cd236edc5",
+    "data/SeattleNeighborhoodBoundaries.geojson": "6a0a507edc55dc529f0b9a9491c716e266ae5c343c19f66de55c8f77178e56df",
+    "data/ServiceTerritories.geojson": "4f3c577d8a4f2e7df78ac5828db6592d6c43dcafcb39c783593bb7ac33dc4705",
+    "data/UtilityFacilities.geojson": "342ee04e0bd987860ac4cc55573c6c07ee7d34a4ee730d778b2ebabbec71a9a6",
+    "data/UtilityIncidents.csv": "45e50924bcd669be3a7179059c5ebcddd634321d7b02c2ea8dcf12a4644a10d3",
+    "package_setup.py": "a90dec4d15cf3b6883d67ef1f0674ca17740dcdcce0120bd0505941e378cf748",
+    "requirements.txt": "3ccb00c57e9571c409ec5696465e1dd94663b7fbfe77c7bda357d5bdc4754f39",
+    "setup_utility_outages.py": "ec2f3165033d3c56334532a6dbd205abb2e5389f8fe190f5e2dfe22765eae2b8",
+    "tests/test_setup.py": "8814231368b7db46d2bcb388387618897f7e738a8cae50a4c77a05facd8adc4a",
+    "verify-handoff.kql": "7b327a955fdcaf4c0986428a50b1938dfd70e67b36e47b96274ac404766ef978",
+    "verify-history.sql": "c16ac5a79b5fa6627764602332082cf5ac59c2bd909f58248984c136389a8f09"
+  }
+}

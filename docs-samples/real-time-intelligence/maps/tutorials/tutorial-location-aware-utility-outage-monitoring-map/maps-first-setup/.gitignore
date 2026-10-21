@@ -1,0 +1,6 @@
+__pycache__/
+*.pyc
+.venv/
+setup-state.json
+run-report.json
+enriched-checkpoint.json

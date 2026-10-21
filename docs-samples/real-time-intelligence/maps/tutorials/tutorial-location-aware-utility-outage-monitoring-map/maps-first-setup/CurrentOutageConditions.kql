@@ -1,0 +1,119 @@
+.create-or-alter function CurrentOutageConditions()
+{
+    let TimeWindow = 15m;
+    let S2Level = 14;
+    let MinimumIncidents = 3;
+    let CurrentIncidents = materialize(
+        EnrichedIncidents
+        | summarize arg_max(geocodedAt, *) by incidentId
+        | where geocodeStatus == "Matched"
+        | where isnotnull(latitude) and isnotnull(longitude)
+    );
+    let AnalysisStart = toscalar(
+        CurrentIncidents
+        | summarize min(reportedAt)
+    );
+    let CandidateGroups = materialize(
+        CurrentIncidents
+        | extend LocationCell = geo_point_to_s2cell(longitude, latitude, S2Level)
+        | where isnotempty(LocationCell)
+        | extend WindowStart = bin_at(reportedAt, TimeWindow, AnalysisStart)
+        | summarize
+            IncidentCount = count(),
+            CriticalIncidentCount = countif(priority == "Critical"),
+            HighPriorityIncidentCount = countif(priority == "High"),
+            DownedLineCount = countif(incidentType == "Downed line"),
+            DistinctAddresses = dcount(address),
+            IncidentIds = make_set(incidentId, 100),
+            IncidentTypes = make_set(incidentType, 20),
+            FirstReported = min(reportedAt),
+            LastReported = max(reportedAt)
+            by LocationCell, WindowStart
+        | where IncidentCount >= MinimumIncidents and DistinctAddresses >= 2
+        | extend GroupPoint = geo_s2cell_to_central_point(LocationCell)
+        | extend
+            longitude = todouble(GroupPoint.coordinates[0]),
+            latitude = todouble(GroupPoint.coordinates[1]),
+            probableOutageId = strcat(
+                "PO-",
+                LocationCell,
+                "-",
+                format_datetime(WindowStart, "yyyyMMddHHmm")
+            )
+        | project-away GroupPoint
+    );
+    let KnownAreas = materialize(
+        ['KnownOutageAreas.geojson']
+        | mv-expand Feature = features
+        | project
+            ActiveOutageId = tostring(Feature.properties.OutageId),
+            ActiveOutageName = tostring(Feature.properties.OutageName),
+            ActiveOutageStatus = tostring(Feature.properties.Status),
+            ActiveOutagePriority = tostring(Feature.properties.Priority),
+            AffectedCustomers = tolong(Feature.properties.AffectedCustomers),
+            OutagePolygon = todynamic(Feature.geometry)
+    );
+    let Matches =
+        CandidateGroups
+        | extend JoinKey = 1
+        | join kind=inner (KnownAreas | extend JoinKey = 1) on JoinKey
+        | where geo_point_in_polygon(longitude, latitude, OutagePolygon)
+        | summarize take_any(
+            ActiveOutageId,
+            ActiveOutageName,
+            ActiveOutageStatus,
+            ActiveOutagePriority,
+            AffectedCustomers
+        ) by probableOutageId;
+    CandidateGroups
+    | lookup kind=leftouter Matches on probableOutageId
+    | extend OutageComparison = iff(
+        isnotempty(ActiveOutageId),
+        "Within active outage",
+        "Potential new outage"
+    )
+    | extend CustomerImpactPoints = case(
+        AffectedCustomers >= 400, 5,
+        AffectedCustomers >= 200, 3,
+        AffectedCustomers > 0, 1,
+        0
+    )
+    | extend PriorityScore =
+        IncidentCount
+        + (CriticalIncidentCount * 5)
+        + (HighPriorityIncidentCount * 3)
+        + (DownedLineCount * 5)
+        + iff(OutageComparison == "Potential new outage", 4, 0)
+        + CustomerImpactPoints
+    | extend PriorityIndicator = case(
+        PriorityScore >= 20, "Critical",
+        PriorityScore >= 12, "High",
+        PriorityScore >= 7, "Medium",
+        "Low"
+    )
+    | project
+        probableOutageId,
+        OutageComparison,
+        PriorityIndicator,
+        PriorityScore,
+        CriticalIncidentCount,
+        HighPriorityIncidentCount,
+        DownedLineCount,
+        CustomerImpactPoints,
+        ActiveOutageId,
+        ActiveOutageName,
+        ActiveOutageStatus,
+        ActiveOutagePriority,
+        AffectedCustomers,
+        WindowStart,
+        FirstReported,
+        LastReported,
+        IncidentCount,
+        DistinctAddresses,
+        IncidentTypes,
+        IncidentIds,
+        latitude,
+        longitude,
+        LocationCell
+    | order by PriorityScore desc, IncidentCount desc
+}

@@ -1,0 +1,8 @@
+CrewId,CrewName,Latitude,Longitude,AvailabilityStatus,OperatingDistrict,Skills
+CREW-01,North Line Crew,47.6680,-122.3840,Available,North,"Overhead lines;transformers"
+CREW-02,North Troubleshooting Crew,47.6530,-122.3500,Assigned,North,"Diagnostics;switching"
+CREW-03,Central Response Crew,47.6120,-122.3160,Available,Central,"Underground lines;switching"
+CREW-04,Downtown Network Crew,47.6080,-122.3380,Available,Downtown,"Network systems;vault access"
+CREW-05,South Line Crew,47.5480,-122.2860,Assigned,South,"Overhead lines;vegetation response"
+CREW-06,West Seattle Crew,47.5740,-122.3860,Available,West,"Overhead lines;transformers"
+CREW-07,Emergency Restoration Crew,47.6200,-122.3320,On call,Central,"Downed lines;emergency restoration"

@@ -1,0 +1,16 @@
+// Read-only verification. Run these queries separately in the KQL database.
+RawIncidents | summarize Rows=count(), DistinctIncidents=dcount(incidentId)
+
+EnrichedIncidents
+| summarize arg_max(geocodedAt, *) by incidentId
+| summarize Incidents=count() by geocodeStatus
+
+['KnownOutageAreas.geojson']
+| mv-expand Feature=features
+| project OutageId=tostring(Feature.properties.OutageId), GeometryType=tostring(Feature.geometry.type)
+
+CurrentOutageConditions()
+| summarize Groups=count() by OutageComparison, PriorityIndicator
+
+CurrentOutageConditions()
+| project probableOutageId, IncidentCount, DistinctAddresses, PriorityScore, latitude, longitude
