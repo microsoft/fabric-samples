@@ -1,0 +1,35 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {"FacilityId": "FAC-01", "FacilityName": "Ballard Substation", "FacilityType": "Substation", "OperatingDistrict": "North", "Status": "Operational", "CapacityMVA": 45},
+      "geometry": {"type": "Point", "coordinates": [-122.3860, 47.6650]}
+    },
+    {
+      "type": "Feature",
+      "properties": {"FacilityId": "FAC-02", "FacilityName": "Fremont Switching Station", "FacilityType": "Switching station", "OperatingDistrict": "North", "Status": "Operational", "CapacityMVA": 25},
+      "geometry": {"type": "Point", "coordinates": [-122.3490, 47.6540]}
+    },
+    {
+      "type": "Feature",
+      "properties": {"FacilityId": "FAC-03", "FacilityName": "Central District Substation", "FacilityType": "Substation", "OperatingDistrict": "Central", "Status": "Operational", "CapacityMVA": 55},
+      "geometry": {"type": "Point", "coordinates": [-122.3020, 47.6050]}
+    },
+    {
+      "type": "Feature",
+      "properties": {"FacilityId": "FAC-04", "FacilityName": "Downtown Network Center", "FacilityType": "Operations center", "OperatingDistrict": "Downtown", "Status": "Operational", "CapacityMVA": 0},
+      "geometry": {"type": "Point", "coordinates": [-122.3360, 47.6070]}
+    },
+    {
+      "type": "Feature",
+      "properties": {"FacilityId": "FAC-05", "FacilityName": "Rainier Valley Substation", "FacilityType": "Substation", "OperatingDistrict": "South", "Status": "Operational", "CapacityMVA": 40},
+      "geometry": {"type": "Point", "coordinates": [-122.2770, 47.5360]}
+    },
+    {
+      "type": "Feature",
+      "properties": {"FacilityId": "FAC-06", "FacilityName": "West Seattle Service Center", "FacilityType": "Service center", "OperatingDistrict": "West", "Status": "Operational", "CapacityMVA": 0},
+      "geometry": {"type": "Point", "coordinates": [-122.3810, 47.5600]}
+    }
+  ]
+}
