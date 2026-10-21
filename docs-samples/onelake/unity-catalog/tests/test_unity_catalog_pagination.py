@@ -110,5 +110,29 @@ class PaginationTests(unittest.TestCase):
             util.Utils.get_dbx_uc_tables({**CONFIG, "dbx_uc_schemas": []})
 
 
+class EmptyInventoryTests(unittest.TestCase):
+    @patch.object(util.Utils, "get_dbx_uc_tables", return_value=[])
+    @patch.object(util.Utils, "get_lakehouse_shortcuts", create=True, return_value=["uc_sales_old"])
+    @patch.object(util.Utils, "delete_shortcuts", create=True)
+    def test_empty_inventory_does_not_delete_shortcuts(self, delete, ls, tables):
+        with self.assertRaisesRegex(ValueError, "allow_empty_catalog_deletion"):
+            util.sync_dbx_uc_tables_to_onelake(
+                CONFIG, {"consider_dbx_uc_table_changes": True}
+            )
+        delete.assert_not_called()
+
+    @patch.object(util.Utils, "get_dbx_uc_tables", return_value=[])
+    @patch.object(util.Utils, "get_lakehouse_shortcuts", create=True, return_value=["uc_sales_old"])
+    @patch.object(util.Utils, "delete_shortcuts", create=True, return_value=(1, 0))
+    @patch.object(util.Utils, "create_shortcuts", create=True, return_value=(0, 0, 0))
+    def test_explicit_empty_catalog_cleanup(self, create, delete, ls, tables):
+        util.sync_dbx_uc_tables_to_onelake(
+            CONFIG, {
+                "consider_dbx_uc_table_changes": True,
+                "allow_empty_catalog_deletion": True,
+            },
+        )
+        delete.assert_called_once()
+
 if __name__ == "__main__":
     unittest.main()

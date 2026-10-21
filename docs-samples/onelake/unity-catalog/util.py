@@ -230,6 +230,13 @@ def sync_dbx_uc_tables_to_onelake(databricks_config, fabric_config):
 
     uc_shortcuts = [name for name in all_shortcuts if name.startswith(Utils.PREFIX)]
 
+    if (fabric_config['consider_dbx_uc_table_changes'] and uc_shortcuts and not tables
+            and not fabric_config.get('allow_empty_catalog_deletion', False)):
+        raise ValueError(
+            "Unity Catalog returned no tables; set allow_empty_catalog_deletion=True "
+            "to remove existing shortcuts intentionally"
+        )
+
     uc_table_names = [f"{Utils.PREFIX}_{entry['catalog_name']}_{entry['schema_name']}_{entry['name']}" for entry in tables]
 
     skipped_required = [name for name in uc_shortcuts if name in uc_table_names]
