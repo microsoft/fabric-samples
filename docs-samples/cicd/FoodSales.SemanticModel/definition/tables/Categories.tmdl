@@ -1,0 +1,45 @@
+table Categories
+	lineageTag: 99508c15-e8e6-42d8-871b-35fabdada4c1
+
+	measure 'Category Title' = SELECTEDVALUE(Categories[CategoryName], DISTINCTCOUNT(Categories[CategoryName]) & " Selected")
+		lineageTag: 4167b6a7-9764-4836-9274-9278af7097a4
+
+	column CategoryID
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 48ca9192-1435-40a0-9970-647853d5ce92
+		summarizeBy: none
+		sourceColumn: CategoryID
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column CategoryName
+		dataType: string
+		lineageTag: 6423357d-6800-46e4-be4b-4833dfb51220
+		summarizeBy: none
+		sourceColumn: CategoryName
+
+		annotation SummarizationSetBy = Automatic
+
+	column Description
+		dataType: string
+		lineageTag: 48f1660b-abf3-4989-840f-5bc93a7af411
+		summarizeBy: none
+		sourceColumn: Description
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Categories-b60d3cb7-f94d-4509-86d5-3c19b692b7ff = m
+		mode: import
+		source =
+				let
+				    Source = OData.Feed("https://services.odata.org/Northwind/Northwind.svc"),
+				    Categories_table = Source{[Name="Categories",Signature="table"]}[Data]
+				in
+				    Categories_table
+
+	annotation PBI_ResultType = Table
+

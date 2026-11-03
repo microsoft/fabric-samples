@@ -1,0 +1,74 @@
+table Order_Details
+	lineageTag: 493b4392-aad5-4f52-86d6-17124e225317
+
+	measure Revenue = sumx(Order_Details,Order_Details[Quantity]*Order_Details[UnitPrice])
+		formatString: \$#,0.0;(\$#,0.0);\$#,0.0
+		lineageTag: c335ee36-5377-44cd-848e-4827ee9016f4
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	column OrderID
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: a40875a6-8d00-400c-b0c4-490ad6fb039e
+		summarizeBy: none
+		sourceColumn: OrderID
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column ProductID
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: cbdb4acd-90b0-458f-9c39-5bcf1e8bccc1
+		summarizeBy: none
+		sourceColumn: ProductID
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column UnitPrice
+		dataType: double
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: f9318c2f-aa6d-4cbc-93ab-a72cbf206f94
+		summarizeBy: sum
+		sourceColumn: UnitPrice
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	column Quantity
+		dataType: int64
+		formatString: 0
+		lineageTag: 74a261be-ad42-4044-a491-30675a3d4a52
+		summarizeBy: sum
+		sourceColumn: Quantity
+
+		annotation SummarizationSetBy = Automatic
+
+	column Discount
+		dataType: double
+		lineageTag: e6ca9cf4-89aa-429f-9cad-416961fb4e43
+		summarizeBy: sum
+		sourceColumn: Discount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition Order_Details-d7c5ad66-6959-47f5-92e4-645f5e55bdf4 = m
+		mode: import
+		source =
+				let
+				    Source = OData.Feed("https://services.odata.org/Northwind/Northwind.svc"),
+				    Order_Details_table = Source{[Name="Order_Details",Signature="table"]}[Data]
+				in
+				    Order_Details_table
+
+	annotation PBI_ResultType = Table
+
