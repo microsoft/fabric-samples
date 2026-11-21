@@ -1,0 +1,13 @@
+GraphModelQueryLogs
+| where Timestamp > ago(24h)
+| summarize arg_max(Timestamp, *) by WorkspaceId, ItemId, OperationId
+| where Status in ("Success", "SuccessDespiteError", "Failed")
+| summarize
+    QueryCount = count(),
+    FailedQueries = countif(Status == "Failed"),
+    QueriesWithErrors = countif(Status == "SuccessDespiteError"),
+    AverageDurationMs = avg(DurationMs),
+    P95DurationMs = percentile(DurationMs, 95)
+    by bin(Timestamp, 1h), WorkspaceId, ItemId
+| extend FailureRatePercent = 100.0 * FailedQueries / QueryCount
+| order by Timestamp desc

@@ -1,0 +1,7 @@
+GraphModelQueryLogs
+| where Timestamp > ago(24h)
+| summarize arg_max(Timestamp, *) by WorkspaceId, ItemId, OperationId
+| where Status in ("Success", "SuccessDespiteError", "Failed")
+| top 20 by DurationMs desc
+| project Timestamp, WorkspaceName, ItemId, ItemName, OperationId,
+    DurationMs, Status, GQLStatusCode, ErrorCode, GQLQuery
