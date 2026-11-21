@@ -1,0 +1,9 @@
+GraphModelQueryLogs
+| where Timestamp > ago(24h)
+| summarize arg_max(Timestamp, *) by WorkspaceId, ItemId, OperationId
+| where Status != "Success"
+| project Timestamp, WorkspaceName, ItemId, ItemName, OperationId,
+    CorrelationId, DurationMs, Status, GQLStatusCode, ErrorCode,
+    GQLErrorMessage, GQLQuery
+| order by Timestamp desc
+| take 100

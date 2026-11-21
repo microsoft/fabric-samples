@@ -1,0 +1,7 @@
+GraphModelQueryLogs
+| where Timestamp > ago(24h)
+| summarize arg_max(Timestamp, *) by WorkspaceId, ItemId, OperationId
+| where Status != "Success"
+| summarize FailedQueries = count()
+    by WorkspaceId, ItemId, ItemName, GQLStatusCode, ErrorCode
+| order by FailedQueries desc
